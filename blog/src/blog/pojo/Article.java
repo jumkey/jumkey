@@ -22,7 +22,7 @@ public class Article {
 	private String content;
 
 	@Persistent
-	private Date addDate;
+	private Date postDate;
 	
 	@Persistent(mappedBy = "article")
     private List<Comment> commentSets;
@@ -35,10 +35,10 @@ public class Article {
 		this.commentSets = commentSets;
 	}
 
-	public Article(String title, String content, Date addDate) {
+	public Article(String title, String content, Date postDate) {
 		this.title = title;
 		this.content = content;
-		this.addDate = addDate;
+		this.postDate = postDate;
 	}
 
 	public Long getId() {
@@ -65,12 +65,12 @@ public class Article {
 		this.content = content;
 	}
 
-	public Date getAddDate() {
-		return addDate;
+	public Date getPostDate() {
+		return postDate;
 	}
 
-	public void setAddDate(Date addDate) {
-		this.addDate = addDate;
+	public void setPostDate(Date postDate) {
+		this.postDate = postDate;
 	}
 
 }
