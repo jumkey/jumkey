@@ -1,34 +1,38 @@
 package blog.admin;
 
 import java.io.IOException;
-import java.util.List;
+import java.io.UnsupportedEncodingException;
+import java.security.NoSuchAlgorithmException;
 
-import javax.jdo.PersistenceManager;
-import javax.jdo.Query;
 import javax.servlet.http.*;
 
 import blog.BaseServlet;
-import blog.db.PMF;
-import blog.pojo.Users;
+import blog.service.UsersService;
+import blog.service.UsersServiceImpl;
+import blog.util.MD5;
 
 @SuppressWarnings("serial")
 public class LoginServlet extends BaseServlet {
-	@SuppressWarnings("unchecked")
 	public void doAll(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
 		String name=req.getParameter("name");
 		String password=req.getParameter("password");
-		
-		PersistenceManager pm = PMF.get().getPersistenceManager();
-		String querystr = "select from " + Users.class.getName()+" where name=="+name+"&&password=="+password;
-	    Query query = pm.newQuery(querystr);
-	    try{
-	        List<Users> users = (List<Users>) query.execute();
-	        pm.detachCopyAll(users);
-	        System.out.println(users);
-	    }finally{
-	        query.closeAll();
-	        pm.close();
-	    }
+		UsersService usersser = new UsersServiceImpl();
+		if(usersser.login(name, password)){
+			try {
+				//添加cookies
+				StringBuffer str=new StringBuffer();
+				str.append(MD5.getMD5Str(name));
+				str.append(MD5.getMD5Str(password));
+				String md5str=MD5.getMD5Str(MD5.getMD5Str(str.substring(16, 48)));
+				Cookie cookie = new Cookie("key", md5str);
+				cookie.setMaxAge(60*60*24);
+				resp.addCookie(cookie);
+			} catch (NoSuchAlgorithmException e) {
+				e.printStackTrace();
+			} catch (UnsupportedEncodingException e) {
+				e.printStackTrace();
+			}
+		}
 	}
 }
