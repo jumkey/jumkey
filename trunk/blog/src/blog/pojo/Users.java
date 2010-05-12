@@ -28,8 +28,7 @@ public class Users {
 	@Persistent
 	private Integer logged;// int(10) 非负,可为空 上次登录最后活跃时间
 	@Persistent
-	private String group;// enum('administrator', 'editor', 'contributor',
-							// 'subscriber', 'visitor') N/A 用户组
+	private String group;// enum('administrator', 'editor', 'contributor', 'subscriber', 'visitor') N/A 用户组
 
 	public Long getUid() {
 		return uid;
