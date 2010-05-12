@@ -25,7 +25,7 @@ public class LoginServlet extends BaseServlet {
 				str.append(MD5.getMD5Str(name));
 				str.append(MD5.getMD5Str(password));
 				String md5str=MD5.getMD5Str(MD5.getMD5Str(str.substring(16, 48)));
-				Cookie cookie = new Cookie("key", md5str);
+				Cookie cookie = new Cookie("userauth", md5str);
 				cookie.setMaxAge(60*60*24);
 				resp.addCookie(cookie);
 			} catch (NoSuchAlgorithmException e) {
