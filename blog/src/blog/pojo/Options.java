@@ -1,6 +1,5 @@
 package blog.pojo;
 
-import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.IdentityType;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
@@ -11,7 +10,6 @@ import com.google.appengine.api.datastore.Text;
 @PersistenceCapable(identityType = IdentityType.APPLICATION)
 public class Options {
 	@PrimaryKey
-	@Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
 	private String name;// varchar(32) 主键 配置名称
 	@Persistent
 	private Integer user;// int(10) 主键,非负 配置所属用户,默认为0(全局配置)

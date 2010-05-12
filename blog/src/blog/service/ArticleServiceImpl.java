@@ -1,12 +1,37 @@
 package blog.service;
 
+import java.util.List;
+
 import javax.jdo.PersistenceManager;
 
 import blog.db.PMF;
 import blog.pojo.Article;
+import blog.pojo.Metas;
 
 public class ArticleServiceImpl implements ArticleService {
-	protected ArticleServiceImpl() {
+
+	public void create(Metas metas) {
+		PersistenceManager pm = PMF.get().getPersistenceManager();
+		try {
+			pm.makePersistent(metas);
+		} finally {
+			pm.close();
+		}
+	}
+	@SuppressWarnings("unchecked")
+	public List<Metas> getMetas() {
+		PersistenceManager pm = PMF.get().getPersistenceManager();
+		String query = "select from " + Metas.class.getName();
+		try {
+			List<Metas> metas = (List<Metas>) pm.newQuery(query).execute();
+			pm.detachCopyAll(metas);
+			// articles.size();//Tell me why?
+			return metas;
+		} catch (Exception e) {
+			return null;
+		} finally {
+			pm.close();
+		}
 	}
 
 	public void create(Article article) {
