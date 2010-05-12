@@ -44,7 +44,7 @@ public class Contents {
 	@Persistent
 	private Boolean allowPing;// enum(enable, disable) 可为空 是否允许ping
 	@Persistent
-	private Boolean allowFeed;// enum(enable, disable) 可为空 允许出现在聚合中
+	private Boolean allowFeed;// enum(enable, disable) 可为空 允许出现在聚合中 
 
 	public Long getCid() {
 		return cid;
