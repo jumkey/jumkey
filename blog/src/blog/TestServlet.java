@@ -16,6 +16,6 @@ public class TestServlet extends BaseServlet {
 		Metas meta = new Metas();
 		meta.setName("jumkey");
 		articleser.create(meta);
-		System.out.println(articleser.getMetas().get(0).getName());;
+		System.out.println(articleser.getMetas().get(0).getName());
 	}
 }
