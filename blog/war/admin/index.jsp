@@ -1,15 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE HTML>
 <html lang="zh">
 <head>
 <meta charset="UTF-8">
-<title>Word Taste</title>
+<title>Word Taste 后台登陆</title>
 </head>
 
 <body>
 <header>
-<h1><a href="/" title="首页">login</a></h1>
+<h1><a href="/" title="首页">Login</a></h1>
 </header>
 <article>
 <p>

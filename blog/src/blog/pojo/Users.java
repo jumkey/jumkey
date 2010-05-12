@@ -22,11 +22,11 @@ public class Users {
 	@Persistent
 	private String screenName;// varchar(32) 可为空 用户显示的名称
 	@Persistent
-	private Integer created;// int(10) 非负,可为空 用户注册时的GMT unix时间戳
+	private Long created;// int(10) 非负,可为空 用户注册时的GMT unix时间戳
 	@Persistent
-	private Integer activated;// int(10) 非负,可为空 最后活动时间
+	private Long activated;// int(10) 非负,可为空 最后活动时间
 	@Persistent
-	private Integer logged;// int(10) 非负,可为空 上次登录最后活跃时间
+	private Long logged;// int(10) 非负,可为空 上次登录最后活跃时间
 	@Persistent
 	private String group;// enum('administrator', 'editor', 'contributor', 'subscriber', 'visitor') N/A 用户组
 
@@ -78,27 +78,27 @@ public class Users {
 		this.screenName = screenName;
 	}
 
-	public Integer getCreated() {
+	public Long getCreated() {
 		return created;
 	}
 
-	public void setCreated(Integer created) {
+	public void setCreated(Long created) {
 		this.created = created;
 	}
 
-	public Integer getActivated() {
+	public Long getActivated() {
 		return activated;
 	}
 
-	public void setActivated(Integer activated) {
+	public void setActivated(Long activated) {
 		this.activated = activated;
 	}
 
-	public Integer getLogged() {
+	public Long getLogged() {
 		return logged;
 	}
 
-	public void setLogged(Integer logged) {
+	public void setLogged(Long logged) {
 		this.logged = logged;
 	}
 
