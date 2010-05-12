@@ -35,10 +35,7 @@ public class ArticleServiceImpl implements ArticleService {
 		PersistenceManager pm = PMF.get().getPersistenceManager();
 		try {
 			Article original = pm.getObjectById(Article.class, article.getId());
-			original.setCategoryid(article.getCategoryid());
-			original.setCategoryindex(article.getCategoryindex());
 			original.setContent(article.getContent());
-			original.setIndex(article.getIndex());
 			original.setPostDate(article.getPostDate());
 			original.setTitle(article.getTitle());
 			pm.makePersistent(original);
