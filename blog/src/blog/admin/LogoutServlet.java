@@ -15,6 +15,7 @@ public class LogoutServlet extends BaseServlet {
 		if(cookies!=null){
 			for(int i=0;i<cookies.length;i++){
 				if("userauth".equals(cookies[i].getName())){
+					cookies[i].setValue(null);
 					cookies[i].setMaxAge(0);
 					cookies[i].setPath("/");
 					resp.addCookie(cookies[i]);

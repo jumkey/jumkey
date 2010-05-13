@@ -26,6 +26,7 @@ public class IndexServlet extends BaseServlet {
 		UsersService usersser=new UsersServiceImpl();
 		boolean t=usersser.decoder(str);
 		if(t){
+			req.getSession().setAttribute("logstr", true);
 			resp.sendRedirect(Contains.main);
 		}else{
 			resp.sendRedirect(Contains.login);
