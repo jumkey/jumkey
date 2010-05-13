@@ -43,7 +43,6 @@ public class UsersDAOImpl implements UsersDAO {
 	    }
 	}
 	@SuppressWarnings("unchecked")
-	@Override
 	public Users getUsersByName(String name) {
 		PersistenceManager pm = PMF.get().getPersistenceManager();
 		String querystr = "select from " + Users.class.getName()+" where name=='"+name+"'";
