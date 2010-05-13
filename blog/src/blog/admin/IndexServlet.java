@@ -14,10 +14,12 @@ public class IndexServlet extends BaseServlet {
 			throws IOException {
 		Cookie[] cookies=req.getCookies();
 		String str=null;
-		for(int i=0;i<cookies.length;i++){
-			if("userauth".equals(cookies[i].getName())){
-				str=cookies[i].getValue();
-				break;
+		if(cookies!=null){
+			for(int i=0;i<cookies.length;i++){
+				if("userauth".equals(cookies[i].getName())){
+					str=cookies[i].getValue();
+					break;
+				}
 			}
 		}
 		UsersService usersser=new UsersServiceImpl();
