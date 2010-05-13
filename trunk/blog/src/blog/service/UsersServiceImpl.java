@@ -68,12 +68,20 @@ public class UsersServiceImpl implements UsersService {
 	@Override
 	public boolean decoder(String str) {
 		boolean t=false;
-		String[] userstr=str.split("#");
-		System.out.println(userstr[0]+"---------"+userstr[1]);
-		UsersDAO usersdao=new UsersDAOImpl();
-		Users user = usersdao.getUsersByName(userstr[0]);
-		if(str.equals(encoder(user.getName(), user.getPassword()))){
-			t=true;
+		try{
+			String[] userstr=str.split("#");
+			//System.out.println(userstr[0]+"---------"+userstr[1]);
+			UsersDAO usersdao=new UsersDAOImpl();
+			Users user = usersdao.getUsersByName(userstr[0]);
+			if(str.equals(encoder(user.getName(), user.getPassword()))){
+				t=true;
+			}
+		}catch (NullPointerException npe) {
+			npe.printStackTrace();
+		}catch (ArrayIndexOutOfBoundsException aie) {
+			aie.printStackTrace();
+		}catch (Exception e) {
+			e.printStackTrace();
 		}
 		return t;
 	}
