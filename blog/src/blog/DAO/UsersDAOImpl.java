@@ -42,6 +42,25 @@ public class UsersDAOImpl implements UsersDAO {
 	        pm.close();
 	    }
 	}
+	@SuppressWarnings("unchecked")
+	@Override
+	public Users getUsersByName(String name) {
+		PersistenceManager pm = PMF.get().getPersistenceManager();
+		String querystr = "select from " + Users.class.getName()+" where name=='"+name+"'";
+	    Query query = pm.newQuery(querystr);
+	    try{
+	        List<Users> users = (List<Users>) query.execute();
+	        pm.detachCopyAll(users);
+	        Users user=null;
+	        if(users!=null&&users.size()!=0){
+	        	user = users.get(0);
+	        }
+	        return user;
+	    }finally{
+	        query.closeAll();
+	        pm.close();
+	    }
+	}
 
 	public void create(Users users) {
 		PersistenceManager pm = PMF.get().getPersistenceManager();
