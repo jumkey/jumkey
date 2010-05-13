@@ -5,4 +5,5 @@ public interface UsersService {
 	public boolean hasUsers();
 	public boolean login(String name, String password);
 	public String encoder(String name, String password);
+	public boolean decoder(String str);
 }

@@ -5,7 +5,8 @@ import java.io.IOException;
 import javax.servlet.http.*;
 
 import blog.BaseServlet;
-import blog.util.MD5;
+import blog.service.UsersService;
+import blog.service.UsersServiceImpl;
 
 @SuppressWarnings("serial")
 public class IndexServlet extends BaseServlet {
@@ -19,5 +20,8 @@ public class IndexServlet extends BaseServlet {
 				break;
 			}
 		}
+		UsersService usersser=new UsersServiceImpl();
+		boolean t=usersser.decoder(str);
+		System.out.println(t);
 	}
 }

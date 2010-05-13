@@ -6,6 +6,8 @@ import blog.pojo.Users;
 
 public interface UsersDAO {
 	public Users getUsersByNP(String name, String password);
+	
+	public Users getUsersByName(String name);
 
 	public List<Users> getAllUsers();
 
