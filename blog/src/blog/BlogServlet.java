@@ -18,6 +18,7 @@ public class BlogServlet extends BaseServlet {
 
 		List<Contents> contents=contentsser.getAllText();
 		req.setAttribute("contentslist", contents);
+		System.out.println(contents.get(0).getText());
 		try {
 			req.getRequestDispatcher("index.jsp").forward(req, resp);
 		} catch (ServletException e) {
