@@ -27,7 +27,7 @@ public class Comments {
 	private String ip;// varchar(64) 可为空 评论者ip地址
 	@Persistent
 	private String agent;// varchar(200) 可为空 评论者客户端
-	@Persistent
+	@Persistent(serialized="true", defaultFetchGroup="true")
 	private Text text;// text 可为空 评论文字
 	@Persistent
 	private String type;// enum('pingback', 'trackback', 'comment') 可为空 评论类型
