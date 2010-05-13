@@ -51,6 +51,15 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	</servlet-mapping>
 	
 	<servlet>
+		<servlet-name>Logout</servlet-name>
+		<servlet-class>blog.admin.LogoutServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Logout</servlet-name>
+		<url-pattern>/admin/logout</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
 		<servlet-name>Index</servlet-name>
 		<servlet-class>blog.admin.IndexServlet</servlet-class>
 	</servlet>

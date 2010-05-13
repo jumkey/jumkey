@@ -7,6 +7,7 @@ import javax.servlet.http.*;
 import blog.BaseServlet;
 import blog.service.UsersService;
 import blog.service.UsersServiceImpl;
+import blog.util.Contains;
 
 @SuppressWarnings("serial")
 public class LoginServlet extends BaseServlet {
@@ -23,6 +24,9 @@ public class LoginServlet extends BaseServlet {
 			cookie.setPath("/");
 			//cookie.setSecure(false);
 			resp.addCookie(cookie);
+			resp.sendRedirect(Contains.index);
+		}else{
+			resp.sendRedirect(Contains.login);
 		}
 	}
 }
