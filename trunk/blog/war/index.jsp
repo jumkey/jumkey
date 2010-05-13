@@ -24,6 +24,6 @@ ${art.content}<br /><br />
 <input type="text" name="content" value="" />
 <input type="submit" value="submit" />
 </form>
-<footer>&copy;2010 - jumkey</footer>
+<footer>&copy; 2010 - jumkey</footer>
 </body>
 </html>
