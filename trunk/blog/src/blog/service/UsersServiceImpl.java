@@ -44,7 +44,6 @@ public class UsersServiceImpl implements UsersService {
 		return t;
 	}
 
-	@Override
 	public String encoder(String name, String password) {
 		String md5str=null;
 		try {
@@ -65,7 +64,6 @@ public class UsersServiceImpl implements UsersService {
 	 * 
 	 * @author Administrator
 	 */
-	@Override
 	public boolean decoder(String str) {
 		boolean t=false;
 		try{
