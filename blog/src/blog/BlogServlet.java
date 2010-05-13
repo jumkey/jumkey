@@ -6,21 +6,21 @@ import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 
-import blog.DAO.ArticleDAO;
-import blog.pojo.Article;
+import blog.pojo.Contents;
+import blog.service.ContentsService;
+import blog.service.ContentsServiceImpl;
 
 @SuppressWarnings("serial")
 public class BlogServlet extends BaseServlet {
 	public void doAll(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
-		ArticleDAO articledao=new ArticleDAO();
-		resp.setContentType("text/plain");
-		List<Article> articles=articledao.getArticles();
-		req.setAttribute("artlist", articles);
+		ContentsService contentsser=new ContentsServiceImpl();
+
+		List<Contents> contents=contentsser.getAllText();
+		req.setAttribute("contentslist", contents);
 		try {
 			req.getRequestDispatcher("index.jsp").forward(req, resp);
 		} catch (ServletException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

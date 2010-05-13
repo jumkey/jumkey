@@ -23,7 +23,7 @@ public class Contents {
 	private Integer created;// int(10) 索引,非负,可为空 内容生成时的GMT unix时间戳
 	@Persistent
 	private Integer modified;// int(10) 非负,可为空 内容更改时的GMT unix时间戳
-	@Persistent
+	@Persistent(serialized="true", defaultFetchGroup="true")
 	private Text text;// text 可为空 内容文字
 	@Persistent
 	private String tags;// varchar(200) 可为空 内容标签,冗余字段

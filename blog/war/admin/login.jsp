@@ -14,7 +14,7 @@
 <p>
 <form action="login" method="post">
 <input type="text" name="name" value="" /><br />
-<input type="text" name="password" value="" /><br />
+<input type="password" name="password" value="" /><br />
 <input type="submit" value="submit" />
 </form>
 </p>

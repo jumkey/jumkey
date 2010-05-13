@@ -8,22 +8,15 @@
 </head>
 
 <body>
-<c:forEach var="art" items="${artlist}">
-${art.id}.<b>${art.title}</b><br />
-${art.content}<br /><br />
-</c:forEach>
 <header>
 <h1><a href="/" title="首页">Word Taste</a></h1>
 </header>
+<c:forEach var="contents" items="${contentslist}">
 <article>
-<h2 style="font-weight:bold;">Available Servlets:</h2>
-<p><a href="blog">Blog</a></p>
+${contents.cid}.<b>${contents.title}</b><br />
+${contents.text}<br /><br />
 </article>
-<form action="add" method="post">
-<input type="text" name="title" value="" />
-<input type="text" name="content" value="" />
-<input type="submit" value="submit" />
-</form>
+</c:forEach>
 <footer>&copy; 2010 - jumkey</footer>
 </body>
 </html>

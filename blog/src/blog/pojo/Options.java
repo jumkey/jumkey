@@ -13,7 +13,7 @@ public class Options {
 	private String name;// varchar(32) 主键 配置名称
 	@Persistent
 	private Integer user;// int(10) 主键,非负 配置所属用户,默认为0(全局配置)
-	@Persistent
+	@Persistent(serialized="true", defaultFetchGroup="true")
 	private Text value;// text 可为空 配置值
 
 	public String getName() {
