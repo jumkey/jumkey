@@ -63,6 +63,7 @@ public class ContentsDAOImpl implements ContentsDAO {
 			// contents.size();//Tell me why?
 			return contents;
 		} catch (Exception e) {
+			e.printStackTrace();
 			return null;
 		} finally {
 			pm.close();

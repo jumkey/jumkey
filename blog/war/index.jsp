@@ -14,7 +14,7 @@
 <c:forEach var="contents" items="${contentslist}">
 <article>
 ${contents.cid}.<b>${contents.title}</b><br />
-${contents.text}<br /><br />
+${contents.text.value}<br /><br />
 </article>
 </c:forEach>
 <footer>&copy; 2010 - jumkey</footer>

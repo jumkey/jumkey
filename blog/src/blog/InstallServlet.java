@@ -15,6 +15,7 @@ public class InstallServlet extends BaseServlet {
 		UsersService usersser = new UsersServiceImpl();
 		//检测是否已经存在Users
 		if(usersser.hasUsers()){
+			resp.setCharacterEncoding("utf-8");
 			resp.setContentType("text/html");
 			resp.getWriter().println("非法安装！");
 		}else{
