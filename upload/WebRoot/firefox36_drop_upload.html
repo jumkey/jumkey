@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>HTML File upload test</title>
+    <style type="text/css">
+      .dropbox {
+        width: 250px;
+        height: 150px;
+        border: 4px dashed black;
+        -moz-border-radius: 8px;
+        -webkit-border-radius: 8px;
+        text-align: center;
+        vertical-align: middle;
+        display: table-cell;
+      }
+	  .data_content {
+	  	border: 4px solid green;
+		padding: 10px;
+		margin-top: 10px;
+	  }
+    </style>
+    <script type="text/javascript">
+      function handleFiles(files) {
+        var txt = "选择文件数：" + files.length + "<br/>";
+        for (var i = 0; i < files.length; i++) {
+          var f = files.item(i);
+          txt += i + ": " + f.name;
+          txt += " (" + f.type + "; " + f.size + " bytes)<br/>";
+        }
+        document.getElementById("status").innerHTML = txt;
+
+		for(var i=0; i < files.length; i++) {
+          var reader = new FileReader();
+		  // 异步访问，在文件读取完以后显示文件内容
+          reader.onloadend = function(e) {
+			document.getElementById("message").innerHTML += "<div class='data_content'>" + e.target.result + "</div>";
+          };
+		  // 开始访问文件内容
+          reader.readAsBinaryString(files[i]);
+		 }
+      }
+    </script>
+  </head>
+  <body>
+  	<h1>Firefox托拽测试</h1>
+    <div id="status"></div>
+    <div id="dropbox" class="dropbox" >
+    <b>或者把文件拖到这里吧（支持多文件）</b>
+    </div>
+    <div id="message"></div>
+
+    <p>This test is based on <a href="https://developer.mozilla.org/en/Using_files_from_web_applications">this doc</a> and <a href="https://developer.mozilla.org/en/DOM/FileReader">this doc</a>.</p>
+
+    <script type="text/javascript">
+    var dropbox = document.getElementById("dropbox");
+    dropbox.addEventListener("dragenter", dragenter, false);
+    dropbox.addEventListener("dragover", dragover, false);
+    dropbox.addEventListener("drop", drop, false);
+
+    function dragenter(e) {
+      e.stopPropagation();
+      e.preventDefault();
+    }
+
+    function dragover(e) {
+      e.stopPropagation();
+      e.preventDefault();
+    }
+
+    function drop(e) {
+      e.stopPropagation();
+      e.preventDefault();
+
+      handleFiles(e.dataTransfer.files);
+	  return false;
+    }
+    </script>
+  </body>
+</html>
