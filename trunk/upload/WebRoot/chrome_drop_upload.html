@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<title>托拽上传文件</title>
+		<style type="text/css">
+		  .data_content {
+		  	border: 4px solid green;
+			padding: 10px;
+			margin-top: 10px;
+		  }
+			.way {
+				padding: 10px;
+				border-bottom: 2px solid #ddd;
+			}
+			.way:hover {
+			}
+			.dropzone {
+				border: 4px dashed #aaa;
+				height: 180px;
+				width: 400px;
+			}
+			.dropzone:hover {
+				border-color: #777;
+			}
+			#dropable_file {
+				font-size: 100px;
+				opacity: 0;	
+				padding: 30px;
+				height: 100%;
+				width: auto;
+				position: relative;
+			}
+			.drop_file {
+				overflow:hidden;
+				background:url(download.png) center bottom no-repeat;
+				border: 4px dashed #aaa;
+			}
+			.drop_file:hover {
+				background-image: url(download_on.png);
+			}
+			input:focus {
+				outline:none;	
+			}
+		</style>
+		<script type="text/javascript" src="js/my.js"></script>
+        <script type="text/javascript">
+            window.onload=function () {
+                var div = document.getElementById("div");
+                div.ondragenter = function (e) {
+					console.log("ondragenter");
+                    e.dataTransfer.dropEffect = 'copy'; // 让鼠标出现复制文件时的样式
+					e.target.style.background = "yellow";
+					e.preventDefault();
+                    return false;
+                };
+                div.ondragover = function (e) {
+					console.log("ondragover");
+                    e.dataTransfer.dropEffect = 'copy'; // 让鼠标出现复制文件时的样式
+					e.target.style.background = "yellow";
+					e.preventDefault();
+                    return false;
+                };
+                div.ondrop = function (e) {
+					console.log("ondrop");
+					FileManager.uploadFiles(e.dataTransfer.files); // 文件可以通过鼠标的MouseEvent传递过来
+					e.target.style.background = "lightgray";
+					console.log("ondrop");
+					e.preventDefault();
+                    return false;
+                };
+				div.ondragleave = function(e) {
+					console.log("ondragleave");
+					e.target.style.background = "lightgreen";
+					e.preventDefault();
+                    return false;
+				};
+				document.ondragstart = function(e) {
+					console.log("ondragstart");
+					e.preventDefault();
+                    return false;
+				};
+				document.ondragend = function(e) {
+					console.log("ondragend");
+					e.preventDefault();
+                    return false;
+				};
+				document.ondrag = function(e) {
+					console.log("ondrag");
+					e.preventDefault();
+                    return false;
+				};
+            }
+        </script>
+    </head>
+    <body>
+		<h1>托拽文件上传实例(Chrome2+)</h1>
+		<p>文件上传控件直接将文件托放选择文件，也支持直接将文件托放进网页获取到所托放的文件信息，
+		然后通过XMLHttpRequest的send方法将选中的文件发送到服务器端<p>
+		<div style="color: green">直接在本地打开文件测试是无法看到效果的</div>
+		<div class="way">直接通过托放接口访问所托放的文件信息
+        	<div id="div" class="dropzone">将文件托放到这里（支持多文件）</div>
+		</div>
+		<div id="message">
+		</div>
+    </body>
+</html>
