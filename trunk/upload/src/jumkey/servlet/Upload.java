@@ -72,7 +72,7 @@ public class Upload extends HttpServlet {
 		}
 		outputStream.close();
 		inputStream.close();
-		response.getWriter().println("{\"file\":\""+request.getParameter("file")+"\"}");
+		response.getWriter().println("{\"file\":\""+URLDecoder.decode(request.getHeader("X-File-Name"),"UTF-8")+"\"}");
 	}
 
 	/**

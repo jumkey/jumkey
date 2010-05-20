@@ -4,16 +4,16 @@
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 		<title>托拽上传文件</title>
 		<style type="text/css">
-		  .data_content {
-		  	border: 4px solid green;
-			padding: 10px;
-			margin-top: 10px;
-		  }
-			.way {
+			.data_content {
+			  	border: 4px solid green;
+				padding: 10px;
+				margin-top: 10px;
+			}
+			#way {
 				padding: 10px;
 				border-bottom: 2px solid #ddd;
 			}
-			.way:hover {
+			#way:hover {
 			}
 			.dropzone {
 				border: 4px dashed #aaa;
@@ -42,7 +42,23 @@
 			input:focus {
 				outline:none;	
 			}
+			#message .loader {
+				display:inline-block;
+				position:relative;
+				top:3px;
+				width:150px;
+				height:12px;
+				margin-left:20px;
+				border-radius:5px;
+				border:1px solid rgb(79, 99, 99);
+			}
+			#message .loader div {
+				height:12px;
+				width:0px;
+				background-color:gray;
+			}
 		</style>
+		<script type="text/javascript" src="js/jquery-1.4.2.js"></script>
 		<script type="text/javascript" src="js/my.js"></script>
         <script type="text/javascript">
             window.onload=function () {
@@ -63,7 +79,9 @@
                 };
                 div.ondrop = function (e) {
 					console.log("ondrop");
-					FileManager.uploadFiles(e.dataTransfer.files); // 文件可以通过鼠标的MouseEvent传递过来
+					var files=e.dataTransfer.files;
+					FileManager.uploadFiles(files); // 文件可以通过鼠标的MouseEvent传递过来
+					
 					e.target.style.background = "lightgray";
 					console.log("ondrop");
 					e.preventDefault();
@@ -98,7 +116,7 @@
 		<p>文件上传控件直接将文件托放选择文件，也支持直接将文件托放进网页获取到所托放的文件信息，
 		然后通过XMLHttpRequest的send方法将选中的文件发送到服务器端<p>
 		<div style="color: green">直接在本地打开文件测试是无法看到效果的</div>
-		<div class="way">直接通过托放接口访问所托放的文件信息
+		<div id="way">直接通过托放接口访问所托放的文件信息
         	<div id="div" class="dropzone">将文件托放到这里（支持多文件）</div>
 		</div>
 		<div id="message">
