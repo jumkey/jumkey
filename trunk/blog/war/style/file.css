@@ -1,0 +1,53 @@
+.data_content {
+  	border: 4px solid green;
+	padding: 10px;
+	margin-top: 10px;
+}
+#way {
+	padding: 10px;
+	border-bottom: 2px solid #ddd;
+}
+#way:hover {
+}
+.dropzone {
+	border: 4px dashed #aaa;
+	height: 180px;
+	width: 400px;
+}
+.dropzone:hover {
+	border-color: #777;
+}
+#dropable_file {
+	font-size: 100px;
+	opacity: 0;	
+	padding: 30px;
+	height: 100%;
+	width: auto;
+	position: relative;
+}
+.drop_file {
+	overflow:hidden;
+	background:url(download.png) center bottom no-repeat;
+	border: 4px dashed #aaa;
+}
+.drop_file:hover {
+	background-image: url(download_on.png);
+}
+input:focus {
+	outline:none;	
+}
+#message .loader {
+	display:inline-block;
+	position:relative;
+	top:3px;
+	width:150px;
+	height:12px;
+	margin-left:20px;
+	border-radius:5px;
+	border:1px solid rgb(79, 99, 99);
+}
+#message .loader div {
+	height:12px;
+	width:0px;
+	background-color:gray;
+}

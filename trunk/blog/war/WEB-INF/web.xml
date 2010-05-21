@@ -23,12 +23,20 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	</servlet-mapping>
 	
 	<servlet>
-		<servlet-name>Add</servlet-name>
-		<servlet-class>blog.AddArticleServlet</servlet-class>
+		<servlet-name>Upload</servlet-name>
+		<servlet-class>blog.Upload</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>Add</servlet-name>
-		<url-pattern>/add</url-pattern>
+		<servlet-name>Upload</servlet-name>
+		<url-pattern>/servlet/Upload</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>GetFile</servlet-name>
+		<servlet-class>blog.GetFile</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>GetFile</servlet-name>
+		<url-pattern>/servlet/GetFile</url-pattern>
 	</servlet-mapping>
 	
 	<servlet>
