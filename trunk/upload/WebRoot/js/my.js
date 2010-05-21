@@ -3,7 +3,7 @@ var FileManager={
 	fileCount:-1,
 	// 通过Ajax将File对象发送到服务器端
 	uploadFiles:function(files) {
-		$("#message").after("上传" + files.length + "个文件...<br />");
+		$("#message").append("上传" + files.length + "个文件...<br />");
 		for(var i=0; i < files.length; i++) {
 			$("#message").append(files[i].fileName+"<br/><div class=\"loader\"><div></div></div><br/>");
 			var xhr = new XMLHttpRequest;
