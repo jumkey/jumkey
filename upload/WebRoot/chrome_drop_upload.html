@@ -62,7 +62,7 @@
 		<script type="text/javascript" src="js/my.js"></script>
         <script type="text/javascript">
             window.onload=function () {
-                var div = document.getElementById("div");
+                var div = $("#div").get(0);
                 div.ondragenter = function (e) {
 					console.log("ondragenter");
                     e.dataTransfer.dropEffect = 'copy'; // 让鼠标出现复制文件时的样式
@@ -119,7 +119,6 @@
 		<div id="way">直接通过托放接口访问所托放的文件信息
         	<div id="div" class="dropzone">将文件托放到这里（支持多文件）</div>
 		</div>
-		<div id="message">
-		</div>
+		<div id="message"></div>
     </body>
 </html>
