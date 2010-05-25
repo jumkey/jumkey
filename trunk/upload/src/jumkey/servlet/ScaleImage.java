@@ -56,8 +56,8 @@ public class ScaleImage {
         File saveFile = new File(saveToFileStr);
         File fromFile = new File(fromFileStr);
         srcImage = ImageIO.read(fromFile); // construct image
-        int imageWideth = srcImage.getWidth(null);
-        int imageHeight = srcImage.getHeight(null);
+        int imageWideth = srcImage.getWidth();
+        int imageHeight = srcImage.getHeight();
         int changeToWideth = 0;
         int changeToHeight = 0;
         if (imageWideth > 0 && imageHeight > 0) {
