@@ -55,7 +55,7 @@ public class ScaleImage {
         BufferedImage srcImage;
         File saveFile = new File(saveToFileStr);
         File fromFile = new File(fromFileStr);
-        srcImage = javax.imageio.ImageIO.read(fromFile); // construct image
+        srcImage = ImageIO.read(fromFile); // construct image
         int imageWideth = srcImage.getWidth(null);
         int imageHeight = srcImage.getHeight(null);
         int changeToWideth = 0;
