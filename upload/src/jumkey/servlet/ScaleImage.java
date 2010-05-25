@@ -36,7 +36,7 @@ public class ScaleImage {
     public static void main(String[] args) {
         ScaleImage is = new ScaleImage();
         try {
-            is.saveImageAsJpg("c:/_DBZ02-_0020.png", "c:/_DBZ02-_0020__.png", 420, 420);
+            is.saveImageAsJpg("c:/_DBZ02-_0020.png", "c:/_DBZ02-_0020__.jpg", 420, 420);
             System.out.println("success");
         } catch (Exception e) {
             e.printStackTrace();
