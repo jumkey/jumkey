@@ -61,11 +61,11 @@ public class ZoomImage extends HttpServlet {
 		response.setHeader("Cache-Control", "no-store");
 		response.setHeader("Pragma", "no-cache");
 		response.setDateHeader("Expires", 0);
-		response.setContentType("image/jpeg");
+		response.setContentType("image/png");
 		BufferedImage oi = ImageIO.read(new File(path));
 		ScaleImage is = new ScaleImage();
 		BufferedImage ni = is.imageZoomOut(oi, Integer.parseInt(x), Integer.parseInt(y));
-		ImageIO.write(ni, "JPEG", response.getOutputStream());
+		ImageIO.write(ni, "PNG", response.getOutputStream());
 	}
 
 	/**
