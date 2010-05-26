@@ -56,7 +56,7 @@ li.list a:hover img {
 <body>
 <ul>
 <c:forEach var="name" items="${list}">
-<li class="list"><a href=""><img src="../img/Moth_by_vhm_alex.jpg" />${name }</a></li>
+<li class="list"><a href="show?name=${name }"><img src="../img/Moth_by_vhm_alex.jpg" />${name }</a></li>
 </c:forEach>
 </ul>
 </body>
