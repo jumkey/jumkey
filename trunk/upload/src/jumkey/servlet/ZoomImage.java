@@ -52,7 +52,7 @@ public class ZoomImage extends HttpServlet {
 	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		File path = new File("//D:/TDDOWNLOAD/[Comic][龍珠完全版][鳥山明][文傳][C.C]Vol_02");
+		File path = new File("//D:/TDDOWNLOAD");
 		String[] list = path.list();
 		request.setAttribute("list", list);
 		request.getRequestDispatcher("/list.jsp").forward(request, response);
