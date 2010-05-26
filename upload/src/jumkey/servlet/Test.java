@@ -1,7 +1,6 @@
 package jumkey.servlet;
 
 import java.io.File;
-
 import javax.imageio.ImageIO;
 
 public class Test {
@@ -10,10 +9,10 @@ public class Test {
 		for (String name : names) {
 			System.out.println(name);
 		}
-		File path = new File("//D:/TDDOWNLOAD/[Comic][龍珠完全版][鳥山明][文傳][C.C]Vol_01");
+		File path = new File("//D:/TDDOWNLOAD");
 		String[] list = path.list();
 		for(String fn : list){
-			System.out.println(fn.split("\\.")[0]);
+			System.out.println(fn);
 		}
 	}
 }

@@ -1,10 +1,8 @@
 package jumkey.servlet;
 
-import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
-import javax.imageio.ImageIO;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -54,18 +52,10 @@ public class ZoomImage extends HttpServlet {
 	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String x=request.getParameter("x");
-		String y=request.getParameter("y");
-		String path=request.getParameter("path");
-		
-		response.setHeader("Cache-Control", "no-store");
-		response.setHeader("Pragma", "no-cache");
-		response.setDateHeader("Expires", 0);
-		response.setContentType("image/png");
-		BufferedImage oi = ImageIO.read(new File(path));
-		ScaleImage is = new ScaleImage();
-		BufferedImage ni = is.imageZoomOut(oi, Integer.parseInt(x), Integer.parseInt(y));
-		ImageIO.write(ni, "PNG", response.getOutputStream());
+		File path = new File("//D:/TDDOWNLOAD/[Comic][龍珠完全版][鳥山明][文傳][C.C]Vol_02");
+		String[] list = path.list();
+		request.setAttribute("list", list);
+		request.getRequestDispatcher("/list.jsp").forward(request, response);
 	}
 
 	/**
