@@ -7,14 +7,15 @@
 <title>DB</title>
 <style type="text/css">
 ul {
-	display: inline;
 	margin: 0px;
-	list-style: none;
+	padding: 0px;
 }
-ul li {
+ul .list {
 	float: left;
 	display: inline;
     list-style: none;
+    width: 120px;
+    text-align: center;
 }
 img {
 	border: 0px;
@@ -25,7 +26,7 @@ img {
 <body>
 <ul>
 <c:forEach var="name" items="${list}">
-<li><a href=""><img src="../img/Moth_by_vhm_alex.jpg" style="display: block;width: 100px;height: 100px;" />${name }</a></li>
+<li class="list"><a href=""><img src="../img/Moth_by_vhm_alex.jpg" style="display: block;width: 100px;height: 100px;margin: 0 auto;" />${name }</a></li>
 </c:forEach>
 </ul>
 </body>
