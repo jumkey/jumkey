@@ -5,7 +5,24 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>DB</title>
+<script type="text/javascript" src="../js/jquery-1.4.2.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".list img").mouseover(function(){
+		$("#single img").attr("src",$(this).attr("src"));
+		$("#single").show("slow");
+	});
+	$(".list img").mouseover(function(){
+	});
+	$(".list img").mouseout(function(){
+		$("#single").hide("slow");
+	});
+});
+</script>
 <style type="text/css">
+body {
+	font-size: 12px;
+}
 /*未点击过的链接*/
 a:link {
 	color: blue;
@@ -38,7 +55,9 @@ li.list {
 	display: inline;
     list-style: none;
     width: 120px;
+    height: 160px;
     text-align: center;
+    overflow: hidden;
 }
 li.list img {
 	display: block;
@@ -50,6 +69,10 @@ li.list img {
 li.list a:hover img {
 	border: 5px solid red;
 }
+#single {
+	position: absolute;
+	display: none;
+}
 </style>
 </head>
 
@@ -59,5 +82,8 @@ li.list a:hover img {
 <li class="list"><a href="show?name=${name }"><img src="../img/Moth_by_vhm_alex.jpg" />${name }</a></li>
 </c:forEach>
 </ul>
+<div id="single">
+<img src="" />
+</div>
 </body>
 </html>
