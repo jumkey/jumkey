@@ -8,14 +8,31 @@
 <script type="text/javascript" src="../js/jquery-1.4.2.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
-	$(".list img").mouseover(function(){
+	var docW=$(document).width();
+	var docH=$(document).height();
+	var x,y;
+	$(window).resize(function(){
+		docW=$(document).width();
+		docH=$(document).height();
+	});
+	$(".list img").mouseover(function(e){
 		$("#single img").attr("src",$(this).attr("src"));
-		$("#single").show("slow");
-	});
-	$(".list img").mouseover(function(){
-	});
-	$(".list img").mouseout(function(){
-		$("#single").hide("slow");
+		$("#single").show();
+	}).mousemove(function(e){
+		if(e.pageX+330>docW){
+			x=e.pageX-320-10;
+		}else{
+			x=e.pageX+10;
+		}
+		if(e.pageY+250>docH){
+			y=e.pageY-240-10;
+		}else{
+			y=e.pageY+10;
+		}
+		$("#single").css({left:x,top:y});
+	}).mouseout(function(e){
+		//$("#single").remove();
+		$("#single").hide();
 	});
 });
 </script>
@@ -66,12 +83,45 @@ li.list img {
 	margin: 0 auto;
 	border: 5px #ccc solid;
 }
-li.list a:hover img {
+/*li.list a:hover img*/
+li.list a img:hover {
 	border: 5px solid red;
 }
 #single {
 	position: absolute;
 	display: none;
+	width: 320px;
+	height: 240px;
+	overflow: hidden;
+	z-index: 999;
+}
+#single img {
+	border: 2px solid #ccc;
+	border-radius: 20px;
+}
+
+#scroll {
+	background: url("../img/zsnos.png") no-repeat 0px 0px;
+	height: 30px;
+	width: 18px;
+	margin: -15px -190px 0px 0px;
+	overflow: hidden;
+	position: fixed;
+	right: 50%;
+	top: 50%;
+}
+#scroll:hover {
+	background: url("../img/zsnos.png") no-repeat 0px -30px;
+}
+#top {
+	cursor: pointer;
+	height: 15px;
+	width: 18px;
+}
+#bottom {
+	cursor: pointer;
+	height: 15px;
+	width: 18px;
 }
 </style>
 </head>
@@ -85,5 +135,6 @@ li.list a:hover img {
 <div id="single">
 <img src="" />
 </div>
+<div id="scroll"><div id="top"></div><div id="bottom"></div></div>
 </body>
 </html>
