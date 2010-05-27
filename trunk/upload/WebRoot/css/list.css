@@ -84,3 +84,10 @@ li.list a img:hover {
 	height: 15px;
 	width: 18px;
 }
+#header {
+	border: 2px #ccc solid;
+}
+#footer {
+	border: 2px #ccc solid;
+	clear: both;
+}
