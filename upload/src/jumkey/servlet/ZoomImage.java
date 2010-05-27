@@ -57,7 +57,7 @@ public class ZoomImage extends HttpServlet {
 		String[] list = path.list();
 		StringBuffer sb=new StringBuffer("{");
 		for(int i=0;i<list.length;i++){
-			sb.append("\"uu"+i+"\":\""+list[i]+"\",");
+			sb.append("\""+i+"\":\""+list[i]+"\",");
 		}
 		sb.deleteCharAt(sb.length()-1);//É¾³ý×îºóµÄ,ºÅ
 		sb.append("}");
