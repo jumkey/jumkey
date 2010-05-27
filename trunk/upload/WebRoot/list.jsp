@@ -12,8 +12,7 @@
 
 <body>
 <div id="header">header</div>
-<ul id="ulist">
-</ul>
+<ul id="ulist"></ul>
 <div id="single"></div>
 <div id="scroll">
 <div id="top"></div>
