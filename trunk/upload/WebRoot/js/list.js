@@ -3,7 +3,7 @@ $(document).ready(function(){
 		$.getJSON("ZoomImage",{},function(json){
 			var ulist=$("#ulist");
 			for(var p in json){
-				ulist.append("<li class=\"list\"><a href=\"show?folder=1&name=${name }\"><img src=\"img/Moth_by_vhm_alex.jpg\" />name</a></li>");
+				ulist.append("<li class=\"list\"><a href=\"show?folder=1&name=${name }\"><img src=\"img/Moth_by_vhm_alex.jpg\" />"+json[p]+"</a></li>");
 				//console.log(json[p]+p);
 			}
 			var x,y;
