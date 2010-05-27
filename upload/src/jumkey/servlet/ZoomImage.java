@@ -55,8 +55,14 @@ public class ZoomImage extends HttpServlet {
 			throws ServletException, IOException {
 		File path = new File("//D:/TDDOWNLOAD/[Comic][龍珠完全版][鳥山明][文傳][C.C]Vol_14");
 		String[] list = path.list();
-		request.setAttribute("list", list);
-		request.getRequestDispatcher("/list.jsp").forward(request, response);
+		StringBuffer sb=new StringBuffer("{");
+		for(int i=0;i<list.length;i++){
+			sb.append("\""+i+"\":\""+list[i]+"\",");
+		}
+		sb.deleteCharAt(sb.length()-1);//删除最后的,号
+		sb.append("}");
+		response.setContentType("text/plain");
+		response.getWriter().write(sb.toString());
 	}
 
 	/**

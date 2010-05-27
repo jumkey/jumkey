@@ -1,4 +1,7 @@
 $(document).ready(function(){
+	$.getJSON("ZoomImage",{},function(json){
+		alert(json[1]);
+	});
 	var x,y;
 	$(".list img").mouseover(function(e){
 		//$("#single img").attr("src",$(this).attr("src"));
