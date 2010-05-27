@@ -18,6 +18,9 @@ $(document).ready(function(){
 		$("#single").css({left:x,top:y});
 	}).mouseout(function(e){
 		$("#single").hide();
+	}).click(function(){
+//		$(this).animate({opacity: 'hide'}, 500);
+//		return false;
 	});
 	$("#top").click(function(){
 		$(document.body).animate({scrollTop: $("#header").offset().top}, 1000);
