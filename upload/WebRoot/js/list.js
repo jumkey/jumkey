@@ -2,6 +2,7 @@ $(document).ready(function(){
 	$("#header").click(function(){
 		$.getJSON("ZoomImage",{},function(json){
 			var ulist=$("#ulist");
+			ulist.html("");//Çå¿Õul
 			for(var p in json){
 				ulist.append("<li class=\"list\"><a href=\"show?folder=1&name=${name }\"><img src=\"img/Moth_by_vhm_alex.jpg\" />"+json[p]+"</a></li>");
 				//console.log(json[p]+p);
