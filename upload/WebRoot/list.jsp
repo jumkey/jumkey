@@ -12,10 +12,7 @@
 
 <body>
 <div id="header">header</div>
-<ul>
-<c:forEach var="name" items="${list}">
-<li class="list"><a href="show?folder=1&name=${name }"><img src="img/Moth_by_vhm_alex.jpg" />${name }</a></li>
-</c:forEach>
+<ul id="ulist">
 </ul>
 <div id="single"></div>
 <div id="scroll">
