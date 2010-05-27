@@ -11,6 +11,7 @@
 </head>
 
 <body>
+<div id="header">header</div>
 <ul>
 <c:forEach var="name" items="${list}">
 <li class="list"><a href="show?name=${name }"><img src="img/Moth_by_vhm_alex.jpg" />${name }</a></li>
@@ -21,5 +22,6 @@
 <div id="top"></div>
 <div id="bottom"></div>
 </div>
+<div id="footer">footer</div>
 </body>
 </html>
