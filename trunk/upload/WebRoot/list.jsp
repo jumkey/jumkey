@@ -16,9 +16,10 @@
 <li class="list"><a href="show?name=${name }"><img src="img/Moth_by_vhm_alex.jpg" />${name }</a></li>
 </c:forEach>
 </ul>
-<div id="single">
-<img src="" />
+<div id="single"></div>
+<div id="scroll">
+<div id="top"></div>
+<div id="bottom"></div>
 </div>
-<div id="scroll"><div id="top"></div><div id="bottom"></div></div>
 </body>
 </html>
