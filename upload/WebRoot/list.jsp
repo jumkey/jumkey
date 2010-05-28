@@ -5,9 +5,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>DB</title>
+<link type="text/css" href="css/list.css" rel="stylesheet" />
+<link type="text/css" href="css/smoothness/jquery-ui-1.8.1.custom.css" rel="stylesheet" />
 <script type="text/javascript" src="js/jquery-1.4.2.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.8.1.custom.min.js"></script>
 <script type="text/javascript" src="js/list.js"></script>
-<link type="text/css" rel="stylesheet" href="css/list.css" />
 </head>
 
 <body>
@@ -15,10 +17,12 @@
 <ul id="ulist"></ul>
 <div id="single"></div>
 <div id="scroll">
-<div id="top"></div>
-<div id="bottom"></div>
+	<div id="top"></div>
+	<div id="bottom"></div>
+</div>
+<div id="dialog" title="Dialog Title">
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 </div>
 <div id="footer">footer</div>
-<div id="aa"></div>
 </body>
 </html>
