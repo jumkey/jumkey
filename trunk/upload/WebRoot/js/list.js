@@ -37,4 +37,20 @@ $(document).ready(function(){
 		$(document.body).animate({scrollTop: $("#footer").offset().top}, 1000);
 		return false;
 	});
+	// Dialog
+	$('#dialog').dialog({
+		autoOpen: false,
+		width: 600,
+		buttons: {
+			"Ok": function() {
+				$(this).dialog("close");
+			},
+			"Cancel": function() {
+				$(this).dialog("close");
+			}
+		}
+	});
+	$("#footer").click(function(){
+		$('#dialog').dialog('open');
+	});
 });
