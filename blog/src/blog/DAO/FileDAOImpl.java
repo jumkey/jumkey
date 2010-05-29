@@ -7,7 +7,6 @@ import blog.pojo.EEFile;
 
 public class FileDAOImpl implements FileDAO {
 
-	@Override
 	public void addFile(EEFile file) {
 		PersistenceManager pm = PMF.get().getPersistenceManager();
 		try {
@@ -17,7 +16,6 @@ public class FileDAOImpl implements FileDAO {
 		}
 	}
 
-	@Override
 	public EEFile retrieve(Long id) {
 		PersistenceManager pm = PMF.get().getPersistenceManager();
 		try {
