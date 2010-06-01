@@ -43,11 +43,6 @@ public class Service extends Thread {
 				tmpPost[i] = (char)input.read();
 				line += String.valueOf(tmpPost[i]);
 			}
-//			int i=input.read();
-//			while(i!=-1){
-//				line += String.valueOf((char)i);
-//				i=input.read();
-//			}
 			
 			sb.append(line);
 
