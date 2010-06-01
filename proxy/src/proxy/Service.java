@@ -4,6 +4,7 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
 import java.net.Socket;
 
 public class Service extends Thread {
@@ -19,33 +20,17 @@ public class Service extends Thread {
 			BufferedReader input = new BufferedReader(new InputStreamReader(_socket.getInputStream()));
 			// Wrapper the OutputStream to BufferedWriter
 			BufferedWriter output = new BufferedWriter(new OutputStreamWriter(_socket.getOutputStream()));
-
-			StringBuffer sb=new StringBuffer();
-			int contentLength = 0;
-			String line = input.readLine();
-			while (line != null) {
-				sb.append(line + "\r\n");
-				if("".equals(line))
-					break;
-				line = input.readLine();
-				// here to fix post no response bug
-                if(line.startsWith("Content-Length")) {
-                    try {
-                        contentLength = Integer.parseInt(line.substring(line.indexOf(':') + 1).trim());
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                }
-			}
-			char[] tmpPost = new char[contentLength];
 			
-			for(int i = 0; i < contentLength; i++) {
-				tmpPost[i] = (char)input.read();
-				line += String.valueOf(tmpPost[i]);
-			}
+			System.out.print(Encoder.getEncodeStr(input));
+			//Redirect.sendHttp(Encoder.getEncodeStr(input));
 			
-			sb.append(line);
-
+			/*response*/
+			PrintWriter out = new PrintWriter(output,true);
+			out.println("HTTP/1.1 200 OK");//返回应答消息,并结束应答
+			out.println("Content-Type: text/html; charset=utf-8");
+			out.println();// 根据 HTTP 协议, 空行将结束头信息
+			out.println("<h1> Hello Http Server空行</h1>");
+			
 			input.close();
 			output.close();
 		} catch (IOException e) {
