@@ -31,8 +31,8 @@ public class Encoder {
 		sb.append(line);
 		
 		StringBuffer s=new StringBuffer();
-		s.append("POST http://jumkey.appspot.com/ HTTP/1.1\r\n");
-		s.append("Host: jumkey.appspot.com\r\n");
+		s.append("POST /gaeproxy HTTP/1.1\r\n");
+		s.append("Host: 127.0.0.1\r\n");
 		s.append("Connection: keep-alive\r\n");
 		s.append("\r\n");
 		s.append("11111111111wwwwwwwwwwwwww");
