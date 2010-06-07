@@ -1,0 +1,158 @@
+/* ------------------------
+	THEME : Strawberry
+--------------------------- */
+
+body{
+	background:#000 url(images/Background.jpg) repeat 50% top;
+}
+
+/* Color of links */
+	/* General text links */
+	#main a{ 		color:#666; }
+	#main a:hover{ 	color:#d9003d; }
+
+.s1{ background:#169aa6;}
+.s2{ background:#e77113;}
+.s3{ background:#b90021;}
+.s4{ background:#000;}
+/* Navigation Top Color link Hover + current State */
+#menu a:hover{
+		color:#d9003d;
+		margin:0 10px;
+	}
+#menu a.current{
+		color:#d9003d;
+	}
+
+/* Title Page style */
+	.title_of_page .start{
+		background:url(images/title_a.png);
+		display:block; float:left;
+		width:13px; height:30px;
+	}
+	.title_of_page .middle{
+		background:url(images/title_b.png) repeat;
+		display:block; float:left;
+		height:30px;
+		line-height:30px;
+		padding:0 5px;
+	}
+	.title_of_page .end{
+		background:url(images/title_c.png) no-repeat;
+		display:block; float:left;
+		width:4px;height:30px;
+	}
+	
+/* Title Block style */
+	.title_of_block .start{
+		background:url(images/title_a.png);
+		display:block; float:left;
+		width:13px; height:30px;
+	}
+	.title_of_block .middle{
+		background:url(images/title_b.png) repeat;
+		display:block; float:left;
+		height:30px;
+		line-height:30px;
+		padding:0 5px;
+		font-size:16px;
+		text-transform:uppercase;
+	}
+	.title_of_block .end{
+		background:url(images/title_c.png) no-repeat;
+		display:block; float:left;
+		width:4px;height:30px;
+	}
+	
+/* date_of_entry style */
+	.date_of_entry .start{
+		background:url(images/title_a.png);
+		display:block; float:left;
+		width:13px; height:30px;
+	}
+	.date_of_entry .middle{
+		background:url(images/title_b.png) repeat;
+		display:block; float:left;
+		height:30px;
+		line-height:30px;
+		padding:0 5px;
+		font-size:13px;
+		text-transform:normal;
+	}
+	.date_of_entry .end{
+		background:url(images/title_c.png) no-repeat;
+		display:block; float:left;
+		width:4px;height:30px;
+	}
+
+/* Social networks links */
+	.social_networks .twitter_link{
+		background:url(images/link_twitter.png) no-repeat 50% top;
+		display:block; float:left;
+		width:46px; height:30px;
+	}
+	.social_networks .rss{
+		background:url(images/link_rss.png) no-repeat 50% top;
+		display:block; float:left;
+		width:46px; height:30px;
+	}
+	.social_networks a.twitter_link:hover,
+	.social_networks a.rss:hover{
+		background-position:bottom;
+	}
+
+
+
+	a.side_gall:hover{ 
+		border-bottom:1px solid #d9003d;
+	}
+	
+/* Nices Titles */
+	.nice_titles span{
+		color:#d9003d;
+	}
+
+/* Go To Link */
+	.goto a{
+		background:url(images/go_link.png) no-repeat 50% top;
+		display:block;
+		width:46px; height:28px;
+		position:absolute;
+		top:4px;
+		right:0;
+		z-index:10;
+	}
+	.goto a:hover{
+		background:url(images/go_link.png) no-repeat 50% bottom;
+	}
+
+
+/* Style for link of works description */
+.works_links a{
+	background:url(images/link_more.png) no-repeat left top;
+	display:block;
+	float:right;
+	width:79px; height:28px;
+	}
+.works_links a:hover{
+	background:url(images/link_more.png) no-repeat left bottom;
+	}
+
+/* Style for link of blog entries */
+.blog_links a{
+	background:url(images/link_more.png) no-repeat left top;
+	display:block;
+	float:right;
+	width:79px; height:28px;
+	}
+.blog_links a:hover{
+	background:url(images/link_more.png) no-repeat left bottom;
+	}
+
+
+div.pagination a:hover,active {
+	color:#FFF;
+}
+div.pagination span.courante {
+	color:#d9003d;
+}

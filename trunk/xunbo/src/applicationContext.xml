@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
+
+	<!-- Configure JDO for appengine using Spring ORM -->
+
+	<bean id="pmf"
+		class="org.springframework.orm.jdo.LocalPersistenceManagerFactoryBean">
+		<property name="jdoProperties">
+			<props>
+				<prop key="javax.jdo.PersistenceManagerFactoryClass">
+					org.datanucleus.store.appengine.jdo.DatastoreJDOPersistenceManagerFactory
+				</prop>
+				<prop key="javax.jdo.option.ConnectionURL">
+					appengine
+        		</prop>
+				<prop key="javax.jdo.option.NontransactionalRead">
+					true
+      	  		</prop>
+				<prop key="javax.jdo.option.NontransactionalWrite">
+					true
+       			</prop>
+				<prop key="javax.jdo.option.RetainValues">
+					true
+        		</prop>
+				<prop key="datanucleus.appengine.autoCreateDatastoreTxns">
+					true
+        		</prop>
+			</props>
+		</property>
+
+	</bean>
+
+	<bean id="datastoreService"
+		class="com.google.appengine.api.datastore.DatastoreServiceFactory"
+		factory-method="getDatastoreService" />
+
+	<!-- Transaction -->
+	<!--
+		<bean id="txManager" class="org.springframework.orm.jdo.JdoTransactionManager">
+			<property name="persistenceManagerFactory" ref="pmf" />
+		</bean>
+		<tx:advice id="txAdvice" transaction-manager="txManager">
+			<tx:attributes>
+				<tx:method name="*" propagation="REQUIRED" />
+			</tx:attributes>
+		</tx:advice>
+		<aop:config>
+			<aop:pointcut id="recordServiceMethods" expression="execution(*xunbo.service.*Service.*(..))" />
+			<aop:advisor advice-ref="txAdvice" pointcut-ref="recordServiceMethods" />
+		</aop:config>
+	-->
+	<bean id="jdoTransactionManager" class="org.springframework.orm.jdo.JdoTransactionManager">
+		<property name="persistenceManagerFactory" ref="pmf" />
+	</bean>
+
+	<bean id="transactionInterceptor"
+		class="org.springframework.transaction.interceptor.TransactionInterceptor">
+		<property name="transactionManager" ref="jdoTransactionManager" />
+		<property name="transactionAttributes">
+			<props>
+				<prop key="add*">PROPAGATION_REQUIRED</prop>
+				<prop key="save*">PROPAGATION_REQUIRED</prop>
+				<prop key="update*">PROPAGATION_REQUIRED</prop>
+				<prop key="del*">PROPAGATION_REQUIRED</prop>
+				<prop key="*">PROPAGATION_REQUIRED,readOnly
+				</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="autoproxy"
+		class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+		<property name="beanNames">
+			<list>
+				<value>*Service</value>
+			</list>
+		</property>
+		<property name="interceptorNames">
+			<list>
+				<value>transactionInterceptor</value>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- the application context definition for the guestbook bean -->
+	<bean id="contentsDao" class="xunbo.dao.impl.ContentsDAOImpl">
+		<property name="persistenceManagerFactory" ref="pmf" />
+	</bean>
+
+	<bean id="contentsService" class="xunbo.service.impl.ContentsServiceImpl">
+		<property name="contentsdao" ref="contentsDao" />
+	</bean>
+
+	<bean name="contentsAction" class="xunbo.action.ContentsAction" scope="prototype">
+		<property name="contentsservice" ref="contentsService" />
+	</bean>
+	
+	
+	<bean id="testDao" class="xunbo.dao.impl.TestDAOImpl">
+		<property name="persistenceManagerFactory" ref="pmf" />
+	</bean>
+
+	<bean id="testService" class="xunbo.service.impl.TestServiceImpl">
+		<property name="testdao" ref="testDao" />
+	</bean>
+
+	<bean name="testAction" class="xunbo.action.TestAction" scope="prototype">
+		<property name="testservice" ref="testService" />
+	</bean>
+	
+	
+	<bean id="metasDao" class="xunbo.dao.impl.MetasDAOImpl">
+		<property name="persistenceManagerFactory" ref="pmf" />
+	</bean>
+
+	<bean id="metasService" class="xunbo.service.impl.MetasServiceImpl">
+		<property name="metasdao" ref="metasDao" />
+	</bean>
+
+	<bean name="metasAction" class="xunbo.action.MetasAction" scope="prototype">
+		<property name="metasservice" ref="metasService" />
+	</bean>
+	<bean name="indexAction" class="xunbo.action.IndexAction" scope="prototype">
+		<property name="metasservice" ref="metasService" />
+		<property name="contentsservice" ref="contentsService" />
+	</bean>
+</beans>

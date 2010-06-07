@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.action.extension" value="do" />
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<constant name="struts.i18n.reload" value="true" />
+	
+	<package name="struts2" namespace="/" extends="struts-default">
+		<global-results>
+			<result name="exceptionResult">/WEB-INF/jsp/exception.jsp</result>
+			<result name="globalException">/WEB-INF/jsp/exception.jsp</result>
+		</global-results>
+		<action name="index_*" method="{1}" class="indexAction">
+			<exception-mapping result="exceptionResult" exception="java.lang.RuntimeException"></exception-mapping>
+			<result name="success">/WEB-INF/jsp/main.jsp</result>
+			<result name="input" type="redirect" >/index.jsp</result>
+		</action>
+		<action name="add" method="add" class="indexAction">
+			<exception-mapping result="exceptionResult" exception="java.lang.RuntimeException"></exception-mapping>
+			<result name="add">/WEB-INF/jsp/add.jsp</result>
+			<result name="input" type="redirect" >/index.jsp</result>
+		</action>
+		<action name="show" method="show" class="indexAction">
+			<exception-mapping result="exceptionResult" exception="java.lang.RuntimeException"></exception-mapping>
+			<result name="show">/WEB-INF/jsp/show.jsp</result>
+			<result name="input" type="redirect" >/index.jsp</result>
+		</action>
+		<action name="*_Contents" method="{1}" class="contentsAction">
+			<exception-mapping result="exceptionResult" exception="java.lang.RuntimeException"></exception-mapping>
+			<result name="success">/WEB-INF/jsp/success.jsp</result>
+			<result name="input" type="redirect" >/index.jsp</result>
+		</action>
+		<action name="*_Test" method="{1}" class="testAction">
+			<exception-mapping result="exceptionResult" exception="java.lang.RuntimeException"></exception-mapping>
+			<result name="success">/WEB-INF/jsp/success.jsp</result>
+			<result name="input" type="redirect" >/index.jsp</result>
+		</action>
+		<action name="*_Metas" method="{1}" class="metasAction">
+			<result name="success">/WEB-INF/jsp/success.jsp</result>
+			<result name="input" type="redirect" >/index.jsp</result>
+		</action>
+		<action name="*">
+			<result type="velocity">/{1}.vm</result>
+		</action>
+	</package>
+</struts>
