@@ -1,0 +1,430 @@
+/*
+ * Evo Toolbar
+ * Note: ther emay be some properties that seem overkill but the fact is we need to override
+ * any too general styles a skin may want to bring in for its own body/general display.
+ */
+div#evo_toolbar {
+   background-color: ThreeDFace;
+   color: ButtonText;
+   border-top: 1px solid ThreeDHighlight;
+   border-bottom: 1px solid ThreeDShadow;
+   text-align: left;
+   margin: 0;
+   /* font: menu; /* -- poorly supported */
+   font-size: 11px;
+   font-family: "Microsoft sans serif", sans-serif, Arial, Helvetica;
+
+   position: fixed;
+   z-index: 99;
+   left: 0px;
+   top: 0px;
+   height: 21px;
+   width:100%;      /* Safari Windows */
+   -webkit-text-size-adjust: none; /* iPhone */
+}
+
+div.skin_wrapper_loggedin {
+   margin-top: 22px;
+   padding-top: 1px;
+}
+
+div#evo_toolbar a {
+   border: 1px solid ThreeDFace;
+   color: ButtonText;
+   text-decoration: none;
+   padding: 2px 1ex;
+}
+div#evo_toolbar a:hover {
+   border-top-color: ThreeDHighlight;
+   border-left-color: ThreeDHighlight;
+   border-bottom-color: ThreeDShadow;
+   border-right-color: ThreeDShadow;
+}
+div#evo_toolbar .actions_left {
+   padding: 4px;
+}
+div#evo_toolbar .actions_right {
+   padding: 4px;
+   float: right;
+}
+
+div#evo_toolbar ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+div#evo_toolbar li {
+  display: inline;
+}
+div#evo_toolbar li ul {
+  position: absolute;
+   z-index: 100;
+   background-color: ThreeDFace;
+   border: 1px solid;
+   padding: 1px;
+   border-top-color: ThreeDHighlight;
+   border-left-color: ThreeDHighlight;
+   border-bottom-color: ThreeDShadow;
+   border-right-color: ThreeDShadow;
+   width: 25ex; /* prevent page wide dropdowns in IE6; nicer hover in IE7 */
+}
+div#evo_toolbar li.menu_open ul {
+   display: block;
+}
+div#evo_toolbar li.menu_close ul {
+   display: none;
+}
+div#evo_toolbar li.menu_open:hover ul,
+div#evo_toolbar li.menu_close:hover ul {
+   display: block;
+}
+div#evo_toolbar li ul li {
+   display: block;
+   padding: 0 4ex 0 0;
+   white-space: nowrap;
+}
+div#evo_toolbar li ul li a {
+   display: block;
+   padding: 4px 2ex;
+   border: none;
+   width: 100%;
+}
+div#evo_toolbar li ul li a:hover {
+   background-color: Highlight;
+   color: HighlightText;
+}
+div#evo_toolbar.evo_toolbar_safari li ul li a:hover {
+   background-color: #36d;
+}
+div#evo_toolbar li.separator {
+   padding: 0;
+}
+div#evo_toolbar hr {
+   display: block;
+}
+
+div#evo_toolbar .time {
+   margin: 0 1ex;
+   color: GrayText;
+}
+/* ---------------------------------------------- */
+* {
+	padding: 0px;
+	margin:0px;
+}
+body {
+	background-color:#000000;
+	color: #555555;
+	font-size: 9pt;
+	font-family: Arial, Helvetica, sans-serif;
+}
+#wrap {
+	width: 870px;
+	text-align:left;
+	background: url(images/background_header.jpg) no-repeat #ffffff;
+	margin-top:15px;
+	padding:0px 15px;
+}
+#header {
+	height:300px;
+	margin:0px 0px 25px 0px;
+}
+#title {
+	height:100px;
+	padding: 0px 0px 0px 0px;
+}
+#pagenav {
+	height:35px;
+	font-size:10pt;
+	color: #ffffff;
+	padding: 0px 0px;
+	font-weight: bold;
+	line-height:35px;
+	text-align:right;
+	margin-top:10px;
+}
+#pagenav ul li {
+	list-style: none;
+	display:inline;
+}
+#pagenav li a {
+	margin-left: 10px;
+	color: #ffffff;
+	text-decoration: none;
+	background:url(images/background_pagnav.png); 
+	height: 35px;
+	display:inline-block;
+	padding: 0px 10px;
+}
+
+#main {
+
+}
+#sidebar {
+	float: right;
+	width: 200px;
+	color: #555555;
+}
+#content {
+	float: left;
+	width: 650px;
+	margin-right: 20px;
+}
+#footer {
+	color: #a1a1a1;
+	text-align: center;
+	width:900px;
+	margin:15px 0px;
+}
+.bText {
+	margin-bottom: 15px;
+}
+.sform {
+	border: 1px solid #464646;
+	padding: 5px;
+	margin-bottom: 10px;
+	width:188px;
+}
+.widget {
+		margin-bottom: 25px;
+}
+
+/* default */
+p, #content h1, h2, h3, h4, h5, h6, ol, ul, .post {
+	padding-bottom:10px;
+}
+.clear {
+	clear:both;
+	height:1px;
+}
+img {
+	border:0px;
+}
+/*text */
+#title h1 {
+	font-size:22pt;
+	font-weight: normal;
+	padding: 25px 0 0 0px;
+	margin-bottom:0px;
+}
+#title h1 a {
+	color: #598527;
+	text-decoration: none;
+}
+.description {
+	font-size:10pt;
+	padding:0px 0 0 0px;
+	color: #999;
+}
+#footer a {
+	color: #a1a1a1;
+	text-decoration: none;
+}
+#content ul li, #content ol li {
+	margin-left: 25px;
+}
+#content h1 {
+	font-size: 18pt;
+	font-weight: normal;
+	color: #598527;
+}
+#content h1 a {
+	color: #598527;
+	text-decoration: none;
+}
+h2 {
+	font-size: 12pt;
+}
+#sidebar h2 {
+	color: #598527;
+	font-size: 10pt;
+	border-bottom: 1px solid #d9d9d9;
+	margin-bottom:10px;
+}
+#sidebar h2 a {
+	color: #598527;
+	text-decoration: none;
+}
+#content h2 a {
+	color: #598527;
+	text-decoration: none;
+}
+h3, h4 {
+	font-size: 11pt;
+	color: #598527;
+}
+#sidebar ul {
+	padding-bottom:0px;
+}
+#sidebar ul li {
+	list-style: none;
+}
+#sidebar ul li ul li {
+	margin-left: 3px;
+}
+#sidebar ul li ul li ul li {	
+	margin-left: 3px;
+}
+ul li ul li {
+	margin-left: 10px;
+}
+ul li ul li ul li {	
+	margin-left: 10px;
+}
+#sidebar a {
+	color: #555555;
+	text-decoration: none;
+}
+blockquote {
+	margin: 15px;
+	font-size: 11pt;
+	font-style: italic;
+}
+.postmetadata {
+	padding: 10px 0px;
+	color: #598527;
+}
+.postmetadata a {
+	color: #598527;
+	text-decoration: none;
+}
+a {
+	color: #598527;
+	text-decoration: none;
+}
+.searchform {
+	padding-bottom: 10px;
+}
+/* form */
+
+fieldset {
+	border: 0px; 
+	padding: 0px 15px 15px 15px;
+}
+input, textarea {
+	border: 1px solid #363636; 
+	padding: 5px;
+	font-size: 9pt;
+	background:transparent;
+	color: #666666;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.label {
+	font-weight: bold;
+}
+.notes {
+	font-style: italic;
+}
+#author, #email, #url, #comment {
+	padding: 5px;
+}
+.s {
+	padding: 3px;
+}
+.submit, .searchsubmit, .preview {
+	background-color: #46cb00;
+	color: #000000;
+	border: 1px solid #363636; 
+	font-size: 9pt;
+	padding: 2px;
+	margin-top: 3px;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+}
+#commentform a {
+	text-decoration: none;
+}
+#commentform a:hover {
+	color:#333333;	
+	text-decoration: underline;
+}
+
+.bComment {
+	padding: 0px 15px;
+}
+.bCommentText {
+	padding: 10px 15px;
+}
+.bCommentSmallPrint {
+	font-size: 8pt;
+	padding: 0px 15px;
+}
+.feedback_feed_msg {
+	padding: 10px 15px;
+}
+.widget_core_coll_longdesc p {
+	padding-bottom: 0px;
+}
+.powered_by {
+	padding: 10px 0px;
+}
+.widget_core_coll_title {
+	padding-top: 10px;
+}
+/* calendar */
+#bCalendarToday, caption {
+	font-weight: bold;
+}
+td a {
+	text-decoration: underline;
+}
+td, th {
+	padding: 1px;
+}
+.bCalendarTable {
+	padding-bottom: 10px;
+}
+/* ---------------------------------------------------------- */
+#evo_toolbar ul li,
+#evo_toolbar ol li {
+   margin-left: 0;
+}
+
+.blogcontent {
+    padding: 5px 10px;
+    font-size: 10pt;
+}
+
+.license {
+    padding: 10px 10px;
+    border-width: 1px;
+    border-style: dashed;
+    background-color: lightgray;
+}
+
+.console {
+    margin-bottom: 5px;
+    padding: 3px 3px;
+    border-style: outset;
+    background-color: black;
+    color: white;
+    font-family: monospace;
+    font-size: 9pt;
+}
+
+.codelist {
+    margin-bottom: 5px;
+    padding: 3px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    background-color: lightgray;
+    color: black;
+    font-family: monospace;
+    font-size: 9pt;
+}
+
+.blogcontent h2 {
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.blogcontent h3 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.blogcontent a {
+    border-bottom-style: dashed;
+    border-bottom-width: 1px;
+}
