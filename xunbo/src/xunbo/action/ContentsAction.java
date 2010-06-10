@@ -22,6 +22,8 @@ public class ContentsAction {
 			contents.setCreated(d);
 		}
 		contents.setModified(contents.getCreated());
+		contents.setAuthor(1);//作者
+		contents.setCommentsNum(0);//评论数量
 		contentsservice.addText(contents);
 		contentss=contentsservice.getAllText();
 		return "success";
