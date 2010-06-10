@@ -7,7 +7,7 @@
 	<constant name="struts.i18n.encoding" value="UTF-8" />
 	<constant name="struts.i18n.reload" value="true" />
 	
-	<package name="struts2" namespace="/" extends="struts-default">
+	<package name="admin" namespace="/admin" extends="struts-default">
 		<global-results>
 			<result name="exceptionResult">/WEB-INF/jsp/exception.jsp</result>
 			<result name="globalException">/WEB-INF/jsp/exception.jsp</result>
@@ -15,19 +15,6 @@
 		<action name="add" method="add" class="indexAction">
 			<exception-mapping result="exceptionResult" exception="java.lang.RuntimeException"></exception-mapping>
 			<result name="add">/WEB-INF/jsp/add.jsp</result>
-			<result name="input" type="redirect" >/index.jsp</result>
-		</action>
-		<action name="show" method="show" class="indexAction">
-			<exception-mapping result="exceptionResult" exception="java.lang.RuntimeException"></exception-mapping>
-			<result name="show">/WEB-INF/jsp/show.jsp</result>
-			<result name="input" type="redirect" >/index.jsp</result>
-		</action>
-		<action name="about">
-			<result>/WEB-INF/jsp/about.jsp</result>
-		</action>
-		<action name="index_*" method="{1}" class="indexAction">
-			<exception-mapping result="exceptionResult" exception="java.lang.RuntimeException"></exception-mapping>
-			<result name="success">/WEB-INF/jsp/main.jsp</result>
 			<result name="input" type="redirect" >/index.jsp</result>
 		</action>
 		<action name="*_Contents" method="{1}" class="contentsAction">
@@ -42,6 +29,28 @@
 		</action>
 		<action name="*_Metas" method="{1}" class="metasAction">
 			<result name="success">/WEB-INF/jsp/success.jsp</result>
+			<result name="input" type="redirect" >/index.jsp</result>
+		</action>
+		<action name="*">
+			<result type="velocity">/{1}.vm</result>
+		</action>
+	</package>
+	<package name="struts2" namespace="/" extends="struts-default">
+		<global-results>
+			<result name="exceptionResult">/WEB-INF/jsp/exception.jsp</result>
+			<result name="globalException">/WEB-INF/jsp/exception.jsp</result>
+		</global-results>
+		<action name="show" method="show" class="indexAction">
+			<exception-mapping result="exceptionResult" exception="java.lang.RuntimeException"></exception-mapping>
+			<result name="show">/WEB-INF/jsp/show.jsp</result>
+			<result name="input" type="redirect" >/index.jsp</result>
+		</action>
+		<action name="about">
+			<result>/WEB-INF/jsp/about.jsp</result>
+		</action>
+		<action name="index_*" method="{1}" class="indexAction">
+			<exception-mapping result="exceptionResult" exception="java.lang.RuntimeException"></exception-mapping>
+			<result name="success">/WEB-INF/jsp/main.jsp</result>
 			<result name="input" type="redirect" >/index.jsp</result>
 		</action>
 		<action name="*">
