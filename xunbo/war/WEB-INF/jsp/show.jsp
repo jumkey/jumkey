@@ -5,44 +5,65 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <title>Show</title>
+    <link type="text/css" href="style/style.css" rel="stylesheet" />
   </head>
 
   <body>
-    <h1>Show</h1>
-	<!-- 
-    <form action="add_Test.do" method="post">
-    	title<input type="text" name="test.title" value="" /><br/>
-    	content<input type="text" name="test.content" value="" /><br/>
-    	<input type="submit" value="submit" />
-    </form>
-     -->
-    <form action="add_Metas.do" method="post">
-    	name<input type="text" name="meta.name" value="" /><br/>
-    	slug<input type="text" name="meta.slug" value="" /><br/>
-    	type<input type="text" name="meta.type" value="" /><br/>
-    	description<input type="text" name="meta.description" value="" /><br/>
-    	count<input type="text" name="meta.count" value="" /><br/>
-    	sort<input type="text" name="meta.sort" value="" /><br/>
-    	<input type="submit" value="submit" />
-    </form>
-    <form action="add_Contents.do" method="post">
-    	title<input type="text" name="contents.title" value="" /><br/>
-    	slug<input type="text" name="contents.slug" value="" /><br/>
-    	uri<input type="text" name="contents.uri" value="" /><br/>
-    	text<textarea name="contents.text" rows="" cols="" ></textarea><br/>
-    	metas
-    	<select name="contents.metas[0]">
-    		<s:iterator var="meta" value="metas">
-    		<option value="<s:property value="key" />">${meta.name}</option>
-    		</s:iterator>
-    	</select><br/>
-    	template<input type="text" name="contents.template" value="" /><br/>
-    	type<input type="text" name="contents.type" value="" /><br/>
-    	password<input type="text" name="contents.password" value="" /><br/>
-    	<input type="checkbox" name="contents.allowComment" value="true" checked="checked" />allowComment<br/>
-    	<input type="checkbox" name="contents.allowPing" value="true" checked="checked" />allowPing<br/>
-    	<input type="checkbox" name="contents.allowFeed" value="true" checked="checked" />allowFeed<br/>
-    	<input type="submit" value="submit" />
-    </form>
+  	<div id="header">
+  		<h1>Show</h1>
+  		<div id="navSearch">
+  		<div id="navSearchIn">
+		<div class="nav">
+			<a class="highlight" title="首页" href="/index.do">首页</a>
+			<a class="normal" title="关于" href="/about.do">关于</a>
+		</div>
+		<div class="search">
+			<form name="searchedForm" action="/search.do" method="post" target="_blank">
+				<input name="key" id="key" type="text" value="">
+				<a class="btn" href="javascript:submitSearcheForm();">搜索</a>
+			</form>
+		</div>
+		</div>
+		</div>
+  	</div>
+  	<div id="container">
+  	<div id="main">
+    <div id="content">
+		<h2>contents</h2>
+	    <div class="post">
+			<h1><s:property value="content.title" /></h1>
+			发表于 <span class="date"><s:property value="content.created" /></span>：最后修改 <span class="date"><s:property value="content.modified" /></span>
+		    <div><s:property value="content.text" /></div>
+	    </div>
+		<h2>comments</h2>
+		<s:iterator var="comment" value="content.contents">
+	    <div class="comments" style="width: 600px;">
+			<h1><s:property value="comment.title" /></h1>
+			发表于 <span class="date"><s:property value="comment.created" /></span>：最后修改 <span class="date"><s:property value="comment.modified" /></span>
+		    <div><s:property value="comment.text" /></div>
+	    </div>
+		</s:iterator>
+    </div>
+    <div id="sidebar">
+	    <h2>metas</h2>
+	    <ul>
+		    <li class="widget">
+		    <h2><a href="/">Jumkey's博客</a></h2>
+		    </li>
+		    <li class="widget">
+		    <ul>
+				<s:iterator var="meta" value="metas">
+			    <li><a href="category.do?key=<s:property value="key" />"><s:property value="name" /></a></li>
+			    </s:iterator>
+		    </ul>
+		    </li>
+	    </ul>
+    </div>
+    </div><!-- end main -->
+    </div><!-- end container -->
+    <div id="footer">
+    	<div id="bottomSearch"></div>
+    	<p>&copy;Jumkey 2010</p>
+    </div>
   </body>
 </html>

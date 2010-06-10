@@ -61,6 +61,8 @@ a:link {
 	 float: left;
 	 width: 600px;
 }
+#content .post {width: 560px;}
+#content .comments {width: 560px;}
 #content .date {
 	color: #598527;
 }
