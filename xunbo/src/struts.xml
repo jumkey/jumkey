@@ -32,7 +32,7 @@
 			<result name="input" type="redirect" >/index.jsp</result>
 		</action>
 		<action name="*">
-			<result type="velocity">/{1}.vm</result>
+			<result type="freemaker">/{1}.ftl</result>
 		</action>
 	</package>
 	<package name="struts2" namespace="/" extends="struts-default">
@@ -54,7 +54,7 @@
 			<result name="input" type="redirect" >/index.jsp</result>
 		</action>
 		<action name="*">
-			<result type="velocity">/{1}.vm</result>
+			<result type="freemaker">/{1}.ftl</result>
 		</action>
 	</package>
 </struts>
