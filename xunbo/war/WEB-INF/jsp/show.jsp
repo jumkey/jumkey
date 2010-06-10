@@ -43,6 +43,27 @@
 		    <div><s:property value="comment.text" /></div>
 	    </div>
 		</s:iterator>
+		<div id="commentForm">
+		    <form action="add_Contents.do" method="post">
+		    	标题<input type="text" name="contents.title" value="" /><br/>
+		    	slug<input type="text" name="contents.slug" value="" /><br/>
+		    	URI <input type="text" name="contents.uri" value="" /><br/>
+		    	内容<br/><textarea name="contents.text" rows="10" cols="50" ></textarea><br/>
+		    	metas
+		    	<select name="contents.metas[0]">
+		    		<s:iterator var="meta" value="metas">
+		    		<option value="<s:property value="key" />">${meta.name}</option>
+		    		</s:iterator>
+		    	</select><br/>
+		    	template<input type="text" name="contents.template" value="" /><br/>
+		    	类型<input type="text" name="contents.type" value="1" /><br/>
+		    	密码<input type="text" name="contents.password" value="" /><br/>
+		    	<input type="checkbox" name="contents.allowComment" value="true" checked="checked" />allowComment<br/>
+		    	<input type="checkbox" name="contents.allowPing" value="true" checked="checked" />allowPing<br/>
+		    	<input type="checkbox" name="contents.allowFeed" value="true" checked="checked" />allowFeed<br/>
+		    	<input type="submit" value="submit" />
+		    </form>
+    	</div>
     </div>
     <div id="sidebar">
 	    <h2>metas</h2>
