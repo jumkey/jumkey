@@ -4,11 +4,11 @@
 <html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <title>Hello App Engine</title>
+    <title>Add</title>
   </head>
 
   <body>
-    <h1>Hello App Engine!</h1>
+    <h1>Add</h1>
 	<!-- 
     <form action="add_Test.do" method="post">
     	title<input type="text" name="test.title" value="" /><br/>

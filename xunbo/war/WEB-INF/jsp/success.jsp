@@ -19,7 +19,7 @@
     </s:iterator>
     <h2>contents</h2>
 	<s:iterator var="content" value="contentss">
-    <div>${content.contents}</div>
+    <div><s:property value="text" /></div>
     </s:iterator>
   </body>
 </html>

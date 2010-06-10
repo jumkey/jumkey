@@ -4,7 +4,7 @@
 <html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    <title>Success</title>
+    <title>Main</title>
     <link type="text/css" href="style/style.css" rel="stylesheet" />
   </head>
 
