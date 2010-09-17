@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<!--
+	- Middle tier application context definition for the image database.
+-->
+<beans><!--
+	<bean id="DepartmentDAO" class="DepartmentDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="DepartmentService" class="DepartmentServiceImpl">
+		<property name="newsDao" ref="DepartmentDAO" />
+	</bean>-->
+	
+	<bean id="SysaccountDAO" class="com.onegrid.meetmanager.dao.impl.SysaccountDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="SysaccountService" class="com.onegrid.meetmanager.service.impl.SysaccountServiceImpl">
+		<property name="sysaccountDAO" ref="SysaccountDAO" />
+	</bean>
+	
+	<bean name="loginAction" class="com.onegrid.meetmanager.web.action.LoginAction" scope="prototype">
+		<property name="sysaccountService" ref="SysaccountService" />
+	</bean>
+	<bean name="mainAction" class="com.onegrid.meetmanager.web.action.MainAction" scope="prototype">
+	</bean>
+	<bean name="accountAction" class="com.onegrid.meetmanager.web.action.AccountAction" scope="prototype">
+		<property name="sysaccountservice" ref="SysaccountService" />
+	</bean>
+</beans>
