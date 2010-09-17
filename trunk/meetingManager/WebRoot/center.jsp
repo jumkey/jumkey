@@ -41,12 +41,12 @@ function switchSysBar(){
 <table>
   <tr>
     <td style="width: 4px; text-align: center; vertical-align: top; background: url('images/main_16.gif');"></td>
-    <td width="173" id="frmTitle" align="center" valign="top" nowrap="nowrap">
+    <td height="100%" width="173" id="frmTitle" align="center" valign="top" nowrap="nowrap">
     	<iframe name="I1" height="100%" width="100%" src="left.jsp" frameborder="0" scrolling="no">
     	浏览器不支持嵌入式框架，或被配置为不显示嵌入式框架。</iframe></td>
     <td style="background: url('images/main_12.gif'); width: 8px; vertical-align: middle;" onclick="switchSysBar()">
     	<span class="navPoint"><img src="images/main_18.gif" name="img1" width="8px" height="52px" id="img1" /></span></td>
-    <td align="center" valign="top">
+    <td height="100%" align="center" valign="top">
     	<iframe name="I2" height="100%" width="100%" frameborder="0" src="wellcome.jsp">
     	浏览器不支持嵌入式框架，或被配置为不显示嵌入式框架。</iframe></td>
     <td style="width: 4px; text-align: center; vertical-align: top; background: url('images/main_20.gif');"></td>
