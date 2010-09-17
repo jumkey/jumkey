@@ -13,33 +13,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <link rel="stylesheet" type="text/css" href="style/styles.css" />
 </head>
 <body>
-<table width="100%" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td height="11" background="images/main_03.gif"><img src="images/main_01.gif" width="104" height="11" /></td>
-  </tr>
-  <tr>
-    <td height="36" background="images/main_07.gif"><table width="100%" border="0" cellspacing="0" cellpadding="0">
-      <tr>
-        <td width="282" height="52" background="images/main_05.gif">&nbsp;</td>
-        <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
-          <tr>
-            <td>
-            	<span class="STYLE3"><a href="index.jsp" target="_top">回首页</a></span>
-            	<span class="STYLE1">
-            		<a onclick="if (confirm('确定要退出吗？')) return true; else return false;" href="admin/sys_logout.action" target="_top">退出系统</a>
-            	</span>
-            </td>
-          </tr>
-        </table></td>
-        <td width="247" background="images/main_08.gif">&nbsp;</td>
-        <td width="283" background="images/main_09.gif"><table width="100%" border="0" cellspacing="0" cellpadding="0">
-          <tr>
-            <td><span class="STYLE2">当前登录用户：${account.account } 角色：管理员</span></td>
-          </tr>
-        </table></td>
-      </tr>
-    </table></td>
-  </tr>
-</table>
+<div>
+    <div style="height: 11px; background: url('images/main_03.gif');"><img src="images/main_01.gif" width="104" height="11" /></div>
+	<div style="height: 52px; background: url('images/main_07.gif');">
+		<div style="float: right; width: 300px;">
+			<span class="STYLE1">当前登录用户：${account.account } 角色：</span><br />
+			<span class="STYLE2">
+				<a href="index.jsp" target="_top">回首页</a>
+			</span>
+			<span class="STYLE3">
+				<a onclick="if (confirm('确定要退出吗？')) return true; else return false;" href="admin/sys_logout.action" target="_top">退出系统</a>
+			</span>
+		</div>
+	</div>
+</div>
 </body>
 </html>

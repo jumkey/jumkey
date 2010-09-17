@@ -63,16 +63,16 @@ a.menuParent:visited {color: #000; text-decoration: none;}
 a.menuParent:hover {color: #f60; text-decoration: none;}
 /*top.jsp*/
 .STYLE1 {
-	background: url("../images/quit.gif") no-repeat;
-	padding-left: 20px;
-}
-.STYLE2 {
 	background: url("../images/uesr.gif") no-repeat;
 	padding-left: 20px;
 	color: #333333;
 }
-.STYLE3 {
+.STYLE2 {
 	background: url("../images/home.gif") no-repeat;
+	padding-left: 20px;
+}
+.STYLE3 {
+	background: url("../images/quit.gif") no-repeat;
 	padding-left: 20px;
 }
 .STYLE4 {
