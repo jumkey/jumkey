@@ -19,20 +19,19 @@ body {
 table {
 	width: 100%;
 	height: 100%;
-	table-layout: fixed;
 }
 -->
 </style>
 <script type="text/javascript">
 function switchSysBar(){
 	var locate=location.href.replace('center.jsp','');
-	var ssrc=document.all("img1").src.replace(locate,'');
+	var ssrc=document.getElementById("img1").src.replace(locate,'');
 	if (ssrc=="images/main_18.gif"){
-		document.all("img1").src="images/main_18_1.gif";
-		document.all("frmTitle").style.display="none";
+		document.getElementById("img1").src="images/main_18_1.gif";
+		document.getElementById("frmTitle").style.display="none";
 	}else{
-		document.all("img1").src="images/main_18.gif";
-		document.all("frmTitle").style.display="";
+		document.getElementById("img1").src="images/main_18.gif";
+		document.getElementById("frmTitle").style.display="";
 	}
 }
 </script>
@@ -41,7 +40,7 @@ function switchSysBar(){
 <table>
   <tr>
     <td style="width: 4px; text-align: center; vertical-align: top; background: url('images/main_16.gif');"></td>
-    <td height="100%" width="173" id="frmTitle" align="center" valign="top" nowrap="nowrap">
+    <td height="100%" width="170" id="frmTitle" align="center" valign="top" nowrap="nowrap">
     	<iframe name="I1" height="100%" width="100%" src="left.jsp" frameborder="0" scrolling="no">
     	浏览器不支持嵌入式框架，或被配置为不显示嵌入式框架。</iframe></td>
     <td style="background: url('images/main_12.gif'); width: 8px; vertical-align: middle;" onclick="switchSysBar()">
