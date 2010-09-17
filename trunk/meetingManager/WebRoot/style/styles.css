@@ -55,31 +55,21 @@ a:active {
 a.menuChild {
 	background: url("../images/menu_icon.gif") no-repeat 0% center;
 	padding: 0 0 0 12px;
-	margin: 0 0 0 20px;
+	margin: 0px;
 }
-a.menuChild:link {
-	color: #036; text-decoration: none;
-}
-a.menuChild:visited {
-	color: #036; text-decoration: none;
-}
-a.menuChild:hover {
-	color: #f60; text-decoration: underline;
-}
-a.menuParent:link {
-	color: #000; text-decoration: none;
-}
-a.menuParent:visited {
-	color: #000; text-decoration: none;
-}
-a.menuParent:hover {
-	color: #f60; text-decoration: none;
-}
-td.menuParentTD {
-	height: 22px;
-	padding-left: 30px;
-	background: url("../images/menu_bt.jpg") no-repeat;
-}
+a.menuChild:link {color: #036; text-decoration: none;}
+a.menuChild:visited {color: #036; text-decoration: none;}
+a.menuChild:hover {color: #f60; text-decoration: underline;}
+a.menuParent:link {color: #000; text-decoration: none;}
+a.menuParent:visited {color: #000; text-decoration: none;}
+a.menuParent:hover {color: #f60; text-decoration: none;}
+ul,li {margin:0; padding:0; list-style:none;}
+#nav {width: 170px; height: 100%; background: url("../images/menu_bg.jpg");padding-top: 20px; }
+#nav ul{margin-top:5px;}
+#nav strong{color:#696;}
+#nav li ul{display:none;}
+#nav li{padding-left:15px;text-align: left;}
+#nav li.menuParentLI{padding-left: 30px;  padding-bottom:8px; background: url("../images/menu_bt.jpg") no-repeat center top;}
 /*top.jsp*/
 .STYLE1 {
 	background: url("../images/quit.gif") no-repeat;
