@@ -11,11 +11,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>会议管理系统</title>
 </head>
-<frameset rows="63,*,23" frameborder="no" border="0" framespacing="0">
+<frameset rows="63,*,23" style="border: 0;" frameborder="no" framespacing="0">
   <frame src="top.jsp" name="topFrame" scrolling="no" noresize="noresize" id="topFrame" />
   <frame src="center.jsp" name="mainFrame" id="mainFrame" />
   <frame src="down.jsp" name="bottomFrame" scrolling="no" noresize="noresize" id="bottomFrame" />
+  <noframes><body>Your browser does not handle frames!</body></noframes>
 </frameset>
-<noframes><body>
-</body></noframes>
 </html>
