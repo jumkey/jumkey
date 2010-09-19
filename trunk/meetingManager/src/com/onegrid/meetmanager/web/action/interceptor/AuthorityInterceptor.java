@@ -12,20 +12,20 @@ import com.opensymphony.xwork2.interceptor.AbstractInterceptor;
 public class AuthorityInterceptor extends AbstractInterceptor {
 	@SuppressWarnings("unchecked")
 	@Override
-	// À¹½ØAction´¦ÀíµÄÀ¹½Ø·½·¨
+	// æ‹¦æˆªActionå¤„ç†çš„æ‹¦æˆªæ–¹æ³•
 	public String intercept(ActionInvocation invocation) throws Exception {
-		// È¡µÃÇëÇóÏà¹ØµÄActionContextÊµÀı
+		// å–å¾—è¯·æ±‚ç›¸å…³çš„ActionContextå®ä¾‹
 		ActionContext ctx = invocation.getInvocationContext();
 		Map session = ctx.getSession();
-		// È¡³öÃûÎªuserµÄSessionÊôĞÔ
+		// å–å‡ºåä¸ºuserçš„Sessionå±æ€§
 		Sysaccount sysaccount = (Sysaccount) session.get("account");
-		// Èç¹ûÃ»ÓĞµÇÂ½£¬»òÕßµÇÂ½ËùÓÃµÄÓÃ»§Ãû²»ÊÇscott£¬¶¼·µ»ØÖØĞÂµÇÂ½
+		// å¦‚æœæ²¡æœ‰ç™»é™†ï¼Œæˆ–è€…ç™»é™†æ‰€ç”¨çš„ç”¨æˆ·åä¸æ˜¯scottï¼Œéƒ½è¿”å›é‡æ–°ç™»é™†
 		if (sysaccount != null) {
 			return invocation.invoke();
 		}
-		// Ã»ÓĞµÇÂ½£¬½«·şÎñÆ÷ÌáÊ¾ÉèÖÃ³ÉÒ»¸öHttpServletRequestÊôĞÔ
-		ctx.put("tip", "Äú»¹Ã»ÓĞµÇÂ½£¬ÇëµÇÂ½ÏµÍ³");
-		// Ö±½Ó·µ»ØloginµÄÂß¼­ÊÓÍ¼
+		// æ²¡æœ‰ç™»é™†ï¼Œå°†æœåŠ¡å™¨æç¤ºè®¾ç½®æˆä¸€ä¸ªHttpServletRequestå±æ€§
+		ctx.put("tip", "æ‚¨è¿˜æ²¡æœ‰ç™»é™†ï¼Œè¯·ç™»é™†ç³»ç»Ÿ");
+		// ç›´æ¥è¿”å›loginçš„é€»è¾‘è§†å›¾
 		return Action.LOGIN;
 	}
 }
