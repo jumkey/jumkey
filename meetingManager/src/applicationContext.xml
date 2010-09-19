@@ -82,19 +82,6 @@
 		</property>
 	</bean>
 	
-	<!-- dwr权限 -->
-	<bean id="dwrAdvisor" class="org.springframework.aop.support.RegexpMethodPointcutAdvisor">
-		<property name="advice">
-			<ref local="dwrInterceptor"/>
-		</property>
-		<property name="patterns">
-			<list>
-				<value>.*Service\..*DWR.*</value>
-			</list>
-		</property>
-	</bean>
-	<bean id="dwrInterceptor" class="com.onegrid.meetmanager.iterceptor.MainInterceptor" />
-	
 	<!-- 自动代理 -->
 	<bean id="autoproxy" class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
 		<!-- 可以是Service或DAO层（最好是针对业务业务层*Service） -->
@@ -105,7 +92,6 @@
 		</property>
 		<property name="interceptorNames">
 			<list>
-				<value>dwrAdvisor</value>
 				<value>transactionInterceptor</value>
 			</list>
 		</property>
