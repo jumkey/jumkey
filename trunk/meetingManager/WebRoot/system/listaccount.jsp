@@ -14,10 +14,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <link type="text/css" href="css/ui-lightness/jquery-ui-1.8.4.custom.css" rel="stylesheet" />	
 <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
 <script type="text/javascript" src="js/jquery-ui-1.8.4.custom.min.js"></script>
-
-<script type='text/javascript' src='/meetingManager/dwr/interface/accountService.js'></script>
-<script type='text/javascript' src='/meetingManager/dwr/engine.js'></script>
-
 <script type="text/javascript">
 $(document).ready(function(){
 	$(".edit").bind("click",function(){
@@ -42,17 +38,15 @@ $(document).ready(function(){
 		title:"编辑",position:"center",width:400,height:300,
 		buttons:{
 			"修改":function(){
-				var data={
-					id:$("#accountid").val(),
-					username:$("#username").val(),
-					sex:$("input:checked").val(),
-					phone:$("#phone").val(),
-					zip:$("#zip").val(),
-					address:$("#address").val()
-				}
-				accountService.updateAccountDWR(data,function(d){
-					alert("修改成功");
-					$("#dialog").dialog("close");
+				$.post('main/pinfo_modify.action', {
+					"sysaccount.id":$("#accountid").val(),
+					"sysaccount.username":$("#username").val(),
+					"sysaccount.sex":$("input:checked").val(),
+					"sysaccount.phone":$("#phone").val(),
+					"sysaccount.zip":$("#zip").val(),
+					"sysaccount.address":$("#address").val()
+				}, function(data) {
+					alert(data);
 				});
 			},
 			"关闭":function(){

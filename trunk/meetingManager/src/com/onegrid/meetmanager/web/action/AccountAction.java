@@ -2,8 +2,12 @@ package com.onegrid.meetmanager.web.action;
 
 import java.util.List;
 
+import org.apache.struts2.ServletActionContext;
+import org.apache.struts2.json.annotations.JSON;
+
 import com.onegrid.meetmanager.model.Sysaccount;
 import com.onegrid.meetmanager.service.SysaccountService;
+import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -19,7 +23,7 @@ public class AccountAction extends ActionSupport {
 	public void setList(List<Sysaccount> list) {
 		this.list = list;
 	}
-
+	@JSON(serialize=false)
 	public SysaccountService getSysaccountservice() {
 		return sysaccountservice;
 	}
@@ -51,6 +55,17 @@ public class AccountAction extends ActionSupport {
 			e.printStackTrace();
 		}
 		return "editpage";
+	}
+	public String modify(){
+		try {
+			//更新session
+			ActionContext.getContext().getSession().put("account", sysaccountservice.updateAccount(sysaccount));
+			//添加成功信息
+		} catch (Exception e) {
+			//添加失败信息
+			e.printStackTrace();
+		}
+		return SUCCESS;
 	}
 	public String list(){
 		list=sysaccountservice.getAllAccount();
