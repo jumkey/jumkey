@@ -85,20 +85,18 @@ function clickto() {
 </head>
 
 <body>
-<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr>
-    <td height="30"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+<div id="tabwrap">
+<div>
+    <div id="tabhead"><table>
       <tr>
-        <td width="15" height="30"><img src="images/tab_03.gif" width="15" height="30" /></td>
-        <td background="images/tab_05.gif"><img src="images/311.gif" width="16" height="16" /> <span class="STYLE4">服务器进程配置列表</span></td>
-        <td width="14"><img src="images/tab_07.gif" width="14" height="30" /></td>
+        <td style="background: url('images/tab_03.gif') no-repeat; width: 15px"></td>
+        <td><span style="background: url('images/311.gif') no-repeat; padding-left: 17px; font-size:14px;" class="STYLE4">服务器进程配置列表</span></td>
+        <td style="background: url('images/tab_07.gif') no-repeat; width: 14px"></td>
       </tr>
-    </table></td>
-  </tr>
-  <tr>
-    <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+    </table></div>
+    <div id="tabbody" style="width: 100%;height: 100%;"><table>
       <tr>
-        <td width="9" background="images/tab_12.gif">&nbsp;</td>
+        <td style="background: url('images/tab_12.gif'); width: 9px;">&nbsp;</td>
         <td bgcolor="e5f1d6"><table align="center" style="width: 99%;border-spacing: 1px;border-collapse: separate; background-color: #CECECE;" onmouseover="changeto()" onmouseout="changeback()">
           <tr class="tabTitle">
             <td width="10%">选择</td>
@@ -126,17 +124,15 @@ function clickto() {
             <td class="delete">[<a href="#">删除</a>]</td>
           </tr></s:iterator>
         </table></td>
-        <td width="9" background="images/tab_16.gif">&nbsp;</td>
+        <td style="background: url('images/tab_16.gif'); width: 9px;">&nbsp;</td>
       </tr>
-    </table></td>
-  </tr>
-  <tr>
-    <td height="29"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+    </table></div>
+    <div style="width: 100%;height: 30px;"><table>
       <tr>
-        <td width="15" height="29"><img src="images/tab_20.gif" width="15" height="29" /></td>
-        <td background="images/tab_21.gif"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <td style="background: url('images/tab_20.gif') no-repeat; width: 15px"></td>
+        <td style="background: url('images/tab_21.gif');"><table>
           <tr>
-            <td width="21%" height="29">
+            <td width="21%">
             	<a href="javascript:void(0);" >全选</a>
             	<a href="javascript:void(0);" >全不选</a>
             	<a href="javascript:void(0);" >反选</a>
@@ -152,11 +148,10 @@ function clickto() {
             </div></td>
           </tr>
         </table></td>
-        <td width="14"><img src="images/tab_22.gif" width="14" height="29" /></td>
+        <td style="background: url('images/tab_22.gif') no-repeat; width: 14px;"></td>
       </tr>
-    </table></td>
-  </tr>
-</table>
+    </table></div>
+</div>
 <div>
 <!-- 定义一个button，点击显示dialog -->
 <input type="button" value="我要登录" id="show" />
@@ -165,5 +160,6 @@ function clickto() {
 <div id="dialog" class="flora"></div>
 <!--这边为什么要定义class=”flora”呢？class是指定dialog的css,因为在jqueryUI的css样式都是使用class来作为选择器-->
 <s:debug></s:debug>
+</div>
 </body>
 </html>
