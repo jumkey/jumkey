@@ -38,12 +38,12 @@
 		<action name="main" class="mainAction">
 			<result name="success">/main.jsp</result>
 		</action>
+		<action name="pinfo_modify" method="modify" class="accountAction">
+			<result type="json" />
+		</action>
 		<action name="pinfo_*" method="{1}" class="accountAction">
 			<result name="editpage">/system/editpinfo.jsp</result>
 			<result name="listaccount">/system/listaccount.jsp</result>
-		</action>
-		<action name="pinfo_modify" method="modify" class="accountAction">
-			<result type="json" />
 		</action>
 		<action name="*">
 			<result type="velocity">/{1}.vm</result>
