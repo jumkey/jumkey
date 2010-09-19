@@ -7,6 +7,7 @@
 
     <create creator="spring" javascript="accountService">
     	<param name="beanName" value="SysaccountService"/>
+    	<include method="updateAccountDWR" />
     </create>
     <convert converter="bean" match="com.onegrid.meetmanager.model.Sysaccount">
     	<param name="include" value="username,zip,address,id,phone" />
