@@ -14,15 +14,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <link type="text/css" href="css/ui-lightness/jquery-ui-1.8.4.custom.css" rel="stylesheet" />	
 <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
 <script type="text/javascript" src="js/jquery-ui-1.8.4.custom.min.js"></script>
+
+<script type='text/javascript' src='/meetingManager/dwr/interface/accountService.js'></script>
+<script type='text/javascript' src='/meetingManager/dwr/engine.js'></script>
+
 <script type="text/javascript">
 $(document).ready(function(){
-	$("#list tr:gt(0)").hover(function(){
-		//console.log("over");
-		$(this).children("td").css("background","#d5f4fe");
-	},function(){
-		//console.log("out");
-		$(this).children("td").css("background","#fff");
-	});
 	$(".edit").bind("click",function(){
 		$("#accountid").val($(this).parent().find("input").val());
 		$("#username").val($(this).parent()[0].cells[2].innerHTML);
@@ -33,9 +30,9 @@ $(document).ready(function(){
 			$("#sex1").removeAttr("checked");
 			$("#sex0").attr("checked","checked");
 		}
-		$("#phone").val($(this).parent()[0].cells[3].innerHTML);
-		$("#zip").val($(this).parent()[0].cells[4].innerHTML);
-		$("#address").val($(this).parent()[0].cells[5].innerHTML);
+		$("#phone").val($(this).parent()[0].cells[4].innerHTML);
+		$("#zip").val($(this).parent()[0].cells[5].innerHTML);
+		$("#address").val($(this).parent()[0].cells[6].innerHTML);
 		//$(this).parent()[0].cells[1].innerHTML
 		$("#dialog").dialog();
 	});
@@ -45,11 +42,18 @@ $(document).ready(function(){
 		title:"编辑",position:"center",width:400,height:300,
 		buttons:{
 			"修改":function(){
-				//隐藏登录表单
-				$("#content").toggle();
+				var data={
+					id:$("#accountid").val(),
+					username:$("#username").val(),
+					sex:$("input:checked").val(),
+					phone:$("#phone").val(),
+					zip:$("#zip").val(),
+					address:$("#address").val()
+				}
+				accountService.updateAccount(data);
 			},
 			"关闭":function(){
-				$("#dialog").dialog("close");//关闭dialog
+				$("#dialog").dialog("close");
 			}
 		}
 	}).dialog("close");

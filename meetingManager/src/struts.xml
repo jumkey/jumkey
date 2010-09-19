@@ -3,7 +3,9 @@
     "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
     "http://struts.apache.org/dtds/struts-2.0.dtd">
 <struts>
-	<!-- <constant name="struts.action.extension" value="do" /> -->
+	<!-- 用URL扩展名来确定是否这个请求是被用作Struts action -->
+	<constant name="struts.action.extension" value="action" />
+	<!-- <constant name="struts.action.excludePattern" value="/dwr/.*,/dwr/test/.*" /> -->
 	<constant name="struts.i18n.encoding" value="UTF-8" />
 	<constant name="struts.devMode" value="true" />
 	
