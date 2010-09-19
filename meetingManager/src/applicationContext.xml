@@ -89,7 +89,7 @@
 		</property>
 		<property name="patterns">
 			<list>
-				<value>.*Service\.update.*</value>
+				<value>.*Service\..*DWR.*</value>
 			</list>
 		</property>
 	</bean>

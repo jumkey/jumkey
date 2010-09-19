@@ -37,6 +37,17 @@ public class SysaccountServiceImpl implements SysaccountService {
 		return sysa;
 	}
 
+	public Sysaccount updateAccountDWR(Sysaccount account) throws Exception {
+		Sysaccount sysa=sysaccountDAO.findById(account.getId());
+		sysa.setAddress(account.getAddress());
+		sysa.setPhone(account.getPhone());
+		sysa.setSex(account.getSex());
+		sysa.setUsername(account.getUsername());
+		sysa.setZip(account.getZip());
+		//sysa.setDepartment(department);
+		return sysa;
+	}
+
 	public List<Sysaccount> getAllAccount() {
 		return sysaccountDAO.findAllAccount();
 	}

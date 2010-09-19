@@ -8,4 +8,5 @@ public interface SysaccountService {
 	public Sysaccount checkAccount(String account,String password);
 	public Sysaccount updateAccount(Sysaccount account) throws Exception;
 	public List<Sysaccount> getAllAccount();
+	public Sysaccount updateAccountDWR(Sysaccount account) throws Exception;
 }

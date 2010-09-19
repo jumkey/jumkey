@@ -50,7 +50,10 @@ $(document).ready(function(){
 					zip:$("#zip").val(),
 					address:$("#address").val()
 				}
-				accountService.updateAccount(data);
+				accountService.updateAccountDWR(data,function(d){
+					alert("修改成功");
+					$("#dialog").dialog("close");
+				});
 			},
 			"关闭":function(){
 				$("#dialog").dialog("close");
