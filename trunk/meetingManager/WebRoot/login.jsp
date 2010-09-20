@@ -14,7 +14,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</head>
 	<body>
 	<div id="wrap">
-	<div id="header">头</div><!-- end header -->
+	<div id="header" style="height: 50px;"></div><!-- end header -->
 	<div id="main">
 		<div id="login">
         <s:form method="post" namespace="/admin" action="sys_login" theme="simple">
@@ -24,7 +24,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         </s:form>
         </div>
     </div><!-- end main -->
-	<div id="footer">脚</div><!-- end footer -->
+	<div id="footer" style="text-align: center;">&copy 2010</div><!-- end footer -->
 	</div>
 	</body>
 </html>
