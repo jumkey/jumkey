@@ -14,9 +14,28 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <link type="text/css" href="css/ui-lightness/jquery-ui-1.8.4.custom.css" rel="stylesheet" />	
 <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
 <script type="text/javascript" src="js/jquery-ui-1.8.4.custom.min.js"></script>
+<script type="text/javascript" src="script/util.js"></script>
 <script type="text/javascript">
+//更新表格
+//rowid表格的列
+//data数据
+function updateTab(rowid,data){
+	rowid.cells[2].innerHTML=data.sysaccount.username;
+	rowid.cells[3].innerHTML=data.sysaccount.sex;
+	rowid.cells[4].innerHTML=data.sysaccount.phone;
+	rowid.cells[5].innerHTML=data.sysaccount.zip;
+	rowid.cells[6].innerHTML=data.sysaccount.address;
+}
 $(document).ready(function(){
+	//初始化dialog
+	$("#dialog").dialog({
+		autoOpen: false,modal: true,overlay: { opacity: 0.5, background: "black" },
+		title:"编辑",position:"center",width:400,height:300
+	});
+	//绑定事件
 	$(".edit").bind("click",function(){
+		var rowid;//保存点击的列
+		rowid=$(this).parent()[0];//获得当前列
 		$("#accountid").val($(this).parent().find("input").val());
 		$("#username").val($(this).parent()[0].cells[2].innerHTML);
 		if($(this).parent()[0].cells[3].innerHTML=="1"){
@@ -30,30 +49,76 @@ $(document).ready(function(){
 		$("#zip").val($(this).parent()[0].cells[5].innerHTML);
 		$("#address").val($(this).parent()[0].cells[6].innerHTML);
 		//$(this).parent()[0].cells[1].innerHTML
-		$("#dialog").dialog();
-	});
-	$("#dialog").css("display","none");
-	$("#dialog").dialog({
-		modal: true,overlay: { opacity: 0.5, background: "black" },
-		title:"编辑",position:"center",width:400,height:300,
-		buttons:{
-			"修改":function(){
-				$.post('main/pinfo_modify.action', {
-					"sysaccount.id":$("#accountid").val(),
-					"sysaccount.username":$("#username").val(),
-					"sysaccount.sex":$("input:checked").val(),
-					"sysaccount.phone":$("#phone").val(),
-					"sysaccount.zip":$("#zip").val(),
-					"sysaccount.address":$("#address").val()
-				}, function(data) {
-					alert(data);
-				});
-			},
-			"关闭":function(){
-				$("#dialog").dialog("close");
+		//console.dir(rowid);
+		$("#dialog").dialog({
+			buttons:{
+				"修改":function(){
+					$.post('main/perinfo_modify.action', {
+						"sysaccount.id":$("#accountid").val(),
+						"sysaccount.username":$("#username").val(),
+						"sysaccount.sex":$("input:checked").val(),
+						"sysaccount.phone":$("#phone").val(),
+						"sysaccount.zip":$("#zip").val(),
+						"sysaccount.address":$("#address").val()
+					}, function(data) {
+						//alert(data);
+						var result=$.parseJSON(data.result);
+						console.dir(result);
+						if(result.success!="true"){
+							$("#alert").html(result.msg).addClass("ui-state-error ui-corner-all");
+						}else{
+							$("#alert").html(result.msg).addClass("ui-state-highlight ui-corner-all");
+							//更新table
+							updateTab(rowid,data);
+							//$("#dialog").dialog("close");
+						}
+					});
+					/*$.ajax({
+						url:"main/perinfo_modify.action",
+						data:{
+							"sysaccount.id":$("#accountid").val(),
+							"sysaccount.username":$("#username").val(),
+							"sysaccount.sex":$("input:checked").val(),
+							"sysaccount.phone":$("#phone").val(),
+							"sysaccount.zip":$("#zip").val(),
+							"sysaccount.address":$("#address").val()
+						},
+						type:'post',
+						dataType:'json',
+						success:function(data){
+							alert("成功");
+						},
+						error:function(){
+							alert("失败");
+						}
+					});*/
+				}
 			}
-		}
-	}).dialog("close");
+		}).dialog("open");
+	});
+	$(".delete").bind("click",function(){
+		var accountid=$(this).parent().find("input").val();//
+		
+		confirm("确认删除",function(){
+			$.ajax({
+				url: "main/perinfo_delete.action",
+				data: {
+					"sysaccount.id": accountid
+				},
+				type: "post",
+				dataType: "json",
+				success: function(data){
+					var result=$.parseJSON(data.result);
+					console.dir(result);
+					if (result=="true") {
+						alert("删除成功！");
+					}else {
+						alert("删除失败！");
+					}
+				}
+            });
+		});
+	});
 });
 </script>
 </head>
@@ -136,6 +201,7 @@ $(document).ready(function(){
 	邮编：<input type="text" name="sysaccount.zip" value="" id="zip"/><br/>
 	地址：<input type="text" name="sysaccount.address" value="" id="address"/><br/>
 </form>
+<div id="alert"></div>
 </div>
 <s:debug></s:debug>
 </div><!--end tabwrap-->
