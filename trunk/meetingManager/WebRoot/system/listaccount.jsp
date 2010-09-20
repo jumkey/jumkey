@@ -26,12 +26,6 @@ function updateTab(rowid,data){
 	rowid.cells[5].innerHTML=data.sysaccount.zip;
 	rowid.cells[6].innerHTML=data.sysaccount.address;
 }
-//删除表格列
-//tab表格
-//rowid表格的列
-function deleteTab(tab,rowid){
-	deleteRow
-}
 $(document).ready(function(){
 	//初始化dialog
 	$("#dialog").dialog({
