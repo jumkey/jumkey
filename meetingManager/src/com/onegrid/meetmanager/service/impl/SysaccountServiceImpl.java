@@ -23,7 +23,7 @@ public class SysaccountServiceImpl implements SysaccountService {
 	}
 
 	public Sysaccount updateAccount(Sysaccount account) throws Exception {
-		Sysaccount sysa=sysaccountDAO.getEntity(account.getId());
+		Sysaccount sysa=sysaccountDAO.get(account.getId());
 		//PropertyUtils.copyProperties
 		//BeanUtils.copyProperties(sysa, account);
 		//sysa.setPassword(account.getPassword());
@@ -37,6 +37,6 @@ public class SysaccountServiceImpl implements SysaccountService {
 	}
 
 	public List<Sysaccount> getAllAccount() {
-		return sysaccountDAO.getAllEntity();
+		return sysaccountDAO.findAll();
 	}
 }

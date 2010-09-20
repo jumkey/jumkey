@@ -46,7 +46,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <table cellspacing="0" cellpadding="2" width="95%" align="center" border="0">
   <tr>
     <td align="right" width="100">登陆帐号：</td>
-    <td style="COLOR: #880000">admin</td>
+    <td style="COLOR: #880000">${account.account }</td>
   </tr>
   <tr>
     <td align="right">真实姓名：</td>
