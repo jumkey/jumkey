@@ -26,17 +26,27 @@ public class SysaccountServiceImpl implements SysaccountService {
 		Sysaccount sysa=sysaccountDAO.get(account.getId());
 		//PropertyUtils.copyProperties
 		//BeanUtils.copyProperties(sysa, account);
-		//sysa.setPassword(account.getPassword());
+		if(account.getPassword()!=null){//null没有修改密码
+			sysa.setPassword(account.getPassword());
+		}
 		sysa.setAddress(account.getAddress());
 		sysa.setPhone(account.getPhone());
 		sysa.setSex(account.getSex());
 		sysa.setUsername(account.getUsername());
 		sysa.setZip(account.getZip());
-		//sysa.setDepartment(department);
+		//部门暂时不能修改
+		//if(account.getPassword()!=null){//null没有修改部门
+		//	sysa.setDepartment(department);
+		//}
 		return sysa;
 	}
 
 	public List<Sysaccount> getAllAccount() {
 		return sysaccountDAO.findAll();
+	}
+
+	public void delete(Sysaccount account) {
+		account=sysaccountDAO.get(account.getId());
+		sysaccountDAO.delete(account);
 	}
 }

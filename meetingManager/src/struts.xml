@@ -38,7 +38,7 @@
 		<action name="main" class="mainAction">
 			<result name="success">/main.jsp</result>
 		</action>
-		<action name="pinfo_modify" method="modify" class="accountAction">
+		<action name="perinfo_*" method="{1}" class="accountAction">
 			<result type="json" />
 		</action>
 		<action name="pinfo_*" method="{1}" class="accountAction">
