@@ -26,11 +26,18 @@ function updateTab(rowid,data){
 	rowid.cells[5].innerHTML=data.sysaccount.zip;
 	rowid.cells[6].innerHTML=data.sysaccount.address;
 }
+//删除表格列
+//tab表格
+//rowid表格的列
+function deleteTab(tab,rowid){
+	deleteRow
+}
 $(document).ready(function(){
 	//初始化dialog
 	$("#dialog").dialog({
 		autoOpen: false,modal: true,overlay: { opacity: 0.5, background: "black" },
-		title:"编辑",position:"center",width:400,height:300
+		title:"编辑",position:"center",width:400,height:300,
+		close: function(event, ui){$("#alert").hide();}
 	});
 	//绑定事件
 	$(".edit").bind("click",function(){
@@ -65,9 +72,11 @@ $(document).ready(function(){
 						var result=$.parseJSON(data.result);
 						console.dir(result);
 						if(result.success!="true"){
-							$("#alert").html(result.msg).addClass("ui-state-error ui-corner-all");
+							$("#alert").html(result.msg).show()
+							.addClass("ui-state-error ui-corner-all");
 						}else{
-							$("#alert").html(result.msg).addClass("ui-state-highlight ui-corner-all");
+							$("#alert").html(result.msg).show()
+							.addClass("ui-state-highlight ui-corner-all");
 							//更新table
 							updateTab(rowid,data);
 							//$("#dialog").dialog("close");
@@ -98,7 +107,9 @@ $(document).ready(function(){
 	});
 	$(".delete").bind("click",function(){
 		var accountid=$(this).parent().find("input").val();//
-		
+		var rowid;//保存点击的列
+		rowid=$(this).parent("tr");//获得当前列
+		//alert(rowno);
 		confirm("确认删除",function(){
 			$.ajax({
 				url: "main/perinfo_delete.action",
@@ -110,10 +121,12 @@ $(document).ready(function(){
 				success: function(data){
 					var result=$.parseJSON(data.result);
 					console.dir(result);
-					if (result=="true") {
+					if (result.success=="true") {
 						alert("删除成功！");
+						//删除table列
+						rowid.remove();
 					}else {
-						alert("删除失败！");
+						alert("删除失败！有部门关联或者数据不存在 刷新后操作");
 					}
 				}
             });
