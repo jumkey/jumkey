@@ -1,5 +1,7 @@
 package com.onegrid.meetmanager.dao;
 
-public interface DepartmentDAO {
+import com.onegrid.meetmanager.model.Department;
+
+public interface DepartmentDAO extends GenericDAO<Department,Integer> {
 	
 }

@@ -5,7 +5,6 @@ import java.util.List;
 import com.onegrid.meetmanager.dao.SysaccountDAO;
 import com.onegrid.meetmanager.model.Sysaccount;
 import com.onegrid.meetmanager.service.SysaccountService;
-import com.sun.org.apache.commons.beanutils.BeanUtils;
 
 public class SysaccountServiceImpl implements SysaccountService {
 	private SysaccountDAO sysaccountDAO;
@@ -24,7 +23,7 @@ public class SysaccountServiceImpl implements SysaccountService {
 	}
 
 	public Sysaccount updateAccount(Sysaccount account) throws Exception {
-		Sysaccount sysa=sysaccountDAO.findById(account.getId());
+		Sysaccount sysa=sysaccountDAO.getEntity(account.getId());
 		//PropertyUtils.copyProperties
 		//BeanUtils.copyProperties(sysa, account);
 		//sysa.setPassword(account.getPassword());
@@ -38,6 +37,6 @@ public class SysaccountServiceImpl implements SysaccountService {
 	}
 
 	public List<Sysaccount> getAllAccount() {
-		return sysaccountDAO.findAllAccount();
+		return sysaccountDAO.getAllEntity();
 	}
 }
