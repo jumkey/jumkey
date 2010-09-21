@@ -14,6 +14,15 @@ public class AccountAction extends ActionSupport {
 	private Sysaccount sysaccount;
 	private List<Sysaccount> list;
 	private String result;
+	private Integer[] selected;
+
+	public Integer[] getSelected() {
+		return selected;
+	}
+
+	public void setSelected(Integer[] selected) {
+		this.selected = selected;
+	}
 
 	public String getResult() {
 		return result;
@@ -78,7 +87,7 @@ public class AccountAction extends ActionSupport {
 	}
 	public String delete(){
 		try {
-			sysaccountservice.delete(sysaccount);
+			sysaccountservice.deleteAccount(sysaccount);
 			//添加成功信息
 			result="{\"success\":\"true\",\"msg\":\"删除成功\"}";
 		} catch (Exception e) {
@@ -88,8 +97,24 @@ public class AccountAction extends ActionSupport {
 		}
 		return SUCCESS;
 	}
+	public String add(){
+		try {
+			sysaccountservice.addAccount(sysaccount);
+			//添加成功信息
+			result="{\"success\":\"true\",\"msg\":\"添加成功\"}";
+		} catch (Exception e) {
+			//添加失败信息
+			result="{\"success\":\"false\",\"msg\":\"添加失败"+e.getMessage()+"\"}";
+			e.printStackTrace();
+		}
+		return SUCCESS;
+	}
 	public String list(){
 		list=sysaccountservice.getAllAccount();
 		return "listaccount";
+	}
+	public String delselect(){
+		System.out.println(selected);
+		return SUCCESS;
 	}
 }
