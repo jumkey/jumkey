@@ -16,6 +16,28 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script type="text/javascript" src="js/jquery-ui-1.8.4.custom.min.js"></script>
 <script type="text/javascript" src="script/util.js"></script>
 <script type="text/javascript">
+//全选
+function selectAll(){
+	$("input[@name='checkbox']:checkbox").each(function(){
+		$(this).attr("checked",true);
+	});
+}
+//全不选
+function unselectAll(){
+	$("input[@name='checkbox']:checkbox").each(function(){
+		$(this).removeAttr("checked");
+	});
+}
+//反选
+function fselectAll(){
+	$("input[@name='checkbox']:checkbox").each(function(){
+		if($(this).attr("checked")){
+			$(this).removeAttr("checked");
+		}else{
+			$(this).attr("checked",true);
+		}
+	});
+}
 //更新表格
 //rowid表格的列 html元素
 //data数据
@@ -46,6 +68,7 @@ function addRow(tabid,data){
 }
 //入口
 $(document).ready(function(){
+	var selectedItems;//批量删除用
 	//初始化dialog
 	$("#dialog").dialog({
 		autoOpen: false,modal: true,overlay: { opacity: 0.5, background: "black" },
@@ -117,7 +140,7 @@ $(document).ready(function(){
 					var result=$.parseJSON(data.result);
 					//console.dir(result);
 					if (result.success=="true") {
-						alert("删除成功！");
+						alert(result.msg);
 						//删除table列
 						$this_.parent("tr").remove();
 					}else {
@@ -160,24 +183,31 @@ $(document).ready(function(){
 		}).dialog("open");
 	});
 	$("#delselect").click(function(){
-		var selectedItems = new Array();
+		selectedItems = new Array();//只能定义全局变量，否则进入confirm后值会变为第一次设置的值（不知道原因）
 		$("input[@name='checkbox']:checked").each(function(){selectedItems.push($(this).val());});
 		if (selectedItems.length == 0){
-			alert("Please select item(s) to delete.");
+			alert("请选择要删除的行");
 		}else{
-			console.dir("selected=" + selectedItems.join('&selected='));
-			
-			$.ajax({
-				type: "POST",
-				url: "main/perinfo_delselect.action",
-				data: "selected=" + selectedItems.join('&selected='),
-				dataType: "json",
-				success: function (request) {
-					//document.location.reload();
-				},
-				error: function(request,error){
-					alert('Error deleting item(s), try again later.');
-				}
+			confirm("确认删除",function(){
+				//console.dir("selected=" + selectedItems.join('&selected='));
+				$.ajax({
+					type: "POST",
+					url: "main/perinfo_delselect.action",
+					data: "selected=" + selectedItems.join('&selected='),
+					dataType: "json",
+					success: function (data) {
+						//alert(data);
+						var result=$.parseJSON(data.result);
+						//console.dir(result);
+						if(result.success!="true"){
+							alert(result.msg);
+						}else{
+							//更新table 删除记录
+							$("input[@name='checkbox']:checked").parent().parent("tr").remove();
+							alert(result.msg);
+						}
+					}
+				});
 			});
 		}
 	});
@@ -234,9 +264,9 @@ $(document).ready(function(){
         <td style="background: url('images/tab_21.gif');"><table>
           <tr>
             <td width="21%">
-            	<a href="javascript:void(0);" >全选</a>
-            	<a href="javascript:void(0);" >全不选</a>
-            	<a href="javascript:void(0);" >反选</a>
+            	<a href="javascript:selectAll();" >全选</a>
+            	<a href="javascript:unselectAll();" >全不选</a>
+            	<a href="javascript:fselectAll();" >反选</a>
             </td>
             <td width="79%"><div align="right">
                   <a href="javascript:void(0);" >首页</a>
@@ -253,7 +283,9 @@ $(document).ready(function(){
       </tr>
     </table></div>
 </div>
-<div id="add">新增</div><div id="delselect">删除选中</div><a href="javascript:location.reload();">刷新</a>
+<div id="op" style="padding-left: 20px;">
+	<span id="add"><a href="javascript:void(0);">新增</a></span> | <span id="delselect"><a href="javascript:void(0);">删除选中</a></span> | <a href="javascript:location.reload();">刷新</a>
+</div>
 <div id="dialog" class="flora">
 <form id="form1" action="/" method="post">
 	<input type="hidden" name="sysaccount.id" value="" id="accountid"/><br/>
