@@ -8,5 +8,6 @@ public interface SysaccountService {
 	public Sysaccount checkAccount(String account,String password);
 	public Sysaccount updateAccount(Sysaccount account) throws Exception;
 	public List<Sysaccount> getAllAccount();
-	public void delete(Sysaccount account);
+	public void deleteAccount(Sysaccount account);
+	public void addAccount(Sysaccount account);
 }

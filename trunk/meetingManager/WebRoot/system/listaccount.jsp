@@ -17,7 +17,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script type="text/javascript" src="script/util.js"></script>
 <script type="text/javascript">
 //更新表格
-//rowid表格的列
+//rowid表格的列 html元素
 //data数据
 function updateTab(rowid,data){
 	rowid.cells[2].innerHTML=data.sysaccount.username;
@@ -26,45 +26,67 @@ function updateTab(rowid,data){
 	rowid.cells[5].innerHTML=data.sysaccount.zip;
 	rowid.cells[6].innerHTML=data.sysaccount.address;
 }
+//更新表格
+//tabid表格id jquery元素
+//data数据
+function addRow(tabid,data){
+	tabid.append('<tr class="tabItem">'
+		+ '<td><input name="checkbox" type="checkbox" value="'+data.sysaccount.id+'" /></td>'
+		+ '<td>'+data.sysaccount.account+'</td>'
+		+ '<td>'+data.sysaccount.username+'</td>'
+		+ '<td>'+data.sysaccount.sex+'</td>'
+		+ '<td>'+data.sysaccount.phone+'</td>'
+		+ '<td>'+data.sysaccount.zip+'</td>'
+		+ '<td>'+data.sysaccount.address+'</td>'
+		+ '<td>'+data.sysaccount.department+'</td>'
+		+ '<td class="edit">[<a href="javascript:void(0);" >编辑</a>]</td>'
+		+ '<td class="delete">[<a href="javascript:void(0);">删除</a>]</td>'
+		+ '</tr>'
+	);
+}
+//入口
 $(document).ready(function(){
 	//初始化dialog
 	$("#dialog").dialog({
 		autoOpen: false,modal: true,overlay: { opacity: 0.5, background: "black" },
-		title:"编辑",position:"center",width:400,height:300,
-		close: function(event, ui){$("#alert").hide();}
+		title:"编辑",position:"center",width:360,height:400,
+		close: function(event, ui){
+			$("#alert").hide();
+			//清空form数据
+			$("#form1")[0].reset();
+			//$("#accountid").val("");
+			//$("#username").val("");
+			//$("#sex").val("");
+			//$("#phone").val("");
+			//$("#zip").val("");
+			//$("#address").val("");
+		}
 	});
-	//绑定事件
-	$(".edit").bind("click",function(){
-		var rowid;//保存点击的列
-		rowid=$(this).parent()[0];//获得当前列
+	//修改
+	$(".edit").live("click",function(){
+		var $this_=$(this);//保存当前this对象
+		//设置form数据
 		$("#accountid").val($(this).parent().find("input").val());
 		$("#username").val($(this).parent()[0].cells[2].innerHTML);
-		if($(this).parent()[0].cells[3].innerHTML=="1"){
-			$("#sex0").removeAttr("checked");
-			$("#sex1").attr("checked","checked");
-		}else{
-			$("#sex1").removeAttr("checked");
-			$("#sex0").attr("checked","checked");
-		}
+		$("#sex").val($(this).parent()[0].cells[3].innerHTML);
 		$("#phone").val($(this).parent()[0].cells[4].innerHTML);
 		$("#zip").val($(this).parent()[0].cells[5].innerHTML);
 		$("#address").val($(this).parent()[0].cells[6].innerHTML);
-		//$(this).parent()[0].cells[1].innerHTML
-		//console.dir(rowid);
+
 		$("#dialog").dialog({
 			buttons:{
 				"修改":function(){
 					$.post('main/perinfo_modify.action', {
 						"sysaccount.id":$("#accountid").val(),
 						"sysaccount.username":$("#username").val(),
-						"sysaccount.sex":$("input:checked").val(),
+						"sysaccount.sex":$("#sex").val(),
 						"sysaccount.phone":$("#phone").val(),
 						"sysaccount.zip":$("#zip").val(),
 						"sysaccount.address":$("#address").val()
 					}, function(data) {
 						//alert(data);
 						var result=$.parseJSON(data.result);
-						console.dir(result);
+						//console.dir(result);
 						if(result.success!="true"){
 							$("#alert").html(result.msg).show()
 							.addClass("ui-state-error ui-corner-all");
@@ -72,59 +94,92 @@ $(document).ready(function(){
 							$("#alert").html(result.msg).show()
 							.addClass("ui-state-highlight ui-corner-all");
 							//更新table
-							updateTab(rowid,data);
+							updateTab($this_.parent()[0],data);
 							//$("#dialog").dialog("close");
 						}
 					});
-					/*$.ajax({
-						url:"main/perinfo_modify.action",
-						data:{
-							"sysaccount.id":$("#accountid").val(),
-							"sysaccount.username":$("#username").val(),
-							"sysaccount.sex":$("input:checked").val(),
-							"sysaccount.phone":$("#phone").val(),
-							"sysaccount.zip":$("#zip").val(),
-							"sysaccount.address":$("#address").val()
-						},
-						type:'post',
-						dataType:'json',
-						success:function(data){
-							alert("成功");
-						},
-						error:function(){
-							alert("失败");
-						}
-					});*/
 				}
 			}
 		}).dialog("open");
 	});
-	$(".delete").bind("click",function(){
-		var accountid=$(this).parent().find("input").val();//
-		var rowid;//保存点击的列
-		rowid=$(this).parent("tr");//获得当前列
-		//alert(rowno);
+	//删除
+	$(".delete").live("click",function(){
+		var $this_=$(this);//保存父this
 		confirm("确认删除",function(){
 			$.ajax({
 				url: "main/perinfo_delete.action",
 				data: {
-					"sysaccount.id": accountid
+					"sysaccount.id": $this_.parent().find("input").val()
 				},
 				type: "post",
 				dataType: "json",
 				success: function(data){
 					var result=$.parseJSON(data.result);
-					console.dir(result);
+					//console.dir(result);
 					if (result.success=="true") {
 						alert("删除成功！");
 						//删除table列
-						rowid.remove();
+						$this_.parent("tr").remove();
 					}else {
 						alert("删除失败！有部门关联或者数据不存在 刷新后操作");
 					}
 				}
             });
 		});
+	});
+	//增加
+	$("#add").bind("click",function(){
+		$("#dialog").dialog({
+			buttons:{
+				"新增":function(){
+					$.post('main/perinfo_add.action', {
+						"sysaccount.account":$("#account").val(),
+						"sysaccount.password":$("#password").val(),
+						"sysaccount.username":$("#username").val(),
+						"sysaccount.sex":$("#sex").val(),
+						"sysaccount.phone":$("#phone").val(),
+						"sysaccount.zip":$("#zip").val(),
+						"sysaccount.address":$("#address").val()
+					}, function(data) {
+						//alert(data);
+						var result=$.parseJSON(data.result);
+						//console.dir(result);
+						if(result.success!="true"){
+							$("#alert").html(result.msg).show()
+							.addClass("ui-state-error ui-corner-all");
+						}else{
+							$("#alert").html(result.msg).show()
+							.addClass("ui-state-highlight ui-corner-all");
+							//更新table 添加记录
+							addRow($("#list"),data);
+							//$("#dialog").dialog("close");
+						}
+					});
+				}
+			}
+		}).dialog("open");
+	});
+	$("#delselect").click(function(){
+		var selectedItems = new Array();
+		$("input[@name='checkbox']:checked").each(function(){selectedItems.push($(this).val());});
+		if (selectedItems.length == 0){
+			alert("Please select item(s) to delete.");
+		}else{
+			console.dir("selected=" + selectedItems.join('&selected='));
+			
+			$.ajax({
+				type: "POST",
+				url: "main/perinfo_delselect.action",
+				data: "selected=" + selectedItems.join('&selected='),
+				dataType: "json",
+				success: function (request) {
+					//document.location.reload();
+				},
+				error: function(request,error){
+					alert('Error deleting item(s), try again later.');
+				}
+			});
+		}
 	});
 });
 </script>
@@ -198,15 +253,24 @@ $(document).ready(function(){
       </tr>
     </table></div>
 </div>
+<div id="add">新增</div><div id="delselect">删除选中</div><a href="javascript:location.reload();">刷新</a>
 <div id="dialog" class="flora">
-<form action="/" method="post">
+<form id="form1" action="/" method="post">
 	<input type="hidden" name="sysaccount.id" value="" id="accountid"/><br/>
+	账号：<input type="text" name="sysaccount.account" value="" id="account"/><br/>
+	密码：<input type="text" name="sysaccount.password" value="" id="password"/><br/>
 	昵称：<input type="text" name="sysaccount.username" value="" id="username"/><br/>
-	性别：<input type="radio" name="sysaccount.sex" id="sex1" value="1"/>男
-	<input type="radio" name="sysaccount.sex" id="sex0" value="0"/>女<br />
+	性别：<select name="sysaccount.sex" id="sex">
+		<option value="1">男</option>
+		<option value="0">女</option>
+	</select><br />
 	电话：<input type="text" name="sysaccount.phone" value="" id="phone"/><br/>
 	邮编：<input type="text" name="sysaccount.zip" value="" id="zip"/><br/>
 	地址：<input type="text" name="sysaccount.address" value="" id="address"/><br/>
+	部门：<select name="sysaccount.department" id="department">
+		<option value="1">人事</option>
+		<option value="2">技术</option>
+	</select><br />
 </form>
 <div id="alert"></div>
 </div>

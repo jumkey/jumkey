@@ -45,8 +45,11 @@ public class SysaccountServiceImpl implements SysaccountService {
 		return sysaccountDAO.findAll();
 	}
 
-	public void delete(Sysaccount account) {
+	public void deleteAccount(Sysaccount account) {
 		account=sysaccountDAO.get(account.getId());
 		sysaccountDAO.delete(account);
+	}
+	public void addAccount(Sysaccount account) {
+		sysaccountDAO.save(account);
 	}
 }
