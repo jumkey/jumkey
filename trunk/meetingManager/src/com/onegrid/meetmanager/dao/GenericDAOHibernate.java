@@ -7,6 +7,7 @@ import java.util.List;
 
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Example;
@@ -201,6 +202,28 @@ public abstract class GenericDAOHibernate<T, ID extends Serializable> extends
 	}
 
 	/**
+	 * 分页查询 注:不能满足要求子类重写该方法
+	 * 
+	 * @param hsql
+	 * @param firstResult
+	 * @param maxResult
+	 * @return 返回分页查询的数据
+	 */
+	@SuppressWarnings("unchecked")
+	public List<T> findByPagination(final String hsql, final int firstResult,
+			final int maxResult) {
+		return getHibernateTemplate().executeFind(new HibernateCallback() {
+			public Object doInHibernate(Session session)
+					throws HibernateException, SQLException {
+				Query query = session.createQuery(hsql);
+				query.setFirstResult(firstResult);
+				query.setMaxResults(maxResult);
+				return query.list();
+			}
+		});
+	}
+
+	/**
 	 * 分页统计查询
 	 * 
 	 * @param t
@@ -219,5 +242,18 @@ public abstract class GenericDAOHibernate<T, ID extends Serializable> extends
 						return criteria.uniqueResult();
 					}
 				});
+	}
+
+	/**
+	 * 查询记录总数
+	 * 
+	 * @param queryString
+	 *            查询语句
+	 * @return Integer 记录数
+	 */
+	public Integer getCountByQuery(final String queryString){
+		int rowsCount = 0;
+		rowsCount = ((Integer) getSession().createQuery("select count(*) " + queryString).iterate().next()).intValue();
+		return rowsCount; 
 	}
 }

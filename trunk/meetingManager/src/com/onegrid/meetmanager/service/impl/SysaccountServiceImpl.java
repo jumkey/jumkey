@@ -3,6 +3,7 @@ package com.onegrid.meetmanager.service.impl;
 import java.util.List;
 
 import com.onegrid.meetmanager.dao.SysaccountDAO;
+import com.onegrid.meetmanager.model.Page;
 import com.onegrid.meetmanager.model.Sysaccount;
 import com.onegrid.meetmanager.service.SysaccountService;
 
@@ -57,5 +58,15 @@ public class SysaccountServiceImpl implements SysaccountService {
 		for(int id:selected){
 			sysaccountDAO.delete(sysaccountDAO.get(id));
 		}
+	}
+
+	public List<Sysaccount> getPageAccount(Page page) {
+		page.setRecordCount(sysaccountDAO.getCountByQuery("from Sysaccount"));
+		return sysaccountDAO.findByPagination("from Sysaccount", page.getStart(), page.getPageSize());
+	}
+
+	public int getPageCount() {
+		//sysaccountDAO.find
+		return 0;
 	}
 }

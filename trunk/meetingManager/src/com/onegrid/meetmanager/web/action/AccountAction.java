@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.struts2.json.annotations.JSON;
 
+import com.onegrid.meetmanager.model.Page;
 import com.onegrid.meetmanager.model.Sysaccount;
 import com.onegrid.meetmanager.service.SysaccountService;
 import com.opensymphony.xwork2.ActionContext;
@@ -13,8 +14,18 @@ public class AccountAction extends ActionSupport {
 	private SysaccountService sysaccountservice;
 	private Sysaccount sysaccount;
 	private List<Sysaccount> list;
-	private String result;
-	private Integer[] selected;
+	private String result;//返回ajax 结果
+	private Integer[] selected;//选择项
+	
+	private Page page;
+
+	public Page getPage() {
+		return page;
+	}
+
+	public void setPage(Page page) {
+		this.page = page;
+	}
 
 	public Integer[] getSelected() {
 		return selected;
@@ -110,7 +121,7 @@ public class AccountAction extends ActionSupport {
 		return SUCCESS;
 	}
 	public String list(){
-		list=sysaccountservice.getAllAccount();
+		list=sysaccountservice.getPageAccount(page);
 		return "listaccount";
 	}
 	public String delselect(){

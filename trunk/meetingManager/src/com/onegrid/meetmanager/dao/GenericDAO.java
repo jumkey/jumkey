@@ -128,6 +128,18 @@ public interface GenericDAO<T, ID extends Serializable> {
 			final int maxResult);
 
 	/**
+	 * 分页查询 注:不能满足要求子类重写该方法
+	 * 
+	 * @param hsql
+	 * @param firstResult
+	 * @param maxResult
+	 * @return 返回分页查询的数据
+	 */
+	@SuppressWarnings("unchecked")
+	public List<T> findByPagination(final String hsql, final int firstResult,
+			final int maxResult);
+
+	/**
 	 * 分页统计查询
 	 * 
 	 * @param t
@@ -135,4 +147,13 @@ public interface GenericDAO<T, ID extends Serializable> {
 	 */
 	@SuppressWarnings("unchecked")
 	public int countByPagination(final T t);
+
+	/**
+	 * 查询记录总数
+	 * 
+	 * @param queryString
+	 *            查询语句
+	 * @return Integer 记录数
+	 */
+	public Integer getCountByQuery(final String queryString);
 }
