@@ -10,4 +10,5 @@ public interface SysaccountService {
 	public List<Sysaccount> getAllAccount();
 	public void deleteAccount(Sysaccount account);
 	public void addAccount(Sysaccount account);
+	public void deleteSelectAccount(Integer[] selected);
 }

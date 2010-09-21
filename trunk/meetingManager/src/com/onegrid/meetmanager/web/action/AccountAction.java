@@ -114,7 +114,15 @@ public class AccountAction extends ActionSupport {
 		return "listaccount";
 	}
 	public String delselect(){
-		System.out.println(selected);
+		try {
+			sysaccountservice.deleteSelectAccount(selected);
+			//添加成功信息
+			result="{\"success\":\"true\",\"msg\":\"批量删除成功\"}";
+		} catch (Exception e) {
+			//添加失败信息
+			result="{\"success\":\"false\",\"msg\":\"批量删除失败"+e.getMessage()+"\"}";
+			e.printStackTrace();
+		}
 		return SUCCESS;
 	}
 }

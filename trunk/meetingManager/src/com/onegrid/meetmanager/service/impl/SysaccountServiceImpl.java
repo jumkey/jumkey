@@ -52,4 +52,10 @@ public class SysaccountServiceImpl implements SysaccountService {
 	public void addAccount(Sysaccount account) {
 		sysaccountDAO.save(account);
 	}
+
+	public void deleteSelectAccount(Integer[] selected) {
+		for(int id:selected){
+			sysaccountDAO.delete(sysaccountDAO.get(id));
+		}
+	}
 }
