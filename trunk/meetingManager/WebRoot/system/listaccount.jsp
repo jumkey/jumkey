@@ -43,10 +43,11 @@ function fselectAll(){
 //data数据
 function updateTab(rowid,data){
 	rowid.cells[2].innerHTML=data.sysaccount.username;
-	rowid.cells[3].innerHTML=data.sysaccount.sex;
+	rowid.cells[3].innerHTML=(data.sysaccount.sex==1?"男":"女");
 	rowid.cells[4].innerHTML=data.sysaccount.phone;
 	rowid.cells[5].innerHTML=data.sysaccount.zip;
 	rowid.cells[6].innerHTML=data.sysaccount.address;
+	rowid.cells[7].innerHTML=data.sysaccount.department.departmentname;
 }
 //更新表格
 //tabid表格id jquery元素
@@ -56,11 +57,11 @@ function addRow(tabid,data){
 		+ '<td><input name="checkbox" type="checkbox" value="'+data.sysaccount.id+'" /></td>'
 		+ '<td>'+data.sysaccount.account+'</td>'
 		+ '<td>'+data.sysaccount.username+'</td>'
-		+ '<td>'+data.sysaccount.sex+'</td>'
+		+ '<td>'+(data.sysaccount.sex==1?"男":"女")+'</td>'
 		+ '<td>'+data.sysaccount.phone+'</td>'
 		+ '<td>'+data.sysaccount.zip+'</td>'
 		+ '<td>'+data.sysaccount.address+'</td>'
-		+ '<td>'+data.sysaccount.department+'</td>'
+		+ '<td>'+data.sysaccount.department.departmentname+'</td>'
 		+ '<td class="edit">[<a href="javascript:void(0);" >编辑</a>]</td>'
 		+ '<td class="delete">[<a href="javascript:void(0);">删除</a>]</td>'
 		+ '</tr>'
@@ -103,12 +104,31 @@ $(document).ready(function(){
 	$(".edit").live("click",function(){
 		var $this_=$(this);//保存当前this对象
 		//设置form数据
+		$("#account").val("不用填写");
+		$("#password").val("不用填写");
+		
 		$("#accountid").val($(this).parent().find("input").val());
 		$("#username").val($(this).parent()[0].cells[2].innerHTML);
-		$("#sex").val($(this).parent()[0].cells[3].innerHTML);
+		
+		var sex=$(this).parent()[0].cells[3].innerText;
+		if(sex=="男"){
+			$("#sex").get(0).selectedIndex=0;
+		}else{
+			$("#sex").get(0).selectedIndex=1;
+		}
+		
 		$("#phone").val($(this).parent()[0].cells[4].innerHTML);
 		$("#zip").val($(this).parent()[0].cells[5].innerHTML);
 		$("#address").val($(this).parent()[0].cells[6].innerHTML);
+		
+		var text=$(this).parent()[0].cells[7].innerText;
+		var count=$("#department option").length;
+		for(var i=0;i<count;i++){
+			if($("#department").get(0).options[i].text == text){
+				$("#department").get(0).options[i].selected = true;
+				break;
+			}
+		}
 
 		$("#dialog").dialog({
 			buttons:{
@@ -119,11 +139,12 @@ $(document).ready(function(){
 						"sysaccount.sex":$("#sex").val(),
 						"sysaccount.phone":$("#phone").val(),
 						"sysaccount.zip":$("#zip").val(),
-						"sysaccount.address":$("#address").val()
+						"sysaccount.address":$("#address").val(),
+						"sysaccount.department.id":$("#department").val(),
+						"sysaccount.department.departmentname":$("#department").find("option:selected").text()
 					}, function(data) {
-						//alert(data);
+						console.dir(data);
 						var result=$.parseJSON(data.result);
-						//console.dir(result);
 						if(result.success!="true"){
 							$("#alert").html(result.msg).show()
 							.addClass("ui-state-error ui-corner-all");
@@ -176,7 +197,9 @@ $(document).ready(function(){
 						"sysaccount.sex":$("#sex").val(),
 						"sysaccount.phone":$("#phone").val(),
 						"sysaccount.zip":$("#zip").val(),
-						"sysaccount.address":$("#address").val()
+						"sysaccount.address":$("#address").val(),
+						"sysaccount.department.id":$("#department").val(),
+						"sysaccount.department.departmentname":$("#department").find("option:selected").text()
 					}, function(data) {
 						//alert(data);
 						var result=$.parseJSON(data.result);
@@ -260,7 +283,7 @@ $(document).ready(function(){
             <td><input name="checkbox" type="checkbox" value="${sysaccount1.id }" /></td>
             <td>${sysaccount1.account }</td>
             <td>${sysaccount1.username }</td>
-            <td>${sysaccount1.sex }</td>
+            <td>${sysaccount1.sex==1?"男":"女"}</td>
             <td>${sysaccount1.phone }</td>
             <td>${sysaccount1.zip }</td>
             <td>${sysaccount1.address }</td>
@@ -314,8 +337,9 @@ $(document).ready(function(){
 	邮编：<input type="text" name="sysaccount.zip" value="" id="zip"/><br/>
 	地址：<input type="text" name="sysaccount.address" value="" id="address"/><br/>
 	部门：<select name="sysaccount.department" id="department">
-		<option value="1">人事</option>
-		<option value="2">技术</option>
+	<s:iterator status="index" value="dlist" id="department">
+		<option value="${department.id }">${department.departmentname }</option>
+	</s:iterator>
 	</select><br />
 </form>
 <div id="alert"></div>
