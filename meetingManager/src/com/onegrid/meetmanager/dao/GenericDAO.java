@@ -3,6 +3,8 @@ package com.onegrid.meetmanager.dao;
 import java.io.Serializable;
 import java.util.List;
 
+import com.onegrid.meetmanager.model.Page;
+
 public interface GenericDAO<T, ID extends Serializable> {
 
 	// 保存
@@ -131,13 +133,11 @@ public interface GenericDAO<T, ID extends Serializable> {
 	 * 分页查询 注:不能满足要求子类重写该方法
 	 * 
 	 * @param hsql
-	 * @param firstResult
-	 * @param maxResult
+	 * @param page
 	 * @return 返回分页查询的数据
 	 */
 	@SuppressWarnings("unchecked")
-	public List<T> findByPagination(final String hsql, final int firstResult,
-			final int maxResult);
+	public List<T> findByPagination(final String hsql, final Page page);
 
 	/**
 	 * 分页统计查询

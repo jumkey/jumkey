@@ -121,6 +121,9 @@ public class AccountAction extends ActionSupport {
 		return SUCCESS;
 	}
 	public String list(){
+		if(page==null){
+			page=new Page();
+		}
 		list=sysaccountservice.getPageAccount(page);
 		return "listaccount";
 	}
