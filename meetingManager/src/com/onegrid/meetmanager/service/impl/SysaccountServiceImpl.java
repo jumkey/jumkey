@@ -35,10 +35,8 @@ public class SysaccountServiceImpl implements SysaccountService {
 		sysa.setSex(account.getSex());
 		sysa.setUsername(account.getUsername());
 		sysa.setZip(account.getZip());
-		//部门暂时不能修改
-		//if(account.getPassword()!=null){//null没有修改部门
-		//	sysa.setDepartment(department);
-		//}
+
+		sysa.setDepartment(account.getDepartment());
 		return sysa;
 	}
 

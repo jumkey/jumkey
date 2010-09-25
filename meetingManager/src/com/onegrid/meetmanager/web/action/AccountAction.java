@@ -4,20 +4,32 @@ import java.util.List;
 
 import org.apache.struts2.json.annotations.JSON;
 
+import com.onegrid.meetmanager.model.Department;
 import com.onegrid.meetmanager.model.Page;
 import com.onegrid.meetmanager.model.Sysaccount;
+import com.onegrid.meetmanager.service.DepartmentService;
 import com.onegrid.meetmanager.service.SysaccountService;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class AccountAction extends ActionSupport {
 	private SysaccountService sysaccountservice;
+	private DepartmentService departmentservice;
 	private Sysaccount sysaccount;
 	private List<Sysaccount> list;
+	private List<Department> dlist;
 	private String result;//返回ajax 结果
 	private Integer[] selected;//选择项
 	
 	private Page page;
+
+	public List<Department> getDlist() {
+		return dlist;
+	}
+
+	public void setDlist(List<Department> dlist) {
+		this.dlist = dlist;
+	}
 
 	public Page getPage() {
 		return page;
@@ -58,7 +70,15 @@ public class AccountAction extends ActionSupport {
 	public void setSysaccountservice(SysaccountService sysaccountservice) {
 		this.sysaccountservice = sysaccountservice;
 	}
-	
+	@JSON(serialize=false)
+	public DepartmentService getDepartmentservice() {
+		return departmentservice;
+	}
+
+	public void setDepartmentservice(DepartmentService departmentservice) {
+		this.departmentservice = departmentservice;
+	}
+
 	public Sysaccount getSysaccount() {
 		return sysaccount;
 	}
@@ -86,6 +106,7 @@ public class AccountAction extends ActionSupport {
 	}
 	public String modify(){
 		try {
+			//System.out.println(sysaccount.getDepartment().getId());
 			sysaccount=sysaccountservice.updateAccount(sysaccount);
 			//添加成功信息
 			result="{\"success\":\"true\",\"msg\":\"修改成功\"}";
@@ -124,6 +145,7 @@ public class AccountAction extends ActionSupport {
 		if(page==null){
 			page=new Page();
 		}
+		dlist=departmentservice.getAllDepartment();
 		list=sysaccountservice.getPageAccount(page);
 		return "listaccount";
 	}
