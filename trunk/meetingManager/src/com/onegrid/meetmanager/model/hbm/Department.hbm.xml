@@ -17,7 +17,7 @@
             <column name="departmentid" />
         </many-to-one>
         <property name="departmentname" type="java.lang.String">
-            <column name="departmentname" length="20" />
+            <column name="departmentname" length="20" not-null="true" />
         </property>
         <property name="createtime" type="java.util.Date">
             <column name="createtime" length="19" />

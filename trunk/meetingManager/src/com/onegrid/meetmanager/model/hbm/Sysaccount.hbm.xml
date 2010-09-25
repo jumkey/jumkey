@@ -14,7 +14,7 @@
             <column name="creator" />
         </many-to-one>
         <many-to-one name="department" class="com.onegrid.meetmanager.model.Department" fetch="select">
-            <column name="departmentid" />
+            <column name="departmentid" not-null="true" />
         </many-to-one>
         <property name="account" type="java.lang.String">
             <column name="account" length="20" not-null="true" unique="true" />
