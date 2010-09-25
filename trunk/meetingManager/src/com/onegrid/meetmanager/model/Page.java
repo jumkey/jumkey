@@ -1,101 +1,72 @@
 package com.onegrid.meetmanager.model;
 
 public class Page implements java.io.Serializable {
-	private static final long serialVersionUID = 1L;
-	private static Integer DEFAULT_PAGE_SIZE = 30;
-	private Integer id;
-	private Integer start = 0; // 记录的起始行
-	private Integer end = 1; // 记录的结束行
-	private Integer pageCount = 0; // 总页数
-	private Integer recordCount = 0; // 总记录数
-	private Integer currentPage = 1; // 当前页
-	private Integer pageSize = DEFAULT_PAGE_SIZE; // 单页条数
+	private int totalPage = 1; // 总页数 4
+	private int totalNum = 0; // 总记录数 3
+	private int maxResult = 20; // 每页行数 1
+	private int currentPage = 1; // 当前页码 2
+	private int selectRows = 0;// 当前查询获得的数据行数 5
 
-	public Page(Integer currentPage, Integer recordCount, Integer pageSize) {
-		if (currentPage < 1)
-			currentPage = 1;
-		this.currentPage = currentPage;
-		if (pageSize < 1)
-			pageSize = 1;
-		this.pageSize = pageSize;
-		setRecordCount(recordCount);
-		start += (currentPage - 1) * pageSize;
-		end = start + pageSize;
+	/**
+	 * 得到从数据库查询时记录的起始行号，注意从0开始计算
+	 */
+	public int getFirstResult() {
+		if (getCurrentPage() <= 0)
+			return 0;
+
+		return getMaxResult() * (getCurrentPage() - 1);
 	}
 
-	public Page(Integer currentPage, Integer recordCount) {
-		this(currentPage, recordCount, DEFAULT_PAGE_SIZE);
-	}
-
-	public Page() {
-	}
-
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	public Integer getStart() {
-		return start;
-	}
-
-	public void setStart(Integer start) {
-		this.start = start;
-	}
-
-	public Integer getEnd() {
-		return end;
-	}
-
-	public void setEnd(Integer end) {
-		this.end = end;
-	}
-
-	public Integer getCurrentPage() {
+	public int getCurrentPage() {
 		return currentPage;
 	}
 
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
+	public void setCurrentPage(int currentPage) {
+		if (currentPage < 1){
+			this.currentPage = 1;
+		}
+		else{
+			this.currentPage = currentPage;
+		}
 	}
 
-	public Integer getPageSize() {
-		return pageSize;
+	public int getMaxResult() {
+		return maxResult;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setMaxResult(int maxResult) {
+		this.maxResult = maxResult;
 	}
 
-	public Integer getPageCount() {
-		return pageCount;
+	public int getTotalPage() {
+		return totalPage;
 	}
 
-	public void setPageCount() {
-		pageCount = recordCount / pageSize
-				+ (recordCount % pageSize == 0 ? 0 : 1);
+	public void setTotalPage(int totalPage) {
+		this.totalPage = totalPage;
 	}
 
-	public Integer getRecordCount() {
-		return recordCount;
+	public int getTotalNum() {
+		return totalNum;
 	}
 
-	public void setRecordCount(Integer recordCount) {
-		this.recordCount = recordCount;
-		setPageCount();
-		end = (end <= recordCount ? end : recordCount + 1);
-		currentPage = (currentPage <= pageCount ? currentPage : pageCount);
+	public void setTotalNum(int totalNum) {
+		this.totalNum = totalNum;
+		this.totalPage=this.totalNum/this.maxResult;
+		if(this.totalNum%this.maxResult!=0){
+			this.totalPage++;
+		}
+		if(this.currentPage>this.totalPage){
+			this.currentPage=this.totalPage;
+		}
 	}
 
-	public boolean getHasPrevious() {
-		return currentPage > 1;
+	public int getSelectRows() {
+		return selectRows;
 	}
 
-	public boolean getHasNext() {
-		return currentPage < pageCount;
+	public void setSelectRows(int selectRows) {
+		this.selectRows = selectRows;
 	}
 
 }

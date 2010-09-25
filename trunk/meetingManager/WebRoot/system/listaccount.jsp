@@ -66,6 +66,20 @@ function addRow(tabid,data){
 		+ '</tr>'
 	);
 }
+
+//分页
+function page(num){
+	if(!isNaN(num)){
+		location.href="<%=basePath%>main/pinfo_list.action?page.currentPage="+num;
+	}
+}
+function gopage(){
+	if(isNaN($("#gogo").val())){
+		alert("请输入数字");
+	}else{
+		page($("#gogo").val());
+	}
+}
 //入口
 $(document).ready(function(){
 	var selectedItems;//批量删除用
@@ -269,13 +283,13 @@ $(document).ready(function(){
             	<a href="javascript:fselectAll();" >反选</a>
             </td>
             <td width="79%"><div align="right">
-                  <a href="javascript:void(0);" >首页</a>
-                  <a href="javascript:void(0);" >上一页</a>
-                  <a href="javascript:void(0);" >下一页</a>
-                  <a href="javascript:void(0);" >尾页</a>
+                  <a href="javascript:page(1);" >首页</a>
+                  <a href="javascript:page(${page.currentPage-1 });" >上一页</a>
+                  <a href="javascript:page(${page.currentPage+1 });" >下一页</a>
+                  <a href="javascript:page(${page.totalPage });" >尾页</a>
                   <span>
-                  	转到第<input name="textfield" type="text" style="height:12px; width:25px;" size="5" />页
-                  </span><img src="images/g_page.gif" width="14" height="14" />
+                  	转到第<input id="gogo" name="textfield" type="text" style="height:12px; width:25px;" size="5" />页
+                  </span><a href="javascript:gopage();" ><img src="images/g_page.gif" width="14" height="14" /></a>
             </div></td>
           </tr>
         </table></td>

@@ -61,8 +61,8 @@ public class SysaccountServiceImpl implements SysaccountService {
 	}
 
 	public List<Sysaccount> getPageAccount(Page page) {
-		page.setRecordCount(sysaccountDAO.getCountByQuery("from Sysaccount"));
-		return sysaccountDAO.findByPagination("from Sysaccount", page.getStart(), page.getPageSize());
+		page.setTotalNum(sysaccountDAO.getCountByQuery("from Sysaccount"));
+		return sysaccountDAO.findByPagination("from Sysaccount", page);
 	}
 
 	public int getPageCount() {

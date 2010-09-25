@@ -17,6 +17,8 @@ import org.hibernate.criterion.Restrictions;
 import org.springframework.orm.hibernate3.HibernateCallback;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
+import com.onegrid.meetmanager.model.Page;
+
 public abstract class GenericDAOHibernate<T, ID extends Serializable> extends
 		HibernateDaoSupport implements GenericDAO<T, ID> {
 	protected Class<T> clazz;
@@ -205,20 +207,24 @@ public abstract class GenericDAOHibernate<T, ID extends Serializable> extends
 	 * 分页查询 注:不能满足要求子类重写该方法
 	 * 
 	 * @param hsql
-	 * @param firstResult
-	 * @param maxResult
+	 * @param page
 	 * @return 返回分页查询的数据
 	 */
 	@SuppressWarnings("unchecked")
-	public List<T> findByPagination(final String hsql, final int firstResult,
-			final int maxResult) {
+	public List<T> findByPagination(final String hsql, final Page page) {
 		return getHibernateTemplate().executeFind(new HibernateCallback() {
 			public Object doInHibernate(Session session)
 					throws HibernateException, SQLException {
 				Query query = session.createQuery(hsql);
-				query.setFirstResult(firstResult);
-				query.setMaxResults(maxResult);
-				return query.list();
+				query.setFirstResult(page.getFirstResult());
+				query.setMaxResults(page.getMaxResult());
+				List<T> list = query.list();
+				if(list==null||list.size()==0){
+					page.setSelectRows(0);
+				}else{
+					page.setSelectRows(list.size());
+				}
+				return list;
 			}
 		});
 	}
