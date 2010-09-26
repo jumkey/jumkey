@@ -25,15 +25,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </head>
 <body>
 <ul id="nav">
-  <li><a href="javascript:void(0);">关于我们</a>
+  <li><a href="javascript:void(0);">询价</a>
     <ul>
-      <li><a href="javascript:void(0);" target="I2">公司简介</a></li>
-      <li><a href="javascript:void(0);" target="I2">荣誉资质</a></li>
-      <li><a href="javascript:void(0);" target="I2">分类管理</a></li>
-      <li><a href="javascript:void(0);" target="I2">子类管理</a></li>
+      <li><a href="javascript:void(0);" target="I2">询价申请</a></li>
+      <li><a href="javascript:void(0);" target="I2">修改询价申请</a></li>
+      <li><a href="javascript:void(0);" target="I2">管理员审核</a></li>
     </ul>
   </li>
-  <li><a href="javascript:void(0);">新闻中心</a>
+  <li><a href="javascript:void(0);">合同</a>
     <ul>
       <li><a href="javascript:void(0);" target="I2">公司新闻</a></li>
       <li><a href="javascript:void(0);" target="I2">分类管理</a></li>
@@ -80,6 +79,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <li><a href="javascript:void(0);">系统管理</a>
     <ul>
       <li><a href="main/pinfo_list.action" target="I2">账户管理</a></li>
+      <li><a href="main/user_list.action" target="I2">用户管理</a></li>
       <li><a href="javascript:void(0);" target="I2">基本设置</a></li>
       <li><a href="javascript:void(0);" target="I2">样式管理</a></li>
       <li><a href="javascript:void(0);" target="I2">栏目管理</a></li>
@@ -91,7 +91,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </li>
   <li><a href="javascript:void(0);">个人管理</a>
     <ul>
-      <li><a href="main/pinfo_edit.action" target="I2">修改信息</a></li>
+      <li><a href="main/pinfo_edit.action" target="I2">修改个人信息</a></li>
       <li><a onclick="if (confirm('确定要退出吗？')) return true; else return false;" href="admin/sys_logout.action" target="_top">退出系统</a></li>
     </ul>
   </li>

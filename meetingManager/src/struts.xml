@@ -45,6 +45,10 @@
 			<result name="editpage">/system/editpinfo.jsp</result>
 			<result name="listaccount">/system/listaccount.jsp</result>
 		</action>
+		<action name="user_*" method="{1}" class="userAction">
+			<result name="editpage">/system/editpinfo.jsp</result>
+			<result name="listuser">/system/listuser.jsp</result>
+		</action>
 		<action name="*">
 			<result type="velocity">/{1}.vm</result>
 		</action>
