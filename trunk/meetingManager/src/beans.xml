@@ -19,6 +19,11 @@
 	<bean id="DepartmentDAO" class="com.onegrid.meetmanager.dao.impl.DepartmentDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
+	<bean id="UserDAO" class="com.onegrid.meetmanager.dao.impl.UserDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	
 	
 	<bean id="SysaccountService" class="com.onegrid.meetmanager.service.impl.SysaccountServiceImpl">
 		<property name="sysaccountDAO" ref="SysaccountDAO" />
@@ -26,6 +31,11 @@
 	<bean id="DepartmentService" class="com.onegrid.meetmanager.service.impl.DepartmentServiceImpl">
 		<property name="departmentDAO" ref="DepartmentDAO" />
 	</bean>
+	<bean id="UserService" class="com.onegrid.meetmanager.service.impl.UserServiceImpl">
+		<property name="userDAO" ref="UserDAO" />
+	</bean>
+	
+	
 	
 	<bean name="loginAction" class="com.onegrid.meetmanager.web.action.LoginAction" scope="prototype">
 		<property name="sysaccountService" ref="SysaccountService" />
@@ -35,5 +45,8 @@
 	<bean name="accountAction" class="com.onegrid.meetmanager.web.action.AccountAction" scope="prototype">
 		<property name="sysaccountservice" ref="SysaccountService" />
 		<property name="departmentservice" ref="DepartmentService" />
+	</bean>
+	<bean name="userAction" class="com.onegrid.meetmanager.web.action.UserAction" scope="prototype">
+		<property name="userservice" ref="UserService" />
 	</bean>
 </beans>
