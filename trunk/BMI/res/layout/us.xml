@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+	<TextView 
+	    android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content" 
+	    android:text="@string/us_height"
+	    />
+	<Spinner android:id="@+id/feet" 
+	    android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content" 
+	    android:drawSelectorOnTop="true"
+	    android:prompt="@string/feet_prompt"
+	    />
+	<Spinner android:id="@+id/inch" 
+	    android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content" 
+	    android:drawSelectorOnTop="true"
+	    android:prompt="@string/inch_prompt"
+	    />
+	<TextView 
+	    android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content" 
+	    android:text="@string/pound"
+	    />
+	<EditText android:id="@+id/weight" 
+	    android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content"
+	    android:text=""
+	    />
+	<Button android:id="@+id/submit" 
+	    android:layout_width="wrap_content" 
+	    android:layout_height="wrap_content" 
+	    android:text="@string/bmi_btn"
+	    />
+	 <TextView android:id="@+id/result" 
+	    android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content" 
+	    android:text=""
+	    />
+	 <TextView android:id="@+id/suggest" 
+	    android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content" 
+	    android:text=""
+	    />
+</LinearLayout>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="us_label">英制</string>
+    <string name="norm_label">公制</string>
+    <string name="us_height">身高</string>
+    <string name="feet_prompt">選擇呎</string>
+    <string name="inch_prompt">選擇吋</string>
+    <string name="pound">體重 (lbs)</string>
+    <string-array name="feets">
+        <item>2 Feets</item>
+        <item>3 Feets</item>
+        <item>4 Feets</item>
+        <item>5 Feets</item>
+        <item>6 Feets</item>
+        <item>7 Feets</item>
+        <item>8 Feets</item>
+    </string-array>
+   <string-array name="inches">
+        <item>0 Inch</item>
+        <item>1 Inch</item>
+        <item>2 Inches</item>
+        <item>3 Inches</item>
+        <item>4 Inches</item>
+        <item>5 Inches</item>
+        <item>6 Inches</item>
+        <item>7 Inches</item>
+        <item>8 Inches</item>
+        <item>9 Inches</item>
+        <item>10 Inches</item>
+        <item>11 Inches</item>
+    </string-array>
+</resources>
