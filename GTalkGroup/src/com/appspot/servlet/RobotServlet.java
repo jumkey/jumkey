@@ -62,7 +62,7 @@ public class RobotServlet extends HttpServlet {
 //					RobotMsg.HelloForFirstTime);
 //			user = RobotService.getInstance().newUser(userId);
 //		}
-
+		RobotMsg.getInstance().sendMessage(message, RobotMsg.Help);
 		// 获取操作类型
 		int opCode = RobotMsg.getInstance().getOperateType(messageBody);
 		switch (opCode) {
