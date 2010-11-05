@@ -26,9 +26,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.appspot.common.RobotOpType;
-import com.appspot.persistence.User;
 import com.appspot.robot.RobotMsg;
-import com.appspot.robot.RobotService;
 import com.google.appengine.api.xmpp.Message;
 import com.google.appengine.api.xmpp.XMPPService;
 import com.google.appengine.api.xmpp.XMPPServiceFactory;
@@ -54,34 +52,20 @@ public class RobotServlet extends HttpServlet {
 			return;
 		}
 		String messageBody = message.getBody().trim();
-		String userId = RobotMsg.getInstance().getUserId(message);
-		if (messageBody.length() == 0 || userId == null) {
-			return;
-		}
-		User user = RobotService.getInstance().getUserByUserId(userId);
-		if (user == null) {// 第一次使用，保存用户信息
-			RobotMsg.getInstance().sendMessage(message,
-					RobotMsg.HelloForFirstTime);
-			user = RobotService.getInstance().newUser(userId);
-		}
+//		String userId = RobotMsg.getInstance().getUserId(message);
+//		if (messageBody.length() == 0 || userId == null) {
+//			return;
+//		}
+//		User user = RobotService.getInstance().getUserByUserId(userId);
+//		if (user == null) {// 第一次使用，保存用户信息
+//			RobotMsg.getInstance().sendMessage(message,
+//					RobotMsg.HelloForFirstTime);
+//			user = RobotService.getInstance().newUser(userId);
+//		}
 
 		// 获取操作类型
 		int opCode = RobotMsg.getInstance().getOperateType(messageBody);
 		switch (opCode) {
-		case RobotOpType.REMOVE:
-			RobotService.getInstance().doRemove(message, user);
-			break;
-		case RobotOpType.STATUS:
-			RobotService.getInstance().doStatus(message, user);
-			break;
-		case RobotOpType.TON:
-			RobotService.getInstance().doTwitterNotifyChange(message, user,
-					true);
-			break;
-		case RobotOpType.TOFF:
-			RobotService.getInstance().doTwitterNotifyChange(message, user,
-					false);
-			break;
 		case RobotOpType.ERROR:
 			RobotMsg.getInstance().sendMessage(message, RobotMsg.OperateError);
 			break;
