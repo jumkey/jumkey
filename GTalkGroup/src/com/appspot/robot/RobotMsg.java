@@ -1,23 +1,4 @@
-﻿/*
- *  Copyright (c) 2010, Steven Wang
- *  
- *  Licensed under the Apache License, Version 2.0 (the "License");
- *  you may not use this file except in compliance with the License.
- *  You may obtain a copy of the License at
- *  
- *      http://www.apache.org/licenses/LICENSE-2.0
- *      
- *  Unless required by applicable law or agreed to in writing, software
- *  distributed under the License is distributed on an "AS IS" BASIS,
- *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *  See the License for the specific language governing permissions and
- *  limitations under the License.
- *  
- *  twitterSina at http://twitterSina.appspot.com
- *  twitterSina code at http://twitterSina.googlecode.com
- * 	
- */
-package com.appspot.robot;
+﻿package com.appspot.robot;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -30,6 +11,7 @@ import com.google.appengine.api.xmpp.JID;
 import com.google.appengine.api.xmpp.Message;
 import com.google.appengine.api.xmpp.MessageBuilder;
 import com.google.appengine.api.xmpp.MessageType;
+import com.google.appengine.api.xmpp.SendResponse;
 import com.google.appengine.api.xmpp.XMPPService;
 import com.google.appengine.api.xmpp.XMPPServiceFactory;
 
@@ -79,7 +61,8 @@ public class RobotMsg {
 		return instance;
 	}
 
-	private static final XMPPService xmppService = XMPPServiceFactory.getXMPPService();
+	private static final XMPPService xmppService = XMPPServiceFactory
+			.getXMPPService();
 
 	/**
 	 * 发送XMPP消息
@@ -91,7 +74,14 @@ public class RobotMsg {
 		Message reply = new MessageBuilder().withRecipientJids(
 				message.getFromJid()).withMessageType(MessageType.NORMAL)
 				.withBody(body).build();
-		xmppService.sendMessage(reply);
+		boolean messageSent = false;
+		if (xmppService.getPresence(message.getFromJid()).isAvailable()) {
+			SendResponse status = xmppService.sendMessage(reply);
+			messageSent = (status.getStatusMap().get(message.getFromJid()) == SendResponse.Status.SUCCESS);
+		}
+		if (!messageSent) {
+			System.out.println(body);
+		}
 	}
 
 	/**

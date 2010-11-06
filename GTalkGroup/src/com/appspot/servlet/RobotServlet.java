@@ -13,8 +13,8 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  *  
- *  twitterSina at http://twitterSina.appspot.com
- *  twitterSina code at http://twitterSina.googlecode.com
+ *  http://twitterSina.appspot.com
+ *  code at http://twitterSina.googlecode.com
  * 	
  */
 package com.appspot.servlet;
@@ -25,8 +25,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.appspot.common.RobotOpType;
+import com.appspot.persistence.User;
 import com.appspot.robot.RobotMsg;
+import com.appspot.robot.RobotService;
 import com.google.appengine.api.xmpp.Message;
 import com.google.appengine.api.xmpp.XMPPService;
 import com.google.appengine.api.xmpp.XMPPServiceFactory;
@@ -34,7 +35,7 @@ import com.google.appengine.api.xmpp.XMPPServiceFactory;
 /**
  * 机器人相关的Servlet
  * 
- * @author Steven Wang <http://blog.stevenwang.name>
+ * @author Steven Wang
  */
 public class RobotServlet extends HttpServlet {
 	private static final long serialVersionUID = -8333918611331603780L;
@@ -51,27 +52,17 @@ public class RobotServlet extends HttpServlet {
 		if (message == null) {
 			return;
 		}
-		String messageBody = message.getBody().trim();
-//		String userId = RobotMsg.getInstance().getUserId(message);
-//		if (messageBody.length() == 0 || userId == null) {
-//			return;
-//		}
-//		User user = RobotService.getInstance().getUserByUserId(userId);
-//		if (user == null) {// 第一次使用，保存用户信息
-//			RobotMsg.getInstance().sendMessage(message,
-//					RobotMsg.HelloForFirstTime);
-//			user = RobotService.getInstance().newUser(userId);
-//		}
-		RobotMsg.getInstance().sendMessage(message, RobotMsg.Help);
-		// 获取操作类型
-		int opCode = RobotMsg.getInstance().getOperateType(messageBody);
-		switch (opCode) {
-		case RobotOpType.ERROR:
-			RobotMsg.getInstance().sendMessage(message, RobotMsg.OperateError);
-			break;
-		case RobotOpType.HELP:
-			RobotMsg.getInstance().sendMessage(message, RobotMsg.Help);
-			break;
-		}
+		String messageBody = message.getBody();
+		
+		String userId = RobotMsg.getInstance().getUserId(message);
+        if(messageBody.length() == 0 || userId == null) {
+        	return;
+        }
+        User user = RobotService.getInstance().getUserByUserId(userId);
+        if(user == null) {//第一次使用，保存用户信息
+        	RobotMsg.getInstance().sendMessage(message, RobotMsg.HelloForFirstTime);
+        	user = RobotService.getInstance().newUser(userId);
+        }
+		RobotMsg.getInstance().sendMessage(message,messageBody);
 	}
 }
