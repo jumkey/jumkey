@@ -6,8 +6,6 @@ import com.appspot.common.SysLogType;
 import com.appspot.persistence.Account;
 import com.appspot.persistence.SysLog;
 import com.appspot.persistence.SysLogDao;
-import com.appspot.persistence.TwitterNotify;
-import com.appspot.persistence.TwitterNotifyDao;
 import com.appspot.persistence.User;
 import com.appspot.persistence.UserDao;
 import com.google.appengine.api.datastore.Text;
@@ -90,13 +88,7 @@ public class RobotService {
 		UserDao.getInstance().addOrUpdateUser(user);
 
 		// 更新Twitter消息提示
-		TwitterNotify twitterNotify = TwitterNotifyDao.getInstance()
-				.getByUserId(user.getUserId());
-		if (twitterNotify != null) {
-			twitterNotify.setIsNotify(false);
-			TwitterNotifyDao.getInstance().addOrUpdateTwitterNotify(
-					twitterNotify);
-		}
+		
 
 		// 写系统日志
 		log.setUserId(user.getUserId());
@@ -149,73 +141,5 @@ public class RobotService {
 		// 更新用户信息
 		user.setLastActiveTime(DateHelp.getLocalDateTime());
 		UserDao.getInstance().addOrUpdateUser(user);
-	}
-
-	/**
-	 * 设置Twitter消息提示
-	 * 
-	 * @param message，用户发送的message
-	 * @param user，用户实体
-	 * @param isNotify，打开/关闭消息提示
-	 */
-	public void doTwitterNotifyChange(Message message, User user,
-			boolean isNotify) {
-		TwitterNotify twitterNotify = TwitterNotifyDao.getInstance()
-				.getByUserId(user.getUserId());
-
-		// 没有设置消息提示时取消消息提示操作
-		if (twitterNotify == null && !isNotify) {
-			RobotMsg.getInstance().sendMessage(message,
-					RobotMsg.NotSetTwitterNotify);
-			return;
-		}
-
-		// 若为打开消息提示
-		if (isNotify) {
-			// 还没有设置过消息提示
-			if (twitterNotify == null) {
-				twitterNotify = new TwitterNotify();
-				twitterNotify.setUserId(user.getUserId());
-				twitterNotify.setLastNotifyMsgId(0);
-				twitterNotify.setNotifyCount(0);
-			}
-			boolean find = false;
-			for (Account account : user.getAccountList()) {
-				if (account.getAccountType() == AccountType.TWITTER
-						&& account.getIsAuth()) {
-					twitterNotify.setUserJID(message.getFromJid().getId());
-					twitterNotify.setUserName(account.getUserName());
-					twitterNotify.setUserPwd(account.getUserPwd());
-					find = true;
-					break;
-				}
-			}
-			if (!find) {
-				RobotMsg.getInstance().sendMessage(message,
-						RobotMsg.NotBindTwitter);
-				return;
-			}
-		}
-		twitterNotify.setIsNotify(isNotify);
-		TwitterNotifyDao.getInstance().addOrUpdateTwitterNotify(twitterNotify);
-
-		String result = "";
-		if (isNotify)
-			result = RobotMsg.SetTwitterNotifyOnSuc;
-		else
-			result = RobotMsg.SetTwitterNotifyOffSuc;
-		RobotMsg.getInstance().sendMessage(message, result);
-
-		// 更新用户信息
-		user.setLastActiveTime(DateHelp.getLocalDateTime());
-		UserDao.getInstance().addOrUpdateUser(user);
-
-		// 写系统日志
-		SysLog log = new SysLog();
-		log.setUserId(user.getUserId());
-		log.setLogTime(DateHelp.getLocalDateTime());
-		log.setLogType(SysLogType.doTwitterNotifyChange);
-		log.setLogContent(new Text(result));
-		SysLogDao.getInstance().addSysLog(log);
 	}
 }

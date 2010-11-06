@@ -1,13 +1,9 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <cronentries>
-  <cron>
-    <url>/sysStatus</url>
-    <description>Update system status every 10 minutes</description>
-    <schedule>every 10 minutes</schedule>
-  </cron>
-  <cron>
-    <url>/twitterNotify</url>
-    <description>Do Twitter Notify every 3 minutes</description>
-    <schedule>every 3 minutes</schedule>
-  </cron>
+	<cron>
+		<url>/</url>
+		<description>Mail out a weekly report</description>
+		<schedule>every monday of month 08:30</schedule>
+		<timezone>America/New_York</timezone>
+	</cron>
 </cronentries>

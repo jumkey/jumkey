@@ -13,24 +13,6 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<url-pattern>/_ah/xmpp/message/chat/</url-pattern>
 	</servlet-mapping>
 	
-	<servlet>
-		<servlet-name>SysStatus</servlet-name>
-		<servlet-class>com.appspot.servlet.cron.SysStatusServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>SysStatus</servlet-name>
-		<url-pattern>/sysStatus</url-pattern>
-	</servlet-mapping>
-	
-	<servlet>
-		<servlet-name>TwitterNotify</servlet-name>
-		<servlet-class>com.appspot.servlet.cron.TwitterNotifyServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>TwitterNotify</servlet-name>
-		<url-pattern>/twitterNotify</url-pattern>
-	</servlet-mapping>
-	
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>
