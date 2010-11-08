@@ -43,7 +43,8 @@ public class RobotMsg {
 			+ "* /list [filter] - 显示群员列表, filter过滤\n"
 			+ "* /alias name - 修改你自己的昵称为 'name'\n"
 			+ "* /invite email@foo.com, email@bar.com ... - 邀请邮箱列表到这个群\n"
-			+ "* /help - 显示这个\n";
+			+ "* /help - 显示这个\n"
+			+ "* 如果你使用的是pidgin 在命令前加/say \n";
 
 	private RobotMsg() {
 	}
