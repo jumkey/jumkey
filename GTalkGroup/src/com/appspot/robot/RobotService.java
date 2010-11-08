@@ -82,7 +82,7 @@ public class RobotService {
 	 */
 	public void doPublish(Message message, User user) {
 		String messageBody = message.getBody().trim();
-		messageBody = "[" + user.getNickName() + "]：" + messageBody;
+		messageBody = "[" + user.getNickName() + "]:" + messageBody;
 		RobotMsg.getInstance().sendMessageToAll(message, messageBody);
 	}
 
