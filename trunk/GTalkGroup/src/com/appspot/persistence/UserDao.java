@@ -67,6 +67,33 @@ public class UserDao {
 	}
 
 	/**
+	 * 用户昵称是否存在
+	 * 
+	 * @param nickName，用户昵称
+	 * @return 是否存在
+	 */
+	@SuppressWarnings("unchecked")
+	public boolean checkNickName(String nickName) {
+		PersistenceManager pm = PMF.get().getPersistenceManager();
+		boolean flag = false;
+		try {
+			Query query = pm.newQuery(User.class);
+			query.setFilter("nickName == userParam");
+			query.declareParameters("java.lang.String userParam");
+			List<User> users = (List<User>) query.execute(nickName);
+			if(users==null||users.size()==0){
+				flag = false;
+			}else{
+				flag = true;
+			}
+		} catch (Exception e) {
+		} finally {
+			pm.close();
+		}
+		return flag;
+	}
+
+	/**
 	 * 根据用户ID获取用户
 	 * 
 	 * @param UserId，用户ID

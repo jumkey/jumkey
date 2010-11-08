@@ -176,14 +176,16 @@ public class RobotService {
 	public void doAlias(Message message, User user) {
 		String messageBody = message.getBody().trim();
 		String[] sp = messageBody.split("/alias ");
-		if (sp.length>1) {
+		if (sp.length<2) {
+			RobotMsg.getInstance().sendMessage(message, "输入有误，检查后再试");
+		}else if(UserDao.getInstance().checkNickName(sp[1])) {
+			RobotMsg.getInstance().sendMessage(message, "昵称已被占用，换个试试");
+		}else {
 			String name=user.getNickName();
 			user.setNickName(sp[1]);
 			UserDao.getInstance().addOrUpdateUser(user);
 			RobotMsg.getInstance().sendMessageToAll(message, name+" 的昵称现在已经修改为 "+sp[1]);
 			RobotMsg.getInstance().sendMessage(message, "你的昵称现在已经修改为 "+sp[1]);
-		}else {
-			RobotMsg.getInstance().sendMessage(message, "输入有误，检查后再试");
 		}
 	}
 
