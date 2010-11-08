@@ -81,9 +81,9 @@ public class RobotServlet extends HttpServlet {
 			case RobotOpType.LIST:
 				RobotService.getInstance().doList(message, user);
 				break;
-//			case RobotOpType.STATUS:
-//				RobotService.getInstance().doStatus(message, user);
-//				break;
+			case RobotOpType.INVITE:
+				RobotService.getInstance().doInvite(message, user);
+				break;
 //			case RobotOpType.TON:
 //				RobotService.getInstance().doTwitterNotifyChange(message, user, true);
 //				break;
