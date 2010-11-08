@@ -20,6 +20,7 @@
 package com.appspot.servlet;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -58,11 +59,15 @@ public class RobotServlet extends HttpServlet {
         if(messageBody.length() == 0 || userId == null) {
         	return;
         }
+        messageBody = "["+userId.split("@")[0]+"]："+message.getBody();
+        
+        
         User user = RobotService.getInstance().getUserByUserId(userId);
+        System.out.println(user.getUserId()+"----------------");
         if(user == null) {//第一次使用，保存用户信息
         	RobotMsg.getInstance().sendMessage(message, RobotMsg.HelloForFirstTime);
         	user = RobotService.getInstance().newUser(userId);
         }
-		RobotMsg.getInstance().sendMessage(message,messageBody);
+		RobotMsg.getInstance().sendMessageToAll(message,messageBody);
 	}
 }

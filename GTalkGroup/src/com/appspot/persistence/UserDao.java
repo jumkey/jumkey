@@ -45,6 +45,28 @@ public class UserDao {
 	}
 
 	/**
+	 * 获取所有用户
+	 * 
+	 * @return，所有用户
+	 */
+	@SuppressWarnings("unchecked")
+	public List<User> getUserList(String userId) {
+		PersistenceManager pm = PMF.get().getPersistenceManager();
+		List<User> users = null;
+		try {
+			Query query = pm.newQuery(User.class);
+			query.setFilter("userId != userParam");
+			query.declareParameters("java.lang.String userParam");
+			users = (List<User>) query.execute(userId);
+			pm.detachCopyAll(users);
+		} catch (Exception e) {
+		} finally {
+			pm.close();
+		}
+		return users;
+	}
+
+	/**
 	 * 根据用户ID获取用户
 	 * 
 	 * @param UserId，用户ID

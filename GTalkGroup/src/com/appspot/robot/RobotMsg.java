@@ -21,7 +21,7 @@ import com.google.appengine.api.xmpp.XMPPServiceFactory;
  * @author Steven Wang <http://blog.stevenwang.name>
  */
 public class RobotMsg {
-	public final static String HelloForFirstTime = "您好，欢迎使用围着脖子推机器人！\n如果您需要帮助，请使用-help命令。";
+	public final static String HelloForFirstTime = "您好，欢迎使用群聊机器人！\n如果您需要帮助，请使用-help命令。";
 	public final static String OperateError = "您输入的操作不正确，请重新输入。";
 	public final static String NotBind = "您目前还没有绑定同步账号。";
 	public final static String BindSuc = "绑定同步账号成功！";
@@ -63,6 +63,31 @@ public class RobotMsg {
 
 	private static final XMPPService xmppService = XMPPServiceFactory
 			.getXMPPService();
+
+	/**
+	 * 群发XMPP消息
+	 * 
+	 * @param message，用户发送的message
+	 * @param body，发送消息的内容
+	 */
+	public void sendMessageToAll(Message message, String body) {
+		List<User> users = RobotService.getInstance().getAllUser(RobotMsg.getInstance().getUserId(message));
+		JID jid = null;
+		Message reply = null;
+		for (User u : users) {
+			jid = new JID(u.getUserId());
+			reply = new MessageBuilder().withRecipientJids(jid)
+					.withMessageType(MessageType.NORMAL).withBody(body).build();
+			boolean messageSent = false;
+			if (isOnline(u.getUserId())) {
+				SendResponse status = xmppService.sendMessage(reply);
+				messageSent = (status.getStatusMap().get(jid) == SendResponse.Status.SUCCESS);
+			}
+			if (!messageSent) {
+				System.out.println(body);
+			}
+		}
+	}
 
 	/**
 	 * 发送XMPP消息
