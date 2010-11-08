@@ -152,8 +152,8 @@ public class RobotMsg {
 			if (messageBody.startsWith(RobotOpType.LISTSTR)) {
 				return RobotOpType.LIST;
 			}
-			if (messageBody.startsWith(RobotOpType.STATUSSTR)) {
-				return RobotOpType.STATUS;
+			if (messageBody.startsWith(RobotOpType.INVITESTR)) {
+				return RobotOpType.INVITE;
 			}
 			if (messageBody.startsWith(RobotOpType.TONSTR)) {
 				return RobotOpType.TON;

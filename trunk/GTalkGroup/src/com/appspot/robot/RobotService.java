@@ -197,4 +197,18 @@ public class RobotService {
 		}
 		RobotMsg.getInstance().sendMessage(message, sb.toString());
 	}
+
+	public void doInvite(Message message, User user) {
+		String messageBody = message.getBody().trim();
+		String[] sp = messageBody.split("/invite ");
+		if (sp.length<2) {
+			RobotMsg.getInstance().sendMessage(message, "输入有误，检查后再试");
+		}else {//去前后空格
+			for(String s:sp[1].split(",")){
+				RobotService.getInstance().newUser(s);
+			}
+			RobotMsg.getInstance().sendMessageToAll(message, user.getNickName()+" 邀请啦 "+sp[1]);
+			RobotMsg.getInstance().sendMessage(message, "邀请成功");
+		}
+	}
 }

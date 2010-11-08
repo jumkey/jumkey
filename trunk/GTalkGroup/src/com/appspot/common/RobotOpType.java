@@ -27,22 +27,22 @@ public class RobotOpType {
 	public final static String HELPSTR = "/help";
 
 	/**
-	 * ALIAS-绑定同步账号-2
+	 * ALIAS-修改昵称-2
 	 */
 	public final static int ALIAS = 2;
 	public final static String ALIASSTR = "/alias";
 
 	/**
-	 * LIST-取消所有绑定-3
+	 * LIST-列出群员列表-3
 	 */
 	public final static int LIST = 3;
 	public final static String LISTSTR = "/list";
 
 	/**
-	 * STATUS-产看用户信息-4
+	 * INVITE-邀请用户-4
 	 */
-	public final static int STATUS = 4;
-	public final static String STATUSSTR = "-status";
+	public final static int INVITE = 4;
+	public final static String INVITESTR = "/invite";
 
 	/**
 	 * TON-打开Twitter消息提示-5
