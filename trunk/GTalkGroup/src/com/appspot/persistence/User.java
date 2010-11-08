@@ -25,6 +25,9 @@ public class User {
 	@Persistent
 	private String userPwd;
 
+	@Persistent
+	private String nickName;
+
 	@Persistent(mappedBy = "user")
 	private List<Account> accountList = new ArrayList<Account>();
 
@@ -54,6 +57,14 @@ public class User {
 
 	public void setUserPwd(String userPwd) {
 		this.userPwd = userPwd;
+	}
+
+	public String getNickName() {
+		return nickName;
+	}
+
+	public void setNickName(String nickName) {
+		this.nickName = nickName;
 	}
 
 	public List<Account> getAccountList() {

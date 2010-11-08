@@ -24,19 +24,19 @@ public class RobotOpType {
 	 * HELP-查看帮助-1
 	 */
 	public final static int HELP = 1;
-	public final static String HELPSTR = "-help";
+	public final static String HELPSTR = "/help";
 
 	/**
-	 * BIND-绑定同步账号-2
+	 * ALIAS-绑定同步账号-2
 	 */
-	public final static int BIND = 2;
-	public final static String BINDSTR = "-bind";
+	public final static int ALIAS = 2;
+	public final static String ALIASSTR = "/alias";
 
 	/**
-	 * REMOVE-取消所有绑定-3
+	 * LIST-取消所有绑定-3
 	 */
-	public final static int REMOVE = 3;
-	public final static String REMOVESTR = "-remove";
+	public final static int LIST = 3;
+	public final static String LISTSTR = "/list";
 
 	/**
 	 * STATUS-产看用户信息-4

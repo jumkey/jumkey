@@ -64,6 +64,7 @@ public class RobotService {
 	public User newUser(String userId) {
 		User user = new User();
 		user.setUserId(userId);
+		user.setNickName(userId.split("@")[0]);
 		user.setUserPwd("000000");
 		user.setIsInUse(true);
 		user.setPushCount(0);
@@ -71,6 +72,18 @@ public class RobotService {
 		user.setLastActiveTime(DateHelp.getLocalDateTime());
 		UserDao.getInstance().addOrUpdateUser(user);
 		return user;
+	}
+
+	/**
+	 * 发布消息
+	 * 
+	 * @param message，用户发送的message
+	 * @param user，用户实体
+	 */
+	public void doPublish(Message message, User user) {
+		String messageBody = message.getBody().trim();
+		messageBody = "[" + user.getNickName() + "]：" + messageBody;
+		RobotMsg.getInstance().sendMessageToAll(message, messageBody);
 	}
 
 	/**
@@ -100,7 +113,6 @@ public class RobotService {
 		UserDao.getInstance().addOrUpdateUser(user);
 
 		// 更新Twitter消息提示
-		
 
 		// 写系统日志
 		log.setUserId(user.getUserId());
@@ -153,5 +165,34 @@ public class RobotService {
 		// 更新用户信息
 		user.setLastActiveTime(DateHelp.getLocalDateTime());
 		UserDao.getInstance().addOrUpdateUser(user);
+	}
+
+	/**
+	 * 修改昵称
+	 * 
+	 * @param message，用户发送的message
+	 * @param user，用户实体
+	 */
+	public void doAlias(Message message, User user) {
+		String messageBody = message.getBody().trim();
+		String[] sp = messageBody.split("/alias ");
+		if (sp.length>1) {
+			String name=user.getNickName();
+			user.setNickName(sp[1]);
+			UserDao.getInstance().addOrUpdateUser(user);
+			RobotMsg.getInstance().sendMessageToAll(message, name+" 的昵称现在已经修改为 "+sp[1]);
+			RobotMsg.getInstance().sendMessage(message, "你的昵称现在已经修改为 "+sp[1]);
+		}else {
+			RobotMsg.getInstance().sendMessage(message, "输入有误，检查后再试");
+		}
+	}
+
+	public void doList(Message message, User user) {
+		StringBuffer sb=new StringBuffer("\n");
+		List<User> users = UserDao.getInstance().getUserList(user.getUserId());
+		for(User u:users){
+			sb.append(u.getNickName()+"\t"+u.getUserId()+"\n");
+		}
+		RobotMsg.getInstance().sendMessage(message, sb.toString());
 	}
 }
