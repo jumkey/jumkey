@@ -1,5 +1,7 @@
 ﻿package com.appspot.robot;
 
+import java.util.List;
+
 import com.appspot.common.AccountType;
 import com.appspot.common.DateHelp;
 import com.appspot.common.SysLogType;
@@ -27,6 +29,16 @@ public class RobotService {
 			instance = new RobotService();
 		}
 		return instance;
+	}
+
+	/**
+	 * 获取所有用户
+	 * 
+	 * @return，所有用户
+	 */
+	public List<User> getAllUser(String userId) {
+		List<User> users = UserDao.getInstance().getUserList(userId);
+		return users;
 	}
 
 	/**
