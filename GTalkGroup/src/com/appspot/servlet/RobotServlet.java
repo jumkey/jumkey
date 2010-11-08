@@ -26,6 +26,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.appspot.common.RobotOpType;
 import com.appspot.persistence.User;
 import com.appspot.robot.RobotMsg;
 import com.appspot.robot.RobotService;
@@ -40,7 +41,8 @@ import com.google.appengine.api.xmpp.XMPPServiceFactory;
  */
 public class RobotServlet extends HttpServlet {
 	private static final long serialVersionUID = -8333918611331603780L;
-	private static final XMPPService xmppService = XMPPServiceFactory.getXMPPService();
+	private static final XMPPService xmppService = XMPPServiceFactory
+			.getXMPPService();
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws IOException, ServletException {
@@ -53,21 +55,59 @@ public class RobotServlet extends HttpServlet {
 		if (message == null) {
 			return;
 		}
-		String messageBody = message.getBody();
 		
+		String messageBody = message.getBody().trim();
 		String userId = RobotMsg.getInstance().getUserId(message);
-        if(messageBody.length() == 0 || userId == null) {
-        	return;
-        }
-        messageBody = "["+userId.split("@")[0]+"]："+message.getBody();
-        
-        
-        User user = RobotService.getInstance().getUserByUserId(userId);
-        System.out.println(user.getUserId()+"----------------");
-        if(user == null) {//第一次使用，保存用户信息
-        	RobotMsg.getInstance().sendMessage(message, RobotMsg.HelloForFirstTime);
-        	user = RobotService.getInstance().newUser(userId);
-        }
-		RobotMsg.getInstance().sendMessageToAll(message,messageBody);
+		if (messageBody.length() == 0 || userId == null) {
+			return;
+		}
+
+		User user = RobotService.getInstance().getUserByUserId(userId);
+		if (user == null) {// 第一次使用，保存用户信息
+			RobotMsg.getInstance().sendMessage(message,
+					RobotMsg.HelloForFirstTime);
+			user = RobotService.getInstance().newUser(userId);
+		}
+		
+		//获取操作类型
+		int opCode = RobotMsg.getInstance().getOperateType(messageBody);
+		switch(opCode) {
+			case RobotOpType.Publish:
+				RobotService.getInstance().doPublish(message, user);
+				break;
+			case RobotOpType.ALIAS:
+				RobotService.getInstance().doAlias(message, user);
+				break;
+			case RobotOpType.LIST:
+				RobotService.getInstance().doList(message, user);
+				break;
+//			case RobotOpType.STATUS:
+//				RobotService.getInstance().doStatus(message, user);
+//				break;
+//			case RobotOpType.TON:
+//				RobotService.getInstance().doTwitterNotifyChange(message, user, true);
+//				break;
+//			case RobotOpType.TOFF:
+//				RobotService.getInstance().doTwitterNotifyChange(message, user, false);
+//				break;
+//			case RobotOpType.THOME:
+//				RobotService.getInstance().doTwitterHome(message, user);
+//				break;
+//			case RobotOpType.TREPLY:
+//				RobotService.getInstance().doTwitterReply(message, user);
+//				break;
+//			case RobotOpType.TReplyPublish:
+//				RobotService.getInstance().doTwitterReplyPublish(message, user);
+//				break;
+//			case RobotOpType.SePublish:
+//				RobotService.getInstance().doSePublish(message, user);
+//				break;
+			case RobotOpType.ERROR:
+				RobotMsg.getInstance().sendMessage(message, RobotMsg.OperateError);
+				break;
+			case RobotOpType.HELP:
+				RobotMsg.getInstance().sendMessage(message, RobotMsg.Help);
+				break;
+		}
 	}
 }

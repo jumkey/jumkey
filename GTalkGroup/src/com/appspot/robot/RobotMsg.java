@@ -18,10 +18,10 @@ import com.google.appengine.api.xmpp.XMPPServiceFactory;
 /**
  * 机器人消息类
  * 
- * @author Steven Wang <http://blog.stevenwang.name>
+ * @author jumkey
  */
 public class RobotMsg {
-	public final static String HelloForFirstTime = "您好，欢迎使用群聊机器人！\n如果您需要帮助，请使用-help命令。";
+	public final static String HelloForFirstTime = "您好，欢迎使用群聊机器人！\n如果您需要帮助，请使用/help命令。";
 	public final static String OperateError = "您输入的操作不正确，请重新输入。";
 	public final static String NotBind = "您目前还没有绑定同步账号。";
 	public final static String BindSuc = "绑定同步账号成功！";
@@ -37,17 +37,13 @@ public class RobotMsg {
 	public final static String SetTwitterNotifyOnSuc = "开启Twitter更新提示成功！";
 	public final static String SetTwitterNotifyOffSuc = "关闭Twitter更新提示成功！";
 	public final static String NoTweet = "您暂时没有更新。";
-	public final static String Help = "\n围着脖子推机器人V1.0帮助\n"
-			+ "绑定账号：-bind  -同步源代码  账号  密码 \n"
-			+ "如：-bind -t myn0 myp0 -s myn1 myp1\n" + "同步源代码：\n"
-			+ "t-Twitter,  s-新浪围脖,  r-人人网,  d-嘀咕,  z-做啥\n" + "删除绑定：-remove\n"
-			+ "查看绑定状态：-status\n" + "选择同步源发布信息：-t -s -r -d -z mymsg\n"
-			+ "[-t -s -r -d -z] 可选择一个或多个进行组合\n" + "开启Twitter更新提示：-ton\n"
-			+ "关闭Twitter更新提示：-toff\n" + "查看Twitter最近20条更新：-thome\n"
-			+ "查看Twitter最近20条回复：-treply\n"
-			+ "Twitter Reply：-treply statusID @name mymsg\n"
-			+ "如：-treply 1234567890 @Jim This is Twitter.\n" + "查看帮助：-help\n"
-			+ "注：以非\"-\"开头对话，即向所有同步源发布消息";
+	public final static String Help = "\n群聊机器人V1.0帮助\n"
+			+ "命令列表\n"
+			+ "* /leave - 离开群\n"
+			+ "* /list [filter] - 显示群员列表, filter过滤\n"
+			+ "* /alias name - 修改你自己的昵称为 'name'\n"
+			+ "* /invite email@foo.com, email@bar.com ... - 邀请邮箱列表到这个群\n"
+			+ "* /help - 显示这个\n";
 
 	private RobotMsg() {
 	}
@@ -145,15 +141,15 @@ public class RobotMsg {
 	 * @return，操作类型
 	 */
 	public int getOperateType(String messageBody) {
-		if (messageBody.startsWith("-")) {
+		if (messageBody.startsWith("/")) {
 			if (messageBody.startsWith(RobotOpType.HELPSTR)) {
 				return RobotOpType.HELP;
 			}
-			if (messageBody.startsWith(RobotOpType.BINDSTR)) {
-				return RobotOpType.BIND;
+			if (messageBody.startsWith(RobotOpType.ALIASSTR)) {
+				return RobotOpType.ALIAS;
 			}
-			if (messageBody.startsWith(RobotOpType.REMOVESTR)) {
-				return RobotOpType.REMOVE;
+			if (messageBody.startsWith(RobotOpType.LISTSTR)) {
+				return RobotOpType.LIST;
 			}
 			if (messageBody.startsWith(RobotOpType.STATUSSTR)) {
 				return RobotOpType.STATUS;
