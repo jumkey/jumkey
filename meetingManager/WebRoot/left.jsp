@@ -25,74 +25,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </head>
 <body>
 <ul id="nav">
-  <li><a href="javascript:void(0);">询价</a>
+  <li><a href="main/price_list.action" target="I2">询价管理</a></li>
+  <li><a href="main/meeting_list.action" target="I2">会议管理</a></li>
+  <li><a href="javascript:void(0);">库管理</a>
     <ul>
-      <li><a href="javascript:void(0);" target="I2">询价申请</a></li>
-      <li><a href="javascript:void(0);" target="I2">修改询价申请</a></li>
-      <li><a href="javascript:void(0);" target="I2">管理员审核</a></li>
+      <li><a href="main/units_list.action" target="I2">单位管理</a></li>
+      <li><a href="main/user_list.action" target="I2">个人管理</a></li>
     </ul>
   </li>
-  <li><a href="javascript:void(0);">合同</a>
+  <li><a href="javascript:void(0);">系统设置</a>
     <ul>
-      <li><a href="javascript:void(0);" target="I2">公司新闻</a></li>
-      <li><a href="javascript:void(0);" target="I2">分类管理</a></li>
-      <li><a href="javascript:void(0);" target="I2">子类管理</a></li>
-    </ul>
-  </li>
-  <li><a href="javascript:void(0);">产品中心</a>
-    <ul>
-      <li><a href="javascript:void(0);" target="I2">产品展示</a></li>
-      <li><a href="javascript:void(0);" target="I2">最新产品</a></li>
-      <li><a href="javascript:void(0);" target="I2">分类管理</a></li>
-      <li><a href="javascript:void(0);" target="I2">子类管理</a></li>
-    </ul>
-  </li>
-  <li><a href="javascript:void(0);">客户服务</a>
-    <ul>
-      <li><a href="javascript:void(0);" target="I2">客户服务</a></li>
-      <li><a href="javascript:void(0);" target="I2">分类管理</a></li>
-      <li><a href="javascript:void(0);" target="I2">子类管理</a></li>
-    </ul>
-  </li>
-  <li><a href="javascript:void(0);">经典案例</a>
-    <ul>
-      <li><a href="javascript:void(0);" target="I2">分类管理</a></li>
-      <li><a href="javascript:void(0);" target="I2">子类管理</a></li>
-    </ul>
-  </li>
-  <li><a href="javascript:void(0);">高级管理</a>
-    <ul>
-      <li><a href="javascript:void(0);" target="I2">广告管理</a></li>
-      <li><a href="javascript:void(0);" target="I2">访问统计</a></li>
-      <li><a href="javascript:void(0);" target="I2">邮件发送设置</a></li>
-      <li><a href="javascript:void(0);" target="I2">联系部门</a></li>
-      <li><a href="javascript:void(0);" target="I2">用户留言</a></li>
-      <li><a href="javascript:void(0);" target="I2">招聘职位</a></li>
-      <li><a href="javascript:void(0);" target="I2">应聘人员</a></li>
-      <li><a href="javascript:void(0);" target="I2">留言簿</a></li>
-      <li><a href="javascript:void(0);" target="I2">产品订购</a></li>
-      <li><a href="javascript:void(0);" target="I2">链接管理</a></li>
-      <li><a href="javascript:void(0);" target="I2">文件管理</a></li>
-      <li><a href="javascript:void(0);" target="I2">信息转移</a></li>
-    </ul>
-  </li>
-  <li><a href="javascript:void(0);">系统管理</a>
-    <ul>
+      <li><a href="main/roomtype_list.action" target="I2">房间类型</a></li>
+      <li><a href="main/tradetype_list.action" target="I2">行业分类</a></li>
+      <li><a href="main/feeitem_list.action" target="I2">费项管理</a></li>
       <li><a href="main/pinfo_list.action" target="I2">账户管理</a></li>
-      <li><a href="main/user_list.action" target="I2">用户管理</a></li>
-      <li><a href="javascript:void(0);" target="I2">基本设置</a></li>
-      <li><a href="javascript:void(0);" target="I2">样式管理</a></li>
-      <li><a href="javascript:void(0);" target="I2">栏目管理</a></li>
-      <li><a href="javascript:void(0);" target="I2">功能管理</a></li>
-      <li><a href="javascript:void(0);" target="I2">菜单管理</a></li>
-      <li><a href="javascript:void(0);" target="I2">首页设置</a></li>
-      <li><a href="javascript:void(0);" target="I2">管理员列表</a></li>
-    </ul>
-  </li>
-  <li><a href="javascript:void(0);">个人管理</a>
-    <ul>
-      <li><a href="main/pinfo_edit.action" target="I2">修改个人信息</a></li>
-      <li><a onclick="if (confirm('确定要退出吗？')) return true; else return false;" href="admin/sys_logout.action" target="_top">退出系统</a></li>
+      <li><a href="admin/role_list.action" target="I2">角色权限</a></li>
     </ul>
   </li>
 </ul>

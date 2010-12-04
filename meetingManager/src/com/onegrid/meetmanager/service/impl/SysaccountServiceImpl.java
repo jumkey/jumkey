@@ -2,15 +2,26 @@ package com.onegrid.meetmanager.service.impl;
 
 import java.util.List;
 
+import com.onegrid.meetmanager.dao.LimitDAO;
 import com.onegrid.meetmanager.dao.SysaccountDAO;
+import com.onegrid.meetmanager.model.Limit;
 import com.onegrid.meetmanager.model.Page;
 import com.onegrid.meetmanager.model.Sysaccount;
 import com.onegrid.meetmanager.service.SysaccountService;
 
 public class SysaccountServiceImpl implements SysaccountService {
 	private SysaccountDAO sysaccountDAO;
+    private LimitDAO limitDAO;
 
-	public SysaccountDAO getSysaccountDAO() {
+	public LimitDAO getLimitDAO() {
+        return limitDAO;
+    }
+
+    public void setLimitDAO(LimitDAO limitDAO) {
+        this.limitDAO = limitDAO;
+    }
+
+    public SysaccountDAO getSysaccountDAO() {
 		return sysaccountDAO;
 	}
 
@@ -67,4 +78,9 @@ public class SysaccountServiceImpl implements SysaccountService {
 		//sysaccountDAO.find
 		return 0;
 	}
+
+    @Override
+    public List<Limit> findLimitByRoleId(Integer roleid) {
+        return limitDAO.findLimitByRoleId(roleid);
+    }
 }

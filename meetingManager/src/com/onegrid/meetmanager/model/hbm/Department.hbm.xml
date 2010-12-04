@@ -24,7 +24,7 @@
         </property>
         <set name="sysaccounts" inverse="true">
             <key>
-                <column name="departmentid" />
+                <column name="departmentid" not-null="true" />
             </key>
             <one-to-many class="com.onegrid.meetmanager.model.Sysaccount" />
         </set>

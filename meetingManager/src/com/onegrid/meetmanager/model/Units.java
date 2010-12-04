@@ -18,44 +18,55 @@ public class Units implements java.io.Serializable {
 	private String name;
 	private String address;
 	private String zip;
-	private String connect;
-	private String phone;
-	private String mail;
 	private String site;
+	private TradeType tradetype;
+	private Set outlaies = new HashSet(0);
+	private Set incomes = new HashSet(0);
 	private Set users = new HashSet(0);
+	private Set sendNotificationPlans = new HashSet(0);
+	private Set users_1 = new HashSet(0);
 
-	// Constructors
+	public Units(Integer id, UnitsType unitsType, String name, String address,
+			String zip, String site, TradeType tradetype, Set outlaies,
+			Set incomes, Set users, Set sendNotificationPlans, Set users_1) {
+		super();
+		this.id = id;
+		this.unitsType = unitsType;
+		this.name = name;
+		this.address = address;
+		this.zip = zip;
+		this.site = site;
+		this.tradetype = tradetype;
+		this.outlaies = outlaies;
+		this.incomes = incomes;
+		this.users = users;
+		this.sendNotificationPlans = sendNotificationPlans;
+		this.users_1 = users_1;
+	}
 
 	/** default constructor */
 	public Units() {
 	}
 
 	/** minimal constructor */
-	public Units(String name, String address, String connect, String phone) {
+	public Units(String name, String address) {
 		this.name = name;
 		this.address = address;
-		this.connect = connect;
-		this.phone = phone;
 	}
 
 	/** full constructor */
-	public Units(UnitsType unitsType, String name, String address, String zip,
-			String connect, String phone, String mail, String site, Set users) {
-		this.unitsType = unitsType;
-		this.name = name;
-		this.address = address;
-		this.zip = zip;
-		this.connect = connect;
-		this.phone = phone;
-		this.mail = mail;
-		this.site = site;
-		this.users = users;
-	}
-
+	
 	// Property accessors
-
 	public Integer getId() {
 		return this.id;
+	}
+	
+	public TradeType getTradetype() {
+		return tradetype;
+	}
+
+	public void setTradetype(TradeType tradetype) {
+		this.tradetype = tradetype;
 	}
 
 	public void setId(Integer id) {
@@ -94,36 +105,28 @@ public class Units implements java.io.Serializable {
 		this.zip = zip;
 	}
 
-	public String getConnect() {
-		return this.connect;
-	}
-
-	public void setConnect(String connect) {
-		this.connect = connect;
-	}
-
-	public String getPhone() {
-		return this.phone;
-	}
-
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
-
-	public String getMail() {
-		return this.mail;
-	}
-
-	public void setMail(String mail) {
-		this.mail = mail;
-	}
-
 	public String getSite() {
 		return this.site;
 	}
 
 	public void setSite(String site) {
 		this.site = site;
+	}
+
+	public Set getOutlaies() {
+		return this.outlaies;
+	}
+
+	public void setOutlaies(Set outlaies) {
+		this.outlaies = outlaies;
+	}
+
+	public Set getIncomes() {
+		return this.incomes;
+	}
+
+	public void setIncomes(Set incomes) {
+		this.incomes = incomes;
 	}
 
 	public Set getUsers() {
@@ -134,4 +137,19 @@ public class Units implements java.io.Serializable {
 		this.users = users;
 	}
 
+	public Set getSendNotificationPlans() {
+		return this.sendNotificationPlans;
+	}
+
+	public void setSendNotificationPlans(Set sendNotificationPlans) {
+		this.sendNotificationPlans = sendNotificationPlans;
+	}
+
+	public Set getUsers_1() {
+		return this.users_1;
+	}
+
+	public void setUsers_1(Set users_1) {
+		this.users_1 = users_1;
+	}
 }

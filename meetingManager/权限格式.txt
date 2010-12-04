@@ -1,0 +1,26 @@
+询价管理{checkunitsname-askprice-show-add-delete-delselect-modify-list
+	询价浏览PriceAction-list
+	询价管理PriceAction-All//
+	询价报价PriceAction-checkunitsname-askprice-show
+	签订合同PriceAction-list,AgreementAction-show-add-delete-delselect-modify-list
+}
+库管理{
+	库浏览
+	库管理add-delete-delselect-modify-list
+}
+系统设置
+会议管理{
+	会议浏览MeetingAction-list-single
+	会议管理MeetingAction-All//delselect-delete-modify-single-list
+	会议室管理MeetingRoomAction-All//add-delete-delselect-modify-list
+	讲座管理LectureAction-All//add-delete-delselect-modify-list
+	通知/报到回执管理All//add-delete-delselect-modify-list
+	报到管理ReachAction-All//add-delete-delselect-modify-list
+	用餐管理MealAction-All//add-delete-delselect-modify-list
+	费用管理FeeItemAction-All//add-delete-delselect-modify-list,MeetingFeeItemAction,PaymentAction,IncomeAction-list
+	宴请管理FeteAction-All//add-delete-delselect-modify-list,FeteRecordAction-add-delete-delselect-checkusername-list
+	抽奖管理AwardsAction-All//add-delete-delselect-modify-list-choujiang-lotterylist
+	活动管理ActivitiesAction-All//add-delete-delselect-modify-list
+}
+
+MeetingAction-list

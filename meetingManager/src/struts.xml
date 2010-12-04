@@ -8,19 +8,37 @@
 	<!-- <constant name="struts.action.excludePattern" value="/dwr/.*,/dwr/test/.*" /> -->
 	<constant name="struts.i18n.encoding" value="UTF-8" />
 	<constant name="struts.devMode" value="true" />
-	
-	<package name="login" namespace="/admin" extends="struts-default">
+
+	<package name="login" namespace="/admin" extends="json-default">
 		<action name="sys_*" method="{1}" class="loginAction">
 			<!-- <exception-mapping result="exceptionResult" exception="java.lang.RuntimeException"></exception-mapping> -->
-			<result name="success" type="redirect">/main/main.action</result>
-			<result name="login" type="redirect" >/index.jsp</result>
+			<result name="success" type="redirect">
+				/main/main.action
+			</result>
+			<result name="login" type="redirect">/index.jsp</result>
+		</action>
+		<action name="role_*" method="{1}" class="roleAction">
+			<result name="listrole">/system/listrole.jsp</result>
+		</action>
+		<action name="jrole_*" method="{1}" class="roleAction">
+			<result type="json"></result>
+		</action>
+		<action name="limit_*" method="{1}" class="limitAction">
+			<result name="listlimit">/system/listlimit.jsp</result>
+		</action>
+		<action name="jlimit_*" method="{1}" class="limitAction">
+			<result type="json"></result>
+		</action>
+		<action name="rolelimit_*" method="{1}" class="roleLimitAction">
+			<result name="listrolelimit">/system/listrolelimit.jsp</result>
 		</action>
 	</package>
 	<package name="struts2" namespace="/main" extends="json-default">
 		<!-- 用户拦截器定义在该元素下 -->
 		<interceptors>
 			<!-- 定义了一个名为authority的拦截器 -->
-			<interceptor name="authority" class="com.onegrid.meetmanager.web.action.interceptor.AuthorityInterceptor" />
+			<interceptor name="authority"
+				class="com.onegrid.meetmanager.web.action.interceptor.AuthorityInterceptor" />
 			<!-- 定义一个包含权限检查的拦截器栈 -->
 			<interceptor-stack name="mydefault">
 				<!-- 定义拦截器栈包含default-stack拦截器栈 -->
@@ -46,8 +64,168 @@
 			<result name="listaccount">/system/listaccount.jsp</result>
 		</action>
 		<action name="user_*" method="{1}" class="userAction">
-			<result name="editpage">/system/editpinfo.jsp</result>
 			<result name="listuser">/system/listuser.jsp</result>
+		</action>
+		<action name="juser_*" method="{1}" class="userAction">
+			<result type="json" />
+		</action>
+		<action name="units_*" method="{1}" class="unitsAction">
+			<result name="list">/system/listunits.jsp</result>
+			<result name="listcompany">/system/company.jsp</result>
+			<result name="listdesign">/system/units.jsp</result>
+			<result name="listuser">/system/singleunits.jsp</result>
+		</action>
+		<action name="junits_*" method="{1}" class="unitsAction">
+			<result type="json" />
+		</action>
+		<action name="price_*" method="{1}" class="priceAction">
+			<result name="listprice">/system/xunjia.jsp</result>
+		</action>
+		<action name="jprice_*" method="{1}" class="priceAction">
+			<result type="json" />
+		</action>
+		<action name="agreement_*" method="{1}"
+			class="agreementAction">
+			<result name="list">/system/listagreement.jsp</result>
+		</action>
+		<action name="jagreement_*" method="{1}"
+			class="agreementAction">
+			<result type="json" />
+		</action>
+		<action name="meeting_*" method="{1}" class="meetingAction">
+			<result name="listmeeting">/system/listmeeting.jsp</result>
+			<result name="single">/system/singlemeeting.jsp</result>
+		</action>
+		<action name="fete_*" method="{1}" class="feteAction">
+			<result name="listfete">/system/fete.jsp</result>
+		</action>
+		<action name="meal_*" method="{1}" class="mealAction">
+			<result name="listmeal">/system/meal.jsp</result>
+		</action>
+		<action name="awards_*" method="{1}" class="awardsAction">
+			<result name="listawards">/system/awards.jsp</result>
+			<result name="listlottery">/system/listlottery.jsp</result>
+		</action>
+		<action name="activities_*" method="{1}"
+			class="activitiesAction">
+			<result name="listactivities">
+				/system/activities.jsp
+			</result>
+		</action>
+		<action name="joinactivities_*" method="{1}"
+			class="joinActivitiesRecordAction">
+			<result name="listjoinactivities">
+				/system/joinactivities.jsp
+			</result>
+		</action>
+		<action name="feterecord_*" method="{1}"
+			class="feteRecordAction">
+			<result name="listfeterecord">
+				/system/feterecord.jsp
+			</result>
+		</action>
+		<action name="meetingroom_*" method="{1}" class="meetingRoomAction">
+			<result name="listmeetingroom">/system/meetingroom.jsp</result>
+		</action>
+		<action name="lecture_*" method="{1}" class="lectureAction">
+			<result name="listlecture">/system/lecture.jsp</result>
+		</action>
+		<action name="meetingarrangements_*" method="{1}" class="meetingArrangementsAction">
+			<result name="listmeetingarrangements">/system/arrangements.jsp</result>
+		</action>
+		<action name="arrangementsSeminars_*" method="{1}" class="arrangementsSeminarsAction">
+			<result name="listarrangementsSeminars">/system/arrangementsSeminars.jsp</result>
+		</action>
+		<action name="domeeting_*" method="{1}" class="meetingAction">
+			<result type="json" />
+		</action>
+		<action name="dofete_*" method="{1}" class="feteAction">
+			<result type="json" />
+		</action>
+		<action name="domeal_*" method="{1}" class="mealAction">
+			<result type="json" />
+		</action>
+		<action name="doawards_*" method="{1}" class="awardsAction">
+			<result type="json" />
+		</action>
+		<action name="doactivities_*" method="{1}"
+			class="activitiesAction">
+			<result type="json" />
+		</action>
+		<action name="dojoinactivities_*" method="{1}"
+			class="joinActivitiesRecordAction">
+			<result type="json" />
+		</action>
+		<action name="dofeterecord_*" method="{1}"
+			class="feteRecordAction">
+			<result type="json" />
+		</action>
+		<action name="doroom_*" method="{1}" class="meetingRoomAction">
+			<result type="json" />
+		</action>
+		<action name="dolecture_*" method="{1}" class="lectureAction">
+			<result type="json" />
+		</action>
+		<action name="domeetingarrangements_*" method="{1}" class="meetingArrangementsAction">
+			<result type="json" />
+		</action>
+		<action name="doarrangementsSeminars_*" method="{1}" class="arrangementsSeminarsAction">
+			<result type="json" />
+		</action>
+		<action name="notice_*" method="{1}" class="noticeAction">
+			<result name="list">/system/notice.jsp</result>
+			<result name="send">/system/sendnotice.jsp</result>
+			<result name="exportsended">
+				/system/exportsended.jsp
+			</result>
+		</action>
+		<action name="jnotice_*" method="{1}" class="noticeAction">
+			<result type="json" />
+		</action>
+		<action name="reach_*" method="{1}" class="reachAction">
+			<result name="list">/system/listreach.jsp</result>
+			<result name="reach">/system/reach.jsp</result>
+			<result name="makecord">/system/makecord.jsp</result>
+		</action>
+		<action name="jreach_*" method="{1}" class="reachAction">
+			<result type="json" />
+		</action>
+		<action name="feeitem_*" method="{1}" class="feeItemAction">
+			<result name="listfeeitem">/system/listfeeitem.jsp</result>
+		</action>
+		<action name="jfeeitem_*" method="{1}" class="feeItemAction">
+			<result type="json" />
+		</action>
+		<action name="meetingfeeitem_*" method="{1}"
+			class="meetingFeeItemAction">
+			<result name="listmeetingfeeitem">
+				/system/listmeetingfeeitem.jsp
+			</result>
+		</action>
+		<action name="jmeetingfeeitem_*" method="{1}"
+			class="meetingFeeItemAction">
+			<result type="json" />
+		</action>
+		<action name="payment_*" method="{1}" class="paymentAction">
+			<result name="list">/system/payment.jsp</result>
+		</action>
+		<action name="jpayment_*" method="{1}" class="paymentAction">
+			<result type="json" />
+		</action>
+		<action name="income_*" method="{1}" class="incomeAction">
+			<result name="listincome">/system/listincome.jsp</result>
+		</action>
+		<action name="roomtype_*" method="{1}" class="roomTypeAction">
+			<result name="listroomtype">/system/listroomtype.jsp</result>
+		</action>
+		<action name="jroomtype_*" method="{1}" class="roomTypeAction">
+			<result type="json" />
+		</action>
+		<action name="tradetype_*" method="{1}" class="tradeTypeAction">
+			<result name="listtradetype">/system/listtradetype.jsp</result>
+		</action>
+		<action name="jtradetype_*" method="{1}" class="tradeTypeAction">
+			<result type="json" />
 		</action>
 		<action name="*">
 			<result type="velocity">/{1}.vm</result>

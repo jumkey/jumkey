@@ -14,12 +14,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </head>
 <body>
 <div>
-    <div style="height: 11px; background: url('images/main_03.gif');"><img src="images/main_01.gif" width="104" height="11" /></div>
+    <div style="height: 11px; background: url('images/main_03.gif');"><!-- <img src="images/main_01.gif" width="104" height="11" /> --></div>
 	<div style="height: 52px; background: url('images/main_07.gif');">
-		<div style="float: right; width: 300px;">
-			<span class="STYLE1">当前登录用户：${account.account } 角色：</span><br />
+		<div style="float: right; width: 300px;margin-top: 5px;">
+			<span class="STYLE1">
+				当前登录用户：${account.account }&nbsp;部门：${account.department.departmentname }
+			</span><br />
 			<span class="STYLE2">
-				<a href="index.jsp" target="_top">回首页</a>
+				<a href="index.jsp" target="_top">首  页</a>
+			</span>
+			<span class="STYLE1">
+				<a href="main/pinfo_edit.action" target="I2">修改个人资料</a>
 			</span>
 			<span class="STYLE3">
 				<a onclick="if (confirm('确定要退出吗？')) return true; else return false;" href="admin/sys_logout.action" target="_top">退出系统</a>

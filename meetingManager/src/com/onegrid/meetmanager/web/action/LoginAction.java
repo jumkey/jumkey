@@ -1,5 +1,9 @@
 package com.onegrid.meetmanager.web.action;
 
+import java.util.List;
+
+import com.onegrid.meetmanager.model.Limit;
+import com.onegrid.meetmanager.model.Role;
 import com.onegrid.meetmanager.model.Sysaccount;
 import com.onegrid.meetmanager.service.SysaccountService;
 import com.opensymphony.xwork2.ActionContext;
@@ -37,8 +41,12 @@ public class LoginAction {
 	public String login(){
 		Sysaccount sysaccount = sysaccountService.checkAccount(account, password);
 		if(sysaccount!=null){
+	        Role role=sysaccount.getRole();
+	        List<Limit> llist=sysaccountService.findLimitByRoleId(role.getId());
+	        
 			//添加session
 			ActionContext.getContext().getSession().put("account", sysaccount);
+			ActionContext.getContext().getSession().put("llist", llist);
 			return "success";
 		}
 		return "login";

@@ -15,9 +15,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <body>
 	<div style="float: left;background: url('images/main_25.gif'); width: 100%; height: 23px;">
 		<div style="float: left;width: 200px;height:23px; background: url('images/main_24.gif') no-repeat;"></div>
-		<div style="float: right; width: 200px;height:23px; background: url('images/main_27.gif') no-repeat right bottom;">
-			<div style="color: #147233;">今天是：2007年08月15日 星期三</div>
+		<div style="float: right; width: 200px;height:23px;overflow: hidden; background: url('images/main_27.gif') no-repeat right bottom;">
+			<div id="time" style="color: #147233;"></div>
 		</div>
 	</div>
+	<script type="text/javascript">
+		window.onload=function(){
+			setInterval("document.getElementById('time').innerHTML='今天是：'+new Date().toLocaleString();",1000);
+		}
+	</script>
 </body>
 </html>
