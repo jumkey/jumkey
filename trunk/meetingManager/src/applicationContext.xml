@@ -46,7 +46,7 @@
 		<!-- hbm.xml的映射文件 -->
 		<property name="mappingLocations">
 			<list>
-				<value>classpath:com/onegrid/meetmanager/model/hbm/*.hbm.xml</value>
+				<value>classpath:meetmanager/model/hbm/*.hbm.xml</value>
 			</list>
 		</property>
 	</bean>
