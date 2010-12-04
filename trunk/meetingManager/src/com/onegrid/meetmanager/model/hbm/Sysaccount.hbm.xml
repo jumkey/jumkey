@@ -13,8 +13,11 @@
         <many-to-one name="sysaccount" class="com.onegrid.meetmanager.model.Sysaccount" fetch="select">
             <column name="creator" />
         </many-to-one>
-        <many-to-one name="department" class="com.onegrid.meetmanager.model.Department" fetch="select">
+        <many-to-one name="department" class="com.onegrid.meetmanager.model.Department" fetch="select" lazy="false">
             <column name="departmentid" not-null="true" />
+        </many-to-one>
+        <many-to-one name="role" class="com.onegrid.meetmanager.model.Role" fetch="select" lazy="false">
+            <column name="roleid" not-null="true" />
         </many-to-one>
         <property name="account" type="java.lang.String">
             <column name="account" length="20" not-null="true" unique="true" />
@@ -40,6 +43,24 @@
         <property name="createtime" type="java.util.Date">
             <column name="createtime" length="19" />
         </property>
+        <set name="limits" inverse="true">
+            <key>
+                <column name="creator" />
+            </key>
+            <one-to-many class="com.onegrid.meetmanager.model.Limit" />
+        </set>
+        <set name="meetingFeeItems" inverse="true">
+            <key>
+                <column name="creator" />
+            </key>
+            <one-to-many class="com.onegrid.meetmanager.model.MeetingFeeItem" />
+        </set>
+        <set name="incomes" inverse="true">
+            <key>
+                <column name="creator" />
+            </key>
+            <one-to-many class="com.onegrid.meetmanager.model.Income" />
+        </set>
         <set name="sysaccounts" inverse="true">
             <key>
                 <column name="creator" />
@@ -51,6 +72,36 @@
                 <column name="creator" />
             </key>
             <one-to-many class="com.onegrid.meetmanager.model.Department" />
+        </set>
+        <set name="sendNotificationPlans" inverse="true">
+            <key>
+                <column name="sender" />
+            </key>
+            <one-to-many class="com.onegrid.meetmanager.model.SendNotificationPlan" />
+        </set>
+        <set name="roles" inverse="true">
+            <key>
+                <column name="creator" />
+            </key>
+            <one-to-many class="com.onegrid.meetmanager.model.Role" />
+        </set>
+        <set name="meetingFeeItemProperties" inverse="true">
+            <key>
+                <column name="creator" />
+            </key>
+            <one-to-many class="com.onegrid.meetmanager.model.MeetingFeeItemProperty" />
+        </set>
+        <set name="meetingInfos" inverse="true">
+            <key>
+                <column name="rman" />
+            </key>
+            <one-to-many class="com.onegrid.meetmanager.model.MeetingInfo" />
+        </set>
+        <set name="outlaies" inverse="true">
+            <key>
+                <column name="creator" />
+            </key>
+            <one-to-many class="com.onegrid.meetmanager.model.Outlay" />
         </set>
     </class>
 </hibernate-mapping>

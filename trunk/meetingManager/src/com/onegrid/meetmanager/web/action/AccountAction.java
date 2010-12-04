@@ -13,8 +13,8 @@ import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class AccountAction extends ActionSupport {
-	private SysaccountService sysaccountservice;
-	private DepartmentService departmentservice;
+	private SysaccountService sysaccountService;
+	private DepartmentService departmentService;
 	private Sysaccount sysaccount;
 	private List<Sysaccount> list;
 	private List<Department> dlist;
@@ -63,20 +63,20 @@ public class AccountAction extends ActionSupport {
 		this.list = list;
 	}
 	@JSON(serialize=false)
-	public SysaccountService getSysaccountservice() {
-		return sysaccountservice;
+	public SysaccountService getSysaccountService() {
+		return sysaccountService;
 	}
 
-	public void setSysaccountservice(SysaccountService sysaccountservice) {
-		this.sysaccountservice = sysaccountservice;
+	public void setSysaccountService(SysaccountService sysaccountService) {
+		this.sysaccountService = sysaccountService;
 	}
 	@JSON(serialize=false)
-	public DepartmentService getDepartmentservice() {
-		return departmentservice;
+	public DepartmentService getDepartmentService() {
+		return departmentService;
 	}
 
-	public void setDepartmentservice(DepartmentService departmentservice) {
-		this.departmentservice = departmentservice;
+	public void setDepartmentService(DepartmentService departmentService) {
+		this.departmentService = departmentService;
 	}
 
 	public Sysaccount getSysaccount() {
@@ -93,7 +93,7 @@ public class AccountAction extends ActionSupport {
 	public String doedit(){
 		try {
 			//更新session
-			sysaccount=sysaccountservice.updateAccount(sysaccount);
+			sysaccount=sysaccountService.updateAccount(sysaccount);
 			ActionContext.getContext().getSession().put("account", sysaccount);
 			//添加成功信息
 			this.addActionMessage("修改成功！");
@@ -104,34 +104,9 @@ public class AccountAction extends ActionSupport {
 		}
 		return "editpage";
 	}
-	public String modify(){
-		try {
-			//System.out.println(sysaccount.getDepartment().getId());
-			sysaccount=sysaccountservice.updateAccount(sysaccount);
-			//添加成功信息
-			result="{\"success\":\"true\",\"msg\":\"修改成功\"}";
-		} catch (Exception e) {
-			//添加失败信息
-			result="{\"success\":\"false\",\"msg\":\"修改失败"+e.getMessage()+"\"}";
-			e.printStackTrace();
-		}
-		return SUCCESS;
-	}
-	public String delete(){
-		try {
-			sysaccountservice.deleteAccount(sysaccount);
-			//添加成功信息
-			result="{\"success\":\"true\",\"msg\":\"删除成功\"}";
-		} catch (Exception e) {
-			//添加失败信息
-			result="{\"success\":\"false\",\"msg\":\"删除失败"+e.getMessage()+"\"}";
-			e.printStackTrace();
-		}
-		return SUCCESS;
-	}
 	public String add(){
 		try {
-			sysaccountservice.addAccount(sysaccount);
+			sysaccountService.addAccount(sysaccount);
 			//添加成功信息
 			result="{\"success\":\"true\",\"msg\":\"添加成功\"}";
 		} catch (Exception e) {
@@ -141,17 +116,9 @@ public class AccountAction extends ActionSupport {
 		}
 		return SUCCESS;
 	}
-	public String list(){
-		if(page==null){
-			page=new Page();
-		}
-		dlist=departmentservice.getAllDepartment();
-		list=sysaccountservice.getPageAccount(page);
-		return "listaccount";
-	}
 	public String delselect(){
 		try {
-			sysaccountservice.deleteSelectAccount(selected);
+			sysaccountService.deleteSelectAccount(selected);
 			//添加成功信息
 			result="{\"success\":\"true\",\"msg\":\"批量删除成功\"}";
 		} catch (Exception e) {
@@ -160,5 +127,38 @@ public class AccountAction extends ActionSupport {
 			e.printStackTrace();
 		}
 		return SUCCESS;
+	}
+	public String delete(){
+		try {
+			sysaccountService.deleteAccount(sysaccount);
+			//添加成功信息
+			result="{\"success\":\"true\",\"msg\":\"删除成功\"}";
+		} catch (Exception e) {
+			//添加失败信息
+			result="{\"success\":\"false\",\"msg\":\"删除失败"+e.getMessage()+"\"}";
+			e.printStackTrace();
+		}
+		return SUCCESS;
+	}
+	public String modify(){
+		try {
+			//System.out.println(sysaccount.getDepartment().getId());
+			sysaccount=sysaccountService.updateAccount(sysaccount);
+			//添加成功信息
+			result="{\"success\":\"true\",\"msg\":\"修改成功\"}";
+		} catch (Exception e) {
+			//添加失败信息
+			result="{\"success\":\"false\",\"msg\":\"修改失败"+e.getMessage()+"\"}";
+			e.printStackTrace();
+		}
+		return SUCCESS;
+	}
+	public String list(){
+		if(page==null){
+			page=new Page();
+		}
+		dlist=departmentService.getAllDepartment();
+		list=sysaccountService.getPageAccount(page);
+		return "listaccount";
 	}
 }

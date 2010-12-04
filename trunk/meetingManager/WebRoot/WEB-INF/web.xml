@@ -12,7 +12,6 @@
     <param-value>classpath:applicationContext.xml</param-value>
   </context-param>
   
-  <!-- 这个过滤器用来处理延迟加载的问题 -->
   <filter>
   	<filter-name>OpenSessionInViewFilter</filter-name>
 	<filter-class>org.springframework.orm.hibernate3.support.OpenSessionInViewFilter</filter-class>

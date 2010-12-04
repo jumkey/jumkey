@@ -28,6 +28,11 @@ public class Department implements java.io.Serializable {
 	public Department() {
 	}
 
+	/** minimal constructor */
+	public Department(String departmentname) {
+		this.departmentname = departmentname;
+	}
+
 	/** full constructor */
 	public Department(Sysaccount sysaccount, Department department,
 			String departmentname, Date createtime, Set sysaccounts,

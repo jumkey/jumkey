@@ -9,7 +9,7 @@
 	<!-- apache.dbcp连接池的配置 -->
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
-		<property name="url" value="jdbc:mysql://localhost:3306/meetingManager?useUnicode=true&amp;characterEncoding=UTF-8"></property>
+		<property name="url" value="jdbc:mysql://127.0.0.1:3306/meetingManager?useUnicode=true&amp;characterEncoding=UTF-8"></property>
 		<property name="username" value="root"></property>
 		<property name="password" value="root"></property>
 		<!-- 最大活动连接数 -->
@@ -74,6 +74,7 @@
 				<prop key="update*">PROPAGATION_REQUIRED</prop>
 				<prop key="modify*">PROPAGATION_REQUIRED</prop>
 				<prop key="save*">PROPAGATION_REQUIRED</prop>
+				<prop key="do*">PROPAGATION_REQUIRED</prop>
 				<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
 				<prop key="get*">PROPAGATION_REQUIRED,readOnly</prop>
 				<prop key="load*">PROPAGATION_REQUIRED,readOnly</prop>

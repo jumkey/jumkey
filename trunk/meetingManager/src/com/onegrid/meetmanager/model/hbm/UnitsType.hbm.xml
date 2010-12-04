@@ -21,5 +21,11 @@
             </key>
             <one-to-many class="com.onegrid.meetmanager.model.Units" />
         </set>
+        <set name="unitses_1" inverse="true">
+            <key>
+                <column name="unitstypeId" />
+            </key>
+            <one-to-many class="com.onegrid.meetmanager.model.Units" />
+        </set>
     </class>
 </hibernate-mapping>

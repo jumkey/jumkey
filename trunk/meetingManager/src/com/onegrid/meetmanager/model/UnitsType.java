@@ -16,6 +16,7 @@ public class UnitsType implements java.io.Serializable {
 	private Integer id;
 	private String typeName;
 	private Set unitses = new HashSet(0);
+	private Set unitses_1 = new HashSet(0);
 
 	// Constructors
 
@@ -29,9 +30,10 @@ public class UnitsType implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public UnitsType(String typeName, Set unitses) {
+	public UnitsType(String typeName, Set unitses, Set unitses_1) {
 		this.typeName = typeName;
 		this.unitses = unitses;
+		this.unitses_1 = unitses_1;
 	}
 
 	// Property accessors
@@ -58,6 +60,14 @@ public class UnitsType implements java.io.Serializable {
 
 	public void setUnitses(Set unitses) {
 		this.unitses = unitses;
+	}
+
+	public Set getUnitses_1() {
+		return this.unitses_1;
+	}
+
+	public void setUnitses_1(Set unitses_1) {
+		this.unitses_1 = unitses_1;
 	}
 
 }

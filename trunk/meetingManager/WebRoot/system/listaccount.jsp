@@ -11,9 +11,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>无标题文档</title>
 <link rel="stylesheet" type="text/css" href="style/styles.css" />
-<link type="text/css" href="css/ui-lightness/jquery-ui-1.8.4.custom.css" rel="stylesheet" />	
+<link type="text/css" href="css/south-street/jquery-ui-1.8.5.custom.css" rel="stylesheet" />	
 <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
-<script type="text/javascript" src="js/jquery-ui-1.8.4.custom.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.8.5.custom.min.js"></script>
 <script type="text/javascript" src="script/util.js"></script>
 <script type="text/javascript">
 //全选
@@ -143,7 +143,7 @@ $(document).ready(function(){
 						"sysaccount.department.id":$("#department").val(),
 						"sysaccount.department.departmentname":$("#department").find("option:selected").text()
 					}, function(data) {
-						console.dir(data);
+						
 						var result=$.parseJSON(data.result);
 						if(result.success!="true"){
 							$("#alert").html(result.msg).show()
@@ -173,7 +173,7 @@ $(document).ready(function(){
 				dataType: "json",
 				success: function(data){
 					var result=$.parseJSON(data.result);
-					//console.dir(result);
+					
 					if (result.success=="true") {
 						alert(result.msg);
 						//删除table列
@@ -203,7 +203,7 @@ $(document).ready(function(){
 					}, function(data) {
 						//alert(data);
 						var result=$.parseJSON(data.result);
-						//console.dir(result);
+						
 						if(result.success!="true"){
 							$("#alert").html(result.msg).show()
 							.addClass("ui-state-error ui-corner-all");
@@ -226,7 +226,7 @@ $(document).ready(function(){
 			alert("请选择要删除的行");
 		}else{
 			confirm("确认删除",function(){
-				//console.dir("selected=" + selectedItems.join('&selected='));
+				
 				$.ajax({
 					type: "POST",
 					url: "main/perinfo_delselect.action",
@@ -235,7 +235,7 @@ $(document).ready(function(){
 					success: function (data) {
 						//alert(data);
 						var result=$.parseJSON(data.result);
-						//console.dir(result);
+						
 						if(result.success!="true"){
 							alert(result.msg);
 						}else{
@@ -258,7 +258,7 @@ $(document).ready(function(){
     <div id="tabhead"><table>
       <tr>
         <td style="background: url('images/tab_03.gif') no-repeat; width: 15px"></td>
-        <td><span style="background: url('images/311.gif') no-repeat; padding-left: 17px; font-size:14px;" class="STYLE4">系统用户列表</span></td>
+        <td><span style="background: url('images/311.gif') no-repeat; padding-left: 17px; font-size:14px;" class="STYLE4">账户列表</span></td>
         <td style="background: url('images/tab_07.gif') no-repeat; width: 14px"></td>
       </tr>
     </table></div>
@@ -344,7 +344,7 @@ $(document).ready(function(){
 </form>
 <div id="alert"></div>
 </div>
-<s:debug></s:debug>
+
 </div><!--end tabwrap-->
 </body>
 </html>

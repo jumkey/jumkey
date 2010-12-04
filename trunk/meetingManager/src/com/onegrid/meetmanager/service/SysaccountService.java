@@ -2,6 +2,7 @@ package com.onegrid.meetmanager.service;
 
 import java.util.List;
 
+import com.onegrid.meetmanager.model.Limit;
 import com.onegrid.meetmanager.model.Page;
 import com.onegrid.meetmanager.model.Sysaccount;
 
@@ -14,4 +15,5 @@ public interface SysaccountService {
 	public void deleteSelectAccount(Integer[] selected);
 	public List<Sysaccount> getPageAccount(Page page);
 	public int getPageCount();
+	public List<Limit> findLimitByRoleId(Integer roleid);
 }

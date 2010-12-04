@@ -34,6 +34,11 @@ public abstract class GenericDAOHibernate<T, ID extends Serializable> extends
 		getHibernateTemplate().save(instance);
 	}
 
+    // 保存更新
+    public void saveOrUpdate(T instance) {
+        getHibernateTemplate().saveOrUpdate(instance);
+    }
+
 	// 更新
 	public void update(T instance) {
 		getHibernateTemplate().update(instance);

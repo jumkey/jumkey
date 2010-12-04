@@ -18,13 +18,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div id="main">
 		<div id="login">
         <s:form method="post" namespace="/admin" action="sys_login" theme="simple">
-            账户：<s:textfield label="账户" name="account" /><br/>
-            密码：<s:textfield label="密码" name="password" /><br/>
-            <s:submit value="登陆" /><s:reset value="重置" />
+            账户：<s:textfield label="账户" name="account" value="admin" /><br/>
+            密码：<s:textfield label="密码" name="password"  value="123" /><br/>
+            <s:submit value="" cssStyle="margin:0 0 0 50px; cursor:pointer; border:0; background:url('images/login.png') left top no-repeat; width:74px; height:22px; color:#fff; font-size:12px; display:block; line-height:24px;" />
         </s:form>
         </div>
     </div><!-- end main -->
-	<div id="footer" style="text-align: center;">&copy 2010</div><!-- end footer -->
+	<div id="footer" style="text-align: center;">&copy; 2010</div><!-- end footer -->
 	</div>
 	</body>
 </html>

@@ -26,7 +26,7 @@
             <column name="sex" />
         </property>
         <property name="phone" type="java.lang.String">
-            <column name="phone" length="11" />
+            <column name="phone" length="12" />
         </property>
         <property name="mail" type="java.lang.String">
             <column name="mail" length="50" />
@@ -34,23 +34,80 @@
         <property name="cellphone" type="java.lang.String">
             <column name="cellphone" length="11" />
         </property>
-        <property name="address" type="java.lang.String">
-            <column name="address" length="50" />
-        </property>
-        <property name="zip" type="java.lang.String">
-            <column name="zip" length="6" />
-        </property>
-        <property name="zwei" type="java.lang.String">
-            <column name="zwei" length="11" />
-        </property>
         <property name="zwu" type="java.lang.String">
             <column name="zwu" length="11" />
         </property>
+         <property name="fax" type="java.lang.String">
+            <column name="fax" length="30" />
+        </property>
+        <property name="photo" type="java.lang.String">
+            <column name="photo" length="1000" />
+        </property>
+        <set name="registers" inverse="true">
+            <key>
+                <column name="userid" />
+            </key>
+            <one-to-many class="com.onegrid.meetmanager.model.Register" />
+        </set>
         <set name="users" inverse="true">
             <key>
                 <column name="userid" />
             </key>
             <one-to-many class="com.onegrid.meetmanager.model.User" />
+        </set>
+        <set name="incomes" inverse="true">
+            <key>
+                <column name="userid" />
+            </key>
+            <one-to-many class="com.onegrid.meetmanager.model.Income" />
+        </set>
+        <set name="users_1" inverse="true">
+            <key>
+                <column name="userid" />
+            </key>
+            <one-to-many class="com.onegrid.meetmanager.model.User" />
+        </set>
+        <set name="outlaies" inverse="true">
+            <key>
+                <column name="userid" />
+            </key>
+            <one-to-many class="com.onegrid.meetmanager.model.Outlay" />
+        </set>
+        <set name="relativesesForTheirid" inverse="true">
+            <key>
+                <column name="theirid" />
+            </key>
+            <one-to-many class="com.onegrid.meetmanager.model.Relatives" />
+        </set>
+        <set name="feteRecords" inverse="true">
+            <key>
+                <column name="userid" />
+            </key>
+            <one-to-many class="com.onegrid.meetmanager.model.FeteRecord" />
+        </set>
+        <set name="sendNotificationPlans" inverse="true">
+            <key>
+                <column name="userid" />
+            </key>
+            <one-to-many class="com.onegrid.meetmanager.model.SendNotificationPlan" />
+        </set>
+        <set name="relativesesForUserid" inverse="true">
+            <key>
+                <column name="userid" />
+            </key>
+            <one-to-many class="com.onegrid.meetmanager.model.Relatives" />
+        </set>
+        <set name="joinActivitiesRecords" inverse="true">
+            <key>
+                <column name="joiner" />
+            </key>
+            <one-to-many class="com.onegrid.meetmanager.model.JoinActivitiesRecord" />
+        </set>
+        <set name="lotteries" inverse="true">
+            <key>
+                <column name="owner" />
+            </key>
+            <one-to-many class="com.onegrid.meetmanager.model.Lottery" />
         </set>
     </class>
 </hibernate-mapping>

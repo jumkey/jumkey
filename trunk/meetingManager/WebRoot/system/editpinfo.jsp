@@ -21,12 +21,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         	<s:hidden label="id" name="sysaccount.id" value="%{#attr.account.id}" /><br/>
             密码：<s:textfield id="p1" label="密码" name="sysaccount.password" /><br/>
             确认：<s:textfield id="p2" label="确认" name="try" /><br/>
-            昵称：<s:textfield label="昵称" name="sysaccount.username" value="%{#attr.account.username}" /><br/>
+            姓名：<s:textfield label="昵称" name="sysaccount.username" value="%{#attr.account.username}" /><br/>
             性别：<s:radio label="性别" name="sysaccount.sex" list="%{#{1:'男',0:'女'}}" value="%{#attr.account.sex}" /><br/>
             电话：<s:textfield label="电话" name="sysaccount.phone" value="%{#attr.account.phone}" /><br/>
             邮编：<s:textfield label="邮编" name="sysaccount.zip" value="%{#attr.account.zip}" /><br/>
             地址：<s:textfield label="地址" name="sysaccount.address" value="%{#attr.account.address}" /><br/>
-            <s:submit value="修改" /><br/>
+            <s:submit value="保存" /><br/>
         </s:form>
         <script type="text/javascript">
         	function check(){
@@ -38,6 +38,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         		}
         	}
         </script>
-        <s:debug></s:debug>
+        
 	</body>
 </html>
