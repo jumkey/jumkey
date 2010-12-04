@@ -6,194 +6,194 @@
 -->
 <beans>
 
-	<bean id="ActivitiesDAO" class="com.onegrid.meetmanager.dao.impl.ActivitiesDAOImpl">
+	<bean id="ActivitiesDAO" class="meetmanager.dao.impl.ActivitiesDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	<bean id="AgreementDAO" class="com.onegrid.meetmanager.dao.impl.AgreementDAOImpl">
+	<bean id="AgreementDAO" class="meetmanager.dao.impl.AgreementDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	<bean id="AwardsDAO" class="com.onegrid.meetmanager.dao.impl.AwardsDAOImpl">
+	<bean id="AwardsDAO" class="meetmanager.dao.impl.AwardsDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	<bean id="AwardsPrizeDAO" class="com.onegrid.meetmanager.dao.impl.AwardsPrizeDAOImpl">
+	<bean id="AwardsPrizeDAO" class="meetmanager.dao.impl.AwardsPrizeDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	<bean id="DepartmentDAO" class="com.onegrid.meetmanager.dao.impl.DepartmentDAOImpl">
+	<bean id="DepartmentDAO" class="meetmanager.dao.impl.DepartmentDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	<bean id="FeeItemDAO" class="com.onegrid.meetmanager.dao.impl.FeeItemDAOImpl">
+	<bean id="FeeItemDAO" class="meetmanager.dao.impl.FeeItemDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	<bean id="FeeItemPropertyDAO" class="com.onegrid.meetmanager.dao.impl.FeeItemPropertyDAOImpl">
+	<bean id="FeeItemPropertyDAO" class="meetmanager.dao.impl.FeeItemPropertyDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	<bean id="FeteDAO" class="com.onegrid.meetmanager.dao.impl.FeteDAOImpl">
+	<bean id="FeteDAO" class="meetmanager.dao.impl.FeteDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	<bean id="MeetingRoomDAO" class="com.onegrid.meetmanager.dao.impl.MeetingRoomDAOImpl">
+	<bean id="MeetingRoomDAO" class="meetmanager.dao.impl.MeetingRoomDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	<bean id="LectureDAO" class="com.onegrid.meetmanager.dao.impl.LectureDAOImpl">
+	<bean id="LectureDAO" class="meetmanager.dao.impl.LectureDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	<bean id="MeetingArrangementsDAO" class="com.onegrid.meetmanager.dao.impl.MeetingArrangementsDAOImpl">
+	<bean id="MeetingArrangementsDAO" class="meetmanager.dao.impl.MeetingArrangementsDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	<bean id="ArrangementsSeminarsDAO" class="com.onegrid.meetmanager.dao.impl.ArrangementsSeminarsDAOImpl">
+	<bean id="ArrangementsSeminarsDAO" class="meetmanager.dao.impl.ArrangementsSeminarsDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	<bean id="MealDAO" class="com.onegrid.meetmanager.dao.impl.MealDAOImpl">
+	<bean id="MealDAO" class="meetmanager.dao.impl.MealDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	<bean id="FeteRecordDAO" class="com.onegrid.meetmanager.dao.impl.FeteRecordDAOImpl">
+	<bean id="FeteRecordDAO" class="meetmanager.dao.impl.FeteRecordDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	<bean id="IncomeDAO" class="com.onegrid.meetmanager.dao.impl.IncomeDAOImpl">
+	<bean id="IncomeDAO" class="meetmanager.dao.impl.IncomeDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	<bean id="JoinActivitiesRecordDAO" class="com.onegrid.meetmanager.dao.impl.JoinActivitiesRecordDAOImpl">
+	<bean id="JoinActivitiesRecordDAO" class="meetmanager.dao.impl.JoinActivitiesRecordDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	<bean id="LimitDAO" class="com.onegrid.meetmanager.dao.impl.LimitDAOImpl">
+	<bean id="LimitDAO" class="meetmanager.dao.impl.LimitDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	<bean id="LotteryDAO" class="com.onegrid.meetmanager.dao.impl.LotteryDAOImpl">
+	<bean id="LotteryDAO" class="meetmanager.dao.impl.LotteryDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	<bean id="LotteryRecordDAO" class="com.onegrid.meetmanager.dao.impl.LotteryRecordDAOImpl">
+	<bean id="LotteryRecordDAO" class="meetmanager.dao.impl.LotteryRecordDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	<bean id="MeetingFeeItemDAO" class="com.onegrid.meetmanager.dao.impl.MeetingFeeItemDAOImpl">
+	<bean id="MeetingFeeItemDAO" class="meetmanager.dao.impl.MeetingFeeItemDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	<bean id="MeetingFeeItemPropertyDAO" class="com.onegrid.meetmanager.dao.impl.MeetingFeeItemPropertyDAOImpl">
+	<bean id="MeetingFeeItemPropertyDAO" class="meetmanager.dao.impl.MeetingFeeItemPropertyDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	<bean id="MeetingInfoDAO" class="com.onegrid.meetmanager.dao.impl.MeetingInfoDAOImpl">
+	<bean id="MeetingInfoDAO" class="meetmanager.dao.impl.MeetingInfoDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	<bean id="NoticeDAO" class="com.onegrid.meetmanager.dao.impl.NoticeDAOImpl">
+	<bean id="NoticeDAO" class="meetmanager.dao.impl.NoticeDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	<bean id="OutlayDAO" class="com.onegrid.meetmanager.dao.impl.OutlayDAOImpl">
+	<bean id="OutlayDAO" class="meetmanager.dao.impl.OutlayDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	<bean id="PriceDAO" class="com.onegrid.meetmanager.dao.impl.PriceDAOImpl">
+	<bean id="PriceDAO" class="meetmanager.dao.impl.PriceDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	<bean id="RegisterDAO" class="com.onegrid.meetmanager.dao.impl.RegisterDAOImpl">
+	<bean id="RegisterDAO" class="meetmanager.dao.impl.RegisterDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	<bean id="RelativesDAO" class="com.onegrid.meetmanager.dao.impl.RelativesDAOImpl">
+	<bean id="RelativesDAO" class="meetmanager.dao.impl.RelativesDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	<bean id="RoleDAO" class="com.onegrid.meetmanager.dao.impl.RoleDAOImpl">
+	<bean id="RoleDAO" class="meetmanager.dao.impl.RoleDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	<bean id="RoleLimitDAO" class="com.onegrid.meetmanager.dao.impl.RoleLimitDAOImpl">
+	<bean id="RoleLimitDAO" class="meetmanager.dao.impl.RoleLimitDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	<bean id="RoleLimitIdDAO" class="com.onegrid.meetmanager.dao.impl.RoleLimitIdDAOImpl">
+	<bean id="RoleLimitIdDAO" class="meetmanager.dao.impl.RoleLimitIdDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	<bean id="SendNotificationPlanDAO" class="com.onegrid.meetmanager.dao.impl.SendNotificationPlanDAOImpl">
+	<bean id="SendNotificationPlanDAO" class="meetmanager.dao.impl.SendNotificationPlanDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	<bean id="SysaccountDAO" class="com.onegrid.meetmanager.dao.impl.SysaccountDAOImpl">
+	<bean id="SysaccountDAO" class="meetmanager.dao.impl.SysaccountDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	<bean id="UnitsDAO" class="com.onegrid.meetmanager.dao.impl.UnitsDAOImpl">
+	<bean id="UnitsDAO" class="meetmanager.dao.impl.UnitsDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	<bean id="UnitsTypeDAO" class="com.onegrid.meetmanager.dao.impl.UnitsTypeDAOImpl">
+	<bean id="UnitsTypeDAO" class="meetmanager.dao.impl.UnitsTypeDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	<bean id="UserDAO" class="com.onegrid.meetmanager.dao.impl.UserDAOImpl">
+	<bean id="UserDAO" class="meetmanager.dao.impl.UserDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	<bean id="RoomTypeDAO" class="com.onegrid.meetmanager.dao.impl.RoomTypeDAOImpl">
+	<bean id="RoomTypeDAO" class="meetmanager.dao.impl.RoomTypeDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	<bean id="TradeTypeDAO" class="com.onegrid.meetmanager.dao.impl.TradeTypeDAOImpl">
+	<bean id="TradeTypeDAO" class="meetmanager.dao.impl.TradeTypeDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	<bean id="PriceRoomTypeDAO" class="com.onegrid.meetmanager.dao.impl.PriceRoomTypeDAOImpl">
+	<bean id="PriceRoomTypeDAO" class="meetmanager.dao.impl.PriceRoomTypeDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 	
     <!-- Service -->
-	<bean id="SysaccountService" class="com.onegrid.meetmanager.service.impl.SysaccountServiceImpl">
+	<bean id="SysaccountService" class="meetmanager.service.impl.SysaccountServiceImpl">
 		<property name="sysaccountDAO" ref="SysaccountDAO" />
 		<property name="limitDAO" ref="LimitDAO" />
 	</bean>
-	<bean id="DepartmentService" class="com.onegrid.meetmanager.service.impl.DepartmentServiceImpl">
+	<bean id="DepartmentService" class="meetmanager.service.impl.DepartmentServiceImpl">
 		<property name="departmentDAO" ref="DepartmentDAO" />
 	</bean>
-	<bean id="MeetingInfoService" class="com.onegrid.meetmanager.service.impl.MeetingServiceImpl">
+	<bean id="MeetingInfoService" class="meetmanager.service.impl.MeetingServiceImpl">
 		<property name="meetingInfoDAO" ref="MeetingInfoDAO" />
 		<property name="registerDAO" ref="RegisterDAO" />
 	</bean>
-	<bean id="FeteService" class="com.onegrid.meetmanager.service.impl.FeteServiceImpl">
+	<bean id="FeteService" class="meetmanager.service.impl.FeteServiceImpl">
 		<property name="feteDAO" ref="FeteDAO" />
 	</bean>
-	<bean id="LectureService" class="com.onegrid.meetmanager.service.impl.LectureServiceImpl">
+	<bean id="LectureService" class="meetmanager.service.impl.LectureServiceImpl">
 		<property name="lectureDAO" ref="LectureDAO" />
 	</bean>
-	<bean id="MeetingArrangementsService" class="com.onegrid.meetmanager.service.impl.MeetingArrangementsServiceImpl">
+	<bean id="MeetingArrangementsService" class="meetmanager.service.impl.MeetingArrangementsServiceImpl">
 		<property name="meetingArrangementsDAO" ref="MeetingArrangementsDAO" />
 	</bean>
-	<bean id="ArrangementsSeminarsService" class="com.onegrid.meetmanager.service.impl.ArrangementsSeminarsServiceImpl">
+	<bean id="ArrangementsSeminarsService" class="meetmanager.service.impl.ArrangementsSeminarsServiceImpl">
 		<property name="arrangementsSeminarsDAO" ref="ArrangementsSeminarsDAO" />
 	</bean>
-	<bean id="MeetingRoomService" class="com.onegrid.meetmanager.service.impl.MeetingRoomServiceImpl">
+	<bean id="MeetingRoomService" class="meetmanager.service.impl.MeetingRoomServiceImpl">
 		<property name="meetingRoomDAO" ref="MeetingRoomDAO" />
 	</bean>
-	<bean id="MealService" class="com.onegrid.meetmanager.service.impl.MealServiceImpl">
+	<bean id="MealService" class="meetmanager.service.impl.MealServiceImpl">
 		<property name="mealDAO" ref="MealDAO" />
 	</bean>
-	<bean id="AwardsService" class="com.onegrid.meetmanager.service.impl.AwardsServiceImpl">
+	<bean id="AwardsService" class="meetmanager.service.impl.AwardsServiceImpl">
 		<property name="awardsDAO" ref="AwardsDAO" />
 		<property name="lotteryDAO" ref="LotteryDAO" />
 		<property name="unitsDAO" ref="UnitsDAO" />
 		<property name="meetingInfoDAO" ref="MeetingInfoDAO" />
 		<property name="lotteryRecordDAO" ref="LotteryRecordDAO" />
 	</bean>
-	<bean id="ActivitiesService" class="com.onegrid.meetmanager.service.impl.ActivitiesServiceImpl">
+	<bean id="ActivitiesService" class="meetmanager.service.impl.ActivitiesServiceImpl">
 		<property name="activitiesDAO" ref="ActivitiesDAO" />
 	</bean>
-	<bean id="JoinActivitiesRecordService" class="com.onegrid.meetmanager.service.impl.JoinActivitiesRecordServiceImpl">
+	<bean id="JoinActivitiesRecordService" class="meetmanager.service.impl.JoinActivitiesRecordServiceImpl">
 		<property name="joinActivitiesRecordDAO" ref="JoinActivitiesRecordDAO" />
 		<property name="userDAO" ref="UserDAO" />
 	</bean>
-	<bean id="FeteRecordService" class="com.onegrid.meetmanager.service.impl.FeteRecordServiceImpl">
+	<bean id="FeteRecordService" class="meetmanager.service.impl.FeteRecordServiceImpl">
 		<property name="feteRecordDAO" ref="FeteRecordDAO" />
 		<property name="userDAO" ref="UserDAO" />
 	</bean>
 	
-	<bean id="UserService" class="com.onegrid.meetmanager.service.impl.UserServiceImpl">
+	<bean id="UserService" class="meetmanager.service.impl.UserServiceImpl">
 		<property name="userDAO" ref="UserDAO" />
 	</bean>
-	<bean id="PriceService" class="com.onegrid.meetmanager.service.impl.PriceServiceImpl">
+	<bean id="PriceService" class="meetmanager.service.impl.PriceServiceImpl">
 		<property name="priceDAO" ref="PriceDAO" />
 		<property name="unitsDAO" ref="UnitsDAO" />
 		<property name="roomTypeDAO" ref="RoomTypeDAO" />
 		<property name="priceRoomTypeDAO" ref="PriceRoomTypeDAO" />
 		<property name="meetingInfoDAO" ref="MeetingInfoDAO" />
 	</bean>
-	<bean id="AgreementService" class="com.onegrid.meetmanager.service.impl.AgreementServiceImpl">
+	<bean id="AgreementService" class="meetmanager.service.impl.AgreementServiceImpl">
 		<property name="agreementDAO" ref="AgreementDAO" />
 		<property name="meetingInfoDAO" ref="MeetingInfoDAO" />
 		<property name="priceDAO" ref="PriceDAO" />
 		<property name="feeItemDAO" ref="FeeItemDAO" />
 		<property name="meetingFeeItemDAO" ref="MeetingFeeItemDAO" />
 	</bean>
-	<bean id="NoticeService" class="com.onegrid.meetmanager.service.impl.NoticeServiceImpl">
+	<bean id="NoticeService" class="meetmanager.service.impl.NoticeServiceImpl">
 		<property name="userDAO" ref="UserDAO" />
 		<property name="noticeDAO" ref="NoticeDAO" />
 		<property name="roomTypeDAO" ref="RoomTypeDAO" />
 		<property name="sendNotificationPlanDAO" ref="SendNotificationPlanDAO" />
 	</bean>
-	<bean id="ReachService" class="com.onegrid.meetmanager.service.impl.ReachServiceImpl">
+	<bean id="ReachService" class="meetmanager.service.impl.ReachServiceImpl">
 		<property name="meetingInfoDAO" ref="MeetingInfoDAO" />
 		<property name="registerDAO" ref="RegisterDAO" />
 		<property name="userDAO" ref="UserDAO" />
@@ -202,26 +202,26 @@
 		<property name="unitsDAO" ref="UnitsDAO" />
 		<property name="sendNotificationPlanDAO" ref="SendNotificationPlanDAO" />
 	</bean>
-	<bean id="FeeItemService" class="com.onegrid.meetmanager.service.impl.FeeItemServiceImpl">
+	<bean id="FeeItemService" class="meetmanager.service.impl.FeeItemServiceImpl">
 		<property name="feeItemDAO" ref="FeeItemDAO" />
 	</bean>
-	<bean id="MeetingFeeItemService" class="com.onegrid.meetmanager.service.impl.MeetingFeeItemServiceImpl">
+	<bean id="MeetingFeeItemService" class="meetmanager.service.impl.MeetingFeeItemServiceImpl">
 		<property name="meetingFeeItemDAO" ref="MeetingFeeItemDAO" />
 		<property name="feeItemDAO" ref="FeeItemDAO" />
 		<property name="meetingInfoDAO" ref="MeetingInfoDAO" />
 	</bean>
-	<bean id="IncomeService" class="com.onegrid.meetmanager.service.impl.IncomeServiceImpl">
+	<bean id="IncomeService" class="meetmanager.service.impl.IncomeServiceImpl">
 		<property name="incomeDAO" ref="IncomeDAO" />
 		<property name="meetingFeeItemDAO" ref="MeetingFeeItemDAO" />
 	</bean>
-	<bean id="UnitsService" class="com.onegrid.meetmanager.service.impl.UnitsServiceImpl">
+	<bean id="UnitsService" class="meetmanager.service.impl.UnitsServiceImpl">
 		<property name="unitsDAO" ref="UnitsDAO" />
 		<property name="unitsTypeDAO" ref="UnitsTypeDAO" />
 	</bean>
-	<bean id="UnitsTypeService" class="com.onegrid.meetmanager.service.impl.UnitsTypeServiceImpl">
+	<bean id="UnitsTypeService" class="meetmanager.service.impl.UnitsTypeServiceImpl">
 		<property name="unitsTypeDAO" ref="UnitsTypeDAO" />
 	</bean>
-	<bean id="PaymentService" class="com.onegrid.meetmanager.service.impl.PaymentServiceImpl">
+	<bean id="PaymentService" class="meetmanager.service.impl.PaymentServiceImpl">
 		<property name="meetingInfoDAO" ref="MeetingInfoDAO" />
 		<property name="meetingFeeItemDAO" ref="MeetingFeeItemDAO" />
 		<property name="incomeDAO" ref="IncomeDAO" />
@@ -229,120 +229,120 @@
 		<property name="unitsDAO" ref="UnitsDAO" />
 		<property name="userDAO" ref="UserDAO" />
 	</bean>
-	<bean id="RoleService" class="com.onegrid.meetmanager.service.impl.RoleServiceImpl">
+	<bean id="RoleService" class="meetmanager.service.impl.RoleServiceImpl">
 		<property name="roleDAO" ref="RoleDAO" />
 	</bean>
-	<bean id="LimitService" class="com.onegrid.meetmanager.service.impl.LimitServiceImpl">
+	<bean id="LimitService" class="meetmanager.service.impl.LimitServiceImpl">
 		<property name="limitDAO" ref="LimitDAO" />
 	</bean>
-	<bean id="RoleLimitService" class="com.onegrid.meetmanager.service.impl.RoleLimitServiceImpl">
+	<bean id="RoleLimitService" class="meetmanager.service.impl.RoleLimitServiceImpl">
 		<property name="roleLimitDAO" ref="RoleLimitDAO" />
 	</bean>
-	<bean id="RoomTypeService" class="com.onegrid.meetmanager.service.impl.RoomTypeServiceImpl">
+	<bean id="RoomTypeService" class="meetmanager.service.impl.RoomTypeServiceImpl">
 		<property name="roomTypeDAO" ref="RoomTypeDAO" />
 	</bean>
-	<bean id="TradeTypeService" class="com.onegrid.meetmanager.service.impl.TradeTypeServiceImpl">
+	<bean id="TradeTypeService" class="meetmanager.service.impl.TradeTypeServiceImpl">
 		<property name="tradeTypeDAO" ref="TradeTypeDAO" />
 	</bean>
 	
 	<!-- action -->
-	<bean name="loginAction" class="com.onegrid.meetmanager.web.action.LoginAction" scope="prototype">
+	<bean name="loginAction" class="meetmanager.web.action.LoginAction" scope="prototype">
 		<property name="sysaccountService" ref="SysaccountService" />
 	</bean>
-	<bean name="mainAction" class="com.onegrid.meetmanager.web.action.MainAction" scope="prototype">
+	<bean name="mainAction" class="meetmanager.web.action.MainAction" scope="prototype">
 	</bean>
-	<bean name="accountAction" class="com.onegrid.meetmanager.web.action.AccountAction" scope="prototype">
+	<bean name="accountAction" class="meetmanager.web.action.AccountAction" scope="prototype">
 		<property name="sysaccountService" ref="SysaccountService" />
 		<property name="departmentService" ref="DepartmentService" />
 	</bean>
-	<bean name="userAction" class="com.onegrid.meetmanager.web.action.UserAction" scope="prototype">
+	<bean name="userAction" class="meetmanager.web.action.UserAction" scope="prototype">
 		<property name="userService" ref="UserService" />
 		<property name="unitsService" ref="UnitsService" />
 	</bean>
-	<bean name="meetingAction" class="com.onegrid.meetmanager.web.action.MeetingAction" scope="prototype">
+	<bean name="meetingAction" class="meetmanager.web.action.MeetingAction" scope="prototype">
 		<property name="meetingService" ref="MeetingInfoService" />
 		<property name="priceService" ref="PriceService" />
 	</bean>
-	<bean name="feteAction" class="com.onegrid.meetmanager.web.action.FeteAction" scope="prototype">
+	<bean name="feteAction" class="meetmanager.web.action.FeteAction" scope="prototype">
 		<property name="feteService" ref="FeteService" />
 		<property name="unitsService" ref="UnitsService" />
 	</bean>
-	<bean name="meetingRoomAction" class="com.onegrid.meetmanager.web.action.MeetingRoomAction" scope="prototype">
+	<bean name="meetingRoomAction" class="meetmanager.web.action.MeetingRoomAction" scope="prototype">
 		<property name="meetingRoomService" ref="MeetingRoomService" />
 	</bean>
-	<bean name="lectureAction" class="com.onegrid.meetmanager.web.action.LectureAction" scope="prototype">
+	<bean name="lectureAction" class="meetmanager.web.action.LectureAction" scope="prototype">
 		<property name="lectureService" ref="LectureService" />
 		<property name="userService" ref="UserService" />
 		<property name="unitsService" ref="UnitsService" />
 	</bean>
-	<bean name="meetingArrangementsAction" class="com.onegrid.meetmanager.web.action.MeetingArrangementsAction" scope="prototype">
+	<bean name="meetingArrangementsAction" class="meetmanager.web.action.MeetingArrangementsAction" scope="prototype">
 		<property name="meetingArrangementsService" ref="MeetingArrangementsService" />
 		<property name="meetingRoomService" ref="MeetingRoomService" />
 	</bean>
-	<bean name="arrangementsSeminarsAction" class="com.onegrid.meetmanager.web.action.ArrangementsSeminarsAction" scope="prototype">
+	<bean name="arrangementsSeminarsAction" class="meetmanager.web.action.ArrangementsSeminarsAction" scope="prototype">
 		<property name="arrangementsSeminarsService" ref="ArrangementsSeminarsService" />
 		<property name="lectureService" ref="LectureService" />
 	</bean>
-	<bean name="mealAction" class="com.onegrid.meetmanager.web.action.MealAction" scope="prototype">
+	<bean name="mealAction" class="meetmanager.web.action.MealAction" scope="prototype">
 		<property name="mealService" ref="MealService" />
 	</bean>
-	<bean name="activitiesAction" class="com.onegrid.meetmanager.web.action.ActivitiesAction" scope="prototype">
+	<bean name="activitiesAction" class="meetmanager.web.action.ActivitiesAction" scope="prototype">
 		<property name="activitiesService" ref="ActivitiesService" />
 	</bean>
-	<bean name="awardsAction" class="com.onegrid.meetmanager.web.action.AwardsAction" scope="prototype">
+	<bean name="awardsAction" class="meetmanager.web.action.AwardsAction" scope="prototype">
 		<property name="awardsService" ref="AwardsService" />
 		<property name="meetingArrangementsService" ref="MeetingArrangementsService" />
 	</bean>
 	
-	<bean name="joinActivitiesRecordAction" class="com.onegrid.meetmanager.web.action.JoinActivitiesRecordAction" scope="prototype">
+	<bean name="joinActivitiesRecordAction" class="meetmanager.web.action.JoinActivitiesRecordAction" scope="prototype">
 		<property name="joinActivitiesRecordService" ref="JoinActivitiesRecordService" />
 	</bean>
-	<bean name="feteRecordAction" class="com.onegrid.meetmanager.web.action.FeteRecordAction" scope="prototype">
+	<bean name="feteRecordAction" class="meetmanager.web.action.FeteRecordAction" scope="prototype">
 		<property name="feteRecordService" ref="FeteRecordService" />
 	</bean>
-	<bean name="priceAction" class="com.onegrid.meetmanager.web.action.PriceAction" scope="prototype">
+	<bean name="priceAction" class="meetmanager.web.action.PriceAction" scope="prototype">
 		<property name="priceService" ref="PriceService" />
 	</bean>
-	<bean name="agreementAction" class="com.onegrid.meetmanager.web.action.AgreementAction" scope="prototype">
+	<bean name="agreementAction" class="meetmanager.web.action.AgreementAction" scope="prototype">
 		<property name="agreementService" ref="AgreementService" />
 	</bean>
-	<bean name="unitsAction" class="com.onegrid.meetmanager.web.action.UnitsAction" scope="prototype">
+	<bean name="unitsAction" class="meetmanager.web.action.UnitsAction" scope="prototype">
 		<property name="unitsService" ref="UnitsService" />
 		<property name="tradeTypeService" ref="TradeTypeService" />
 	</bean>
-	<bean name="noticeAction" class="com.onegrid.meetmanager.web.action.NoticeAction" scope="prototype">
+	<bean name="noticeAction" class="meetmanager.web.action.NoticeAction" scope="prototype">
 		<property name="noticeService" ref="NoticeService" />
 	</bean>
-	<bean name="reachAction" class="com.onegrid.meetmanager.web.action.ReachAction" scope="prototype">
+	<bean name="reachAction" class="meetmanager.web.action.ReachAction" scope="prototype">
 		<property name="reachService" ref="ReachService" />
 	</bean>
-	<bean name="feeItemAction" class="com.onegrid.meetmanager.web.action.FeeItemAction" scope="prototype">
+	<bean name="feeItemAction" class="meetmanager.web.action.FeeItemAction" scope="prototype">
 		<property name="feeItemService" ref="FeeItemService" />
 	</bean>
-	<bean name="meetingFeeItemAction" class="com.onegrid.meetmanager.web.action.MeetingFeeItemAction" scope="prototype">
+	<bean name="meetingFeeItemAction" class="meetmanager.web.action.MeetingFeeItemAction" scope="prototype">
 		<property name="meetingFeeItemService" ref="MeetingFeeItemService" />
 	</bean>
-	<bean name="paymentAction" class="com.onegrid.meetmanager.web.action.PaymentAction" scope="prototype">
+	<bean name="paymentAction" class="meetmanager.web.action.PaymentAction" scope="prototype">
 		<property name="paymentService" ref="PaymentService" />
 	</bean>
-	<bean name="incomeAction" class="com.onegrid.meetmanager.web.action.IncomeAction" scope="prototype">
+	<bean name="incomeAction" class="meetmanager.web.action.IncomeAction" scope="prototype">
 		<property name="incomeService" ref="IncomeService" />
 	</bean>
-	<bean name="roleAction" class="com.onegrid.meetmanager.web.action.RoleAction" scope="prototype">
+	<bean name="roleAction" class="meetmanager.web.action.RoleAction" scope="prototype">
 		<property name="roleService" ref="RoleService" />
 	</bean>
-	<bean name="limitAction" class="com.onegrid.meetmanager.web.action.LimitAction" scope="prototype">
+	<bean name="limitAction" class="meetmanager.web.action.LimitAction" scope="prototype">
 		<property name="limitService" ref="LimitService" />
 	</bean>
-	<bean name="roleLimitAction" class="com.onegrid.meetmanager.web.action.RoleLimitAction" scope="prototype">
+	<bean name="roleLimitAction" class="meetmanager.web.action.RoleLimitAction" scope="prototype">
 		<property name="roleService" ref="RoleService" />
 		<property name="limitService" ref="LimitService" />
 		<property name="roleLimitService" ref="RoleLimitService" />
 	</bean>
-	<bean name="roomTypeAction" class="com.onegrid.meetmanager.web.action.RoomTypeAction" scope="prototype">
+	<bean name="roomTypeAction" class="meetmanager.web.action.RoomTypeAction" scope="prototype">
 		<property name="roomTypeService" ref="RoomTypeService" />
 	</bean>
-	<bean name="tradeTypeAction" class="com.onegrid.meetmanager.web.action.TradeTypeAction" scope="prototype">
+	<bean name="tradeTypeAction" class="meetmanager.web.action.TradeTypeAction" scope="prototype">
 		<property name="tradeTypeService" ref="TradeTypeService" />
 		<property name="unitsService" ref="UnitsService" />
 		<property name="unitsTypeService" ref="UnitsTypeService" />

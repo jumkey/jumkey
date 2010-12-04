@@ -38,7 +38,7 @@
 		<interceptors>
 			<!-- 定义了一个名为authority的拦截器 -->
 			<interceptor name="authority"
-				class="com.onegrid.meetmanager.web.action.interceptor.AuthorityInterceptor" />
+				class="meetmanager.web.action.interceptor.AuthorityInterceptor" />
 			<!-- 定义一个包含权限检查的拦截器栈 -->
 			<interceptor-stack name="mydefault">
 				<!-- 定义拦截器栈包含default-stack拦截器栈 -->

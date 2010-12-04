@@ -1,7 +1,7 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : onegrid
+Source Server         : meetingManager
 Source Server Version : 50144
 Source Host           : localhost:3306
 Source Database       : meetingmanager
@@ -1075,7 +1075,7 @@ CREATE TABLE `units` (
 -- ----------------------------
 -- Records of units
 -- ----------------------------
-INSERT INTO `units` VALUES ('1', '万格', '滨江', '341500', 'jj', '13888888888', '888@qq.com', 'http://www.onegrid.com.cn', '1', '20');
+INSERT INTO `units` VALUES ('1', '万格', '滨江', '341500', 'jj', '13888888888', '888@qq.com', 'http://www.baidu.com', '1', '20');
 INSERT INTO `units` VALUES ('2', '哥哥', '杭州', '321000', '狗狗', '13888888888', '2@sfs.v', 'http://www.baidu.com', '2', '21');
 
 -- ----------------------------
