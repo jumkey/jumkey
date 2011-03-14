@@ -5,9 +5,9 @@ import java.util.List;
 import meetmanager.dao.JoinActivitiesRecordDAO;
 import meetmanager.dao.UserDAO;
 import meetmanager.model.JoinActivitiesRecord;
-import meetmanager.model.Page;
 import meetmanager.model.User;
 import meetmanager.service.JoinActivitiesRecordService;
+import meetmanager.utils.dao.Page;
 
 
 public class JoinActivitiesRecordServiceImpl implements

@@ -3,8 +3,8 @@ package meetmanager.web.action;
 import java.util.List;
 
 import meetmanager.model.JoinActivitiesRecord;
-import meetmanager.model.Page;
 import meetmanager.service.JoinActivitiesRecordService;
+import meetmanager.utils.dao.Page;
 
 import com.opensymphony.xwork2.ActionSupport;
 

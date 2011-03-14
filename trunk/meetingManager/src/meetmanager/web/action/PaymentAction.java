@@ -6,9 +6,9 @@ import meetmanager.model.Income;
 import meetmanager.model.MeetingFeeItem;
 import meetmanager.model.MeetingInfo;
 import meetmanager.model.Outlay;
-import meetmanager.model.Page;
 import meetmanager.model.Sysaccount;
 import meetmanager.service.PaymentService;
+import meetmanager.utils.dao.Page;
 
 import org.apache.struts2.json.annotations.JSON;
 

@@ -3,9 +3,9 @@ package meetmanager.web.action;
 import java.util.List;
 
 import meetmanager.model.MeetingRoom;
-import meetmanager.model.Page;
 import meetmanager.model.Units;
 import meetmanager.service.MeetingRoomService;
+import meetmanager.utils.dao.Page;
 
 import org.apache.struts2.json.annotations.JSON;
 import com.opensymphony.xwork2.ActionSupport;

@@ -4,10 +4,10 @@ import java.util.List;
 
 import meetmanager.dao.UnitsDAO;
 import meetmanager.dao.UnitsTypeDAO;
-import meetmanager.model.Page;
 import meetmanager.model.Units;
 import meetmanager.model.UnitsType;
 import meetmanager.service.UnitsService;
+import meetmanager.utils.dao.Page;
 
 
 public class UnitsServiceImpl implements UnitsService {

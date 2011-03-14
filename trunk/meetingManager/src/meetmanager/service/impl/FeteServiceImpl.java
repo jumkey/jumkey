@@ -4,8 +4,8 @@ import java.util.List;
 
 import meetmanager.dao.FeteDAO;
 import meetmanager.model.Fete;
-import meetmanager.model.Page;
 import meetmanager.service.FeteService;
+import meetmanager.utils.dao.Page;
 
 
 public class FeteServiceImpl implements FeteService {

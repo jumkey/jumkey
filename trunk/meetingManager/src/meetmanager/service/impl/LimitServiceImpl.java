@@ -4,8 +4,8 @@ import java.util.List;
 
 import meetmanager.dao.LimitDAO;
 import meetmanager.model.Limit;
-import meetmanager.model.Page;
 import meetmanager.service.LimitService;
+import meetmanager.utils.dao.Page;
 
 
 public class LimitServiceImpl implements LimitService {

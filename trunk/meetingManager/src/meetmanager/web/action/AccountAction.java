@@ -3,10 +3,10 @@ package meetmanager.web.action;
 import java.util.List;
 
 import meetmanager.model.Department;
-import meetmanager.model.Page;
 import meetmanager.model.Sysaccount;
 import meetmanager.service.DepartmentService;
 import meetmanager.service.SysaccountService;
+import meetmanager.utils.dao.Page;
 
 import org.apache.struts2.json.annotations.JSON;
 

@@ -3,11 +3,11 @@ package meetmanager.web.action;
 import java.util.Date;
 import java.util.List;
 
-import meetmanager.model.Page;
 import meetmanager.model.RoomType;
 import meetmanager.model.Sysaccount;
 import meetmanager.model.Units;
 import meetmanager.service.RoomTypeService;
+import meetmanager.utils.dao.Page;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;

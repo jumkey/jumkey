@@ -3,7 +3,7 @@ package meetmanager.service;
 import java.util.List;
 
 import meetmanager.model.Activities;
-import meetmanager.model.Page;
+import meetmanager.utils.dao.Page;
 
 
 public interface ActivitiesService {

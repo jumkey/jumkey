@@ -3,9 +3,9 @@ package meetmanager.service.impl;
 import java.util.List;
 
 import meetmanager.dao.UserDAO;
-import meetmanager.model.Page;
 import meetmanager.model.User;
 import meetmanager.service.UserService;
+import meetmanager.utils.dao.Page;
 
 
 public class UserServiceImpl implements UserService {

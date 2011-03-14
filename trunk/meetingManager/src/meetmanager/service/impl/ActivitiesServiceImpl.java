@@ -4,8 +4,8 @@ import java.util.List;
 
 import meetmanager.dao.ActivitiesDAO;
 import meetmanager.model.Activities;
-import meetmanager.model.Page;
 import meetmanager.service.ActivitiesService;
+import meetmanager.utils.dao.Page;
 
 
 public class ActivitiesServiceImpl implements ActivitiesService {

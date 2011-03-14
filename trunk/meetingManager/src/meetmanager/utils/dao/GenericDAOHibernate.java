@@ -5,8 +5,6 @@ import java.lang.reflect.ParameterizedType;
 import java.sql.SQLException;
 import java.util.List;
 
-import meetmanager.model.Page;
-
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
@@ -19,7 +17,6 @@ import org.hibernate.criterion.Restrictions;
 import org.springframework.orm.hibernate3.HibernateCallback;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
-
 public abstract class GenericDAOHibernate<T, ID extends Serializable> extends
 		HibernateDaoSupport implements GenericDAO<T, ID> {
 	protected Class<T> clazz;
@@ -30,73 +27,99 @@ public abstract class GenericDAOHibernate<T, ID extends Serializable> extends
 				.getGenericSuperclass()).getActualTypeArguments()[0];
 	}
 
-	// 保存
+	/**
+	 * 保存
+	 */
 	public void save(T instance) {
 		getHibernateTemplate().save(instance);
 	}
 
-    // 保存更新
-    public void saveOrUpdate(T instance) {
-        getHibernateTemplate().saveOrUpdate(instance);
-    }
+	/**
+	 * 保存更新
+	 */
+	public void saveOrUpdate(T instance) {
+		getHibernateTemplate().saveOrUpdate(instance);
+	}
 
-	// 更新
+	/**
+	 * 更新
+	 */
 	public void update(T instance) {
 		getHibernateTemplate().update(instance);
 	}
 
-	// 删除
+	/**
+	 * 删除
+	 */
 	public void delete(T instance) {
 		getHibernateTemplate().delete(instance);
 	}
 
-	// 根据ID查询
+	/**
+	 * 根据ID查询
+	 */
 	@SuppressWarnings("unchecked")
 	public T get(ID id) {
 		return (T) getHibernateTemplate().get(clazz, id);
 	}
 
-	// 查询所有
+	/**
+	 * 查询所有
+	 */
 	@SuppressWarnings("unchecked")
 	public List<T> findAll() {
 		return getHibernateTemplate().loadAll(clazz);
 	}
 
-	// 根据例子查询
+	/**
+	 * 根据例子查询
+	 */
 	@SuppressWarnings("unchecked")
 	public List<T> findByExample(T instance) {
 		return getHibernateTemplate().findByExample(instance);
 	}
 
-	// 根据HQL语句进行update操作等
+	/**
+	 * 根据HQL语句进行update操作等
+	 */
 	public int bulkUpdate(String hql) {
 		return getHibernateTemplate().bulkUpdate(hql);
 	}
 
-	// 根据HQL语句进行update操作等
+	/**
+	 * 根据HQL语句进行update操作等
+	 */
 	public int bulkUpdate(String hql, Object value) {
 		return getHibernateTemplate().bulkUpdate(hql, value);
 	}
 
-	// 根据HQL语句进行update操作等
+	/**
+	 * 根据HQL语句进行update操作等
+	 */
 	public int bulkUpdate(String hql, Object[] value) {
 		return getHibernateTemplate().bulkUpdate(hql, value);
 	}
 
-	// 根据HQL语句进行查询
+	/**
+	 * 根据HQL语句进行查询
+	 */
 	@SuppressWarnings("unchecked")
 	public List<T> find(String queryString) {
 		return getHibernateTemplate().find(queryString);
 	}
 
-	// 根据HQL语句进行查询
+	/**
+	 * 根据HQL语句进行查询
+	 */
 	@SuppressWarnings("unchecked")
 	public List<T> find(String queryString, Object obj) {
 
 		return getHibernateTemplate().find(queryString, obj);
 	}
 
-	// 根据HQL语句进行查询
+	/**
+	 * 根据HQL语句进行查询
+	 */
 	@SuppressWarnings("unchecked")
 	public List<T> find(String queryString, Object[] obj) {
 		return getHibernateTemplate().find(queryString, obj);
@@ -225,9 +248,9 @@ public abstract class GenericDAOHibernate<T, ID extends Serializable> extends
 				query.setFirstResult(page.getFirstResult());
 				query.setMaxResults(page.getMaxResult());
 				List<T> list = query.list();
-				if(list==null||list.size()==0){
+				if (list == null || list.size() == 0) {
 					page.setSelectRows(0);
-				}else{
+				} else {
 					page.setSelectRows(list.size());
 				}
 				return list;
@@ -262,9 +285,10 @@ public abstract class GenericDAOHibernate<T, ID extends Serializable> extends
 	 *            查询语句
 	 * @return Integer 记录数
 	 */
-	public Integer getCountByQuery(final String queryString){
+	public Integer getCountByQuery(final String queryString) {
 		int rowsCount = 0;
-		rowsCount = ((Integer) getSession().createQuery("select count(*) " + queryString).iterate().next()).intValue();
-		return rowsCount; 
+		rowsCount = ((Integer) getSession().createQuery(
+				"select count(*) " + queryString).iterate().next()).intValue();
+		return rowsCount;
 	}
 }

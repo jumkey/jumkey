@@ -3,7 +3,6 @@ package meetmanager.web.action;
 import java.util.Date;
 import java.util.List;
 
-import meetmanager.model.Page;
 import meetmanager.model.Sysaccount;
 import meetmanager.model.TradeType;
 import meetmanager.model.Units;
@@ -11,6 +10,7 @@ import meetmanager.model.UnitsType;
 import meetmanager.service.TradeTypeService;
 import meetmanager.service.UnitsService;
 import meetmanager.service.UnitsTypeService;
+import meetmanager.utils.dao.Page;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;

@@ -5,9 +5,9 @@ import java.util.List;
 import meetmanager.dao.FeteRecordDAO;
 import meetmanager.dao.UserDAO;
 import meetmanager.model.FeteRecord;
-import meetmanager.model.Page;
 import meetmanager.model.User;
 import meetmanager.service.FeteRecordService;
+import meetmanager.utils.dao.Page;
 
 
 public class FeteRecordServiceImpl implements FeteRecordService {

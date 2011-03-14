@@ -2,8 +2,8 @@ package meetmanager.service;
 
 import java.util.List;
 
-import meetmanager.model.Page;
 import meetmanager.model.RoomType;
+import meetmanager.utils.dao.Page;
 
 
 public interface RoomTypeService {

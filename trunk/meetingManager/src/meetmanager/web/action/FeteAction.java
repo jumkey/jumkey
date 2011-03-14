@@ -4,10 +4,10 @@ import java.util.List;
 
 import meetmanager.model.Fete;
 import meetmanager.model.MeetingInfo;
-import meetmanager.model.Page;
 import meetmanager.model.Units;
 import meetmanager.service.FeteService;
 import meetmanager.service.UnitsService;
+import meetmanager.utils.dao.Page;
 
 import com.opensymphony.xwork2.ActionSupport;
 

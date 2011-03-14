@@ -2,8 +2,8 @@ package meetmanager.service;
 
 import java.util.List;
 
-import meetmanager.model.Page;
 import meetmanager.model.User;
+import meetmanager.utils.dao.Page;
 
 
 public interface UserService {

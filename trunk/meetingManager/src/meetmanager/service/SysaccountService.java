@@ -3,8 +3,8 @@ package meetmanager.service;
 import java.util.List;
 
 import meetmanager.model.Limit;
-import meetmanager.model.Page;
 import meetmanager.model.Sysaccount;
+import meetmanager.utils.dao.Page;
 
 
 public interface SysaccountService {

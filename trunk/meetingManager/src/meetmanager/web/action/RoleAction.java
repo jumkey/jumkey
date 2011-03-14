@@ -3,10 +3,10 @@ package meetmanager.web.action;
 import java.util.Date;
 import java.util.List;
 
-import meetmanager.model.Page;
 import meetmanager.model.Role;
 import meetmanager.model.Sysaccount;
 import meetmanager.service.RoleService;
+import meetmanager.utils.dao.Page;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
