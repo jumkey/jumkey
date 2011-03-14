@@ -40,6 +40,8 @@
 				<prop key="connection.characterEncoding">utf-8</prop>
 				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
 				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.format_sql">true</prop>
+				<prop key="hibernate.use_sql_comments">false</prop>
 				<prop key="hibernate.hbm2ddl.auto">update</prop><!-- 更新数据库 -->
 			</props>
 		</property>
