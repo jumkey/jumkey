@@ -1,6 +1,7 @@
 package meetmanager.dao;
 
 import meetmanager.model.ArrangementsSeminars;
+import meetmanager.utils.dao.GenericDAO;
 
 
 

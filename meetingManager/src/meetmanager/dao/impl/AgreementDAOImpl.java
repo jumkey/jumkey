@@ -4,8 +4,8 @@ import java.util.Date;
 import java.util.List;
 
 import meetmanager.dao.AgreementDAO;
-import meetmanager.dao.GenericDAOHibernate;
 import meetmanager.model.Agreement;
+import meetmanager.utils.dao.GenericDAOHibernate;
 
 
 public class AgreementDAOImpl extends GenericDAOHibernate<Agreement,Integer> implements AgreementDAO {
