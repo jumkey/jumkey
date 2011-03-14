@@ -3,10 +3,10 @@ package meetmanager.dao.impl;
 import java.sql.SQLException;
 import java.util.List;
 
-import meetmanager.dao.GenericDAOHibernate;
 import meetmanager.dao.RegisterDAO;
 import meetmanager.model.Reach;
 import meetmanager.model.Register;
+import meetmanager.utils.dao.GenericDAOHibernate;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Query;

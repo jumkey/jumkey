@@ -2,9 +2,9 @@ package meetmanager.dao.impl;
 
 import java.util.List;
 
-import meetmanager.dao.GenericDAOHibernate;
 import meetmanager.dao.UnitsDAO;
 import meetmanager.model.Units;
+import meetmanager.utils.dao.GenericDAOHibernate;
 
 
 public class UnitsDAOImpl extends GenericDAOHibernate<Units, Integer> implements

@@ -2,10 +2,10 @@ package meetmanager.dao.impl;
 
 import java.util.List;
 
-import meetmanager.dao.GenericDAOHibernate;
 import meetmanager.dao.IncomeDAO;
 import meetmanager.model.Income;
 import meetmanager.model.MeetingFeeItem;
+import meetmanager.utils.dao.GenericDAOHibernate;
 
 
 public class IncomeDAOImpl extends GenericDAOHibernate<Income,Integer> implements IncomeDAO {

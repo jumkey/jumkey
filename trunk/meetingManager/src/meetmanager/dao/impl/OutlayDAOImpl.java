@@ -1,8 +1,8 @@
 package meetmanager.dao.impl;
 
-import meetmanager.dao.GenericDAOHibernate;
 import meetmanager.dao.OutlayDAO;
 import meetmanager.model.Outlay;
+import meetmanager.utils.dao.GenericDAOHibernate;
 
 
 public class OutlayDAOImpl extends GenericDAOHibernate<Outlay,Integer> implements OutlayDAO {

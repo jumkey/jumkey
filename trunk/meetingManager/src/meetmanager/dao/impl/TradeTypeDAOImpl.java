@@ -2,9 +2,9 @@ package meetmanager.dao.impl;
 
 import java.util.List;
 
-import meetmanager.dao.GenericDAOHibernate;
 import meetmanager.dao.TradeTypeDAO;
 import meetmanager.model.TradeType;
+import meetmanager.utils.dao.GenericDAOHibernate;
 
 
 public class TradeTypeDAOImpl extends GenericDAOHibernate<TradeType, Integer>

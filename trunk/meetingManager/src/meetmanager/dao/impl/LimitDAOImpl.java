@@ -2,9 +2,9 @@ package meetmanager.dao.impl;
 
 import java.util.List;
 
-import meetmanager.dao.GenericDAOHibernate;
 import meetmanager.dao.LimitDAO;
 import meetmanager.model.Limit;
+import meetmanager.utils.dao.GenericDAOHibernate;
 
 
 public class LimitDAOImpl extends GenericDAOHibernate<Limit,Integer> implements LimitDAO {

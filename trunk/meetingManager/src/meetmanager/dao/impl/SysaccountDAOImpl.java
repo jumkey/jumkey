@@ -2,9 +2,9 @@ package meetmanager.dao.impl;
 
 import java.util.List;
 
-import meetmanager.dao.GenericDAOHibernate;
 import meetmanager.dao.SysaccountDAO;
 import meetmanager.model.Sysaccount;
+import meetmanager.utils.dao.GenericDAOHibernate;
 
 
 public class SysaccountDAOImpl extends GenericDAOHibernate<Sysaccount,Integer> implements SysaccountDAO {

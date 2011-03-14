@@ -3,9 +3,9 @@ package meetmanager.dao.impl;
 import java.util.Date;
 import java.util.List;
 
-import meetmanager.dao.GenericDAOHibernate;
 import meetmanager.dao.NoticeDAO;
 import meetmanager.model.Notice;
+import meetmanager.utils.dao.GenericDAOHibernate;
 
 
 public class NoticeDAOImpl extends GenericDAOHibernate<Notice,Integer> implements NoticeDAO {

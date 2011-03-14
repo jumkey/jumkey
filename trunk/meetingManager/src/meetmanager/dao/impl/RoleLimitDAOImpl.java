@@ -2,9 +2,9 @@ package meetmanager.dao.impl;
 
 import java.util.List;
 
-import meetmanager.dao.GenericDAOHibernate;
 import meetmanager.dao.RoleLimitDAO;
 import meetmanager.model.RoleLimit;
+import meetmanager.utils.dao.GenericDAOHibernate;
 
 
 public class RoleLimitDAOImpl extends GenericDAOHibernate<RoleLimit, Integer>
