@@ -4,7 +4,6 @@ import java.util.List;
 
 import meetmanager.dao.GenericDAOHibernate;
 import meetmanager.dao.RoleLimitDAO;
-import meetmanager.model.Limit;
 import meetmanager.model.RoleLimit;
 
 

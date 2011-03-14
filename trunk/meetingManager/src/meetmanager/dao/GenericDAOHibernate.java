@@ -241,7 +241,6 @@ public abstract class GenericDAOHibernate<T, ID extends Serializable> extends
 	 * @param t
 	 * @return 一共有多少条数据
 	 */
-	@SuppressWarnings("unchecked")
 	public int countByPagination(final T t) {
 		return (Integer) getHibernateTemplate().execute(
 				new HibernateCallback() {

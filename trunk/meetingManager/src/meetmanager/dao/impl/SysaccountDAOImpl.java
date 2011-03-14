@@ -9,7 +9,6 @@ import meetmanager.model.Sysaccount;
 
 public class SysaccountDAOImpl extends GenericDAOHibernate<Sysaccount,Integer> implements SysaccountDAO {
 
-	@SuppressWarnings("unchecked")
 	public Sysaccount findByAP(String account, String password) {
 		// TODO Auto-generated method stub
 		List<Sysaccount> list=findByNamedParam("from Sysaccount where account=:account and password=:password",new String[]{"account","password"},new Object[]{account, password});

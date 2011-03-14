@@ -2,7 +2,6 @@ package meetmanager.service;
 
 import java.util.List;
 
-import meetmanager.model.Fete;
 import meetmanager.model.Meal;
 
 

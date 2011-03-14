@@ -2,12 +2,9 @@ package meetmanager.web.action;
 
 import java.util.List;
 
-import meetmanager.model.Fete;
 import meetmanager.model.Meal;
-import meetmanager.service.FeteService;
 import meetmanager.service.MealService;
 
-import org.apache.struts2.json.annotations.JSON;
 
 import com.opensymphony.xwork2.ActionSupport;
 
