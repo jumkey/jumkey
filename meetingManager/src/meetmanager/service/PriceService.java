@@ -5,7 +5,6 @@ import java.util.List;
 import meetmanager.model.Price;
 import meetmanager.model.PriceRoomType;
 import meetmanager.model.RoomType;
-import meetmanager.model.Units;
 
 
 public interface PriceService {

@@ -18,15 +18,12 @@ public interface GenericDAO<T, ID extends Serializable> {
 	public void delete(T instance);
 
 	// 根据ID查询
-	@SuppressWarnings("unchecked")
 	public T get(ID id);
 
 	// 查询所有
-	@SuppressWarnings("unchecked")
 	public List<T> findAll();
 
 	// 根据例子查询
-	@SuppressWarnings("unchecked")
 	public List<T> findByExample(T instance);
 
 	// 根据HQL语句进行update操作等
@@ -39,15 +36,12 @@ public interface GenericDAO<T, ID extends Serializable> {
 	public int bulkUpdate(String hql, Object[] value);
 
 	// 根据HQL语句进行查询
-	@SuppressWarnings("unchecked")
 	public List<T> find(String queryString);
 
 	// 根据HQL语句进行查询
-	@SuppressWarnings("unchecked")
 	public List<T> find(String queryString, Object obj);
 
 	// 根据HQL语句进行查询
-	@SuppressWarnings("unchecked")
 	public List<T> find(String queryString, Object[] obj);
 
 	/**
@@ -61,7 +55,6 @@ public interface GenericDAO<T, ID extends Serializable> {
 	 *            参数值
 	 * @return
 	 */
-	@SuppressWarnings("unchecked")
 	public List<T> findByNamedParam(String queryString, String paramName,
 			Object value);
 
@@ -76,7 +69,6 @@ public interface GenericDAO<T, ID extends Serializable> {
 	 *            参数值的数组
 	 * @return
 	 */
-	@SuppressWarnings("unchecked")
 	public List<T> findByNamedParam(String queryString, String[] paramNames,
 			Object[] values);
 
@@ -87,7 +79,6 @@ public interface GenericDAO<T, ID extends Serializable> {
 	 *            文件中定义的HQL语句的名字
 	 * @return
 	 */
-	@SuppressWarnings("unchecked")
 	public List<T> findByNamedQuery(String queryName);
 
 	/**
@@ -96,7 +87,6 @@ public interface GenericDAO<T, ID extends Serializable> {
 	 * @param value
 	 * @return
 	 */
-	@SuppressWarnings("unchecked")
 	public List<T> findByNamedQuery(String queryName, Object value);
 
 	/**
@@ -105,7 +95,6 @@ public interface GenericDAO<T, ID extends Serializable> {
 	 * @param values
 	 * @return
 	 */
-	@SuppressWarnings("unchecked")
 	public List<T> findByNamedQuery(String queryName, Object[] values);
 
 	/**
@@ -115,7 +104,6 @@ public interface GenericDAO<T, ID extends Serializable> {
 	 * @param value
 	 * @return
 	 */
-	@SuppressWarnings("unchecked")
 	public List<T> findByProperty(String property, Object value);
 
 	/**
@@ -126,7 +114,6 @@ public interface GenericDAO<T, ID extends Serializable> {
 	 * @param maxResult
 	 * @return 返回分页查询的数据
 	 */
-	@SuppressWarnings("unchecked")
 	public List<T> findByPagination(final T t, final int firstResult,
 			final int maxResult);
 
@@ -137,7 +124,6 @@ public interface GenericDAO<T, ID extends Serializable> {
 	 * @param page
 	 * @return 返回分页查询的数据
 	 */
-	@SuppressWarnings("unchecked")
 	public List<T> findByPagination(final String hsql, final Page page);
 
 	/**
@@ -146,7 +132,6 @@ public interface GenericDAO<T, ID extends Serializable> {
 	 * @param t
 	 * @return 一共有多少条数据
 	 */
-	@SuppressWarnings("unchecked")
 	public int countByPagination(final T t);
 
 	/**

@@ -2,11 +2,8 @@ package meetmanager.service.impl;
 
 import java.util.List;
 
-import meetmanager.dao.FeteDAO;
 import meetmanager.dao.MealDAO;
-import meetmanager.model.Fete;
 import meetmanager.model.Meal;
-import meetmanager.service.FeteService;
 import meetmanager.service.MealService;
 
 
