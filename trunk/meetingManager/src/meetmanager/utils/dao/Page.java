@@ -1,5 +1,6 @@
 package meetmanager.utils.dao;
 
+@SuppressWarnings("serial")
 public class Page implements java.io.Serializable {
 	private int totalPage = 1; // 总页数 4
 	private int totalNum = 0; // 总记录数 3
