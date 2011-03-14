@@ -6,12 +6,12 @@ import meetmanager.model.ArrangementsSeminars;
 import meetmanager.model.Lecture;
 import meetmanager.model.MeetingArrangements;
 import meetmanager.model.MeetingRoom;
-import meetmanager.model.Page;
 import meetmanager.model.Units;
 import meetmanager.service.ArrangementsSeminarsService;
 import meetmanager.service.LectureService;
 import meetmanager.service.MeetingArrangementsService;
 import meetmanager.service.MeetingRoomService;
+import meetmanager.utils.dao.Page;
 
 import org.apache.struts2.json.annotations.JSON;
 

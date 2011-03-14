@@ -4,8 +4,8 @@ import java.util.List;
 
 import meetmanager.dao.FeeItemDAO;
 import meetmanager.model.FeeItem;
-import meetmanager.model.Page;
 import meetmanager.service.FeeItemService;
+import meetmanager.utils.dao.Page;
 
 
 public class FeeItemServiceImpl implements FeeItemService {

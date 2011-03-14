@@ -5,9 +5,9 @@ import java.util.List;
 import meetmanager.dao.LimitDAO;
 import meetmanager.dao.SysaccountDAO;
 import meetmanager.model.Limit;
-import meetmanager.model.Page;
 import meetmanager.model.Sysaccount;
 import meetmanager.service.SysaccountService;
+import meetmanager.utils.dao.Page;
 
 
 public class SysaccountServiceImpl implements SysaccountService {

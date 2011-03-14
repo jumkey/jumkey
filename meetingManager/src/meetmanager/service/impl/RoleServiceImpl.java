@@ -3,9 +3,9 @@ package meetmanager.service.impl;
 import java.util.List;
 
 import meetmanager.dao.RoleDAO;
-import meetmanager.model.Page;
 import meetmanager.model.Role;
 import meetmanager.service.RoleService;
+import meetmanager.utils.dao.Page;
 
 
 public class RoleServiceImpl implements RoleService {

@@ -3,7 +3,7 @@ package meetmanager.service;
 import java.util.List;
 
 import meetmanager.model.FeeItem;
-import meetmanager.model.Page;
+import meetmanager.utils.dao.Page;
 
 
 public interface FeeItemService {

@@ -1,4 +1,4 @@
-package meetmanager.model;
+package meetmanager.utils.dao;
 
 public class Page implements java.io.Serializable {
 	private int totalPage = 1; // 总页数 4
@@ -22,10 +22,9 @@ public class Page implements java.io.Serializable {
 	}
 
 	public void setCurrentPage(int currentPage) {
-		if (currentPage < 1){
+		if (currentPage < 1) {
 			this.currentPage = 1;
-		}
-		else{
+		} else {
 			this.currentPage = currentPage;
 		}
 	}
@@ -52,12 +51,12 @@ public class Page implements java.io.Serializable {
 
 	public void setTotalNum(int totalNum) {
 		this.totalNum = totalNum;
-		this.totalPage=this.totalNum/this.maxResult;
-		if(this.totalNum%this.maxResult!=0){
+		this.totalPage = this.totalNum / this.maxResult;
+		if (this.totalNum % this.maxResult != 0) {
 			this.totalPage++;
 		}
-		if(this.currentPage>this.totalPage){
-			this.currentPage=this.totalPage;
+		if (this.currentPage > this.totalPage) {
+			this.currentPage = this.totalPage;
 		}
 	}
 

@@ -3,9 +3,9 @@ package meetmanager.service.impl;
 import java.util.List;
 
 import meetmanager.dao.TradeTypeDAO;
-import meetmanager.model.Page;
 import meetmanager.model.TradeType;
 import meetmanager.service.TradeTypeService;
+import meetmanager.utils.dao.Page;
 
 
 public class TradeTypeServiceImpl implements TradeTypeService {

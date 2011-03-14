@@ -4,8 +4,8 @@ import java.util.List;
 
 import meetmanager.model.Income;
 import meetmanager.model.MeetingFeeItem;
-import meetmanager.model.Page;
 import meetmanager.service.IncomeService;
+import meetmanager.utils.dao.Page;
 
 import org.apache.struts2.json.annotations.JSON;
 

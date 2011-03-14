@@ -5,9 +5,9 @@ import java.util.List;
 import meetmanager.model.FeeItem;
 import meetmanager.model.MeetingFeeItem;
 import meetmanager.model.MeetingInfo;
-import meetmanager.model.Page;
 import meetmanager.model.Units;
 import meetmanager.service.MeetingFeeItemService;
+import meetmanager.utils.dao.Page;
 
 import org.apache.struts2.json.annotations.JSON;
 

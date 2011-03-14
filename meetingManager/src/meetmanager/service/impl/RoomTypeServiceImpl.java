@@ -3,9 +3,9 @@ package meetmanager.service.impl;
 import java.util.List;
 
 import meetmanager.dao.RoomTypeDAO;
-import meetmanager.model.Page;
 import meetmanager.model.RoomType;
 import meetmanager.service.RoomTypeService;
+import meetmanager.utils.dao.Page;
 
 
 public class RoomTypeServiceImpl implements RoomTypeService {

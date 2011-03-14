@@ -3,45 +3,109 @@ package meetmanager.utils.dao;
 import java.io.Serializable;
 import java.util.List;
 
-import meetmanager.model.Page;
-
-
 public interface GenericDAO<T, ID extends Serializable> {
 
-	// 保存
+	/**
+	 * 保存
+	 * 
+	 * @param instance
+	 */
 	public void save(T instance);
 
-	// 更新
+	/**
+	 * 保存更新
+	 * 
+	 * @param instance
+	 */
+	public void saveOrUpdate(T instance);
+
+	/**
+	 * 更新
+	 * 
+	 * @param instance
+	 */
 	public void update(T instance);
 
-	// 删除
+	/**
+	 * 删除
+	 * 
+	 * @param instance
+	 */
 	public void delete(T instance);
 
-	// 根据ID查询
+	/**
+	 * 根据ID查询
+	 * 
+	 * @param id
+	 * @return
+	 */
 	public T get(ID id);
 
-	// 查询所有
+	/**
+	 * 查询所有
+	 * 
+	 * @return
+	 */
 	public List<T> findAll();
 
-	// 根据例子查询
+	/**
+	 * 根据例子查询
+	 * 
+	 * @param instance
+	 * @return
+	 */
 	public List<T> findByExample(T instance);
 
-	// 根据HQL语句进行update操作等
+	/**
+	 * 根据HQL语句进行update操作等
+	 * 
+	 * @param hql
+	 * @return
+	 */
 	public int bulkUpdate(String hql);
 
-	// 根据HQL语句进行update操作等
+	/**
+	 * 根据HQL语句进行update操作等
+	 * 
+	 * @param hql
+	 * @param value
+	 * @return
+	 */
 	public int bulkUpdate(String hql, Object value);
 
-	// 根据HQL语句进行update操作等
+	/**
+	 * 根据HQL语句进行update操作等
+	 * 
+	 * @param hql
+	 * @param value
+	 * @return
+	 */
 	public int bulkUpdate(String hql, Object[] value);
 
-	// 根据HQL语句进行查询
+	/**
+	 * 根据HQL语句进行查询
+	 * 
+	 * @param queryString
+	 * @return
+	 */
 	public List<T> find(String queryString);
 
-	// 根据HQL语句进行查询
+	/**
+	 * 根据HQL语句进行查询
+	 * 
+	 * @param queryString
+	 * @param obj
+	 * @return
+	 */
 	public List<T> find(String queryString, Object obj);
 
-	// 根据HQL语句进行查询
+	/**
+	 * 根据HQL语句进行查询
+	 * 
+	 * @param queryString
+	 * @param obj
+	 * @return
+	 */
 	public List<T> find(String queryString, Object[] obj);
 
 	/**

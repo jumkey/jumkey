@@ -2,12 +2,12 @@ package meetmanager.web.action;
 
 import java.util.List;
 
-import meetmanager.model.Page;
 import meetmanager.model.TradeType;
 import meetmanager.model.Units;
 import meetmanager.model.UnitsType;
 import meetmanager.service.TradeTypeService;
 import meetmanager.service.UnitsService;
+import meetmanager.utils.dao.Page;
 
 import org.apache.struts2.json.annotations.JSON;
 

@@ -4,8 +4,8 @@ import java.util.List;
 
 import meetmanager.model.Activities;
 import meetmanager.model.MeetingInfo;
-import meetmanager.model.Page;
 import meetmanager.service.ActivitiesService;
+import meetmanager.utils.dao.Page;
 
 import com.opensymphony.xwork2.ActionSupport;
 

@@ -5,13 +5,13 @@ import java.util.List;
 
 import meetmanager.model.Lecture;
 import meetmanager.model.MeetingRoom;
-import meetmanager.model.Page;
 import meetmanager.model.Units;
 import meetmanager.model.User;
 import meetmanager.service.LectureService;
 import meetmanager.service.MeetingRoomService;
 import meetmanager.service.UnitsService;
 import meetmanager.service.UserService;
+import meetmanager.utils.dao.Page;
 
 import org.apache.struts2.json.annotations.JSON;
 
