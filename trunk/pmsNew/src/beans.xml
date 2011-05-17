@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<!--
+	- Middle tier application context definition for the image database.
+-->
+<beans>
+
+	<bean id="ActivitiesDAO" class="meetmanager.dao.impl.ActivitiesDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+    <!-- Service -->
+	<bean id="SysaccountService" class="meetmanager.service.impl.SysaccountServiceImpl">
+		<property name="sysaccountDAO" ref="SysaccountDAO" />
+		<property name="limitDAO" ref="LimitDAO" />
+	</bean>
+	
+	<!-- action -->
+	<bean name="loginAction" class="meetmanager.web.action.LoginAction" scope="prototype">
+		<property name="sysaccountService" ref="SysaccountService" />
+	</bean>
+</beans>

@@ -1,0 +1,82 @@
+<html>
+<head>
+<title>文档管理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link href="../css/modlewin.css" rel="stylesheet" type="text/css">
+<script language="javascript" type="text/javascript" src="../js/Calendar.js"></script>
+<script language="javascript" type="text/javascript">
+//点“添加更多附件”链接后新增一行上传文本框TR
+function adddoc() {
+	var oTBody = docTB.childNodes[0];
+	var oNewLine = oTBody.childNodes[0].cloneNode(true);
+	oNewLine.lastChild.innerHTML += "<input type=button class=delfile-btn onclick=remove(this.parentNode.parentNode)>";
+	oTBody.appendChild(oNewLine);
+}
+function remove(oTR) {
+	var oTBody = docTB.childNodes[0];
+	oTBody.deleteRow(oTR.sectionRowIndex);
+}
+</script>
+</head>
+
+<body>
+<form action="" method="post" enctype="multipart/form-data" name="form1">
+  <table cellpadding="0" cellspacing="0" class="table-width">
+    <tr>
+      <td>
+	  <table cellpadding="0" cellspacing="0" class="table-lt-border">
+        <tr>
+          <td class="list-header-td">文档管理〖<a href="#" onClick="adddoc();"><b>要一次上传多个文件的话请点这里</b></a>〗</td>
+        </tr>
+        <tr>
+          <td>
+		  <table cellpadding="0" cellspacing="0" class="table-width">
+            <tr>
+              <td nowrap class="list-left-title">文档名称</td>
+              <td class="info-left-td"><input type="text" name="textfield"></td>
+              <td class="list-left-title">文档类型</td>
+              <td class="info-left-td"><select name="select">
+                <option selected>请选择文档类型</option>
+              </select></td>
+            </tr>
+            <tr>
+              <td nowrap class="list-left-title">文档创建日期</td>
+              <td class="info-left-td"><input name="data2" type="text" class="data_input" readonly>
+                <input name="data_btn" type="button" class="btn-data" onClick="selectDate(document.all.data2);" title="点击选择具体日期"></td>
+              <td class="list-left-title">文档创建人</td>
+              <td class="info-left-td"><input type="text" name="textfield2"></td>
+            </tr>
+            <tr>
+              <td nowrap class="list-left-title">文件上传</td>
+              <td colspan="3" class="info-left-td">
+			  <table cellpadding="0" cellspacing="0" border="0" id="docTB">
+                <tr>
+                  <td>
+                    <input type="file" name="file">
+                  </td>
+                  <td>&nbsp;</td>
+                </tr>
+              </table>
+			  </td>
+             </tr>
+            <tr>
+              <td nowrap class="list-left-title">描述</td>
+              <td colspan="3" class="info-left-td"><textarea name="textarea"></textarea></td>
+              </tr>
+          </table>
+		  </td>
+        </tr>
+      </table>
+	  </td>
+    </tr>
+    <tr>
+      <td class="boxoff_td"></td>
+    </tr>
+    <tr>
+      <td class="btn-position-td"><input name="Button" type="button" class="btn-2word" value="确定">
+      <input name="Button2" type="button" class="btn-2word" value="关闭" onClick="window.close();"></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

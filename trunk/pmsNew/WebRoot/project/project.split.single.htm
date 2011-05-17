@@ -1,0 +1,75 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link href="../css/mainright.css" rel="stylesheet" type="text/css">
+<script language="javascript" type="text/javascript" src="../js/public.js"></script>
+</head>
+<body>
+<form method="post" enctype="multipart/form-data" name="form1">
+  <table cellpadding="0" cellspacing="0" class="table-width">
+    <tr>
+      <td class="page-positon-td">您现在所在的位置：项目管理 - 拆分项目单项</td>
+    </tr>
+    <tr>
+      <td>
+	  <script language="javascript" src="../js/projectinfo.js"></script>
+	  </td>
+    </tr>
+    <tr>
+      <td class="boxoff_td"></td>
+    </tr>
+    <tr>
+      <td>
+	  <table cellpadding="0" cellspacing="0" class="table-lt-border">
+        <tr>
+          <td class="list-header-td">拆分成项目单项信息编辑</td>
+        </tr>
+        <tr>
+          <td>
+		  <table cellpadding="0" cellspacing="0" class="table-width">
+            <tr>
+              <td class="list-left-title">单项名称</td>
+              <td class="info-left-td"><input type="text" name="textfield"></td>
+              <td class="list-left-title">单项编号</td>
+              <td class="info-left-td"><input type="text" name="textfield2"></td>
+            </tr>
+            <tr>
+              <td class="list-left-title">投资额</td>
+              <td class="info-left-td"><input type="text" name="textfield3"></td>
+              <td class="list-left-title">单项负责人</td>
+              <td class="info-left-td"><input name="textfield2" type="text" class="data_input">
+                  <input name="person_btn" type="button" class="btn-person" onClick="selectman();" title="点击选择人员"></td>
+            </tr>
+            <tr>
+              <td class="list-left-title">建设性质</td>
+              <td colspan="3" class="info-left-td"><select name="select">
+                <option selected>请选择</option>
+                <option>新建</option>
+                <option>改建</option>
+                <option>扩建</option>
+                <option>迁改</option>
+              </select></td>
+              </tr>
+            <tr>
+              <td class="list-left-title">建设内容</td>
+              <td colspan="3" class="info-left-td"><textarea name="textarea"></textarea></td>
+              </tr>
+          </table>
+		  </td>
+        </tr>
+      </table>
+	  </td>
+    </tr>
+    <tr>
+      <td class="boxoff_td"></td>
+    </tr>
+    <tr>
+      <td class="btn-position-td"><input name="Submit" type="submit" class="btn-2word" value="保存">
+        <input name="Submit2" type="button" class="btn-2word" value="返回" onClick="location.href='project.rightmain.htm'">
+      </td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

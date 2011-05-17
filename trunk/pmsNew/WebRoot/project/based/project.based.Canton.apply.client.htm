@@ -1,0 +1,540 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link href="../../css/mainright.css" rel="stylesheet" type="text/css">
+<script language="javascript" type="text/javascript" src="../../js/Calendar.js"></script>
+<script language="javascript" type="text/javascript" src="../../js/public.js"></script>
+</head>
+<body>
+<form name="form1" method="post" action="">
+  <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+  <tr>
+      <td class="page-positon-td">您现在所在的位置：项目管理 - 项目立项 - 地市项目申请 </td>
+    </tr>
+  <tr>
+      <td>
+<table cellpadding="0" cellspacing="0" class="table-lt-border">
+		<tr>
+		  <td nowrap class="top-lable-td"><a href="project.based.canton.apply.htm" class="lable-6word-link">项目基本信息</a><span class="lable-8word">客户接入项目信息</span><a href="project.based.canton.apply.machine-room.htm" class="lable-7word-link">非客户机房项目</a><a href="project.based.canton.apply.other.htm" class="lable-6word-link">项目其它信息</a></td>
+		</tr>
+            <tr>
+              <td class="list-header-td"> 请选择建设该项目时所覆盖到的专业</td>
+            </tr>
+            <tr>
+              <td>
+                <table cellpadding="0" cellspacing="0" class="table-width">
+                  <tr>
+                    <td class="info-left-td"><input type="checkbox" name="checkbox" value="checkbox">用户配线 </td>
+                    <td class="info-left-td"> <input type="checkbox" name="checkbox3" value="checkbox">管道</td>
+                    <td class="info-left-td"><input type="checkbox" name="checkbox5" value="checkbox">杆路  </td>
+                    <td class="info-left-td"><input type="checkbox" name="checkbox7" value="checkbox">光缆 </td>
+                    <td class="info-left-td"><input type="checkbox" name="checkbox72" value="checkbox">传输 </td>
+                  </tr>
+                  <tr>
+                    <td class="info-left-td"><input type="checkbox" name="checkbox2" value="checkbox">电缆 </td>
+                    <td class="info-left-td"><input type="checkbox" name="checkbox4" value="checkbox">接入设备 </td>
+                    <td class="info-left-td"><input type="checkbox" name="checkbox6" value="checkbox">数据设备  </td>
+                    <td class="info-left-td"><input type="checkbox" name="checkbox73" value="checkbox">机房改造及配套</td>
+                    <td class="info-right-td"><input name="Button3" type="button" class="btn-2word" value="确定"></td>
+                  </tr>
+              </table>
+			  </td>
+            </tr>
+        </table>
+	  </td>
+    </tr>
+    <tr>
+     <td class="boxoff_td"></td>
+    </tr>
+    <tr>
+     <td>
+	  <table cellpadding="0" cellspacing="0" class="table-left-border"> 
+		<tr>
+		  <td class="list-header-td">用户配线区域现状</td>
+		</tr>
+        <tr>
+         <td>
+		 <table cellpadding="0" cellspacing="0" class="table-width">
+           <tr>
+             <td class="list-left-title">归属局名称</td>
+             <td class="info-left-td"><input type="text" name="textfield9"></td>
+             <td class="list-left-title">业务接入点属性</td>
+             <td class="info-left-td"><input type="text" name="textfield10"></td>
+           </tr>
+           <tr>
+             <td class="list-left-title">覆盖半径（米）</td>
+             <td class="info-left-td"><input type="text" name="textfield8"></td>
+             <td class="list-left-title">配线属性</td>
+             <td class="info-left-td"><input type="text" name="textfield11"></td>
+           </tr>
+           <tr>
+             <td class="list-left-title">现有配线线对</td>
+             <td colspan="3" class="info-left-td"><input type="text" name="textfield7"></td>
+             </tr>
+         </table>
+		 </td>
+          </tr>
+        <tr>
+          <td class="list-header-td">用户配线区域市场情况</td>
+        </tr>
+        <tr>
+          <td>		  <table cellpadding="0" cellspacing="0" class="table-width">
+            <tr>
+              <td class="list-left-title">市场容量</td>
+              <td class="info-left-td"><input type="text" name="textfield3"></td>
+              <td class="list-left-title">现有用户数</td>
+              <td class="info-left-td"><input type="text" name="textfield4"></td>
+            </tr>
+            <tr>
+              <td class="list-left-title">目标用户数</td>
+              <td class="info-left-td"><input type="text" name="textfield6"></td>
+              <td class="list-left-title">一年内发展用户数</td>
+              <td class="info-left-td"><input type="text" name="textfield5"></td>
+            </tr>
+            <tr>
+              <td class="list-left-title">竞争状况</td>
+              <td colspan="3" class="info-left-td"><textarea name="textarea3"></textarea></td>
+              </tr>
+          </table>
+		  </td>
+        </tr>
+        <tr>
+          <td class="list-header-td">用户配线区计划投资情况</td>
+        </tr>
+        <tr>
+          <td>		  <table cellpadding="0" cellspacing="0" class="table-width">
+            <tr>
+              <td class="list-left-title">拟增配线</td>
+              <td class="info-left-td"><input type="text" name="textfield12"></td>
+              <td class="list-left-title">计划投资(万元)</td>
+              <td class="info-left-td"><input type="text" name="textfield13"></td>
+            </tr>
+            <tr>
+              <td class="list-left-title">计划完成日期</td>
+              <td class="info-left-td">
+			  <input type="text" class="data_input" name="data1" readonly>
+			   <input name="data_btn" type="button" class="btn-data" onClick="selectDate(document.all.data1)" title="点击选择具体日期">
+			  </td>
+              <td class="list-left-title">每线成本(万元)</td>
+              <td class="info-left-td"><input type="text" name="textfield14"></td>
+            </tr>
+          </table>
+		  </td>
+        </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+     <td class="boxoff_td"></td>
+    </tr>
+    <tr>
+      <td>
+	  <table cellpadding="0" cellspacing="0" class="table-lt-border">
+        <tr>
+          <td class="list-header-td">管道部分信息</td>
+        </tr>
+        <tr>
+          <td>
+            <table cellpadding="0" cellspacing="0" class="table-width">
+              <tr>
+                <td class="list-left-title">起点</td>
+                <td class="info-left-td"><input type="text" name="textfield"></td>
+                <td class="list-left-title">终点</td>
+                <td class="info-left-td"><input type="text" name="textfield2"></td>
+              </tr>
+              <tr>
+                <td class="list-left-title">现有管孔数</td>
+                <td class="info-left-td"><input type="text" name="textfield16"></td>
+                <td class="list-left-title">利用率</td>
+                <td class="info-left-td"><input type="text" name="textfield15"></td>
+              </tr>
+              <tr>
+                <td class="list-left-title">新建/迁改</td>
+                <td class="info-left-td"><select name="select">
+                  <option selected>请选择</option>
+                  <option>新建</option>
+                  <option>迁改</option>
+                </select></td>
+                <td class="list-left-title">管道材料</td>
+                <td class="info-left-td"><input type="text" name="textfield18"></td>
+              </tr>
+              <tr>
+                <td class="list-left-title">管孔数</td>
+                <td class="info-left-td"><input type="text" name="textfield17"></td>
+                <td class="list-left-title">长度(KM)</td>
+                <td class="info-left-td"><input type="text" name="textfield19"></td>
+              </tr>
+              <tr>
+                <td class="list-left-title">计划投资(万元)</td>
+                <td class="info-left-td"><input type="text" name="textfield20"></td>
+                <td class="list-left-title">平均造价<br>
+                  (万元/孔公里)</td>
+                <td class="info-left-td"><input type="text" name="textfield21"></td>
+              </tr>
+              <tr>
+                <td class="list-left-title">计划完成日期</td>
+                <td colspan="3" class="info-left-td">
+				<input type="text" class="data_input" name="data2" readonly>
+			   <input name="data_btn" type="button" class="btn-data" onClick="selectDate(document.all.data2)" title="点击选择具体日期">
+				</td>
+                </tr>
+            </table>
+			</td>
+        </tr>
+      </table>
+	  </td>
+    </tr>
+    <tr>
+      <td class="boxoff_td"></td>
+    </tr>
+    <tr>
+      <td>
+	    <table cellpadding="0" cellspacing="0" class="table-lt-border">
+          <tr>
+            <td class="list-header-td">杆路投资信息</td>
+          </tr>
+          <tr>
+            <td>
+              <table cellpadding="0" cellspacing="0" class="table-width">
+                <tr>
+                  <td class="list-left-title">起点</td>
+                  <td class="info-left-td"><input type="text" name="textfield22"></td>
+                  <td class="list-left-title">终点</td>
+                  <td class="info-left-td"><input type="text" name="textfield22"></td>
+                </tr>
+                <tr>
+                  <td class="list-left-title">新建/迁改</td>
+                  <td class="info-left-td"><select name="select2">
+                      <option selected>请选择</option>
+                      <option>新建</option>
+                      <option>迁改</option>
+                  </select></td>
+                  <td class="list-left-title">杆程公里</td>
+                  <td class="info-left-td"><input type="text" name="textfield182"></td>
+                </tr>
+                <tr>
+                  <td class="list-left-title">计划投资(万元)</td>
+                  <td class="info-left-td"><input type="text" name="textfield202"></td>
+                  <td class="list-left-title">平均造价<br>
+            (万元/孔公里)</td>
+                  <td class="info-left-td"><input type="text" name="textfield212"></td>
+                </tr>
+                <tr>
+                  <td class="list-left-title">计划完成日期</td>
+                  <td colspan="3" class="info-left-td">
+				  <input type="text" class="data_input" name="data3" readonly>
+			   <input name="data_btn" type="button" class="btn-data" onClick="selectDate(document.all.data3)" title="点击选择具体日期">
+				  </td>
+                </tr>
+            </table>
+			</td>
+          </tr>
+        </table>
+	  </td>
+    </tr>
+    <tr>
+      <td class="boxoff_td"></td>
+    </tr>
+    <tr>
+      <td>
+	    <table cellpadding="0" cellspacing="0" class="table-lt-border">
+          <tr>
+            <td class="list-header-td">光缆部分信息</td>
+          </tr>
+          <tr>
+            <td>
+              <table cellpadding="0" cellspacing="0" class="table-width">
+                <tr>
+                  <td class="list-left-title">起点</td>
+                  <td class="info-left-td"><input type="text" name="textfield23"></td>
+                  <td class="list-left-title">终点</td>
+                  <td class="info-left-td"><input type="text" name="textfield23"></td>
+                </tr>
+                <tr>
+                  <td class="list-left-title">光缆型号</td>
+                  <td class="info-left-td"><input type="text" name="textfield162"></td>
+                  <td class="list-left-title">敷设方式</td>
+                  <td class="info-left-td"><input type="text" name="textfield152"></td>
+                </tr>
+                <tr>
+                  <td class="list-left-title">芯数</td>
+                  <td class="info-left-td"><input type="text" name="textfield172"></td>
+                  <td class="list-left-title">长度(公里)</td>
+                  <td class="info-left-td"><input type="text" name="textfield192"></td>
+                </tr>
+                <tr>
+                  <td class="list-left-title">计划投资(万元)</td>
+                  <td class="info-left-td"><input type="text" name="textfield203"></td>
+                  <td class="list-left-title">平均造价<br>
+            (万元/孔公里)</td>
+                  <td class="info-left-td"><input type="text" name="textfield213"></td>
+                </tr>
+                <tr>
+                  <td class="list-left-title">计划完成日期</td>
+                  <td colspan="3" class="info-left-td">
+				  <input type="text" class="data_input" name="data4" readonly>
+			   <input name="data_btn" type="button" class="btn-data" onClick="selectDate(document.all.data4)" title="点击选择具体日期">
+				  </td>
+                </tr>
+            </table>
+			</td>
+          </tr>
+        </table>
+	  </td>
+    </tr>
+    <tr>
+      <td class="boxoff_td"></td>
+    </tr>
+    <tr>
+      <td>
+	    <table cellpadding="0" cellspacing="0" class="table-lt-border">
+          <tr>
+            <td class="list-header-td">电缆部分信息</td>
+          </tr>
+          <tr>
+            <td>
+              <table cellpadding="0" cellspacing="0" class="table-width">
+                <tr>
+                  <td class="list-left-title">起点</td>
+                  <td class="info-left-td"><input type="text" name="textfield232"></td>
+                  <td class="list-left-title">终点</td>
+                  <td class="info-left-td"><input type="text" name="textfield232"></td>
+                </tr>
+                <tr>
+                  <td class="list-left-title">电缆型号</td>
+                  <td class="info-left-td"><input type="text" name="textfield1622"></td>
+                  <td class="list-left-title">敷设方式</td>
+                  <td class="info-left-td"><input type="text" name="textfield1522"></td>
+                </tr>
+                <tr>
+                  <td class="list-left-title">对数</td>
+                  <td class="info-left-td"><input type="text" name="textfield1722"></td>
+                  <td class="list-left-title">长度(公里)</td>
+                  <td class="info-left-td"><input type="text" name="textfield1922"></td>
+                </tr>
+                <tr>
+                  <td class="list-left-title">计划投资(万元)</td>
+                  <td class="info-left-td"><input type="text" name="textfield2032"></td>
+                  <td class="list-left-title">平均造价<br>
+            (万元/孔公里)</td>
+                  <td class="info-left-td"><input type="text" name="textfield2132"></td>
+                </tr>
+                <tr>
+                  <td class="list-left-title">计划完成日期</td>
+                  <td colspan="3" class="info-left-td">
+				  <input type="text" class="data_input" name="data5" readonly>
+			   <input name="data_btn" type="button" class="btn-data" onClick="selectDate(document.all.data5)" title="点击选择具体日期">
+				  </td>
+                </tr>
+            </table>
+			</td>
+          </tr>
+        </table>
+	  </td>
+    </tr>
+    <tr>
+      <td class="boxoff_td"></td>
+    </tr>
+    <tr>
+      <td>
+	    <table cellpadding="0" cellspacing="0" class="table-lt-border">
+          <tr>
+            <td class="list-header-td">接入设备部分信息</td>
+          </tr>
+          <tr>
+            <td>
+              <table cellpadding="0" cellspacing="0" class="table-width">
+                <tr>
+                  <td class="list-left-title">现有设备种类</td>
+                  <td class="info-left-td"><input type="text" name="textfield24"></td>
+                  <td class="list-left-title">业务接入点属性</td>
+                  <td class="info-left-td"><input type="text" name="textfield24"></td>
+                </tr>
+                <tr>
+                  <td class="list-left-title">覆盖区域的<br>
+                  现有市场容量</td>
+                  <td class="info-left-td"><input type="text" name="textfield163"></td>
+                  <td class="list-left-title">现有设备型号</td>
+                  <td class="info-left-td"><input type="text" name="textfield153"></td>
+                </tr>
+                <tr>
+                  <td class="list-left-title">现有设备容量</td>
+                  <td class="info-left-td"><input type="text" name="textfield1632"></td>
+                  <td class="list-left-title">现有用户数</td>
+                  <td class="info-left-td"><input type="text" name="textfield183"></td>
+                </tr>
+                <tr>
+                  <td class="list-left-title">设备接入类型</td>
+                  <td class="info-left-td"><select name="select4">
+                    <option selected>请选择</option>
+                    <option>新建</option>
+                    <option>扩容</option>
+                    <option>改建</option>
+                                    </select></td>
+                  <td class="list-left-title">新增设备型号</td>
+                  <td class="info-left-td"><input type="text" name="textfield193"></td>
+                </tr>
+                <tr>
+                  <td class="list-left-title">新增设备数量</td>
+                  <td class="info-left-td"><input type="text" name="textfield204"></td>
+                  <td class="list-left-title">提供用户接入数量</td>
+                  <td class="info-left-td"><input type="text" name="textfield214"></td>
+                </tr>
+                <tr>
+                  <td class="list-left-title">新增目标用户数</td>
+                  <td class="info-left-td"><input type="text" name="textfield2143"></td>
+                  <td class="list-left-title">计划投资(万元)</td>
+                  <td class="info-left-td"><input type="text" name="textfield2142"></td>
+                </tr>
+                <tr>
+                  <td class="list-left-title">计划完成日期</td>
+                  <td colspan="3" class="info-left-td">
+				  <input type="text" class="data_input" name="data6" readonly>
+			   <input name="data_btn" type="button" class="btn-data" onClick="selectDate(document.all.data6)" title="点击选择具体日期">
+				  </td>
+                </tr>
+            </table>
+			</td>
+          </tr>
+        </table>
+	  </td>
+    </tr>
+    <tr>
+      <td class="boxoff_td"></td>
+    </tr>
+    <tr>
+      <td>
+	  <table cellpadding="0" cellspacing="0" class="table-lt-border">
+        <tr>
+          <td class="list-header-td"> 数据设备信息</td>
+        </tr>
+        <tr>
+          <td>
+            <table cellpadding="0" cellspacing="0" class="table-width">
+              <tr>
+                <td class="list-left-title"> 新增设备型号</td>
+                <td class="info-left-td"><input type="text" name="textfield222"></td>
+                <td class="list-left-title"> 新增设备数量</td>
+                <td class="info-left-td"><input type="text" name="textfield222"></td>
+              </tr>
+              <tr>
+                <td class="list-left-title">设备接入类型</td>
+                <td class="info-left-td"><select name="select3">
+                    <option selected>请选择</option>
+                    <option>新建</option>
+                    <option>迁改</option>
+                </select></td>
+                <td class="list-left-title"> 新增提供用户接入数量</td>
+                <td class="info-left-td"><input type="text" name="textfield1822"></td>
+              </tr>
+              <tr>
+                <td class="list-left-title">计划投资(万元)</td>
+                <td class="info-left-td"><input type="text" name="textfield2022"></td>
+                <td class="list-left-title"> 新增目标用户数</td>
+                <td class="info-left-td"><input type="text" name="textfield2122"></td>
+              </tr>
+              <tr>
+                <td class="list-left-title">计划完成日期</td>
+                <td colspan="3" class="info-left-td">
+                  <input type="text" class="data_input" name="data32" readonly>
+                  <input name="data_btn2" type="button" class="btn-data" onClick="selectDate(document.all.data3)" title="点击选择具体日期">
+                </td>
+              </tr>
+          </table>
+		  </td>
+        </tr>
+      </table>	  </td>
+    </tr>
+    <tr>
+      <td class="boxoff_td"></td>
+    </tr>
+    <tr>
+      <td class="boxoff_td"><table cellpadding="0" cellspacing="0" class="table-lt-border">
+        <tr>
+          <td class="list-header-td"> 传输部分信息</td>
+        </tr>
+        <tr>
+          <td>
+            <table cellpadding="0" cellspacing="0" class="table-width">
+              <tr>
+                <td class="list-left-title"> 新增设备型号</td>
+                <td class="info-left-td"><input type="text" name="textfield2222"></td>
+                <td class="list-left-title"> 新增设备数量</td>
+                <td class="info-left-td"><input type="text" name="textfield2222"></td>
+              </tr>
+              <tr>
+                <td class="list-left-title">设备接入类型</td>
+                <td class="info-left-td"><select name="select5">
+                    <option selected>请选择</option>
+                    <option>新建</option>
+                    <option>迁改</option>
+                </select></td>
+                <td class="list-left-title"> 新增提供2M数量</td>
+                <td class="info-left-td"><input type="text" name="textfield18222"></td>
+              </tr>
+              <tr>
+                <td class="list-left-title">计划投资(万元)</td>
+                <td class="info-left-td"><input type="text" name="textfield20222"></td>
+                <td class="list-left-title">计划完成日期 </td>
+                <td class="info-left-td"><input type="text" class="data_input" name="data322" readonly>
+                  <input name="data_btn22" type="button" class="btn-data" onClick="selectDate(document.all.data3)" title="点击选择具体日期"></td>
+              </tr>
+          </table></td>
+        </tr>
+      </table></td>
+    </tr>
+    <tr>
+      <td class="boxoff_td"></td>
+    </tr>
+    <tr>
+      <td><table cellpadding="0" cellspacing="0" class="table-lt-border">
+        <tr>
+          <td class="list-header-td">机房改造及配套部分信息</td>
+        </tr>
+        <tr>
+          <td>
+            <table cellpadding="0" cellspacing="0" class="table-width">
+              <tr>
+                <td class="list-left-title">机房地点</td>
+                <td class="info-left-td"><input type="text" name="textfield242"></td>
+                <td class="list-left-title">产权属性</td>
+                <td class="info-left-td"><input type="text" name="textfield242"></td>
+              </tr>
+              <tr>
+                <td class="list-left-title">机房面积(平米)</td>
+                <td class="info-left-td"><input type="text" name="textfield1633"></td>
+                <td class="list-left-title">机房费用(万元)</td>
+                <td class="info-left-td"><input type="text" name="textfield1532"></td>
+              </tr>
+              <tr>
+                <td class="list-left-title">机房改造费用<br>
+                  (万元)</td>
+                <td class="info-left-td"><input type="text" name="textfield16322"></td>
+                <td class="list-left-title">机房配套费用<br>
+                  (万元)</td>
+                <td class="info-left-td"><input type="text" name="textfield1832"></td>
+              </tr>
+              <tr>
+                <td class="list-left-title">计划投资(万元)</td>
+                <td class="info-left-td"><input type="text" name="textfield21422"></td>
+                <td class="list-left-title">计划完成日期</td>
+                <td class="info-left-td">
+				<input type="text" class="data_input" name="data7" readonly>
+			   <input name="data_btn" type="button" class="btn-data" onClick="selectDate(document.all.data7)" title="点击选择具体日期">
+				</td>
+              </tr>
+          </table></td>
+        </tr>
+      </table></td>
+    </tr>
+    <tr>
+      <td class="boxoff_td"></td>
+    </tr>
+    <tr>
+      <td class="btn-position-td"><input name="Button" type="button" class="btn-2word" value="保存"> <input name="Button2" type="button" class="btn-2word" value="返回" onClick="history.back();"></td>
+    </tr>
+</table>
+</form>
+</body>
+</html>

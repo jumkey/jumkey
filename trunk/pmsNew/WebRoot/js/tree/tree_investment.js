@@ -1,0 +1,15 @@
+var title="计划管理";
+var t,itemid;
+t=outlookbar.addtitle('计划管理')
+itemid=outlookbar.additem('启动年度投资计划',t,'plan/investment.plan.invest.htm','')
+itemid=outlookbar.additem('编制年投计划',t,'plan/investment.plan.invest.htm','')
+itemid=outlookbar.additem('评审年投计划',t,'plan/investment.plan.examine.htm','')
+itemid=outlookbar.additem('汇总调整年投计划',t,'plan/investment.plan.collect.htm','')
+itemid=outlookbar.additem('导出年投计划',t,'plan/investment.plan.educetframe.htm','')
+itemid=outlookbar.additem('调整年投计划',t,'plan/investment.plan.regulate.htm','')
+itemid=outlookbar.additem('发布年投计划',t,'plan/investment.plan.issue.htm','')
+itemid=outlookbar.additem('编制动态计划',t,'plan/investment.plan.weavedynamic.htm','')             					
+itemid=outlookbar.additem('编制年投调整计划',t,'plan/investment.plan.weave.htm','')
+itemid=outlookbar.additem('审核年投调整计划',t,'plan/investment.plan.adjust.htm','')
+itemid=outlookbar.additem('发布年投调整计划',t,'plan/investment.plan.issueregulate.htm','')
+itemid=outlookbar.additem('投资结构',t,'plan/investment.plan.frame.htm','')

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="pmsNew"
+  id="myeclipse.1305546032205"
+  context-root="/pmsNew"
+  j2ee-spec="5.0"
+  archive="pmsNew.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link href="../css/mainright.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<form action="" method="post" enctype="multipart/form-data" name="form1">
+  <table cellpadding="0" cellspacing="0" class="table-width">
+    <tr>
+      <td class="page-positon-td">您现在所在的位置：项目立项 - 待处理项目立项申请列表</td>
+    </tr>
+    <tr>
+      <td>
+	  <table cellpadding="0" cellspacing="0" class="table-lt-border">
+        <tr>
+          <td class="list-header-td">项目列表（单位：万元）<span id="flashit">（操作说明提示：点击“项目名称”上的链接可以继续修改或编辑未完成的项目立项申请信息）</span></td>
+        </tr>
+        <tr>
+          <td>
+		  <table cellpadding="0" cellspacing="0" class="table-width">
+            <tr>
+              <td class="list-top-title">项目名称</td>
+              <td class="list-top-title">项目类别</td>
+              <td class="list-top-title">总投资</td>
+              <td class="list-top-title">所属地区</td>
+              </tr>
+            <tr class="rowcolor">
+              <td class="info-left-td"><a href="based/project.based.province.apply.htm" title="鼠标移上去显示完整的项目名称">超过规定字符数省略号显示（省项目1）</a></td>
+              <td class="info-left-td">&nbsp;</td>
+              <td class="info-left-td">123</td>
+              <td class="info-right-td">&nbsp;</td>
+              </tr>
+            <tr class="rowcolor">
+              <td class="info-left-td"><a href="based/project.based.canton.apply.htm" title="鼠标移上去显示完整的项目名称">超过规定字符数省略号显示（地市项目1）</a></td>
+              <td class="info-left-td">&nbsp;</td>
+              <td class="info-left-td">&nbsp;</td>
+              <td class="info-left-td">&nbsp;</td>
+              </tr>
+            <tr class="rowcolor">
+              <td class="info-left-td"><a href="based/project.based.province.apply.htm" title="鼠标移上去显示完整的项目名称">超过规定字符数省略号显示（省项目2）</a></td>
+              <td class="info-left-td">&nbsp;</td>
+              <td class="info-left-td">&nbsp;</td>
+              <td class="info-left-td">&nbsp;</td>
+              </tr>
+            <tr class="rowcolor">
+              <td class="info-left-td"><a href="based/project.based.canton.apply.htm" title="鼠标移上去显示完整的项目名称">超过规定字符数省略号显示（地市项目2）</a></td>
+              <td class="info-left-td">&nbsp;</td>
+              <td class="info-left-td">&nbsp;</td>
+              <td class="info-left-td">&nbsp;</td>
+              </tr>
+            <tr class="rowcolor">
+              <td class="info-left-td"><a href="based/project.based.canton.apply.htm" title="鼠标移上去显示完整的项目名称">超过规定字符数省略号显示（地市项目3）</a></td>
+              <td class="info-left-td">&nbsp;</td>
+              <td class="info-left-td">&nbsp;</td>
+              <td class="info-left-td">&nbsp;</td>
+              </tr>
+          </table>
+		  </td>
+        </tr>
+      </table>
+	  </td>
+    </tr>
+  <tr>
+      <td class="boxoff_td"></td>
+    </tr>
+  </table>
+</form>
+<script language="JavaScript1.2">
+if (document.all&&document.all.flashit){
+
+var flashelement=document.all.flashit
+if (flashelement.length==null)
+flashelement[0]=document.all.flashit
+
+function changecolor(which){
+if (flashelement[which].style.color=='')
+flashelement[which].style.color="#000000"
+else
+flashelement[which].style.color=""
+}
+if (flashelement.length==null)
+setInterval("changecolor(0)",1000)
+else
+for (i=0;i<flashelement.length;i++){
+var tempvariable='setInterval("changecolor('+i+')",'+'1000)'
+eval(tempvariable)
+}
+
+}
+</script>
+</body>
+</html>

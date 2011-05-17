@@ -1,0 +1,56 @@
+<html>
+<head>
+<title>中国网通浙江分公司工程项目管理系统</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<style type="text/css">
+<!--
+body {
+	background-color: #D9EAF5;
+	font-size: 12px;
+	text-decoration: none;
+	background-attachment: fixed;
+	background-image: url(images/hidemenu_bg.gif);
+	background-repeat: repeat-y;
+	background-position: left top;	
+}
+-->
+</style>
+</head>
+<body leftMargin=0 topMargin=0 marginheight="0" marginwidth="0">
+<SCRIPT language=javascript>
+function Hidemenu(obj)
+{
+	if (frmHide.menustatus.value==0)
+	{
+		obj.src="images/menushow.gif";
+		obj.alt="展开导航栏/恢复默认布局";
+		top.zjcncy.cols="0,10,*";
+//		top.zjcncx.rows="26,*,25";
+//		top.topFrame.location.href="topMenu.htm";
+	}
+	else
+	{
+		obj.src="images/menuhide.gif";
+		obj.alt="隐藏导航栏/使操作区最大化";
+		top.zjcncy.cols="156,10,*";
+//		top.zjcncx.rows="80,*,25";
+//		top.topFrame.location.href="maintop.htm";
+	}
+	frmHide.menustatus.value = 1 - frmHide.menustatus.value;
+
+}
+</SCRIPT>
+<TABLE width="10" height=100% border=0 cellPadding=0 cellSpacing=0>
+<TR>
+<TD width="10" align="center" valign="middle">
+    <FORM name=frmHide style="margin:0px;">      
+       <A style="CURSOR:hand" onclick=Hidemenu(arrow)>
+        <IMG src="images/menuhide.gif" alt="隐藏左边导航栏/使操作区最大化" name=arrow width="10" height="60" border=0>
+       </A>
+       <INPUT type=hidden value=0 name=menustatus> 
+    </FORM>
+	</TD>
+  </TR>
+</TABLE>
+</body>
+</html>

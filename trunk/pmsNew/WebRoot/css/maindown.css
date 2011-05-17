@@ -1,0 +1,30 @@
+body {
+	font-size: 12px;
+	text-decoration: none;
+	background-color: #809DC7;
+	margin: 0px;
+	padding: 0px;
+
+	background-repeat: repeat-x;
+	background-position: left top;
+}
+a {
+	font-size: 13px;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+a:hover {
+	font-size: 13px;
+	text-decoration: underline;
+	color: #FFFF00;
+}
+.table-width {
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	border: none;
+}
+td {
+	font-size: 12px;
+	text-decoration: none;
+}
