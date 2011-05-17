@@ -1,0 +1,97 @@
+<html>
+<head>
+<title>项目名称选择</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link href="../css/modlewin.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<form name="form1" method="post" action="">
+  <table cellpadding="0" cellspacing="0" class="table-width">
+    <tr>
+      <td><table cellpadding="0" cellspacing="0" class="table-lt-border">
+        <tr>
+          <td class="list-header-td">项目选择</td>
+        </tr>
+        <tr>
+          <td><table cellpadding="0" cellspacing="0" class="table-width">
+            <tr>
+              <td class="list-left-title">请选择年份</td>
+              <td class="info-left-td"><select name="select2">
+                <option>请选择</option>
+                <option>2002</option>
+                <option>2003</option>
+                <option>2004</option>
+                <option selected>2005</option>
+                <option>2006</option>
+                <option>2007</option>
+                <option>2008</option>
+                                                        </select></td>
+              <td class="list-left-title"> 项目名称</td>
+              <td class="info-left-td"><input type="text" name="textfield"></td>
+            </tr>
+            <tr>
+              <td class="list-left-title"> 专业类别</td>
+              <td colspan="3" class="info-left-td">
+			  <select name="example" size="1" onChange="redirect(this.options.selectedIndex)">
+				<option>客户工程</option>
+				<option>数据工程</option>
+				<option>传输工程</option>
+				</select>
+				<select name="stage2" size="1">
+				<option value="http://wsabstract.com">国际长途交换设备</option>
+				<option value="http://www.dynamicdrive.com">集团长途交换设备</option>
+				<option value="http://javascript.internet.com">省内长途交换设备</option>
+				</select>
+                <span class="btn-position-td">
+                <input name="Button2" type="button" class="btn-2word" value="查询">
+                </span>                <script language="javascript" src="../js/doublecombo.js"></script>
+			  </td>
+              </tr>
+          </table>
+		  </td>
+        </tr>
+      </table>
+	  </td>
+    </tr>
+    <tr>
+      <td class="boxoff_td"></td>
+    </tr>
+    <tr>
+      <td><table cellpadding="0" cellspacing="0" class="table-lt-border">
+        <tr>
+          <td class="list-top-title">&nbsp; </td>
+          <td class="list-top-title">项目编号</td>
+          <td class="list-top-title">项目名称</td>
+        </tr>
+        <tr>
+          <td class="list-center-title"><input name="radiobutton" type="radio" value="radiobutton"></td>
+          <td class="info-left-td">&nbsp;</td>
+          <td class="info-left-td">&nbsp;</td>
+        </tr>
+        <tr>
+          <td class="list-center-title"><input name="radiobutton" type="radio" value="radiobutton"></td>
+          <td class="info-left-td">&nbsp;</td>
+          <td class="info-left-td">&nbsp;</td>
+        </tr>
+        <tr>
+          <td class="list-center-title"><input name="radiobutton" type="radio" value="radiobutton"></td>
+          <td class="info-left-td">&nbsp;</td>
+          <td class="info-left-td">&nbsp;</td>
+        </tr>
+      </table>
+	  </td>
+    </tr>
+    <tr>
+      <td class="boxoff_td"></td>
+    </tr>
+  </table>
+<table cellpadding="0" cellspacing="0" class="table-width"> 
+  <tr>
+    <td><script language="javascript" src="../js/pagination.js"></script></td>
+    <td width="50" class="btn-position-td"><input name="Button" type="button" class="btn-2word" value="确定"></td>
+  </tr>
+</table>
+</form>
+</body>
+</html>

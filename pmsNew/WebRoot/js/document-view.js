@@ -1,0 +1,23 @@
+document.write("<table cellpadding=\"0\" cellspacing=\"0\" class=\"table-lt-border\">");
+        document.write("<tr>");
+          document.write("<td class=\"list-header-td\">相关文档（点鼠标右键“目标另存为”可下载保存相关文档）</td>");
+        document.write("</tr>");
+        document.write("<tr>");
+        document.write("<td>");
+		  document.write("<table cellpadding=\"0\" cellspacing=\"0\" class=\"table-width\">");
+            document.write("<tr>");
+              document.write("<td class=\"list-left-title\">");
+			  document.write("所有文档列表");
+				document.write("</td>");
+              document.write("<td class=\"info-left-td\">");
+			  document.write("1、<a href=\"#\">某某X某X某某某文档</a><br>");
+			  document.write("2、<a href=\"#\">某XXX某XXXXXX某某文档</a><br>");
+			  document.write("3、<a href=\"#\">某XX某XXX某某文档</a><br>");
+			  document.write("4、<a href=\"#\">某XXXXX某XX某某文档</a><br>");
+			  document.write("</td>");
+              document.write("</tr>");
+		  document.write("</table>");
+        document.write("</td>");
+        document.write("</tr>");
+document.write("</table>");
+	

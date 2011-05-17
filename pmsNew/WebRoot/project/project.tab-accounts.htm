@@ -1,0 +1,72 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link href="../css/mainright.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<form action="" method="get" name="form1">
+<table height="100%" cellpadding="0" cellspacing="0" class="table-width">
+  <tr>
+    <td height="20" class="page-positon-td">您现在所在的位置：项目立项 - 项目台帐</td>
+  </tr>
+  <tr>
+    <td height="20">
+	<table cellpadding="0" cellspacing="0" class="table-lt-border">
+      <tr>
+        <td class="list-header-td">项目查询</td>
+      </tr>
+      <tr>
+        <td><table cellpadding="0" cellspacing="0" class="table-width">
+          <tr>
+            <td class="list-left-title">项目名称</td>
+            <td class="info-left-td"><input type="text" name="textfield"></td>
+            <td class="list-left-title">项目编号</td>
+            <td class="info-left-td"><input type="text" name="textfield2"></td>
+          </tr>
+          <tr>
+            <td class="list-left-title">项目类别</td>
+            <td colspan="3" class="info-left-td">
+              <select name="example" size="1" onChange="redirect(this.options.selectedIndex)">
+                <option>客户工程</option>
+                <option>数据工程</option>
+                <option>传输工程</option>
+              </select>
+              <select name="stage2" size="1">
+                <option value="http://wsabstract.com">国际长途交换设备</option>
+                <option value="http://www.dynamicdrive.com">集团长途交换设备</option>
+                <option value="http://javascript.internet.com">省内长途交换设备</option>
+              </select>
+              <script language="javascript" src="../js/doublecombo.js"></script>            
+               <input name="Button" type="button" class="btn-2word" value="查询"></td>
+            </tr>
+        </table>
+		</td>
+      </tr>
+    </table>	  
+	</td>
+  </tr>
+  <tr>
+    <td class="boxoff_td" height="8"></td>
+  </tr>
+  <tr>
+    <td height="20">
+	<table cellpadding="0" cellspacing="0" class="table-lt-border">
+      <tr>
+        <td class="top-lable-td"><a href="#" class="lable-8word-link" onclick="ScrollIframe.doScroll(1);">立项批复阶段信息</a><a href="#" class="lable-8word-link" onclick="ScrollIframe.doScroll(2);">项目可研阶段信息</a><a href="#" class="lable-6word-link" onclick="ScrollIframe.doScroll(3);">施工阶段信息</a><a href="#" class="lable-6word-link" onclick="ScrollIframe.doScroll(4);">项目财务信息</a></td>
+      </tr>
+      <tr>
+        <td class="list-header-td">项目台帐详细信息</td>
+      </tr>
+    </table>	</td>
+  </tr>
+  <tr>
+    <td style="border:1 solid #82AAD2; border-top:0px;">
+	<iframe src="project.tab-accounts.detail.htm" name="ScrollIframe" width="100%" height="100%" scrolling="auto" frameborder="0"></iframe></td>
+  </tr>
+</table>
+</form>
+</body>
+</html>
+

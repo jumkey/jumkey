@@ -1,0 +1,53 @@
+body { 
+	overflow:auto; 
+	margin: 0px;
+	scrollbar-face-color: #DEE3E7;
+	scrollbar-highlight-color: #FFFFFF;
+	scrollbar-shadow-color: #DEE3E7;
+	scrollbar-3dlight-color: #D1D7DC;
+	scrollbar-arrow-color:  #006699;
+	scrollbar-track-color: #EFEFEF;
+	scrollbar-darkshadow-color: #98AAB1;
+	}/*body和滚动条样式*/
+td{
+	font-size: 12px; 
+}/*整个页面默认字体大小*/
+.tree1_false{
+	cursor:hand;
+	color:#000000;
+	height:25;
+	border:1 none navy;
+	padding:3 0 0 0;
+	}/*不是当前页面时*/
+.tree1_true{
+	cursor:hand;
+	color:#000000;
+	height:25;
+	border:1 none white;
+	padding:3 0 0 0;
+	}/*是当前页面时*/
+
+a {
+	font-size: 12px;
+	color: #003399;
+	text-decoration: underline;
+}
+a:hover {
+	font-size: 12px;
+	text-decoration: none;
+	color: #009933;
+}
+a:active{
+	font-size: 12px;
+	color: #FFFFFF;
+	text-decoration: none;
+	background-color: #0066CC;
+}
+.actlink{
+	font-size: 12px;
+	color: #FFFFFF;
+	text-decoration: none;
+	background-color: #1E73CE;
+	font-weight: bold;
+	padding:2 2 1 2;
+}

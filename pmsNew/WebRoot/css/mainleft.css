@@ -1,0 +1,79 @@
+body {
+	font-size: 12px;
+	text-decoration: none;
+	background-color: #EAF4FB;
+	margin: 8px 0px 0px 8px;
+	padding: 0px;
+	background-attachment: fixed;
+	background-repeat: repeat-y;
+	background-position: left top;
+	scrollbar-face-color: #DEE3E7;
+	scrollbar-highlight-color: #FFFFFF;
+	scrollbar-shadow-color: #DEE3E7;
+	scrollbar-3dlight-color: #D1D7DC;
+	scrollbar-arrow-color:  #006699;
+	scrollbar-track-color: #EFEFEF;
+	scrollbar-darkshadow-color: #98AAB1;
+}
+.table-width {
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	border: none;
+}
+a {
+	font-size: 12px;
+	color: #133274;
+	text-decoration: underline;
+}
+a:hover {
+	font-size: 12px;
+	text-decoration: underline;
+	color: #ff3300;
+}
+a:active{
+	font-size: 12px;
+	color: #FFFFFF;
+	text-decoration: none;
+	background-color: #0066CC;
+}
+.icon_td {
+	text-align: center;
+	vertical-align: middle;
+	height: 18px;
+	width: 18px;
+	padding-top: 1px;
+	padding-right: 0px;
+	padding-bottom: 1px;
+	padding-left: 0px;
+}
+.a_td {
+	padding-top: 4px;
+	padding-right: 3px;
+	padding-bottom: 2px;
+	padding-left: 3px;
+}
+.dot_td {
+	text-align: center;
+	vertical-align: middle;
+	width: 18px;
+	background-attachment: fixed;
+	background-image: url(../images/dotdot.gif);
+	background-repeat: repeat-y;
+	background-position: center top;
+}
+.icon {
+	margin: 0px;
+	padding: 0px;
+	height: 18px;
+	width: 18px;
+	border: none;
+}
+.actlink{
+	font-size: 12px;
+	color: #FFFFFF;
+	text-decoration: none;
+	background-color: #1E73CE;
+	font-weight: bold;
+	padding:2 2 1 2;
+}

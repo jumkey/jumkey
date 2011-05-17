@@ -1,0 +1,65 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link href="../../css/mainright.css" rel="stylesheet" type="text/css">
+<script language="javascript" type="text/javascript" src="../../js/Calendar.js"></script>
+<script language="javascript" type="text/javascript" src="../../js/public.js"></script>
+</head>
+<body>
+<form action="" method="post" enctype="multipart/form-data" name="form1">
+  <table cellpadding="0" cellspacing="0" class="table-width">
+    <tr>
+      <td class="page-positon-td">您现在所在的位置：项目管理 - 项目验收 - 施工审计信息记录 - 信息编辑</td>
+    </tr>
+    <tr>
+      <td>
+	<table cellpadding="0" cellspacing="0" class="table-lt-border">
+	<tr>
+	  <td nowrap class="top-lable-td"><span class="lable-8word">施工审计信息记录</span><a href="project.check.auditinfo.modify.doc.htm" class="lable-6word-link">相关文档管理</a></td>
+	</tr>			
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td>
+	  <table cellpadding="0" cellspacing="0" class="table-left-border">
+        <tr>
+          <td class="list-header-td">项目施工审计信息</td>
+        </tr>
+        <tr>
+          <td>
+	  <table cellpadding="0" cellspacing="0" class="table-width">
+            <tr>
+              <td class="list-left-title"> 送审额</td>
+              <td class="info-left-td"><input type="text" name="textfield"></td>
+              <td class="list-left-title"> 审定额</td>
+              <td class="info-left-td"><input type="text" name="textfield2"></td>
+            </tr>
+            <tr>
+              <td class="list-left-title"> 提交审计时间</td>
+              <td colspan="3" class="info-left-td">
+				<input name="data1" type="text" class="data_input" readonly>
+				<input name="data_btn" type="button" class="btn-data" onClick="selectDate(document.all.data1);" title="点击选择具体日期"></td>
+              </tr>
+            <tr>
+              <td class="list-left-title"> 审计概述</td>
+              <td colspan="3" class="info-left-td"><textarea name="textarea"></textarea></td>
+              </tr>
+          </table>
+		  </td>
+        </tr>
+      </table>
+	  </td>
+    </tr>
+    <tr>
+      <td class="boxoff_td"></td>
+    </tr>
+    <tr>
+      <td class="btn-position-td"><input name="Submit22" type="button" class="btn-2word" value="保存">
+        <input name="Submit2" type="button" class="btn-2word" value="返回" onClick="location.href='project.check.auditinfo.htm'"></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

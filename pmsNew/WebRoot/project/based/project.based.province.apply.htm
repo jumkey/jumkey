@@ -1,0 +1,249 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link href="../../css/mainright.css" rel="stylesheet" type="text/css">
+<script language="javascript" src="../../js/Calendar.js"></script>
+<script language="javascript" src="../../js/public.js"></script>
+</head>
+<body>
+<form action="" method="post" enctype="multipart/form-data" name="form1">
+  <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+  <tr>
+      <td class="page-positon-td">您现在所在的位置：项目管理 - 项目立项 - 省立项目申请 </td>
+    </tr>
+    <tr>
+     <td><table cellpadding="0" cellspacing="0" class="table-lt-border">
+       <tr>
+         <td nowrap class="top-lable-td"><span class="lable-6word">项目基本信息</span><a href="project.based.province.apply.other.htm" class="lable-6word-link">项目其它信息</a></td>
+       </tr>
+       <tr>
+         <td class="list-header-td">请填写需要立项的项目的基本信息</td>
+       </tr>
+       <tr>
+         <td>
+           <table cellpadding="0" cellspacing="0" class="table-width">
+             <tr>
+               <td class="list-left-title">项目名称</td>
+               <td class="info-left-td"><input type="text" name="textfield"></td>
+               <td class="list-left-title">投资类别</td>
+               <td class="info-left-td">
+			   <select name="select6">
+                 <option selected>请选择</option>
+                 <option>省公司授权地市分公司管理</option>
+               </select>
+		</td>
+             </tr>
+             <tr>
+               <td class="list-left-title">是否零星工程</td>
+               <td class="info-left-td">
+			   <input name="radio1" type="radio" class="radio_box" value="radiobutton">是
+			   <input name="radio1" type="radio" class="radio_box" value="radiobutton">否
+			   </td>
+               <td class="list-left-title">是否客户工程</td>
+               <td class="info-left-td">
+			   <input name="radio2" type="radio" class="radio_box">是
+			   <input name="radio2" type="radio" class="radio_box">否
+			   </td>
+             </tr>
+             <tr>
+               <td class="list-left-title">年份</td>
+               <td class="info-left-td">
+			   <select name="select2">
+                 <option selected>请选择</option>
+                 <option>2004</option>
+                 <option>2005</option>
+                 <option>2006</option>
+                 <option>2007</option>
+                 <option>2008</option>
+				 </select>
+				 </td>
+               <td class="list-left-title">期别</td>
+               <td class="info-left-td">
+			   <select name="select">
+                 <option selected>请选择</option>
+                 <option>一期</option>
+                 <option>二期</option>
+                 <option>三期</option>
+               </select>
+			   </td>
+             </tr>
+             <tr>
+               <td class="list-left-title">主管单位</td>
+               <td class="info-left-td">
+			   <select name="select3">
+                 <option>请选择</option>
+                 <option>集团公司</option>
+                 <option selected>省公司</option>
+                 <option>地市公司</option>
+				 </select>
+				 </td>
+               <td class="list-left-title">需求单位</td>
+               <td class="info-left-td">
+			   <select name="select4">
+                 <option>请选择</option>
+                 <option selected>计划商务部</option>
+                 <option>网络部</option>
+                 <option>财务部</option>
+                 <option>市场营业部</option>
+				 </select>
+				 </td>
+             </tr>
+             <tr>
+               <td class="list-left-title">建设范围</td>
+               <td class="info-left-td">
+			   <select name="select5">
+                 <option>请选择</option>
+                 <option>集团项目</option>
+                 <option selected>省建项目</option>
+                 <option>地市项目</option>
+				 </select>
+				 </td>
+               <td class="list-left-title">是否迁改工程</td>
+               <td class="info-left-td">
+		<input name="radio3" type="radio" class="radio_box" value="radiobutton">是
+		<input name="radio3" type="radio" class="radio_box" value="radiobutton">否
+		</td>
+             </tr>
+             <tr>
+               <td class="list-left-title">专业类别</td>
+               <td colspan="3" class="info-left-td">
+			   <select name="example" size="1" onChange="redirect(this.options.selectedIndex)">
+				<option>客户工程</option>
+				<option>数据工程</option>
+				<option>传输工程</option>
+				</select>
+				<select name="stage2" size="1">
+				<option value="http://wsabstract.com">国际长途交换设备</option>
+				<option value="http://www.dynamicdrive.com">集团长途交换设备</option>
+				<option value="http://javascript.internet.com">省内长途交换设备</option>
+				</select>
+				<script language="javascript" src="../../js/doublecombo.js"></script>
+			   </td>
+               </tr>
+             <tr>
+               <td class="list-left-title">上报日期</td>
+               <td class="info-left-td">
+			   <input type="text" class="data_input" name="data1" readonly>
+			   <input name="data_btn" type="button" class="btn-data" onClick="selectDate(document.all.data1)" title="点击选择具体日期">
+			   </td>
+               <td class="list-left-title">投资主体</td>
+               <td class="info-left-td">
+			   <select name="select7">
+                 <option>请选择</option>
+                 <option>上市</option>
+                 <option selected>非上市</option>
+               </select>			   </td>
+             </tr>
+             <tr>
+               <td class="list-left-title">项目总投资</td>
+               <td class="info-left-td"><input type="text" name="textfield3"></td>
+               <td class="list-left-title">项目总投资上市部分</td>
+               <td class="info-left-td"><input type="text" name="textfield4"></td>
+             </tr>
+             <tr>
+               <td class="list-left-title">投资回报类别</td>
+               <td class="info-left-td">
+			   <select name="select8">
+                 <option selected>请选择</option>
+                 <option>一年回报</option>
+                 <option>二至三年回报</option>
+                 <option>三年以上回报</option>
+                 <option>战略投资</option>
+				 </select>
+				 </td>
+               <td class="list-left-title">项目总投资非上市部分</td>
+               <td class="info-left-td"><input type="text" name="textfield5"></td>
+             </tr>
+             <tr>
+               <td class="list-left-title">地区投资类别</td>
+               <td class="info-left-td">
+			   <select name="select8">
+                 <option selected>请选择</option>
+                 <option>A</option>
+                 <option>B</option>
+                 <option>C</option>
+				 </select>
+			   </td>
+               <td class="list-left-title">建设单位</td>
+               <td class="info-left-td">
+			   <input name="textfield2" type="text" class="data_input">
+			   <input name="depart_btn01" type="button" class="btn-depart" onClick="selectunit();" title="点击选择单位或部门">
+			   </td>
+             </tr>
+             <tr>
+               <td class="list-left-title">紧急程度</td>
+               <td class="info-left-td">
+			   <select name="select9">
+                 <option selected>请选择</option>
+                 <option>正常</option>
+                 <option>紧急</option>
+				 </select>
+				 </td>
+               <td class="list-left-title">预算</td>
+               <td class="info-left-td">
+			   <select name="select10">
+                 <option selected>请选择</option>
+                 <option>预算内</option>
+                 <option>预算外</option>
+				 </select>
+				 </td>
+             </tr>
+             <tr>
+               <td class="list-left-title">开工日期</td>
+               <td class="info-left-td">
+			   <input name="data2" type="text" class="data_input" id="data2" readonly>
+			   <input name="data_btn2" type="button" class="btn-data" onClick="selectDate(document.all.data3)" title="点击选择具体日期">
+			   </td>
+               <td class="list-left-title">完工日期</td>
+               <td class="info-left-td">
+			   <input name="data3" type="text" class="data_input" id="data3" readonly>
+			   <input name="data_btn3" type="button" class="btn-data" onClick="selectDate(document.all.data3)" title="点击选择具体日期">
+			   </td>
+             </tr>
+             <tr>
+               <td class="list-left-title">项目负责人</td>
+               <td class="info-left-td">
+			   <input name="textfield2" type="text" class="data_input">
+			   <input name="person_btn" type="button" class="btn-person" onClick="selectman();" title="点击选择人员">
+			   </td>
+               <td class="list-left-title">接口人</td>
+               <td class="info-left-td">
+			   <input name="textfield2" type="text" class="data_input">
+			   <input name="person_btn" type="button" class="btn-person" onClick="selectman();" title="点击选择人员">
+			   </td>
+             </tr>
+             <tr>
+               <td class="list-left-title">总经理</td>
+               <td class="info-left-td">
+			   <input name="textfield2" type="text" class="data_input">
+			   <input name="person_btn" type="button" class="btn-person" onClick="selectman();" title="点击选择人员">
+			   </td>
+               <td class="list-left-title">投资属性</td>
+               <td class="info-left-td">
+			   <select name="select11">
+                 <option selected>请选择</option>
+                 <option>经营</option>
+                 <option>战略</option>
+               </select></td>
+             </tr>
+         </table>
+		 </td>
+       </tr>
+     </table>
+	 </td>
+    </tr>
+    <tr>
+      <td class="boxoff_td"></td>
+    </tr>
+    <tr>
+      <td class="btn-position-td">
+	  <input name="Button1" type="button" class="btn-2word" value="保存">
+	  <input name="Button3" type="button" class="btn-2word" value="提交" onClick="location.href='../based.rightmain.htm'">
+	  <input name="Button2" type="button" class="btn-2word" value="返回" onClick="history.back();">
+	  </td>
+    </tr>
+</table>
+</form>
+</body>
+</html>

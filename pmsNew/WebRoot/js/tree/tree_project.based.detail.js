@@ -1,0 +1,16 @@
+var title="立项过程管理";
+var t,itemid;
+t=outlookbar.addtitle('立项过程管理')
+outlookbar.additem('查看立项申请信息',t,'based/project.based.apply.preview.htm','')
+outlookbar.additem('地市立项审核',t,'based/project.based.Canton.confirm.htm','')
+outlookbar.additem('地市立项上报',t,'based/project.based.Canton.reporting.htm','')
+outlookbar.additem('省公司计划审核',t,'based/project.based.province.confirm.htm','')
+outlookbar.additem('立项会审',t,'based/project.based.confirm.htm','')
+outlookbar.additem('立项审批',t,'based/project.based.approval.htm','')
+//outlookbar.additem('导出立项申请',t,'based/project.based.apply.toexcel.htm','')
+outlookbar.additem('集团立项批复',t,'based/project.based.group.approval.htm','')
+outlookbar.additem('合并/拆分客户工程',t,'based/project.based.canton.split.htm','')
+outlookbar.additem('拆分省建项目',t,'based/project.based.province.split.htm','')
+outlookbar.additem('下达投资计划(单)',t,'based/project.based.assign.plan.htm','')
+outlookbar.additem('下达投资计划(省拆)',t,'based/project.based.assign.plan.province.htm','')
+outlookbar.additem('下达投资计划(地客)',t,'based/project.based.assign.plan.canton.htm','')

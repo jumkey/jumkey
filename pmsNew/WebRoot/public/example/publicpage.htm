@@ -1,0 +1,57 @@
+<html>
+<head>
+<title>中国网通浙江分公司工程项目管理系统</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link href="../../CSS/mainright.css" rel="stylesheet" type="text/css">
+<script language="javascript" src="../../js/Calendar.js"></script>
+<script language="javascript" src="../../js/public.js"></script>
+</head>
+
+<body>
+<form name="form1" method="post" action="">
+  <p>
+    日期选择示例：<input type="text" class="data_input" name="data1" readonly>
+    <input name="data_btn" type="button" class="btn-data" onClick="selectDate(document.all.data1)" title="点击选择具体日期">
+  </p>
+  <p>
+  单位或部门示例：
+    <input name="textfield2" type="text" class="data_input">
+  <input name="depart_btn01" type="button" class="btn-depart" onClick="selectunit();" title="点击选择单位或部门">
+</p>
+  <p>
+  选择人员示例：<input name="textfield2" type="text" class="data_input">
+  <input name="person_btn" type="button" class="btn-person" onClick="selectman();" title="点击选择人员">
+  </p>
+  <p>
+    Excel导出按钮示例：<input name="Button" type="button" class="btn-excel" onClick="location.href='../../public/ExcelTemplate.xls'" title="点击按钮生成Excel格式文件">
+</p>
+  <p>
+    1、选择业务类别（两级）示例：
+      <input name="textfield2" type="text" class="data_input">
+  <input name="opsort_btn" type="button" class="btn-opsort" onClick="select2sort();" title="点击选择业务类别"> 
+  注意：需要多选时才用这个
+  </p>
+<p>
+2、选择业务类别示例（两级联动选择，获取最终选择的一个值）：<br>
+<select name="example" size="1" onChange="redirect(this.options.selectedIndex)">
+<option>客户工程</option>
+<option>数据工程</option>
+<option>传输工程</option>
+</select>
+<select name="stage2" size="1">
+<option value="http://wsabstract.com">国际长途交换设备</option>
+<option value="http://www.dynamicdrive.com">集团长途交换设备</option>
+<option value="http://javascript.internet.com">省内长途交换设备</option>
+</select>
+<script language="javascript" src="../../js/doublecombo.js"></script>
+</p>
+<p align="right">  
+  分页示例如下：-------------------------------------------------------------  
+  <script language="javascript" src="../../js/pagination.js"></script>
+</p>
+</form>
+<p>&nbsp;</p>
+<p>★★★★★★以上只是部门公共引用的示例，请注意有关引用路径。。。。★★★★★★
+</p>
+</body>
+</html>

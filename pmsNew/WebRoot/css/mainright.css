@@ -1,0 +1,1122 @@
+body {
+	margin: 8 8 8 8;
+	background-color: #ffffff;
+	overflow:auto;
+}/*body标签默认样式*/
+form,select,input {
+	margin: 0px;
+	padding: 0px;
+}/*表单的基本元素的边（间）距默认为0*/
+.data_input {
+	margin: 0px;
+	padding: 0px;
+	width: 130px;
+}/*用于时间、人员、部门或单位的input框样式*/
+.file_input {
+	margin: 0px;
+	padding: 0px;
+	width: 222px;
+}/*用于文件上传的input框样式*/
+.delfile-btn {
+	text-decoration: none;
+	background-image: url(../images/deletbtn.gif);
+	height: 17px;
+	width: 14px;
+	margin: 0 0 2 0;
+	border: none;
+	cursor:hand;
+	background-repeat: no-repeat;
+	background-color: #ffffff;
+	padding: 0px;
+}/*删除多余的上传file input框的图标按钮*/
+.radio_box {
+	margin: 0px;
+	padding: 0px;
+	width: 12px;
+	margin:0 0 0 2;
+}/*用于文件上传的input框样式*/
+.page_input {
+	margin: 0px;
+	padding: 0px;
+	width: 40px;
+}/*用于翻页输入框input的样式*/
+.list_input {
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+}/*表单的基本元素input的默认大小值*/
+td {
+	font-size: 12px;
+	text-decoration: none;
+}/*各单元格td默认字体大小为12px，无下划线*/
+a {
+	font-size: 12px;
+	color: #444444;
+	text-decoration: underline;
+}
+a:hover {
+	font-size: 12px;
+	color: #FF9933;
+	text-decoration: none;
+}/*页面上的链接的默认样式*/
+.a-proitem:link {
+	font-size: 12px;
+	color: #666666;
+	text-decoration: none;
+	}
+	.a-proitem:visited {
+	font-size: 12px;
+	color: #666666;
+	text-decoration: none;
+	}
+	.a-proitem:hover {
+	font-size: 12px;
+	color: #FF9933;
+	text-decoration: underline;
+	}/*单项-项目名称上的链接样式*/
+.bitian {
+	font-size: 12px;
+	color: #ff0000;
+	text-decoration: none;
+	margin:0 0 0 3;
+}/*必填项标识的样式*/
+.boxoff_td {
+	height: 8px;
+}/*表格table与table之间的间隔td高度*/
+textarea {
+	height: 60px;
+	width: 360px;
+}/*定义页面上所有textarea的大小*/
+.btn-excel {
+	font-size: 12px;
+	color: #003399;
+	text-decoration: none;
+	background-image: url(../images/GotoExcel.gif);
+	height: 20px;
+	width: 110px;
+	margin: 0px;
+	border: none;
+	cursor:hand;
+	background-repeat: no-repeat;
+	background-color: #DFE8EE;
+}/*页面上的excel导出按钮样式*/
+.btn-data {
+	text-decoration: none;
+	background-image: url(../images/datetime.gif);
+	height: 17px;
+	width: 14px;
+	margin: 0 0 2 0;
+	border: none;
+	cursor:hand;
+	background-repeat: no-repeat;
+	background-color: #DFE8EE;
+	padding: 0px;
+}/*日期控件对应的选择图标按钮*/
+.btn-person {
+	text-decoration: none;
+	background-image: url(../images/sperson.gif);
+	height: 17px;
+	width: 14px;
+	margin: 0 0 2 0;
+	border: none;
+	cursor:hand;
+	background-repeat: no-repeat;
+	background-color: #DFE8EE;
+	padding: 0px;
+}/*人员选择页面对应的选择图标按钮*/
+.btn-opsort {
+	text-decoration: none;
+	background-image: url(../images/sopsort.gif);
+	height: 17px;
+	width: 14px;
+	margin: 0 0 2 0;
+	border: none;
+	cursor:hand;
+	background-repeat: no-repeat;
+	background-color: #DFE8EE;
+	padding: 0px;
+}/*人员选择页面对应的选择图标按钮*/
+.btn-depart {
+	text-decoration: none;
+	background-image: url(../images/sdepart.gif);
+	height: 17px;
+	width: 14px;
+	margin: 0 0 2 0;
+	border: none;
+	cursor:hand;
+	background-repeat: no-repeat;
+	background-color: #DFE8EE;
+	padding: 0px;
+}/*单位或部门或分公司或供应商选择页面对应的选择图标按钮*/
+.btn-storage {
+	text-decoration: none;
+	background-image: url(../images/sstorage.gif);
+	height: 17px;
+	width: 15px;
+	margin: 0 0 2 0;
+	border: none;
+	cursor:hand;
+	background-repeat: no-repeat;
+	background-color: #DFE8EE;
+	padding: 0px;
+}/*仓库选择页面对应的选择图标按钮*/
+.btn-material {
+	text-decoration: none;
+	background-image: url(../images/smaterial.gif);
+	height: 17px;
+	width: 16px;
+	margin: 0 0 2 0;
+	border: none;
+	cursor:hand;
+	background-repeat: no-repeat;
+	background-color: #DFE8EE;
+	padding: 0px;
+}/*物资名称选择页面对应的选择图标按钮*/
+.btn-sproject {
+	text-decoration: none;
+	background-image: url(../images/sproject.gif);
+	height: 17px;
+	width: 14px;
+	margin: 0 0 2 0;
+	border: none;
+	cursor:hand;
+	background-repeat: no-repeat;
+	background-color: #DFE8EE;
+	padding: 0px;
+}/*项目名称选择页面对应的选择图标按钮*/
+.btn-selaog {
+	text-decoration: none;
+	background-image: url(../images/selaog.gif);
+	height: 17px;
+	width: 15px;
+	margin: 0 0 2 0;
+	border: none;
+	cursor:hand;
+	background-repeat: no-repeat;
+	background-color: #DFE8EE;
+	padding: 0px;
+}/*到货通知单（号）选择页面对应的选择图标按钮*/
+.btn-select {
+	font-size: 12px;
+	color: #003399;
+	text-decoration: none;
+	background-image: url(../images/selectbtn.gif);
+	height: 20px;
+	width: 30px;
+	margin: 2 0 0 0;
+	border: none;
+	cursor:hand;
+	letter-spacing: 2px;
+}/*Select_list框的联动选择按钮*/
+.btn-pagego {
+	font-size: 12px;
+	color: #003399;
+	text-decoration: none;
+	background-image: url(../images/1wordbtn.gif);
+	height: 20px;
+	width: 30px;
+	cursor:hand;
+	letter-spacing: 2px;
+	border: none;
+	margin: 0px;
+	padding: 2 0 0 0;
+}/*翻页专用的Go按钮*/
+.btn-position-td {
+	text-align: right;
+	padding:1 1 1 6;
+}/*操作按钮在的对应td里居右对齐*/
+.btn-2word {
+	font-size: 12px;
+	color: #003399;
+	text-decoration: none;
+	background-image: url(../images/2wordbtn.gif);
+	height: 20px;
+	width: 48px;
+	border: none;
+	cursor:hand;
+	letter-spacing: 2px;
+	margin: 0px;
+	padding: 2 0 0 0;
+}/*2个字的按钮*/
+.btn-3word {
+	font-size: 12px;
+	color: #003399;
+	text-decoration: none;
+	background-image: url(../images/3wordbtn.gif);
+	height: 20px;
+	width: 60px;
+	margin: 0px;
+	padding: 2 0 0 0;
+	border: none;
+	cursor:hand;
+	letter-spacing: 2px;
+}/*3个字的按钮*/
+.btn-4word {
+	font-size: 12px;
+	color: #003399;
+	text-decoration: none;
+	background-image: url(../images/4wordbtn.gif);
+	height: 20px;
+	width: 72px;
+	margin: 0px;
+	padding: 2 0 0 0;
+	border: none;
+	cursor:hand;
+	letter-spacing: 2px;
+}/*4个字的按钮*/
+.btn-5word {
+	font-size: 12px;
+	color: #003399;
+	text-decoration: none;
+	background-image: url(../images/5wordbtn.gif);
+	height: 20px;
+	width: 84px;
+	margin: 0px;
+	padding: 2 0 0 0;
+	border: none;
+	cursor:hand;
+	letter-spacing: 1px;
+}/*5个字的按钮*/
+.btn-6word {
+	font-size: 12px;
+	color: #003399;
+	text-decoration: none;
+	background-image: url(../images/6wordbtn.gif);
+	height: 20px;
+	width: 96px;
+	margin: 0px;
+	padding: 2 0 0 0;
+	border: none;
+	cursor:hand;
+	letter-spacing: 1px;
+}/*6个字的按钮*/
+.btn-7word {
+	font-size: 12px;
+	color: #003399;
+	text-decoration: none;
+	background-image: url(../images/7wordbtn.gif);
+	height: 20px;
+	width: 108px;
+	margin: 0px;
+	padding: 2 0 0 0;
+	border: none;
+	cursor:hand;
+	letter-spacing: 1px;
+}/*7个字的按钮*/
+.btn-8word {
+	font-size: 12px;
+	color: #003399;
+	text-decoration: none;
+	background-image: url(../images/8wordbtn.gif);
+	height: 20px;
+	width: 120px;
+	margin: 0px;
+	padding: 2 0 0 0;
+	border: none;
+	cursor:hand;
+	letter-spacing: 1px;
+}/*8个字的按钮*/
+.btn-2word-gray {
+	font-size: 12px;
+	color: #777777;
+	text-decoration: none;
+	background-image: url(../images/2wordbtn_gray.gif);
+	height: 20px;
+	width: 96px;
+	margin: 0px;
+	padding: 2 0 0 0;
+	border: none;
+	cursor:hand;
+	letter-spacing: 1px;
+}/*在需要disable时呈灰色的2个字的按钮*/
+.btn-3word-gray {
+	font-size: 12px;
+	color: #777777;
+	text-decoration: none;
+	background-image: url(../images/3wordbtn_gray.gif);
+	height: 20px;
+	width: 96px;
+	margin: 0px;
+	padding: 2 0 0 0;
+	border: none;
+	cursor:hand;
+	letter-spacing: 1px;
+}/*在需要disable时呈灰色的3个字的按钮*/
+.btn-4word-gray {
+	font-size: 12px;
+	color: #777777;
+	text-decoration: none;
+	background-image: url(../images/4wordbtn_gray.gif);
+	height: 20px;
+	width: 96px;
+	margin: 0px;
+	padding: 2 0 0 0;
+	border: none;
+	cursor:hand;
+	letter-spacing: 1px;
+}/*在需要disable时呈灰色的4个字的按钮*/
+.btn-5word-gray {
+	font-size: 12px;
+	color: #777777;
+	text-decoration: none;
+	background-image: url(../images/5wordbtn_gray.gif);
+	height: 20px;
+	width: 96px;
+	margin: 0px;
+	padding: 2 0 0 0;
+	border: none;
+	cursor:hand;
+	letter-spacing: 1px;
+}/*在需要disable时呈灰色的5个字的按钮*/
+.btn-6word-gray {
+	font-size: 12px;
+	color: #777777;
+	text-decoration: none;
+	background-image: url(../images/6wordbtn_gray.gif);
+	height: 20px;
+	width: 96px;
+	margin: 0px;
+	padding: 2 0 0 0;
+	border: none;
+	cursor:hand;
+	letter-spacing: 1px;
+}/*在需要disable时呈灰色的6个字的按钮*/
+.btn-7word-gray {
+	font-size: 12px;
+	color: #777777;
+	text-decoration: none;
+	background-image: url(../images/7wordbtn_gray.gif);
+	height: 20px;
+	width: 96px;
+	margin: 0px;
+	padding: 2 0 0 0;
+	border: none;
+	cursor:hand;
+	letter-spacing: 1px;
+}/*在需要disable时呈灰色的7个字的按钮*/
+.btn-8word-gray {
+	font-size: 12px;
+	color: #777777;
+	text-decoration: none;
+	background-image: url(../images/8wordbtn_gray.gif);
+	height: 20px;
+	width: 96px;
+	margin: 0px;
+	padding: 2 0 0 0;
+	border: none;
+	cursor:hand;
+	letter-spacing: 1px;
+}/*在需要disable时呈灰色的8个字的按钮*/
+.page-positon-td {
+	font-size: 14px;
+	color: #002A86;
+	text-decoration: none;
+	margin: 0px;
+	padding: 0 4 4 1;
+	border:#82AAD2 solid;
+	border-width:0 0 0 0;
+	font-weight: bold;
+	text-align: left;
+	background-color: #ffffff;
+}/*各对应页面的位置导航信息所在的td*/
+.table-width {
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	border: none;
+}/*不带任何边框，默认宽度为100%的table表格*/
+.table-lt-border {
+	text-decoration: none;
+	border:#82AAD2 solid;
+	border-width:1 0 0 1;
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+}/*定义了上边框和左边框，默认宽度为100%的table表格*/
+.table-left-border {
+	text-decoration: none;
+	border:#82AAD2 solid;
+	border-width:0 0 0 1;
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+}/*定义了左边框，默认宽度为100%的table表格*/
+.list-header-td {
+	background-color: #9CC5E4;
+	padding: 5 1 3 22;
+	margin: 0px;
+	font-size: 12px;
+	color: #0055AA;
+	font-weight: normal;
+	border-top-style: none;
+	border:#82AAD2 solid;
+	border-width:0 1 1 0;
+	text-align: left;
+	background-attachment: fixed;
+	background-image: url(../images/icon98.gif);
+	background-repeat: no-repeat;
+	background-position: left center;
+	letter-spacing: 1px;
+}/*以table为数据列表组，列表的抬头提示信息所在的单元格td*/
+.list-top-title {
+	border:#82AAD2 solid;
+	border-width:0 1 1 0;
+	background-color: #DFE8EE;
+	text-align: center;
+	font-size: 12px;
+	text-decoration: none;
+	word-break: keep-all;
+	padding: 5 2 3 2;
+	color: #0055AA;
+	letter-spacing: 1px;
+	font-weight: bold;
+}/*以table为数据列表组，列表的数据项title所在的单元格td*/
+.list-right-title {
+	border:#82AAD2 solid;
+	border-width:0 1 1 0;
+	background-color: #F6FBFF;
+	text-align: right;
+	font-size: 12px;
+	text-decoration: none;
+	padding: 6 5 5 5;
+	word-break: keep-all;
+	color: #0055AA;
+	letter-spacing: 0px;
+	width: 100px;
+}/*数据列表组的最左边列为数据项title时且[右对齐]所在的单元格td*/
+.list-left-title {
+	border:#82AAD2 solid;
+	border-width:0 1 1 0;
+	background-color: #F6FBFF;
+	font-size: 12px;
+	text-decoration: none;
+	padding: 6 5 5 5;
+	word-wrap : normal;
+	word-break : keep-all;
+	color: #0055AA;
+	letter-spacing: 0px;
+	width:100px;
+}/*数据列表组的最左边列为数据项title时且[左对齐]所在的单元格td*/
+.list-center-title {
+	border:#82AAD2 solid;
+	border-width:0 1 1 0;
+	background-color: #F6FBFF;
+	font-size: 12px;
+	text-decoration: none;
+	text-align:center;
+	padding: 0;
+	word-wrap : normal;
+	word-break : keep-all;
+	color: #0055AA;
+	letter-spacing: 0px;
+	width:30px;
+}/*数据列表组的最左边列为数据项title时且[居中对齐]所在的单元格td*/
+.list-caozuo-td {
+	border:#82AAD2 solid;
+	border-width:0 1 1 0;
+	font-size: 12px;
+	text-decoration: none;
+	padding: 5 5 3 5;
+	color: #000000;
+	text-align: center;
+	word-break: keep-all;
+	line-height:18px;
+	width:100px;
+}/*所有数据列表组中，“操作”单元格td对应的样式*/
+.info-left-td {
+	border:#82AAD2 solid;
+	border-width:0 1 1 0;
+	font-size: 12px;
+	text-decoration: none;
+	padding: 5 5 3 5;
+	color: #444444;
+	text-align: left;
+	word-break: keep-all;
+	line-height:18px;
+}/*数据列表组的具体数据记录信息[左对齐]所在的单元格td*/
+.infoitem-left-td {
+	border:#82AAD2 solid;
+	border-width:0 1 1 0;
+	font-size: 12px;
+	text-decoration: none;
+	padding: 5 5 3 16;
+	color: #666666;
+	text-align: left;
+	word-break: keep-all;
+	line-height:18px;
+}/*数据列表中，单项-项目名称[左对齐]所在的单元格td*/
+.info-center-td {
+	border:#82AAD2 solid;
+	border-width:0 1 1 0;
+	font-size: 12px;
+	text-decoration: none;
+	padding: 5 5 3 5;
+	color: #444444;
+	text-align: center;
+	word-break: keep-all;
+	line-height:18px;
+}/*数据列表组的具体数据记录信息[居中]所在的单元格td*/
+.info-right-td {
+	border:#82AAD2 solid;
+	border-width:0 1 1 0;
+	font-size: 12px;
+	text-decoration: none;
+	padding: 5 5 3 5;
+	color: #444444;
+	text-align: right;
+	word-break: keep-all;
+	line-height:18px;
+}/*数据列表组的具体数据记录信息[右对齐]所在的单元格td*/
+.top-lable-td {
+	background-color: #3E89C1;
+	padding: 7 0 0 0;
+	margin: 0px;
+}/*当页面需要lable标签时，lable标签对应的table表格所在的单元格td*/
+.lable-0word-td {
+	border-bottom-width: 1px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: solid;
+	border-left-style: none;
+	border-bottom-color: #8BB0D5;
+	text-align: right;
+}/*各lable标签对应的table表格中自动扩展的单元格td样式*/
+.lable-9word {
+	font-size: 14px;
+	color: #003399;
+	text-decoration: none;
+	background-image: url(../images/lable9word.gif);
+	width: 174px;
+	border: none;
+	font-weight: bold;
+	background-repeat: no-repeat;
+	letter-spacing: 1px;
+	text-align: center;
+	margin: 0px;
+	padding: 9 0 2 0;
+	background-attachment: fixed;
+	background-position: center bottom;
+}/*表示当前状态的，9个字的lable标签*/
+.lable-8word {
+	font-size: 14px;
+	color: #003399;
+	text-decoration: none;
+	background-image: url(../images/lable8word.gif);
+	width: 158px;
+	border: none;
+	font-weight: bold;
+	background-repeat: no-repeat;
+	letter-spacing: 1px;
+	text-align: center;
+	margin: 0px;
+	padding: 9 0 2 0;
+	background-attachment: fixed;
+	background-position: center bottom;
+}/*表示当前状态的，8个字的lable标签*/
+.lable-7word {
+	font-size: 14px;
+	color: #003399;
+	text-decoration: none;
+	background-image: url(../images/lable7word.gif);
+	width: 142px;
+	border: none;
+	font-weight: bold;
+	background-repeat: no-repeat;
+	letter-spacing: 1px;
+	text-align: center;
+	margin: 0px;
+	padding: 9 0 2 0;
+	background-attachment: fixed;
+	background-position: center bottom;
+}/*表示当前状态的，7个字的lable标签*/
+.lable-6word {
+	font-size: 14px;
+	color: #003399;
+	text-decoration: none;
+	background-image: url(../images/lable6word.gif);
+	width: 126px;
+	font-weight: bold;
+	background-repeat: no-repeat;
+	letter-spacing: 1px;
+	text-align: center;
+	margin: 0px;
+	padding: 9 0 2 0;
+	cursor:hand;
+	background-attachment: fixed;
+	background-position: center bottom;
+}/*表示当前状态的，6个字的lable标签*/
+.lable-5word {
+	font-size: 14px;
+	color: #003399;
+	text-decoration: none;
+	background-image: url(../images/lable5word.gif);
+	width: 110px;
+	border: none;
+	font-weight: bold;
+	background-repeat: no-repeat;
+	letter-spacing: 1px;
+	text-align: center;
+	margin: 0px;
+	padding: 9 0 2 0;
+	background-attachment: fixed;
+	background-position: center bottom;
+}/*表示当前状态的，5个字的lable标签*/
+.lable-4word {
+	font-size: 14px;
+	color: #003399;
+	text-decoration: none;
+	background-image: url(../images/lable4word.gif);
+	width: 94px;
+	border: none;
+	font-weight: bold;
+	background-repeat: no-repeat;
+	letter-spacing: 1px;
+	text-align: center;
+	margin: 0px;
+	padding: 9 0 2 0;
+	background-attachment: fixed;
+	background-position: center bottom;
+}/*表示当前状态的，4个字的lable标签*/
+.lable-3word {
+	font-size: 14px;
+	color: #003399;
+	text-decoration: none;
+	background-image: url(../images/lable3word.gif);
+	width: 78px;
+	border: none;
+	font-weight: bold;
+	background-repeat: no-repeat;
+	letter-spacing: 1px;
+	text-align: center;
+	margin: 0px;
+	padding: 9 0 2 0;
+	background-attachment: fixed;
+	background-position: center bottom;
+}/*表示当前状态的，3个字的lable标签*/
+.lable-2word {
+	font-size: 14px;
+	color: #003399;
+	text-decoration: none;
+	background-image: url(../images/lable2word.gif);
+	width: 62px;
+	border: none;
+	font-weight: bold;
+	background-repeat: no-repeat;
+	letter-spacing: 1px;
+	text-align: center;
+	margin: 0px;
+	padding: 9 0 2 0;
+	background-attachment: fixed;
+	background-position: center bottom;
+}/*表示当前状态的，2个字的lable标签*/
+.lable-9word-link:link{
+	font-size: 14px;
+	color: #009900;
+	text-decoration: none;
+	background-image: url(../images/lable9word-out.gif);
+	width: 174px;
+	height:27px;
+	border: none;
+	cursor:hand;
+	font-weight: bold;
+	background-repeat: no-repeat;
+	letter-spacing: 1px;
+	text-align: center;
+	margin: 0px;
+	padding: 9 0 0 0;
+	background-position: bottom;
+	}/*有链接的9个字的lable标签，默认状态样式*/
+	.lable-9word-link:visited {
+	font-size: 14px;
+	color: #88AACC;
+	text-decoration: none;
+	background-image: url(../images/lable9word-out.gif);
+	width: 174px;
+	height:27px;
+	border: none;
+	cursor:hand;
+	font-weight: bold;
+	background-repeat: no-repeat;
+	letter-spacing: 1px;
+	text-align: center;
+	margin: 0px;
+	padding: 9 0 0 0;
+	background-position: bottom;
+	}/*有链接的9个字的lable标签，被访问状态*/
+	.lable-9word-link:hover {
+	font-size: 14px;
+	color: #009900;
+	text-decoration: underline;
+	background-image: url(../images/lable9word-on.gif);
+	width: 174px;
+	height:27px;
+	border: none;
+	cursor:hand;
+	font-weight: bold;
+	background-repeat: no-repeat;
+	letter-spacing: 1px;
+	text-align: center;
+	margin: 0px;
+	padding: 8 0 0 0;
+	background-position: bottom;
+}/*有链接的9个字的lable标签，鼠标移上去时的样式*/
+.lable-8word-link:link{
+	font-size: 14px;
+	color: #009900;
+	text-decoration: none;
+	background-image: url(../images/lable8word-out.gif);
+	width: 158px;
+	height:27px;
+	border: none;
+	cursor:hand;
+	font-weight: bold;
+	background-repeat: no-repeat;
+	letter-spacing: 1px;
+	text-align: center;
+	margin: 0px;
+	padding: 9 0 0 0;
+	background-position: bottom;
+	}/*有链接的8个字的lable标签，默认状态样式*/
+	.lable-8word-link:visited {
+	font-size: 14px;
+	color: #88AACC;
+	text-decoration: none;
+	background-image: url(../images/lable8word-out.gif);
+	width: 158px;
+	height:27px;
+	border: none;
+	cursor:hand;
+	font-weight: bold;
+	background-repeat: no-repeat;
+	letter-spacing: 1px;
+	text-align: center;
+	margin: 0px;
+	padding: 9 0 0 0;
+	background-position: bottom;
+	}/*有链接的8个字的lable标签，被访问状态*/
+	.lable-8word-link:hover {
+	font-size: 14px;
+	color: #009900;
+	text-decoration: underline;
+	background-image: url(../images/lable8word-on.gif);
+	width: 158px;
+	height:27px;
+	border: none;
+	cursor:hand;
+	font-weight: bold;
+	background-repeat: no-repeat;
+	letter-spacing: 1px;
+	text-align: center;
+	margin: 0px;
+	padding: 8 0 0 0;
+	background-position: bottom;
+}/*有链接的8个字的lable标签，鼠标移上去时的样式*/
+.lable-7word-link:link,visited{
+	font-size: 14px;
+	color: #009900;
+	text-decoration: none;
+	background-image: url(../images/lable7word-out.gif);
+	width: 142px;
+	height:27px;
+	border: none;
+	cursor:hand;
+	font-weight: bold;
+	background-repeat: no-repeat;
+	letter-spacing: 1px;
+	text-align: center;
+	margin: 0px;
+	padding: 9 0 0 0;
+	background-position: bottom;
+	}/*有链接的7个字的lable标签，默认状态*/
+	.lable-7word-link:visited {
+	font-size: 14px;
+	color: #88AACC;
+	text-decoration: none;
+	background-image: url(../images/lable7word-out.gif);
+	width: 142px;
+	height:27px;
+	border: none;
+	cursor:hand;
+	font-weight: bold;
+	background-repeat: no-repeat;
+	letter-spacing: 1px;
+	text-align: center;
+	margin: 0px;
+	padding: 9 0 0 0;
+	background-position: bottom;
+	}/*有链接的7个字的lable标签，被访问状态*/
+	.lable-7word-link:hover {
+	font-size: 14px;
+	color: #009900;
+	text-decoration: underline;
+	background-image: url(../images/lable7word-on.gif);
+	width: 142px;
+	height:27px;
+	border: none;
+	cursor:hand;
+	font-weight: bold;
+	background-repeat: no-repeat;
+	letter-spacing: 1px;
+	text-align: center;
+	margin: 0px;
+	padding: 8 0 0 0;
+	background-position: bottom;
+}/*有链接的7个字的lable标签，鼠标移上去时的样式*/
+.lable-6word-link:link{
+	font-size: 14px;
+	color: #009900;
+	text-decoration: none;
+	background-image: url(../images/lable6word-out.gif);
+	width: 126px;
+	height:27px;
+	border: none;
+	cursor:hand;
+	font-weight: bold;
+	background-repeat: no-repeat;
+	letter-spacing: 1px;
+	text-align: center;
+	margin: 0px;
+	padding: 9 0 0 0;
+	background-position: bottom;
+	}/*有链接的6个字的lable标签，默认状态*/
+	.lable-6word-link:visited {
+	font-size: 14px;
+	color: #88AACC;
+	text-decoration: none;
+	background-image: url(../images/lable6word-out.gif);
+	width: 126px;
+	height:27px;
+	border: none;
+	cursor:hand;
+	font-weight: bold;
+	background-repeat: no-repeat;
+	letter-spacing: 1px;
+	text-align: center;
+	margin: 0px;
+	padding: 9 0 0 0;
+	background-position: bottom;
+	}/*有链接的6个字的lable标签，被访问状态*/
+	.lable-6word-link:hover {
+	font-size: 14px;
+	color: #009900;
+	text-decoration: underline;
+	background-image: url(../images/lable6word-on.gif);
+	width: 126px;
+	height:27px;
+	border: none;
+	cursor:hand;
+	font-weight: bold;
+	background-repeat: no-repeat;
+	letter-spacing: 1px;
+	text-align: center;
+	margin: 0px;
+	padding: 8 0 0 0;
+	background-position: bottom;
+}/*有链接的6个字的lable标签，鼠标移上去时的样式*/
+.lable-5word-link:link{
+	font-size: 14px;
+	color: #009900;
+	text-decoration: none;
+	background-image: url(../images/lable5word-out.gif);
+	width: 110px;
+	height:27px;
+	border: none;
+	cursor:hand;
+	font-weight: bold;
+	background-repeat: no-repeat;
+	letter-spacing: 1px;
+	text-align: center;
+	margin: 0px;
+	padding: 9 0 0 0;
+	background-position: bottom;
+	}/*有链接的5个字的lable标签，默认状态*/
+	.lable-5word-link:visited {
+	font-size: 14px;
+	color: #88AACC;
+	text-decoration: none;
+	background-image: url(../images/lable5word-out.gif);
+	width: 110px;
+	height:27px;
+	border: none;
+	cursor:hand;
+	font-weight: bold;
+	background-repeat: no-repeat;
+	letter-spacing: 1px;
+	text-align: center;
+	margin: 0px;
+	padding: 9 0 0 0;
+	background-position: bottom;
+	}/*有链接的5个字的lable标签，被访问状态*/
+	.lable-5word-link:hover {
+	font-size: 14px;
+	color: #009900;
+	text-decoration: underline;
+	background-image: url(../images/lable5word-on.gif);
+	width: 110px;
+	height:27px;
+	border: none;
+	cursor:hand;
+	font-weight: bold;
+	background-repeat: no-repeat;
+	letter-spacing: 1px;
+	text-align: center;
+	margin: 0px;
+	padding: 8 0 0 0;
+	background-position: bottom;
+}/*有链接的5个字的lable标签，鼠标移上去时的样式*/
+.lable-4word-link:link{
+	font-size: 14px;
+	color: #009900;
+	text-decoration: none;
+	background-image: url(../images/lable4word-out.gif);
+	width: 94px;
+	height:27px;
+	border: none;
+	cursor:hand;
+	font-weight: bold;
+	background-repeat: no-repeat;
+	letter-spacing: 1px;
+	text-align: center;
+	margin: 0px;
+	padding: 9 0 0 0;
+	background-position: bottom;
+	}/*有链接的4个字的lable标签，默认状态*/
+	.lable-4word-link:visited {
+	font-size: 14px;
+	color: #88AACC;
+	text-decoration: none;
+	background-image: url(../images/lable4word-out.gif);
+	width: 94px;
+	height:27px;
+	border: none;
+	cursor:hand;
+	font-weight: bold;
+	background-repeat: no-repeat;
+	letter-spacing: 1px;
+	text-align: center;
+	margin: 0px;
+	padding: 9 0 0 0;
+	background-position: bottom;
+	}/*有链接的4个字的lable标签，被访问状态*/
+	.lable-4word-link:hover {
+	font-size: 14px;
+	color: #009900;
+	text-decoration: underline;
+	background-image: url(../images/lable4word-on.gif);
+	width: 94px;
+	height:27px;
+	border: none;
+	cursor:hand;
+	font-weight: bold;
+	background-repeat: no-repeat;
+	letter-spacing: 1px;
+	text-align: center;
+	margin: 0px;
+	padding: 8 0 0 0;
+	background-position: bottom;
+}/*有链接的4个字的lable标签，鼠标移上去时的样式*/
+.lable-3word-link:link{
+	font-size: 14px;
+	color: #009900;
+	text-decoration: none;
+	background-image: url(../images/lable3word-out.gif);
+	width: 78px;
+	height:27px;
+	border: none;
+	cursor:hand;
+	font-weight: bold;
+	background-repeat: no-repeat;
+	letter-spacing: 1px;
+	text-align: center;
+	margin: 0px;
+	padding: 9 0 0 0;
+	background-position: bottom;
+	}/*有链接的3个字的lable标签，默认状态*/
+	.lable-3word-link:visited {
+	font-size: 14px;
+	color: #88AACC;
+	text-decoration: none;
+	background-image: url(../images/lable3word-out.gif);
+	width: 78px;
+	height:27px;
+	border: none;
+	cursor:hand;
+	font-weight: bold;
+	background-repeat: no-repeat;
+	letter-spacing: 1px;
+	text-align: center;
+	margin: 0px;
+	padding: 9 0 0 0;
+	background-position: bottom;
+	}/*有链接的3个字的lable标签，被访问状态*/
+	.lable-3word-link:hover {
+	font-size: 14px;
+	color: #009900;
+	text-decoration: underline;
+	background-image: url(../images/lable3word-on.gif);
+	width: 78px;
+	height:27px;
+	border: none;
+	cursor:hand;
+	font-weight: bold;
+	background-repeat: no-repeat;
+	letter-spacing: 1px;
+	text-align: center;
+	margin: 0px;
+	padding: 8 0 0 0;
+	background-position: bottom;
+}/*有链接的3个字的lable标签，鼠标移上去时的样式*/
+.lable-2word-link:link{
+	font-size: 14px;
+	color: #009900;
+	text-decoration: none;
+	background-image: url(../images/lable2word-out.gif);
+	width: 62px;
+	height:27px;
+	border: none;
+	cursor:hand;
+	font-weight: bold;
+	background-repeat: no-repeat;
+	letter-spacing: 1px;
+	text-align: center;
+	margin: 0px;
+	padding: 9 0 0 0;
+	background-position: bottom;
+	}/*有链接的2个字的lable标签，默认状态*/
+	.lable-2word-link:visited {
+	font-size: 14px;
+	color: #88AACC;
+	text-decoration: none;
+	background-image: url(../images/lable2word-out.gif);
+	width: 62px;
+	height:27px;
+	border: none;
+	cursor:hand;
+	font-weight: bold;
+	background-repeat: no-repeat;
+	letter-spacing: 1px;
+	text-align: center;
+	margin: 0px;
+	padding: 9 0 0 0;
+	background-position: bottom;
+	}/*有链接的2个字的lable标签，被访问状态*/
+	.lable-2word-link:hover {
+	font-size: 14px;
+	color: #009900;
+	text-decoration: underline;
+	background-image: url(../images/lable2word-on.gif);
+	width: 62px;
+	height:27px;
+	border: none;
+	cursor:hand;
+	font-weight: bold;
+	background-repeat: no-repeat;
+	letter-spacing: 1px;
+	text-align: center;
+	margin: 0px;
+	padding: 8 0 0 0;
+	background-position: bottom;
+}/*有链接的2个字的lable标签，鼠标移上去时的样式*/
+.rowcolor {
+	background-color: expression(rowIndex%2==1?'':'#F5F5F5');
+}/*定义数据列表的不同行呈现不同的颜色，以区别显现*/

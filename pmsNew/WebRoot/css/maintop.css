@@ -1,0 +1,164 @@
+body {
+	font-size: 12px;
+	text-decoration: none;
+	background-color: #efefef;
+	margin: 0px;
+	padding: 0px;
+}
+td {
+	font-size: 12px;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+a {
+	font-size: 12px;
+	color: #002A86;
+	text-decoration: none;
+}
+a:hover {
+	font-size: 12px;
+	text-decoration: underline;
+	color: #ffffff;
+}
+.sys_a {
+	font-size: 12px;
+	font-weight: bold;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.topmenu_td {
+	height: 26px;
+	background-color: #AABFDE;
+	padding-left:5px;
+}
+.table-width {
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	border: none;
+}
+.logo_td {
+	margin: 0px;
+	padding: 0px;
+	width: 630px;
+	border: none;
+	background-attachment: fixed;
+	background-color: #0C3795;
+	background-image: url();
+	background-repeat: no-repeat;
+	background-position: center center;
+	height: 54px;
+}
+.kuozhan_td {
+	margin: 0px;
+	padding: 0px;
+	border: none;
+	background-attachment: fixed;
+	background-color: #0C3795;
+	background-image: url(../images/maintop_bg.gif);
+	background-repeat: repeat-x;
+	background-position: left bottom;
+	padding:10 0 0 0;
+	text-align:right;
+	vertical-align:top;
+}
+.icon {
+	margin: 0px;
+	padding: 0px;
+	height: 18px;
+	width: 18px;
+	border: none;
+	margin-right:2px;
+}
+.top-title-link:link{
+	text-align: center;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #FFFFFF;
+	border-right-color: #002A86;
+	border-bottom-color: #002A86;
+	border-left-color: ffffff;
+	font-size: 13px;
+	text-decoration: none;
+	background-color: #AABFDE;
+	color: #002A86;
+	font-weight: bold;
+	width:100%;
+	height:100%;
+	padding:4 0 0 0;
+	}/*主框架页顶部页面模块点链接，默认状态*/
+	.top-title-link:visited {
+	text-align: center;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #FFFFFF;
+	border-right-color: #002A86;
+	border-bottom-color: #002A86;
+	border-left-color: ffffff;
+	font-size: 13px;
+	text-decoration: none;
+	background-color: #AABFDE;
+	color: #002A86;
+	font-weight: bold;
+	width:100%;
+	height:100%;
+	padding:4 0 0 0;
+	}/*主框架页顶部页面模块点链接，被访问状态*/
+	.top-title-link:hover {
+	text-align: center;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #FFFFFF;
+	border-right-color: #002A86;
+	border-bottom-color: #002A86;
+	border-left-color: ffffff;
+	color: #ffffff;
+	font-size: 13px;
+	background-color: #809DC7;
+	text-decoration: none;
+	font-weight: bold;
+	width:100%;
+	height:100%;
+	padding:4 0 0 0;
+}/*主框架页顶部页面模块点链接，鼠标移上去时的样式*/
+.top-title-local {
+	text-align: center;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #9EC3FF;
+	border-right-color: #002A86;
+	border-bottom-color: #002A86;
+	border-left-color: 9EC3FF;
+	color: #efefef;
+	font-size: 14px;
+	background-color: #3E65BB;
+	text-decoration: none;
+	font-weight: bold;
+	width:100%;
+	height:100%;
+	padding:5 0 0 0;
+}
