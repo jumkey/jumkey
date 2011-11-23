@@ -1,26 +1,26 @@
-Ñ¯¼Û¹ÜÀí{checkunitsname-askprice-show-add-delete-delselect-modify-list
-	Ñ¯¼Ûä¯ÀÀPriceAction-list
-	Ñ¯¼Û¹ÜÀíPriceAction-All//
-	Ñ¯¼Û±¨¼ÛPriceAction-checkunitsname-askprice-show
-	Ç©¶©ºÏÍ¬PriceAction-list,AgreementAction-show-add-delete-delselect-modify-list
+è¯¢ä»·ç®¡ç†{checkunitsname-askprice-show-add-delete-delselect-modify-list
+	è¯¢ä»·æµè§ˆPriceAction-list
+	è¯¢ä»·ç®¡ç†PriceAction-All//
+	è¯¢ä»·æŠ¥ä»·PriceAction-checkunitsname-askprice-show
+	ç­¾è®¢åˆåŒPriceAction-list,AgreementAction-show-add-delete-delselect-modify-list
 }
-¿â¹ÜÀí{
-	¿âä¯ÀÀ
-	¿â¹ÜÀíadd-delete-delselect-modify-list
+åº“ç®¡ç†{
+	åº“æµè§ˆ
+	åº“ç®¡ç†add-delete-delselect-modify-list
 }
-ÏµÍ³ÉèÖÃ
-»áÒé¹ÜÀí{
-	»áÒéä¯ÀÀMeetingAction-list-single
-	»áÒé¹ÜÀíMeetingAction-All//delselect-delete-modify-single-list
-	»áÒéÊÒ¹ÜÀíMeetingRoomAction-All//add-delete-delselect-modify-list
-	½²×ù¹ÜÀíLectureAction-All//add-delete-delselect-modify-list
-	Í¨Öª/±¨µ½»ØÖ´¹ÜÀíAll//add-delete-delselect-modify-list
-	±¨µ½¹ÜÀíReachAction-All//add-delete-delselect-modify-list
-	ÓÃ²Í¹ÜÀíMealAction-All//add-delete-delselect-modify-list
-	·ÑÓÃ¹ÜÀíFeeItemAction-All//add-delete-delselect-modify-list,MeetingFeeItemAction,PaymentAction,IncomeAction-list
-	ÑçÇë¹ÜÀíFeteAction-All//add-delete-delselect-modify-list,FeteRecordAction-add-delete-delselect-checkusername-list
-	³é½±¹ÜÀíAwardsAction-All//add-delete-delselect-modify-list-choujiang-lotterylist
-	»î¶¯¹ÜÀíActivitiesAction-All//add-delete-delselect-modify-list
+ç³»ç»Ÿè®¾ç½®
+ä¼šè®®ç®¡ç†{
+	ä¼šè®®æµè§ˆMeetingAction-list-single
+	ä¼šè®®ç®¡ç†MeetingAction-All//delselect-delete-modify-single-list
+	ä¼šè®®å®¤ç®¡ç†MeetingRoomAction-All//add-delete-delselect-modify-list
+	è®²åº§ç®¡ç†LectureAction-All//add-delete-delselect-modify-list
+	é€šçŸ¥/æŠ¥åˆ°å›æ‰§ç®¡ç†All//add-delete-delselect-modify-list
+	æŠ¥åˆ°ç®¡ç†ReachAction-All//add-delete-delselect-modify-list
+	ç”¨é¤ç®¡ç†MealAction-All//add-delete-delselect-modify-list
+	è´¹ç”¨ç®¡ç†FeeItemAction-All//add-delete-delselect-modify-list,MeetingFeeItemAction,PaymentAction,IncomeAction-list
+	å®´è¯·ç®¡ç†FeteAction-All//add-delete-delselect-modify-list,FeteRecordAction-add-delete-delselect-checkusername-list
+	æŠ½å¥–ç®¡ç†AwardsAction-All//add-delete-delselect-modify-list-choujiang-lotterylist
+	æ´»åŠ¨ç®¡ç†ActivitiesAction-All//add-delete-delselect-modify-list
 }
 
 MeetingAction-list
