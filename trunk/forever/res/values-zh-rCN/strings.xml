@@ -1,0 +1,16 @@
+<resources>
+
+    <string name="app_name">定时</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">定时</string>
+    <string name="setting">设置</string>
+    <string name="finish">开启</string>
+    <string name="sendtime">您设置的时间为: %1$s</string>
+    <string name="sendphone">您设置的号码为: %1$s</string>
+    <string name="sendtext">您设置的内容为: %1$s</string>
+    <string name="text">发送内容</string>
+    <string name="phone">手机号码</string>
+    <string name="sendsuccess">短信已经发送成功</string>
+    <string name="noticetitle">通知</string>
+
+</resources>
