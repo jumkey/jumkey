@@ -1,11 +1,16 @@
 package org.cafeboy.forever;
 
+import java.util.ArrayList;
+
 import org.cafeboy.forever.service.SleepAlarmService;
 import org.cafeboy.forever.util.Constants;
 
 import android.app.Activity;
+import android.app.ActivityManager;
+import android.app.ActivityManager.RunningServiceInfo;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -36,6 +41,9 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 		Log.d(TAG, "Activity onCreate");
 
+		final Intent sleepAlarmService = new Intent(MainActivity.this, SleepAlarmService.class);
+		final boolean isRunning = isRunning(MainActivity.this, sleepAlarmService.getComponent().getClassName());
+
 		shezhibutton = (Button) findViewById(R.id.shezhibutton);
 		shezhibutton.setOnClickListener(new OnClickListener() {
 
@@ -49,23 +57,27 @@ public class MainActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				Intent sleepAlarmService = new Intent(MainActivity.this, SleepAlarmService.class);
-				// 停止服务
-				stopService(sleepAlarmService);
-
-				Intent isleepAlarmService = new Intent(MainActivity.this, SleepAlarmService.class);
-				/**
-				 * 在Service启动之前可以使用Intent来传递参数给Service ，方法如下 目前的代码只是演示，与功能无关
-				 */
-				Bundle setting = new Bundle();
-				setting.putString("TIME_SETTING", "5s");
-				// 在Service中使用"TIME_SETTING"这个标签就可以从Intent取出5s 这个字符串了
-				isleepAlarmService.putExtras(setting);
-				startService(isleepAlarmService);
-
+				if (isRunning) {
+					// 停止服务
+					stopService(sleepAlarmService);
+				} else {
+					/**
+					 * 在Service启动之前可以使用Intent来传递参数给Service ，方法如下 目前的代码只是演示，与功能无关
+					 */
+					Bundle setting = new Bundle();
+					setting.putString("TIME_SETTING", "5s");
+					// 在Service中使用"TIME_SETTING"这个标签就可以从Intent取出5s 这个字符串了
+					sleepAlarmService.putExtras(setting);
+					startService(sleepAlarmService);
+				}
 				finish();
 			}
 		});
+		if (isRunning) {
+			wanchengbutton.setText(R.string.stop);
+		} else {
+			wanchengbutton.setText(R.string.start);
+		}
 		shijiantextview = (TextView) findViewById(R.id.shijiantextview);
 		haomatextview = (TextView) findViewById(R.id.haomatextview);
 		neirongtextview = (TextView) findViewById(R.id.neirongtextview);
@@ -116,5 +128,18 @@ public class MainActivity extends Activity {
 
 		}).setNegativeButton(android.R.string.cancel, null).show();
 
+	}
+
+	public boolean isRunning(Context c, String serviceName) {
+		ActivityManager myAM = (ActivityManager) c.getSystemService(Context.ACTIVITY_SERVICE);
+
+		ArrayList<RunningServiceInfo> runningServices = (ArrayList<RunningServiceInfo>) myAM.getRunningServices(Integer.MAX_VALUE);
+		// 获取最多40个当前正在运行的服务，放进ArrList里,以现在手机的处理能力，要是超过40个服务，估计已经卡死，所以不用考虑超过40个该怎么办
+		for (int i = 0; i < runningServices.size(); i++) {// 循环枚举对比
+			if (runningServices.get(i).service.getClassName().equals(serviceName)) {
+				return true;
+			}
+		}
+		return false;
 	}
 }
