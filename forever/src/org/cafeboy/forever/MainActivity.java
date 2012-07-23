@@ -101,7 +101,7 @@ public class MainActivity extends Activity {
 		new AlertDialog.Builder(this).setTitle(R.string.setting).setView(view).setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
 
 			public void onClick(DialogInterface dialog, int which) {
-
+				timePicker.clearFocus();
 				String timeStr = String.format("%1$02d:%2$02d", timePicker.getCurrentHour(), timePicker.getCurrentMinute());
 
 				shijiantextview.setText(getString(R.string.sendtime, timeStr));
