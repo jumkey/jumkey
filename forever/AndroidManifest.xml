@@ -13,6 +13,8 @@
     <uses-permission android:name="android.permission.VIBRATE" />
     <!-- 允许发送短信 -->
     <uses-permission android:name="android.permission.SEND_SMS" />
+    <!-- 开机启动 -->
+    <!-- <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" /> -->
 
     <application
         android:icon="@drawable/ic_launcher"
@@ -30,14 +32,23 @@
 
         <service
             android:name=".service.SleepAlarmService"
-            android:enabled="true" />
+            android:enabled="true"
+            android:label="@string/app_name" />
 
         <receiver
             android:name=".receiver.AlarmReceiver"
-            android:exported="false"
-            android:label="@string/app_name" >
+            android:enabled="true"
+            android:label="@string/app_name" />
+        <!-- receivers -->
+        <receiver
+            android:name=".receiver.BootCompletedReceiver"
+            android:enabled="true"
+            android:label="@string/app_name"
+            android:permission="android.permission.RECEIVE_BOOT_COMPLETED" >
             <intent-filter>
-                <action android:name="AlarmReceiver" />
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </receiver>
     </application>
