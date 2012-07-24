@@ -39,7 +39,6 @@ public class SleepAlarmService extends Service {
 
 		// 设置消息的响应
 		Intent ii = new Intent(this, AlarmReceiver.class);
-		ii.setAction("AlarmReceiver");
 		PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, ii, 0);
 		// aManager.set(AlarmManager.RTC, calendar.getTimeInMillis(),
 		// pendingIntent);
@@ -50,7 +49,6 @@ public class SleepAlarmService extends Service {
 	public void onDestroy() {
 		AlarmManager am = (AlarmManager) getSystemService(Service.ALARM_SERVICE);
 		Intent ii = new Intent(this, AlarmReceiver.class);
-		ii.setAction("AlarmReceiver");
 		PendingIntent pi = PendingIntent.getBroadcast(this, 0, ii, 0);
 		am.cancel(pi);
 		super.onDestroy();
