@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">....</string>
+    <string name="lock">Lock</string>
+    <string name="app_name">Lock Screen Widget</string>
+    <string name="admin_description">Compulsory for lock screen widget to work</string>
+    <string name="extra_add_explanation">Allow the widget with admin permissions to enable screen lock at first run.</string>
+    <string name="help_title">Lock Screen Widget</string>
+    <string name="help_about">Clicking widget locks screen immediately</string>
+    <string name="help_install">"To install:
+ 1. Go to Home screen.
+ 2. Long click on empty space on Home screen.
+ 3. Click \"Widget\" item from list.
+ 4. Select \"Lock Screen Widget\".
+"</string>
+    <string name="help_site">"What to find more widgets?
+Visit our website
+http://droid-mania.com"</string>
+    <string name="help_update">"To update:
+- Remove widget from home screen before update."</string>
+
+</resources>
