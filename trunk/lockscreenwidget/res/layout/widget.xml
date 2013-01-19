@@ -14,7 +14,7 @@
         android:layout_marginTop="15.0dip"
         android:contentDescription="@string/hello"
         android:scaleType="centerInside"
-        android:src="@drawable/lock_yellow" />
+        android:src="@drawable/ic_launcher" />
 
     <TextView
         android:id="@+id/title"
@@ -34,7 +34,7 @@
         android:shadowDy="2"
         android:shadowRadius="1"
         android:singleLine="true"
-        android:text="@string/hello"
+        android:text="@string/lock"
         android:textColor="@color/white"
         android:textSize="13.0dip" />
 
