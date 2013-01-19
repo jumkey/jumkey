@@ -13,8 +13,7 @@ public class LockScreenAdmin extends DeviceAdminReceiver {
 		static final int RESULT_ENABLE = 1;
 		ComponentName mLockScreenAdmin;
 
-		protected void onActivityResult(int requestCode, int resultCode,
-				Intent data) {
+		protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 			switch (requestCode) {
 			default:
 				super.onActivityResult(requestCode, resultCode, data);
@@ -25,15 +24,11 @@ public class LockScreenAdmin extends DeviceAdminReceiver {
 		protected void onCreate(Bundle bundle) {
 			super.onCreate(bundle);
 			DevicePolicyManager policyManager = (DevicePolicyManager) getSystemService(Context.DEVICE_POLICY_SERVICE);
-			this.mLockScreenAdmin = new ComponentName(this,
-					LockScreenAdmin.class);
+			this.mLockScreenAdmin = new ComponentName(this, LockScreenAdmin.class);
 			if (!policyManager.isAdminActive(this.mLockScreenAdmin)) {
-				Intent intent = new Intent(
-						DevicePolicyManager.ACTION_ADD_DEVICE_ADMIN);
-				intent.putExtra(DevicePolicyManager.EXTRA_DEVICE_ADMIN,
-						this.mLockScreenAdmin);
-				intent.putExtra(DevicePolicyManager.EXTRA_ADD_EXPLANATION,
-						getString(R.string.extra_add_explanation));
+				Intent intent = new Intent(DevicePolicyManager.ACTION_ADD_DEVICE_ADMIN);
+				intent.putExtra(DevicePolicyManager.EXTRA_DEVICE_ADMIN, this.mLockScreenAdmin);
+				intent.putExtra(DevicePolicyManager.EXTRA_ADD_EXPLANATION, getString(R.string.extra_add_explanation));
 				startActivityForResult(intent, 1);
 			} else {
 				policyManager.lockNow();

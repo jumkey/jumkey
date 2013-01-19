@@ -38,8 +38,7 @@ public class LockWidget extends AppWidgetProvider {
 		}
 	}
 
-	public void onUpdate(Context context, AppWidgetManager appWidgetManager,
-			int[] appWidgetIds) {
+	public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
 		context.startService(new Intent(context, UpdateService.class));
 	}
 
@@ -54,26 +53,19 @@ public class LockWidget extends AppWidgetProvider {
 
 		private RemoteViews buildUpdate(Context context) {
 			Log.d(TAG, "UpdateService::buildUpdate");
-			RemoteViews remoteViews = new RemoteViews(context.getPackageName(),
-					R.layout.widget);
-			remoteViews.setImageViewResource(R.id.widget_icon,
-					R.drawable.lock_yellow);
-			remoteViews.setTextViewText(R.id.title, getString(R.string.lock));
-			PendingIntent pendingIntent = PendingIntent.getActivity(context, 0,
-					new Intent(this, LockScreenAdmin.LockActivity.class), 0);
-			remoteViews
-					.setOnClickPendingIntent(R.id.widget_icon, pendingIntent);
-			remoteViews.setOnClickPendingIntent(R.id.widget_layout,
-					pendingIntent);
+			RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.widget);
+//			remoteViews.setImageViewResource(R.id.widget_icon, R.drawable.ic_launcher);
+//			remoteViews.setTextViewText(R.id.title, getString(R.string.lock));
+			PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, new Intent(this, LockScreenAdmin.LockActivity.class), 0);
+//			remoteViews.setOnClickPendingIntent(R.id.widget_icon, pendingIntent);
+			remoteViews.setOnClickPendingIntent(R.id.widget_layout, pendingIntent);
 			return remoteViews;
 		}
 
 		public void onHandleIntent(Intent intent) {
 			Log.d(TAG, "UpdateService::onHandleIntent");
-			ComponentName componentName = new ComponentName(this,
-					LockWidget.class);
-			AppWidgetManager.getInstance(this).updateAppWidget(componentName,
-					buildUpdate(this));
+			ComponentName componentName = new ComponentName(this, LockWidget.class);
+			AppWidgetManager.getInstance(this).updateAppWidget(componentName, buildUpdate(this));
 		}
 	}
 }

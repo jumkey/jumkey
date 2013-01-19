@@ -4,7 +4,6 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:layout_weight="1.0"
-    android:background="@color/help_bg"
     android:orientation="vertical"
     android:padding="10.0dip" >
 
@@ -15,11 +14,12 @@
         android:orientation="horizontal" >
 
         <ImageView
-            android:id="@+id/help_image"
+            android:id="@+id/help_icon"
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
             android:layout_marginRight="12.0dip"
-            android:contentDescription="@string/hello" />
+            android:contentDescription="@string/hello"
+            android:src="@drawable/ic_launcher" />
 
         <LinearLayout
             android:id="@+id/LinearLayout01"
