@@ -1,7 +1,5 @@
 package org.cafeboy.web;
 
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
@@ -21,17 +19,19 @@ public class SendPostMethod {
 		HttpURLConnection conn = (HttpURLConnection) new URL("http://www.ems.com.cn/ems/rand?d=" + Math.random()).openConnection();
 		conn.setRequestMethod("GET");
 		InputStream input = conn.getInputStream();
-		File storeFile = new File("C:/temp.jpg");
-		FileOutputStream output = new FileOutputStream(storeFile);
-		// 得到网络资源的字节数组,并写入文件
-		byte[] buffer = new byte[1024]; // Adjust if you want
-		int bytesRead;
-		while ((bytesRead = input.read(buffer)) != -1) {
-			output.write(buffer, 0, bytesRead);
-		}
-
-		output.close();
-		String s = new ValidateCode().crackValidateCode("C:/temp.jpg");
+//		File storeFile = new File("C:/temp.jpg");
+//		FileOutputStream output = new FileOutputStream(storeFile);
+//		// 得到网络资源的字节数组,并写入文件
+//		byte[] buffer = new byte[1024]; // Adjust if you want
+//		int bytesRead;
+//		while ((bytesRead = input.read(buffer)) != -1) {
+//			output.write(buffer, 0, bytesRead);
+//		}
+//
+//		output.close();
+//		String s = new ValidateCode().crackValidateCode("C:/temp.jpg");
+		String s = new ValidateCode().crackValidateCode(input);
+		input.close();
 		System.out.println(s);
 		conn.disconnect();
 
