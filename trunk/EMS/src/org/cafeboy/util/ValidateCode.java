@@ -95,7 +95,7 @@ public class ValidateCode {
 	}
 
 	public static void main(String[] args) throws FileNotFoundException, IOException {
-		String s = new ValidateCode().crackValidateCode("src/rand (1).jpg");
+		String s = new ValidateCode().crackValidateCode("src/rand.jpg");
 		System.out.println(s);
 	}
 
