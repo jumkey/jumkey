@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
     android:initialLayout="@layout/widget"
-    android:minHeight="72.0dip"
-    android:minWidth="72.0dip" >
+    android:minHeight="40dip"
+    android:minWidth="40dip" >
 
     <intent-filter>
         <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
