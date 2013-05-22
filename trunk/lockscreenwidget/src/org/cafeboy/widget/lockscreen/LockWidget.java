@@ -1,4 +1,4 @@
-package org.cafeboy.lockscreenwidget;
+package org.cafeboy.widget.lockscreen;
 
 import android.app.IntentService;
 import android.app.PendingIntent;
