@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="hello">....</string>
-    <string name="lock">Lock</string>
+    <string name="hello">Lock</string>
     <string name="app_name">Lock Screen Widget</string>
     <string name="admin_description">Compulsory for lock screen widget to work</string>
     <string name="extra_add_explanation">Allow the widget with admin permissions to enable screen lock at first run.</string>
