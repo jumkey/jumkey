@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="hello">....</string>
-    <string name="lock">锁屏</string>
+    <string name="hello">锁屏</string>
     <string name="app_name">锁屏小插件</string>
     <string name="admin_description">运行锁屏小插件必须</string>
     <string name="extra_add_explanation">第一次运行锁屏小插件需要具有管理员权限。</string>
